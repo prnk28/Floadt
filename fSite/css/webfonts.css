@@ -1,0 +1,68 @@
+
+@font-face{
+	font-family:"TradeGothicCondensed";
+	font-weight: bold;
+	font-style: normal;
+	src:url("webfonts/Hel25.eot");
+	src:url("webfonts/Hel24.eot@iefix") format("eot"),
+		url("webfonts/Hel34.woff") format("woff"),
+		url("webfonts/Hel21.ttf") format("truetype"),
+		url("webfonts/Hel6.svg#Hel6") format("svg");
+}
+@font-face{
+	font-family:"TradeGothicCondensed";
+	font-weight: normal;
+	font-style: normal;
+	src:url("webfonts/Hel27.eot");
+	src:url("webfonts/Hel26.eot@iefix") format("eot"),
+		url("webfonts/Hel1.woff") format("woff"),
+		url("webfonts/Hel23.ttf") format("truetype"),
+		url("webfonts/Hel7.svg#Hel7") format("svg");
+}
+@font-face{
+	font-family:"TradeGothicCondensed";
+	font-weight: normal;
+	font-style: italic;
+	src:url("webfonts/Hel5.eot");
+	src:url("webfonts/Hel4.eot@iefix") format("eot"),
+		url("webfonts/Hel18.woff") format("woff"),
+		url("webfonts/Hel3.ttf") format("truetype"),
+		url("webfonts/Hel30.svg#Hel30") format("svg");
+}
+@font-face{
+    font-family: 'HelveticaNeue';
+	font-weight: 300;
+	src:url("webfonts/Hel15.eot");
+	src:url("webfonts/Hel14.eot@iefix") format("eot"),
+		url("webfonts/Hel22.woff") format("woff"),
+		url("webfonts/Hel20.ttf") format("truetype"),
+		url("webfonts/Hel19.svg#Hel19") format("svg");
+}
+@font-face{
+    font-family: 'HelveticaNeue';
+	font-weight: 300;
+	font-style: italic;
+	src:url("webfonts/Hel17.eot");
+	src:url("webfonts/Hel16.eot@iefix") format("eot"),
+		url("webfonts/Hel31.woff") format("woff"),
+		url("webfonts/Hel8.ttf") format("truetype"),
+		url("webfonts/Hel13.svg#Hel13") format("svg");
+}
+@font-face{
+    font-family: 'HelveticaNeue';
+	font-weight: normal;
+	src:url("webfonts/Hel11.eot");
+	src:url("webfonts/Hel10.eot@iefix") format("eot"),
+		url("webfonts/Hel9.woff") format("woff"),
+		url("webfonts/Hel12.ttf") format("truetype"),
+		url("webfonts/Hel2.svg#Hel2") format("svg");
+}
+@font-face{
+    font-family: 'HelveticaNeue';
+	font-weight: 500;
+	src:url("webfonts/Hel33.eot");
+	src:url("webfonts/Hel32.eot@iefix") format("eot"),
+		url("webfonts/Hel28.woff") format("woff"),
+		url("webfonts/Hel.ttf") format("truetype"),
+		url("webfonts/Hel29.svg#Hel29") format("svg");
+}
