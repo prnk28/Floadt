@@ -2,19 +2,13 @@
 //  SettingsViewController.h
 //  Floadt
 //
-//  Created by Pradyumn Nukala on 3/3/13.
+//  Created by Pradyumn Nukala on 3/31/13.
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
+#import "QuadCurveMenu.h"
 
-@interface SettingsViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UINavigationItem *nbar;
-
-
-
-
-
+@interface SettingsViewController : UIViewController <QuadCurveMenuDelegate>
 
 @end

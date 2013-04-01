@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E1ACDC516D5952500D9571A"
+               BlueprintIdentifier = "6E26F219170148F8009489A8"
                BuildableName = "Floadt.app"
                BlueprintName = "Floadt"
                ReferencedContainer = "container:Floadt.xcodeproj">
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E1ACDF916D5952600D9571A"
+               BlueprintIdentifier = "6E26F242170148F9009489A8"
                BuildableName = "FloadtTests.octest"
                BlueprintName = "FloadtTests"
                ReferencedContainer = "container:Floadt.xcodeproj">
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E1ACDC516D5952500D9571A"
+            BlueprintIdentifier = "6E26F219170148F8009489A8"
             BuildableName = "Floadt.app"
             BlueprintName = "Floadt"
             ReferencedContainer = "container:Floadt.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E1ACDC516D5952500D9571A"
+            BlueprintIdentifier = "6E26F219170148F8009489A8"
             BuildableName = "Floadt.app"
             BlueprintName = "Floadt"
             ReferencedContainer = "container:Floadt.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E1ACDC516D5952500D9571A"
+            BlueprintIdentifier = "6E26F219170148F8009489A8"
             BuildableName = "Floadt.app"
             BlueprintName = "Floadt"
             ReferencedContainer = "container:Floadt.xcodeproj">
