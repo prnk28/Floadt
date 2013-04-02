@@ -7,6 +7,7 @@
 //
 
 #import "JASidePanelController.h"
+#import <Accounts/Accounts.h>
 
 @interface MainViewController : JASidePanelController 
 

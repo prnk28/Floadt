@@ -27,6 +27,9 @@
     kiip.delegate = self;
     [Kiip setSharedInstance:kiip];
     
+    [PFTwitterUtils initializeWithConsumerKey:@"citoWm6LNlooU6jBNEarpA"
+                               consumerSecret:@"mLSwLz5o9l5TLHxDucGn9SYkXxBEHh03cUtQXu1Ts"];
+    
     return YES;
 }
 							

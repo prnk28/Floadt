@@ -7,8 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 #import "QuadCurveMenu.h"
+#import "JSFlatButton.h"
 
 @interface SettingsViewController : UIViewController <QuadCurveMenuDelegate>
+- (IBAction)tweetLogin:(id)sender;
+@property (weak, nonatomic) IBOutlet JSFlatButton *TAuth;
+
 
 @end
