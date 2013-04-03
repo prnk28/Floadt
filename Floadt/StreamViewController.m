@@ -29,7 +29,6 @@ MGBox *grid;
     [super viewDidLoad];
     
     
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"classy_fabric.png"]]];
  
     
     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -76,10 +75,10 @@ MGBox *grid;
          
          if(i%3){
      box = [MGLine lineWithSize:(CGSize){145, 175}];
-     box.borderColors = UIColor.whiteColor;
+     box.borderColors = UIColor.blueColor;
      box.leftMargin = 10;
      box.topMargin = 10;
-     box.textColor = [UIColor whiteColor];
+
      box.middleItems = (id)@"Post.";
      box.onTap = ^{
      NSLog(@"Tapped Box");
@@ -97,10 +96,10 @@ MGBox *grid;
      else if(i%3==1){
          
          MGLine *box2 = [MGLine lineWithSize:(CGSize){145, 120}];
-         box2.borderColors = UIColor.whiteColor;
+         box2.borderColors = UIColor.blueColor;
          box2.leftMargin = 10;
          box2.topMargin = 10;
-         box2.textColor = [UIColor whiteColor];
+
          box2.middleItems = (id)@"Post.";
 
          box2.onTap = ^{
@@ -118,10 +117,10 @@ MGBox *grid;
      else{
          
          MGLine *box3 = [MGLine lineWithSize:(CGSize){145, 60}];
-         box3.borderColors = UIColor.whiteColor;
+         box3.borderColors = UIColor.blueColor;
          box3.leftMargin = 10;
          box3.topMargin = 10;
-         box3.textColor = [UIColor whiteColor];
+
          box3.middleItems = (id)@"Post.";
 
          box3.onTap = ^{

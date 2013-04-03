@@ -12,13 +12,24 @@
 #import "MGScrollView.h"
 #import "MGTableBoxStyled.h"
 #import "MGLineStyled.h"
+#import "JSFlatButton.h"
 
 @interface BarViewController : UIViewController
 
-- (IBAction)kiip:(id)sender;
+@property (weak, nonatomic) IBOutlet JSFlatButton *b1;
+@property (weak, nonatomic) IBOutlet JSFlatButton *b2;
+@property (weak, nonatomic) IBOutlet JSFlatButton *b3;
+@property (weak, nonatomic) IBOutlet JSFlatButton *b4;
+@property (weak, nonatomic) IBOutlet JSFlatButton *b5;
+@property (weak, nonatomic) IBOutlet JSFlatButton *b6;
 
-- (IBAction)login:(id)sender;
-- (IBAction)logout:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *welcomeLabel;
+- (IBAction)td1:(id)sender;
+- (IBAction)td2:(id)sender;
+- (IBAction)td3:(id)sender;
+- (IBAction)td4:(id)sender;
+- (IBAction)td5:(id)sender;
+- (IBAction)td6:(id)sender;
+
+
 
 @end

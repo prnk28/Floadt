@@ -23,14 +23,6 @@ typedef enum {
 
 @implementation BarViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 int dialog = 0;
 
 
@@ -38,12 +30,6 @@ int dialog = 0;
     [super viewWillAppear:YES];
     
     
-    if ([PFUser currentUser]) {
-        [_welcomeLabel setText:[NSString stringWithFormat:@"Welcome %@!", [[PFUser currentUser] username]]];
-    } else {
-        
-        [_welcomeLabel setText:@"Not logged in"];
-    }
     
 }
 
@@ -53,6 +39,42 @@ int dialog = 0;
 	// Do any additional setup after loading the view.
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"classy_fabric.png"]]];
+    
+    self.b1.buttonBackgroundColor = [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f]; //[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
+    self.b1.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
+    self.b1.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    [self.b1 setFlatTitle:nil];
+    [self.b1 setFlatImage:[UIImage imageNamed:@"131-tower.png"]];
+    
+    self.b2.buttonBackgroundColor = [UIColor colorWithRed:1.0f green:0.16f blue:0.2f alpha:1.00f]; //[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
+    self.b2.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
+    self.b2.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    [self.b2 setFlatTitle:nil];
+    [self.b2 setFlatImage:[UIImage imageNamed:@"101-gameplan.png"]];
+    
+    self.b3.buttonBackgroundColor = [UIColor colorWithRed:0.0f green:0.4f blue:1.0f alpha:1.00f]; //[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
+    self.b3.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
+    self.b3.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    [self.b3 setFlatTitle:nil];
+    [self.b3 setFlatImage:[UIImage imageNamed:@"09-chat-2.png"]];
+    
+    self.b4.buttonBackgroundColor = [UIColor colorWithRed:0.278f green:0.337f blue:0.439f alpha:1.00f]; //[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
+    self.b4.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
+    self.b4.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    [self.b4 setFlatTitle:nil];
+    [self.b4 setFlatImage:[UIImage imageNamed:@"06-magnify.png"]];
+    
+    self.b5.buttonBackgroundColor = [UIColor colorWithRed:0.32f green:0.14f blue:0.32f alpha:1.00f]; //[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
+    self.b5.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
+    self.b5.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    [self.b5 setFlatTitle:nil];
+    [self.b5 setFlatImage:[UIImage imageNamed:@"111-user.png"]];
+    
+    self.b6.buttonBackgroundColor = [UIColor colorWithRed:1.0f green:0.505f blue:0.0f alpha:1.00f]; //[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
+    self.b6.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
+    self.b6.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
+    [self.b6 setFlatTitle:nil];
+    [self.b6 setFlatImage:[UIImage imageNamed:@"158-wrench-2.png"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,6 +95,12 @@ int dialog = 0;
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
+    if ([PFUser currentUser]) {
+            [self.navigationController popViewControllerAnimated:YES];
+    }
+    else{
+        
+    }
 }
 
 
@@ -104,6 +132,8 @@ int dialog = 0;
     
     if (!informationComplete) {
         [[[UIAlertView alloc] initWithTitle:@"Missing Information" message:@"Make sure you fill out all of the information!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
+    }else{
+            [self.navigationController popViewControllerAnimated:YES];
     }
     
     return informationComplete;
@@ -111,38 +141,14 @@ int dialog = 0;
 
 
 
-- (IBAction)kiip:(id)sender {
-     [[Kiip sharedInstance] saveMoment:@"Test Moment" withCompletionHandler:nil];
+
+- (IBAction)td1:(id)sender {
+ [self performSegueWithIdentifier:@"hello" sender:nil];
 }
 
-- (IBAction)login:(id)sender {
-    if (![PFUser currentUser]) {
-        
-        PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-        PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-        [logInViewController setSignUpController:signUpViewController];
-        
-        [self presentViewController:logInViewController animated:YES completion:NULL];
-
-    }
+- (IBAction)td2:(id)sender {
 }
-- (IBAction)logout:(id)sender {
-    dialog+=1;
-    
-    if (dialog == 1) {
-        
-         _welcomeLabel.text = @"Not Logged In.";
-        
-    }
-    else if (dialog > 3){
-        
-        _welcomeLabel.text = @"Seriously Stop.";
-    }
-    else if(dialog > 5){
-        
-        _welcomeLabel.text = @"Ok You win....";
-    }
-    [PFUser logOut];
-    
+
+- (IBAction)td3:(id)sender {
 }
 @end

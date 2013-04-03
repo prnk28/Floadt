@@ -28,7 +28,7 @@
     self.TAuth.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
     self.TAuth.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
     [self.TAuth setFlatTitle:@"  Login to Twitter"];
-    [self.TAuth setFlatImage:[UIImage imageNamed:@"cog_02.png"]];
+    [self.TAuth setFlatImage:[UIImage imageNamed:@"23-bird.png"]];
     
  /*
     
