@@ -14,6 +14,7 @@
 
 @interface StreamViewController : UIViewController{
         CGFloat _progress;
+        
 }
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;

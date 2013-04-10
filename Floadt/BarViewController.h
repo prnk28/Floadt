@@ -13,8 +13,10 @@
 #import "MGTableBoxStyled.h"
 #import "MGLineStyled.h"
 #import "JSFlatButton.h"
+#import "JASidePanelController.h"
 
 @interface BarViewController : UIViewController
+
 
 @property (weak, nonatomic) IBOutlet JSFlatButton *b1;
 @property (weak, nonatomic) IBOutlet JSFlatButton *b2;

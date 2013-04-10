@@ -8,12 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
-#import "QuadCurveMenu.h"
+#import "AwesomeMenu.h"
 #import "JSFlatButton.h"
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
 
-@interface SettingsViewController : UIViewController <QuadCurveMenuDelegate>
+
+
+@interface SettingsViewController : UIViewController <AwesomeMenuDelegate>{}
 - (IBAction)tweetLogin:(id)sender;
 @property (weak, nonatomic) IBOutlet JSFlatButton *TAuth;
 
+@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 
 @end

@@ -13,17 +13,34 @@
 #import "MGLineStyled.h"
 
 @interface MainViewController ()
+{
 
+}
 @end
+
+
+
 
 @implementation MainViewController
 
+
+
 -(void) awakeFromNib
 {
+  
     [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"]];
-    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
-//    [self setRightPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"rightViewController"]];
+ 
+        
+        [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
+    
+//    [self s]
+   
+
+    
+
 }
+
+
 
 - (void)viewDidLoad
 {
@@ -42,5 +59,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

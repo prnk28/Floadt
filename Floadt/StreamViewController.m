@@ -28,8 +28,7 @@ MGBox *grid;
 {
     [super viewDidLoad];
     
-    
- 
+    //    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"classy_fabric.png"]]];
     
     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -136,8 +135,6 @@ MGBox *grid;
          [grid.boxes addObject:box3];
          
      }
-     
-     
      [grid layoutWithSpeed:0.3 completion:nil];
      [scroller layoutWithSpeed:0.3 completion:nil];
      [scroller scrollToView:grid withMargin:10];

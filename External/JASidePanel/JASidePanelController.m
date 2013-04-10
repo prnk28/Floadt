@@ -398,7 +398,7 @@ static char ja_kvoContext;
         if (_leftPanel) {
             [self addChildViewController:_leftPanel];
             [_leftPanel didMoveToParentViewController:self];
-            [self _placeButtonForLeftPanel];
+   //         [self _placeButtonForLeftPanel];
         }
         if (self.state == JASidePanelLeftVisible) {
             self.visiblePanel = _leftPanel;
@@ -423,7 +423,7 @@ static char ja_kvoContext;
 }
 
 #pragma mark - Panel Buttons
-
+/*
 - (void)_placeButtonForLeftPanel {
     if (self.leftPanel) {
         UIViewController *buttonController = self.centerPanel;
@@ -438,7 +438,7 @@ static char ja_kvoContext;
         }
     }	
 }
-
+*/
 #pragma mark - Gesture Recognizer Delegate
 
 - (BOOL)gestureRecognizerShouldBegin:(UIGestureRecognizer *)gestureRecognizer {
@@ -636,7 +636,7 @@ static char ja_kvoContext;
 #pragma mark - Loading Panels
 
 - (void)_loadCenterPanel {
-    [self _placeButtonForLeftPanel];
+    //[self _placeButtonForLeftPanel];
     
     _centerPanel.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     _centerPanel.view.frame = self.centerPanelContainer.bounds;
@@ -902,7 +902,7 @@ static char ja_kvoContext;
             }
         } else if ([keyPath isEqualToString:@"viewControllers"] && object == self.centerPanel) {
             // view controllers have changed, need to replace the button
-            [self _placeButtonForLeftPanel];
+    //        [self _placeButtonForLeftPanel];
         }
     } else {
         [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];

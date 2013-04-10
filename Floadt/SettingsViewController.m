@@ -7,11 +7,12 @@
 //
 
 #import "SettingsViewController.h"
-#import "SettingsViewController.h"
-#import "AwesomeDataSource.h"
-#import "QuadCurveDefaultMenuItemFactory.h"
-#import "QuadCurveLinearDirector.h"
-
+#import "MGScrollView.h"
+#import "MGTableBoxStyled.h"
+#import "MGLineStyled.h"
+#import "DLIDEKeyboardView.h"
+#import "RNBlurModalView.h"
+#import "WTStatusBar.h"
 @interface SettingsViewController ()
 
 
@@ -22,101 +23,63 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"classy_fabric.png"]]];
+
     
-    self.TAuth.buttonBackgroundColor = [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f]; //[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
-    self.TAuth.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
-    self.TAuth.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
-    [self.TAuth setFlatTitle:@"  Login to Twitter"];
-    [self.TAuth setFlatImage:[UIImage imageNamed:@"23-bird.png"]];
+    UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
- /*
+    [settingsButton setTitle:@"" forState:UIControlStateNormal];
+    [settingsButton setBackgroundImage:[UIImage imageNamed:@"pen_usIMG.png"] forState:UIControlStateNormal];
+    [settingsButton setBackgroundImage:[UIImage imageNamed:@"pen_sIMG.png"] forState:UIControlStateHighlighted];
+    [settingsButton addTarget:self action:@selector(didTapSettingsButton:) forControlEvents:UIControlEventTouchUpInside];
+    settingsButton.frame = CGRectMake(0.0f, 0.0f, 30.0f, 30.0f);
+    UIBarButtonItem *settingsButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingsButton];
     
-    AwesomeDataSource *dataSource = [[AwesomeDataSource alloc] init];
+    self.navBar.rightBarButtonItem = settingsButtonItem;
     
-    QuadCurveMenu *menu = [[QuadCurveMenu alloc] initWithFrame:self.view.bounds dataSource:dataSource];
+    UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-        [menu setMenuDirector:[[QuadCurveLinearDirector alloc] initWithAngle:M_PI/2 andPadding:15.0]];
+    [barButton setTitle:@"" forState:UIControlStateNormal];
+    [barButton setBackgroundImage:[UIImage imageNamed:@"barButton.png"] forState:UIControlStateNormal];
+    [barButton setBackgroundImage:[UIImage imageNamed:@"barButton_s.png"] forState:UIControlStateHighlighted];
+    [barButton addTarget:self action:@selector(didTapBarButton:) forControlEvents:UIControlEventTouchUpInside];
+    barButton.frame = CGRectMake(0.0f, 0.0f, 30.0f, 30.0f);
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:barButton];
     
-        [menu setMainMenuItemFactory:[[QuadCurveDefaultMenuItemFactory alloc] initWithImage:[UIImage imageNamed:@"facebook.png"] highlightImage:[UIImage imageNamed:nil]]];
-    
-      [menu setMenuItemFactory:[[QuadCurveDefaultMenuItemFactory alloc] initWithImage:[UIImage imageNamed:@"unknown-user.png"] highlightImage:[UIImage imageNamed:nil]]];
-    
-    menu.delegate = self;
-	[self.view addSubview:menu];
-*/  
-	
+    self.navBar.leftBarButtonItem = barButtonItem;
 }
 
-#pragma mark - QuadCurveMenuDelegate Adherence
-
-- (void)quadCurveMenu:(QuadCurveMenu *)menu didTapMenu:(QuadCurveMenuItem *)mainMenuItem {
-    NSLog(@"Menu - Tapped");
-}
-
-- (void)quadCurveMenu:(QuadCurveMenu *)menu didLongPressMenu:(QuadCurveMenuItem *)mainMenuItem {
-    NSLog(@"Menu - Long Pressed");
-}
-
-- (void)quadCurveMenu:(QuadCurveMenu *)menu didTapMenuItem:(QuadCurveMenuItem *)menuItem {
-    PFUser *user = [PFUser currentUser];
+- (void)didTapBarButton:(id)sender {
     
-    if (![PFTwitterUtils isLinkedWithUser:user]) {
-        [PFTwitterUtils linkUser:user block:^(BOOL succeeded, NSError *error) {
-            if ([PFTwitterUtils isLinkedWithUser:user]) {
-                NSLog(@"Woohoo, user logged in with Twitter!");
-            }
-        }];
+    [self.sidePanelController showLeftPanelAnimated:YES];
+    
+}
+
+- (void)didTapSettingsButton:(id)sender {
     
     
-
+    RNBlurModalView *modal;
+    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 20, 300, 240)];
+    [DLIDEKeyboardView attachToTextView:textView];
     
+    [textView setText:@"Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit. "];
     
-    NSLog(@"Menu Item (%@) - Tapped",menuItem.dataObject);
-   }
-}
-
-- (void)quadCurveMenu:(QuadCurveMenu *)menu didLongPressMenuItem:(QuadCurveMenuItem *)menuItem {
-    NSLog(@"Menu Item (%@) - Long Pressed",menuItem.dataObject);
-}
-
-- (void)quadCurveMenuWillExpand:(QuadCurveMenu *)menu {
-    NSLog(@"Menu - Will Expand");
-}
-
-- (void)quadCurveMenuDidExpand:(QuadCurveMenu *)menu {
-    NSLog(@"Menu - Did Expand");
-}
-
-- (void)quadCurveMenuWillClose:(QuadCurveMenu *)menu {
-    NSLog(@"Menu - Will Close");
-}
-
-- (void)quadCurveMenuDidClose:(QuadCurveMenu *)menu {
-    NSLog(@"Menu - Did Close");
-}
-
-- (BOOL)quadCurveMenuShouldClose:(QuadCurveMenu *)menu {
-    return YES;
-}
-
-- (BOOL)quadCurveMenuShouldExpand:(QuadCurveMenu *)menu {
-    return YES;
-}
-
-
-- (IBAction)tweetLogin:(id)sender {
-    [PFTwitterUtils logInWithBlock:^(PFUser *user, NSError *error) {
-        if (!user) {
-            NSLog(@"Uh oh. The user cancelled the Twitter login.");
-            return;
-        } else if (user.isNew) {
-            NSLog(@"User signed up and logged in with Twitter!");
-        } else {
-            NSLog(@"User logged in with Twitter!");
-        }     
-    }];
-
+    [textView setTextColor:[UIColor whiteColor]];
+    [self.view addSubview:textView];
+    
+    textView.backgroundColor = [UIColor darkGrayColor];
+    textView.layer.cornerRadius = 5.f;
+    textView.layer.borderColor = [UIColor blackColor].CGColor;
+    textView.layer.borderWidth = 5.f;
+    
+    [DLIDEKeyboardView attachToTextView:textView];
+    [textView becomeFirstResponder];
+    
+    modal = [[RNBlurModalView alloc] initWithView:textView];
+    
+    [modal show];
+    
 }
 
 @end

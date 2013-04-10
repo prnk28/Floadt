@@ -7,7 +7,13 @@
 //
 
 #import "BarViewController.h"
+#import "SettingsViewController.h"
 #import <KiipSDK/KiipSDK.h>
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
+#import "StreamViewController.h"
+
+
 
 @interface BarViewController ()
 
@@ -24,6 +30,8 @@ typedef enum {
 @implementation BarViewController
 
 int dialog = 0;
+
+
 
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -75,13 +83,62 @@ int dialog = 0;
     self.b6.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
     [self.b6 setFlatTitle:nil];
     [self.b6 setFlatImage:[UIImage imageNamed:@"158-wrench-2.png"]];
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)td1:(id)sender {
+    
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+
+    self.sidePanelController.centerPanel = viewController;
+    
+    [self.sidePanelController showCenterPanelAnimated:YES];
+
+    
 }
+
+- (IBAction)td2:(id)sender {
+    NSLog(@"The Haunted BUTTON!");
+    
+}
+
+- (IBAction)td3:(id)sender {
+    
+
+}
+
+- (IBAction)td4:(id)sender {
+}
+
+- (IBAction)td5:(id)sender {
+    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+ // Set ourselves as the delegate
+    
+    // Create the sign up view controller
+    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+   // Set ourselves as the delegate
+    
+    // Assign our sign up controller to be displayed from the login controller
+    [logInViewController setSignUpController:signUpViewController];
+    
+    // Present the log in view controller
+    [self presentViewController:logInViewController animated:YES completion:NULL];
+    
+}
+
+- (IBAction)td6:(id)sender {
+    
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"settingsViewController"];
+ 
+    self.sidePanelController.centerPanel = viewController;
+    
+    [self.sidePanelController showCenterPanelAnimated:YES];
+
+}
+
+
+#pragma mark - PFLoginViewController
 
 - (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
     if (username && password && username.length && password.length) {
@@ -96,7 +153,7 @@ int dialog = 0;
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
     if ([PFUser currentUser]) {
-            [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     else{
         
@@ -133,22 +190,18 @@ int dialog = 0;
     if (!informationComplete) {
         [[[UIAlertView alloc] initWithTitle:@"Missing Information" message:@"Make sure you fill out all of the information!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
     }else{
-            [self.navigationController popViewControllerAnimated:YES];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     
     return informationComplete;
 }
 
-
-
-
-- (IBAction)td1:(id)sender {
- [self performSegueWithIdentifier:@"hello" sender:nil];
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)td2:(id)sender {
-}
 
-- (IBAction)td3:(id)sender {
-}
+
 @end

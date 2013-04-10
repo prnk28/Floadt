@@ -9,6 +9,10 @@
 #import "JASidePanelController.h"
 #import <Accounts/Accounts.h>
 
+
+
 @interface MainViewController : JASidePanelController 
+
+- (void)changeCenter2;
 
 @end

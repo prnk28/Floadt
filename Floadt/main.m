@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "AppDelegate.h"
+#import "MainViewController.h"
+#import "SettingsViewController.h"
+#import "StreamViewController.h"
+
 
 int main(int argc, char *argv[])
 {
