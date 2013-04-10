@@ -103,6 +103,11 @@
 		6E26F2F51701495B009489A8 /* settingsButton@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E26F2961701495B009489A8 /* settingsButton@2x.png */; };
 		6E26F2F61701495B009489A8 /* settingsButton_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E26F2971701495B009489A8 /* settingsButton_s@2x.png */; };
 		6E26F2F71701495B009489A8 /* settingsButton_s@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E26F2971701495B009489A8 /* settingsButton_s@2x.png */; };
+		6E2B118E1716121900FA23CB /* JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B11891716121900FA23CB /* JSFlatButton.m */; };
+		6E2B118F1716121900FA23CB /* UIColor+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B118B1716121900FA23CB /* UIColor+JSFlatButton.m */; };
+		6E2B11901716121900FA23CB /* UIImage+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E2B118D1716121900FA23CB /* UIImage+JSFlatButton.m */; };
+		6E2B11931716122A00FA23CB /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E2B11911716122A00FA23CB /* FacebookSDK.framework */; };
+		6E2B11941716122A00FA23CB /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E2B11921716122A00FA23CB /* FacebookSDKResources.bundle */; };
 		6E3C17461708CD790025D038 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C16EC1708CD790025D038 /* JASidePanelController.m */; };
 		6E3C17471708CD790025D038 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C16EC1708CD790025D038 /* JASidePanelController.m */; };
 		6E3C17481708CD790025D038 /* UIViewController+JASidePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C16EE1708CD790025D038 /* UIViewController+JASidePanel.m */; };
@@ -145,10 +150,6 @@
 		6E3C176D1708CD790025D038 /* WTStatusView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C17171708CD790025D038 /* WTStatusView.m */; };
 		6E3C176E1708CD790025D038 /* WTStatusWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C17191708CD790025D038 /* WTStatusWindow.m */; };
 		6E3C176F1708CD790025D038 /* WTStatusWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E3C17191708CD790025D038 /* WTStatusWindow.m */; };
-		6E4436FA1709FD7900877BD0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4436F91709FD7900877BD0 /* FacebookSDK.framework */; };
-		6E4436FB1709FD7900877BD0 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4436F91709FD7900877BD0 /* FacebookSDK.framework */; };
-		6E4436FD1709FDE000877BD0 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E4436FC1709FDE000877BD0 /* FacebookSDKResources.bundle */; };
-		6E4436FE1709FDE000877BD0 /* FacebookSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E4436FC1709FDE000877BD0 /* FacebookSDKResources.bundle */; };
 		6E4437001709FDF900877BD0 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4436FF1709FDF900877BD0 /* AdSupport.framework */; };
 		6E4437031709FE2A00877BD0 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4437011709FE2A00877BD0 /* Accounts.framework */; };
 		6E4437041709FE2A00877BD0 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4437021709FE2A00877BD0 /* Social.framework */; };
@@ -498,12 +499,6 @@
 		6E600CBE170A711600768706 /* truck.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E600BA3170A711500768706 /* truck.png */; };
 		6E600CBF170A711600768706 /* waste_basket.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E600BA4170A711500768706 /* waste_basket.png */; };
 		6E600CC0170A711600768706 /* waste_basket.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E600BA4170A711500768706 /* waste_basket.png */; };
-		6E600CC8170A719300768706 /* JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E600CC3170A719300768706 /* JSFlatButton.m */; };
-		6E600CC9170A719300768706 /* JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E600CC3170A719300768706 /* JSFlatButton.m */; };
-		6E600CCA170A719300768706 /* UIColor+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E600CC5170A719300768706 /* UIColor+JSFlatButton.m */; };
-		6E600CCB170A719300768706 /* UIColor+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E600CC5170A719300768706 /* UIColor+JSFlatButton.m */; };
-		6E600CCC170A719300768706 /* UIImage+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E600CC7170A719300768706 /* UIImage+JSFlatButton.m */; };
-		6E600CCD170A719300768706 /* UIImage+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E600CC7170A719300768706 /* UIImage+JSFlatButton.m */; };
 		6E80376617048B750013C364 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E80376517048B750013C364 /* iPhone.storyboard */; };
 		6E80376717048B750013C364 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E80376517048B750013C364 /* iPhone.storyboard */; };
 		6EA2D0F71704ED3F00BD46C0 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA2D0F61704ED3F00BD46C0 /* CoreImage.framework */; };
@@ -1669,6 +1664,14 @@
 		6E26F2961701495B009489A8 /* settingsButton@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingsButton@2x.png"; sourceTree = "<group>"; };
 		6E26F2971701495B009489A8 /* settingsButton_s@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "settingsButton_s@2x.png"; sourceTree = "<group>"; };
 		6E26F39117014BAA009489A8 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		6E2B11881716121900FA23CB /* JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSFlatButton.h; sourceTree = "<group>"; };
+		6E2B11891716121900FA23CB /* JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSFlatButton.m; sourceTree = "<group>"; };
+		6E2B118A1716121900FA23CB /* UIColor+JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JSFlatButton.h"; sourceTree = "<group>"; };
+		6E2B118B1716121900FA23CB /* UIColor+JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JSFlatButton.m"; sourceTree = "<group>"; };
+		6E2B118C1716121900FA23CB /* UIImage+JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JSFlatButton.h"; sourceTree = "<group>"; };
+		6E2B118D1716121900FA23CB /* UIImage+JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JSFlatButton.m"; sourceTree = "<group>"; };
+		6E2B11911716122A00FA23CB /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = External/FacebookSDK.framework; sourceTree = "<group>"; };
+		6E2B11921716122A00FA23CB /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = FacebookSDKResources.bundle; path = External/FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		6E3C16EB1708CD790025D038 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
 		6E3C16EC1708CD790025D038 /* JASidePanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JASidePanelController.m; sourceTree = "<group>"; };
 		6E3C16ED1708CD790025D038 /* UIViewController+JASidePanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+JASidePanel.h"; sourceTree = "<group>"; };
@@ -1713,8 +1716,6 @@
 		6E3C17171708CD790025D038 /* WTStatusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTStatusView.m; sourceTree = "<group>"; };
 		6E3C17181708CD790025D038 /* WTStatusWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WTStatusWindow.h; sourceTree = "<group>"; };
 		6E3C17191708CD790025D038 /* WTStatusWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WTStatusWindow.m; sourceTree = "<group>"; };
-		6E4436F91709FD7900877BD0 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
-		6E4436FC1709FDE000877BD0 /* FacebookSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FacebookSDKResources.bundle; sourceTree = "<group>"; };
 		6E4436FF1709FDF900877BD0 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		6E4437011709FE2A00877BD0 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		6E4437021709FE2A00877BD0 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
@@ -1911,12 +1912,6 @@
 		6E600BA2170A711500768706 /* trolley.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trolley.png; sourceTree = "<group>"; };
 		6E600BA3170A711500768706 /* truck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = truck.png; sourceTree = "<group>"; };
 		6E600BA4170A711500768706 /* waste_basket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waste_basket.png; sourceTree = "<group>"; };
-		6E600CC2170A719300768706 /* JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSFlatButton.h; sourceTree = "<group>"; };
-		6E600CC3170A719300768706 /* JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSFlatButton.m; sourceTree = "<group>"; };
-		6E600CC4170A719300768706 /* UIColor+JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+JSFlatButton.h"; sourceTree = "<group>"; };
-		6E600CC5170A719300768706 /* UIColor+JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+JSFlatButton.m"; sourceTree = "<group>"; };
-		6E600CC6170A719300768706 /* UIImage+JSFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+JSFlatButton.h"; sourceTree = "<group>"; };
-		6E600CC7170A719300768706 /* UIImage+JSFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+JSFlatButton.m"; sourceTree = "<group>"; };
 		6E80376517048B750013C364 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		6EA2D0F61704ED3F00BD46C0 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6EA2D0F81704ED4700BD46C0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -2493,7 +2488,7 @@
 				6E26F220170148F8009489A8 /* Foundation.framework in Frameworks */,
 				6EDE00AE1708CDDF00C68317 /* KiipSDK.framework in Frameworks */,
 				6EDE00B21708CDDF00C68317 /* Parse.framework in Frameworks */,
-				6E4436FA1709FD7900877BD0 /* FacebookSDK.framework in Frameworks */,
+				6E2B11931716122A00FA23CB /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2506,7 +2501,6 @@
 				6E26F247170148F9009489A8 /* Foundation.framework in Frameworks */,
 				6EDE00AF1708CDDF00C68317 /* KiipSDK.framework in Frameworks */,
 				6EDE00B31708CDDF00C68317 /* Parse.framework in Frameworks */,
-				6E4436FB1709FD7900877BD0 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2552,11 +2546,11 @@
 		6E26F21C170148F8009489A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6E2B11911716122A00FA23CB /* FacebookSDK.framework */,
+				6E2B11921716122A00FA23CB /* FacebookSDKResources.bundle */,
 				6E4437011709FE2A00877BD0 /* Accounts.framework */,
 				6E4437021709FE2A00877BD0 /* Social.framework */,
 				6E4436FF1709FDF900877BD0 /* AdSupport.framework */,
-				6E4436FC1709FDE000877BD0 /* FacebookSDKResources.bundle */,
-				6E4436F91709FD7900877BD0 /* FacebookSDK.framework */,
 				6EDE00AB1708CDDF00C68317 /* KiipSDK.framework */,
 				6EDE00AC1708CDDF00C68317 /* KiipSDKResources.bundle */,
 				6EDE00AD1708CDDF00C68317 /* Parse.framework */,
@@ -2760,7 +2754,7 @@
 		6E26F2FC170149FE009489A8 /* External */ = {
 			isa = PBXGroup;
 			children = (
-				6E600CC1170A719300768706 /* JSFlatButton */,
+				6E2B11871716121900FA23CB /* JSFlatButton */,
 				6E57B3EB1712624F009891F3 /* AwesomeMenu */,
 				6E3C16EA1708CD790025D038 /* JASidePanel */,
 				6E3C16EF1708CD790025D038 /* MGBox */,
@@ -2769,6 +2763,20 @@
 				6E56210B17060177006EF5B8 /* Blur */,
 			);
 			name = External;
+			sourceTree = "<group>";
+		};
+		6E2B11871716121900FA23CB /* JSFlatButton */ = {
+			isa = PBXGroup;
+			children = (
+				6E2B11881716121900FA23CB /* JSFlatButton.h */,
+				6E2B11891716121900FA23CB /* JSFlatButton.m */,
+				6E2B118A1716121900FA23CB /* UIColor+JSFlatButton.h */,
+				6E2B118B1716121900FA23CB /* UIColor+JSFlatButton.m */,
+				6E2B118C1716121900FA23CB /* UIImage+JSFlatButton.h */,
+				6E2B118D1716121900FA23CB /* UIImage+JSFlatButton.m */,
+			);
+			name = JSFlatButton;
+			path = External/JSFlatButton;
 			sourceTree = "<group>";
 		};
 		6E3C16EA1708CD790025D038 /* JASidePanel */ = {
@@ -3085,19 +3093,6 @@
 				6E600BA4170A711500768706 /* waste_basket.png */,
 			);
 			path = standard;
-			sourceTree = "<group>";
-		};
-		6E600CC1170A719300768706 /* JSFlatButton */ = {
-			isa = PBXGroup;
-			children = (
-				6E600CC2170A719300768706 /* JSFlatButton.h */,
-				6E600CC3170A719300768706 /* JSFlatButton.m */,
-				6E600CC4170A719300768706 /* UIColor+JSFlatButton.h */,
-				6E600CC5170A719300768706 /* UIColor+JSFlatButton.m */,
-				6E600CC6170A719300768706 /* UIImage+JSFlatButton.h */,
-				6E600CC7170A719300768706 /* UIImage+JSFlatButton.m */,
-			);
-			path = JSFlatButton;
 			sourceTree = "<group>";
 		};
 		6ECC1C50170BBE90006B8AE0 /* icons */ = {
@@ -3792,7 +3787,6 @@
 				6E5620CA170600E6006EF5B8 /* keyboard.png in Resources */,
 				6E56210D17060201006EF5B8 /* Default@2x.png in Resources */,
 				6EDE00B01708CDDF00C68317 /* KiipSDKResources.bundle in Resources */,
-				6E4436FD1709FDE000877BD0 /* FacebookSDKResources.bundle in Resources */,
 				6E600BA5170A711500768706 /* 00_License.txt in Resources */,
 				6E600BA7170A711500768706 /* 00_readme.pdf in Resources */,
 				6E600BA9170A711500768706 /* alarm@2x.png in Resources */,
@@ -4489,6 +4483,7 @@
 				6E57B40C17126261009891F3 /* icon-plus@2x.png in Resources */,
 				6E57B40D17126261009891F3 /* icon-star.png in Resources */,
 				6E57B40E17126261009891F3 /* icon-star@2x.png in Resources */,
+				6E2B11941716122A00FA23CB /* FacebookSDKResources.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4552,7 +4547,6 @@
 				6E5620CB170600E6006EF5B8 /* keyboard.png in Resources */,
 				6E56210E17060201006EF5B8 /* Default@2x.png in Resources */,
 				6EDE00B11708CDDF00C68317 /* KiipSDKResources.bundle in Resources */,
-				6E4436FE1709FDE000877BD0 /* FacebookSDKResources.bundle in Resources */,
 				6E600BA6170A711500768706 /* 00_License.txt in Resources */,
 				6E600BA8170A711500768706 /* 00_readme.pdf in Resources */,
 				6E600BAA170A711500768706 /* alarm@2x.png in Resources */,
@@ -5290,11 +5284,11 @@
 				6E3C176C1708CD790025D038 /* WTStatusView.m in Sources */,
 				6E3C176E1708CD790025D038 /* WTStatusWindow.m in Sources */,
 				6EEA685D1709190C0069B447 /* SettingsViewController.m in Sources */,
-				6E600CC8170A719300768706 /* JSFlatButton.m in Sources */,
-				6E600CCA170A719300768706 /* UIColor+JSFlatButton.m in Sources */,
-				6E600CCC170A719300768706 /* UIImage+JSFlatButton.m in Sources */,
 				6E57B3F01712624F009891F3 /* AwesomeMenu.m in Sources */,
 				6E57B3F11712624F009891F3 /* AwesomeMenuItem.m in Sources */,
+				6E2B118E1716121900FA23CB /* JSFlatButton.m in Sources */,
+				6E2B118F1716121900FA23CB /* UIColor+JSFlatButton.m in Sources */,
+				6E2B11901716121900FA23CB /* UIImage+JSFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5329,9 +5323,6 @@
 				6E3C176B1708CD790025D038 /* WTStatusBar.m in Sources */,
 				6E3C176D1708CD790025D038 /* WTStatusView.m in Sources */,
 				6E3C176F1708CD790025D038 /* WTStatusWindow.m in Sources */,
-				6E600CC9170A719300768706 /* JSFlatButton.m in Sources */,
-				6E600CCB170A719300768706 /* UIColor+JSFlatButton.m in Sources */,
-				6E600CCD170A719300768706 /* UIImage+JSFlatButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
