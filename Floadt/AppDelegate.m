@@ -21,15 +21,7 @@
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar.png"] forBarMetrics:UIBarMetricsDefault];
     
-    [Parse setApplicationId:@"dv6sMGqcQXmrr7lRCLqZhgtvCYb3nn6yL4PagAAe" clientKey:@"JmTZvpZO6CVukRxvpZ9fd9r7P8ITvQKNhihMTrxq"];
-    
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
-    Kiip *kiip = [[Kiip alloc] initWithAppKey:@"01007bf4acea9a6bb2af55812d670e13" andSecret:@"98580e21b66e08b2fcc8e371dbb1adaf"];
-    kiip.delegate = self;
-    [Kiip setSharedInstance:kiip];
-    
-    [PFTwitterUtils initializeWithConsumerKey:@"citoWm6LNlooU6jBNEarpA" consumerSecret:@"mLSwLz5o9l5TLHxDucGn9SYkXxBEHh03cUtQXu1Ts"];
+
     return YES;
 }
 							
