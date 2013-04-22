@@ -6,22 +6,18 @@
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import "JASidePanelController.h"
-#import "UIViewController+JASidePanel.h"
-#import <KiipSDK/KiipSDK.h>
-#import <Parse/Parse.h>
-#import <Twitter/Twitter.h>
-#import "PSCollectionView.h"
+#import "Imports.h"
+#import <SEMasonryView/SEMasonryView.h>
 
-@interface StreamViewController : UIViewController <PSCollectionViewDelegate, PSCollectionViewDataSource> {
-      NSArray *tweets;
-        CGFloat _progress;
+@interface StreamViewController : UIViewController <SEMasonryViewDelegate> {
+        UIBarButtonItem *reloadButton;
         
 }
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
-
+@property (readwrite,assign) int screenWidth;
+@property (nonatomic, strong) SEMasonryView *masonryView;
+@property (nonatomic, strong) NSMutableArray *photos;
 
 
 @end

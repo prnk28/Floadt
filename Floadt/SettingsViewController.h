@@ -6,18 +6,10 @@
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
-#import "AwesomeMenu.h"
-#import "JSFlatButton.h"
-#import "JASidePanelController.h"
-#import "UIViewController+JASidePanel.h"
+#import "Imports.h"
 
+@interface SettingsViewController : UIViewController 
 
-
-@interface SettingsViewController : UIViewController <AwesomeMenuDelegate>{}
-- (IBAction)tweetLogin:(id)sender;
-@property (weak, nonatomic) IBOutlet JSFlatButton *TAuth;
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 

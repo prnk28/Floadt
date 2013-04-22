@@ -9,17 +9,19 @@
 #import "AppDelegate.h"
 #import <KiipSDK/KiipSDK.h>
 #import <Parse/Parse.h>
+#import <NewRelicAgent/NewRelicAgent.h>
 
 @implementation AppDelegate
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
     
-        [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar.png"] forBarMetrics:UIBarMetricsDefault];
+    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar.png"] forBarMetrics:UIBarMetricsDefault];
     
-    [Parse setApplicationId:@"dv6sMGqcQXmrr7lRCLqZhgtvCYb3nn6yL4PagAAe"
-                  clientKey:@"JmTZvpZO6CVukRxvpZ9fd9r7P8ITvQKNhihMTrxq"];
+    [Parse setApplicationId:@"dv6sMGqcQXmrr7lRCLqZhgtvCYb3nn6yL4PagAAe" clientKey:@"JmTZvpZO6CVukRxvpZ9fd9r7P8ITvQKNhihMTrxq"];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
@@ -27,9 +29,7 @@
     kiip.delegate = self;
     [Kiip setSharedInstance:kiip];
     
-    [PFTwitterUtils initializeWithConsumerKey:@"citoWm6LNlooU6jBNEarpA"
-                               consumerSecret:@"mLSwLz5o9l5TLHxDucGn9SYkXxBEHh03cUtQXu1Ts"];
-    
+    [PFTwitterUtils initializeWithConsumerKey:@"citoWm6LNlooU6jBNEarpA" consumerSecret:@"mLSwLz5o9l5TLHxDucGn9SYkXxBEHh03cUtQXu1Ts"];
     return YES;
 }
 							

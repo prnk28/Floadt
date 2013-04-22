@@ -9,9 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <KiipSDK/KiipSDK.h>
-#import "MGScrollView.h"
-#import "MGTableBoxStyled.h"
-#import "MGLineStyled.h"
 #import "JSFlatButton.h"
 #import "JASidePanelController.h"
 

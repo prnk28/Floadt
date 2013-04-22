@@ -7,12 +7,6 @@
 //
 
 #import "SettingsViewController.h"
-#import "MGScrollView.h"
-#import "MGTableBoxStyled.h"
-#import "MGLineStyled.h"
-#import "DLIDEKeyboardView.h"
-#import "RNBlurModalView.h"
-#import "WTStatusBar.h"
 @interface SettingsViewController ()
 
 
@@ -58,27 +52,7 @@
 
 - (void)didTapSettingsButton:(id)sender {
     
-    
-    RNBlurModalView *modal;
-    UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 20, 300, 240)];
-    [DLIDEKeyboardView attachToTextView:textView];
-    
-    [textView setText:@"Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit. "];
-    
-    [textView setTextColor:[UIColor whiteColor]];
-    [self.view addSubview:textView];
-    
-    textView.backgroundColor = [UIColor darkGrayColor];
-    textView.layer.cornerRadius = 5.f;
-    textView.layer.borderColor = [UIColor blackColor].CGColor;
-    textView.layer.borderWidth = 5.f;
-    
-    [DLIDEKeyboardView attachToTextView:textView];
-    [textView becomeFirstResponder];
-    
-    modal = [[RNBlurModalView alloc] initWithView:textView];
-    
-    [modal show];
+
     
 }
 

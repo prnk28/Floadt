@@ -89,7 +89,7 @@ int dialog = 0;
 
 - (IBAction)td1:(id)sender {
     
-    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"];
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"centerPage"];
 
     self.sidePanelController.centerPanel = viewController;
     
@@ -129,7 +129,7 @@ int dialog = 0;
 
 - (IBAction)td6:(id)sender {
     
-    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"settingsViewController"];
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"settingsPage"];
  
     self.sidePanelController.centerPanel = viewController;
     

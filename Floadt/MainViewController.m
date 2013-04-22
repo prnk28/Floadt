@@ -7,11 +7,6 @@
 //
 
 #import "MainViewController.h"
-#import "JASidePanelController.h"
-#import "MGScrollView.h"
-#import "MGTableBoxStyled.h"
-#import "MGLineStyled.h"
-
 @interface MainViewController ()
 {
 
@@ -23,21 +18,14 @@
 
 @implementation MainViewController
 
-
+ 
 
 -(void) awakeFromNib
 {
   
-    [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"leftViewController"]];
- 
-        
-        [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"centerViewController"]];
+    [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"barController"]];
+    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"centerPage"]];
     
-//    [self s]
-   
-
-    
-
 }
 
 

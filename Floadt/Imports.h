@@ -7,6 +7,38 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
+#import <KiipSDK/KiipSDK.h>
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
+#import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "AwesomeMenu.h"
+#import "JSFlatButton.h"
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
+#import "JASidePanelController.h"
+#import <Accounts/Accounts.h>
+#import "AppDelegate.h"
+#import "JASidePanelController.h"
+#import <Accounts/Accounts.h>
+#import "BarViewController.h"
+#import "SettingsViewController.h"
+#import <KiipSDK/KiipSDK.h>
+#import "JASidePanelController.h"
+#import "UIViewController+JASidePanel.h"
+#import "StreamViewController.h"
+#import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import <KiipSDK/KiipSDK.h>
+#import "JSFlatButton.h"
+#import "JASidePanelController.h"
+#import <Twitter/Twitter.h>
+#import <SEMasonryView/SEMasonryView.h>
+#import "VerticalCell.h"
+#import <SEMasonryView/SEJSONRequestOperation.h>
 
 @interface Imports : NSObject
 
