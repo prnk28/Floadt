@@ -7,28 +7,32 @@
 //
 
 #import "StreamViewController.h"
-#import "MGScrollView.h"
-#import "MGTableBoxStyled.h"
-#import "MGLineStyled.h"
 #import "DLIDEKeyboardView.h"
 #import "RNBlurModalView.h"
 #import "WTStatusBar.h"
+#import <Twitter/Twitter.h>
+#import "PSCollectionViewCell.h"
 
 
 @interface StreamViewController ()
 
+@property (nonatomic, strong) NSMutableArray *items;
+@property (nonatomic, strong) PSCollectionView *collectionView;
+
 @end
 
-MGLine *box;
-MGBox *grid;
 
 @implementation StreamViewController
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    [self fetchTweets];
+    [self makeInterface];
     
-    //    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"classy_fabric.png"]]];
+}
+
+//Setup Stuff
+-(void)makeInterface{
     
     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -52,98 +56,21 @@ MGBox *grid;
     
     self.navBar.leftBarButtonItem = barButtonItem;
     
+    self.collectionView = [[PSCollectionView alloc] initWithFrame:CGRectZero];
+    self.collectionView.collectionViewDelegate = self;
+    self.collectionView.collectionViewDataSource = self;
+    self.collectionView.backgroundColor = [UIColor clearColor];
+    self.collectionView.autoresizingMask = ~UIViewAutoresizingNone;
     
-    // ********************************---MGBOX---*******************************************************
+    if (isDeviceIPad()) {
+        self.collectionView.numColsPortrait = 3;
+        self.collectionView.numColsLandscape = 4;
+    } else {
+        self.collectionView.numColsPortrait = 1;
+        self.collectionView.numColsLandscape = 2;
+    }
     
-    
-    
-     MGScrollView *scroller = [MGScrollView scrollerWithSize:CGSizeMake(320, 500)];
-     scroller.origin = CGPointMake(0,44);
-     [self.view addSubview:scroller];
-     
-     
-     MGTableBoxStyled *section = MGTableBoxStyled.box;
-     [scroller.boxes addObject:section];
-     
-     
-     grid = [MGBox boxWithSize:[[UIScreen mainScreen] bounds].size];
-     grid.contentLayoutMode = MGLayoutGridStyle;
-     [scroller.boxes addObject:grid];
-     
-     for (int i = 0; i < 30; i++) {
-         
-         if(i%3){
-     box = [MGLine lineWithSize:(CGSize){145, 175}];
-     box.borderColors = UIColor.blueColor;
-     box.leftMargin = 10;
-     box.topMargin = 10;
-
-     box.middleItems = (id)@"Post.";
-     box.onTap = ^{
-     NSLog(@"Tapped Box");
-     };
-     box.onLongPress = ^{
-             
-         NSLog(@"Let Go!");
-         [WTStatusBar setStatusText:@"Hold On a Second..." animated:YES];
-         [self performSelector:@selector(setTextStatusProgress2) withObject:nil afterDelay:0.5];
-         
-    };
-     
-     [grid.boxes addObject:box];
-     }
-     else if(i%3==1){
-         
-         MGLine *box2 = [MGLine lineWithSize:(CGSize){145, 120}];
-         box2.borderColors = UIColor.blueColor;
-         box2.leftMargin = 10;
-         box2.topMargin = 10;
-
-         box2.middleItems = (id)@"Post.";
-
-         box2.onTap = ^{
-             NSLog(@"Tapped Box");
-         };
-         box2.onLongPress = ^{
-             
-             NSLog(@"Let Go!");
-             
-         };
-         
-              [grid.boxes addObject:box2];
-         
-     }
-     else{
-         
-         MGLine *box3 = [MGLine lineWithSize:(CGSize){145, 60}];
-         box3.borderColors = UIColor.blueColor;
-         box3.leftMargin = 10;
-         box3.topMargin = 10;
-
-         box3.middleItems = (id)@"Post.";
-
-         box3.onTap = ^{
-             NSLog(@"Tapped Box");
-             
-         };
-         box3.onLongPress = ^{
-             
-             NSLog(@"Let Go!");
-             
-         };
-         
-         [grid.boxes addObject:box3];
-         
-     }
-     [grid layoutWithSpeed:0.3 completion:nil];
-     [scroller layoutWithSpeed:0.3 completion:nil];
-     [scroller scrollToView:grid withMargin:10];
-    
-         
-     }
 }
-
-    // ********************************---END MGBOX---*******************************************************
 
 - (void)setTextStatusProgress2
 {
@@ -184,31 +111,31 @@ MGBox *grid;
     }
 }
 
+- (void)fetchTweets
+{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData* data = [NSData dataWithContentsOfURL:
+                        [NSURL URLWithString: @"https://api.twitter.com/1/statuses/public_timeline.json"]];
+        
+        NSError* error;
+        
+        tweets = [NSJSONSerialization JSONObjectWithData:data
+                                                 options:kNilOptions
+                                                   error:&error];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.collectionView reloadData];
+        });
+    });
+}
+
 - (void)didTapSettingsButton:(id)sender {
 
     
-    RNBlurModalView *modal;
-        UITextView *textView = [[UITextView alloc] initWithFrame:CGRectMake(0, 20, 300, 240)];
-        [DLIDEKeyboardView attachToTextView:textView];
-        
-        [textView setText:@"Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit,Bunch of Bullshit. "];
-    
-        [textView setTextColor:[UIColor whiteColor]];
-        [self.view addSubview:textView];
-    
-        textView.backgroundColor = [UIColor darkGrayColor];
-        textView.layer.cornerRadius = 5.f;
-        textView.layer.borderColor = [UIColor blackColor].CGColor;
-        textView.layer.borderWidth = 5.f;
-    
-              [DLIDEKeyboardView attachToTextView:textView];
-        [textView becomeFirstResponder];
-        
-        modal = [[RNBlurModalView alloc] initWithView:textView];
-    
-    [modal show];
+    NSLog(@"Tapped");
 
 }
+
 
 - (void)didTapBarButton:(id)sender {
     
@@ -216,6 +143,23 @@ MGBox *grid;
     
 }
 
+
+- (Class)collectionView:(PSCollectionView *)collectionView cellClassForRowAtIndex:(NSInteger)index {
+    return [PSCollectionViewCell class];
+}
+
+- (NSInteger)numberOfRowsInCollectionView:(PSCollectionView *)collectionView {
+    return tweets.count;
+}
+
+- (UIView *)collectionView:(PSCollectionView *)collectionView cellForRowAtIndex:(NSInteger)index {
+    
+    return @"hello";
+}
+
+- (CGFloat)collectionView:(PSCollectionView *)collectionView heightForRowAtIndex:(NSInteger)index {
+    return 10.0;
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

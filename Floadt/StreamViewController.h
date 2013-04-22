@@ -11,13 +11,17 @@
 #import "UIViewController+JASidePanel.h"
 #import <KiipSDK/KiipSDK.h>
 #import <Parse/Parse.h>
+#import <Twitter/Twitter.h>
+#import "PSCollectionView.h"
 
-@interface StreamViewController : UIViewController{
+@interface StreamViewController : UIViewController <PSCollectionViewDelegate, PSCollectionViewDataSource> {
+      NSArray *tweets;
         CGFloat _progress;
         
 }
 
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
+
 
 
 @end
