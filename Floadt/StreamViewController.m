@@ -85,10 +85,9 @@ int pageCounter = 1;
         self.masonryView.loading = NO;
         reloadButton.enabled = YES;
     }
-                                                                                        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
                                                                                             NSLog(@"error");
-                                                                                            // if there has been an error, again turn of MasonryView's loading state
-                                                                                            self.masonryView.loading = NO;
+                                                                                    // if there has been an error, again turn of                                                                       self.masonryView.loading = NO;
                                                                                             reloadButton.enabled = YES;
                                                                                         }];
     [operation start];
@@ -110,9 +109,6 @@ int pageCounter = 1;
 {
     [super viewDidLoad];
     
-    // Place a button to the navigation bar to clear items
-    reloadButton = [[UIBarButtonItem alloc] initWithTitle:@"Reload" style:UIBarButtonItemStylePlain target:self action:@selector(clearItems)];
-    self.navigationItem.rightBarButtonItem = reloadButton;
     
     // get the screenWidth to determine the resolution
     screenWidth = (int)[[UIScreen mainScreen] applicationFrame].size.width % 256;
@@ -142,12 +138,18 @@ int pageCounter = 1;
     // enable paging
     self.masonryView.loadMoreEnabled = YES;
     
+    // optional
+    self.masonryView.backgroundColor = [UIColor darkGrayColor];
+    
+    // optional
+    self.masonryView.horizontalModeEnabled = NO;
+    
+    
     // add it to your default view
     [self.view addSubview:self.masonryView];
     
     // start fetching data from a remote API
     [self fetchData];
-    
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [barButton setTitle:@"" forState:UIControlStateNormal];
@@ -223,11 +225,6 @@ int pageCounter = 1;
 }
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
 

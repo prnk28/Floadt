@@ -477,6 +477,7 @@
 		6EAF4709172383A000D2AC31 /* VerticalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAF4708172383A000D2AC31 /* VerticalCell.m */; };
 		6EBBA38D172245B8000EFF73 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBBA38C172245B8000EFF73 /* ImageIO.framework */; };
 		6EBBA38F172245CE000EFF73 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBBA38E172245CE000EFF73 /* MapKit.framework */; };
+		6EBC409417288BD10006B425 /* VerticalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EBC409317288BD10006B425 /* VerticalCell.xib */; };
 		6ECC1E6F170BBE92006B8AE0 /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ECC1C51170BBE90006B8AE0 /* 01-refresh.png */; };
 		6ECC1E70170BBE92006B8AE0 /* 01-refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ECC1C51170BBE90006B8AE0 /* 01-refresh.png */; };
 		6ECC1E71170BBE92006B8AE0 /* 01-refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ECC1C52170BBE90006B8AE0 /* 01-refresh@2x.png */; };
@@ -1863,6 +1864,7 @@
 		6EAF4708172383A000D2AC31 /* VerticalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalCell.m; sourceTree = "<group>"; };
 		6EBBA38C172245B8000EFF73 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		6EBBA38E172245CE000EFF73 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		6EBC409317288BD10006B425 /* VerticalCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VerticalCell.xib; sourceTree = "<group>"; };
 		6ECC1C51170BBE90006B8AE0 /* 01-refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh.png"; sourceTree = "<group>"; };
 		6ECC1C52170BBE90006B8AE0 /* 01-refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01-refresh@2x.png"; sourceTree = "<group>"; };
 		6ECC1C53170BBE90006B8AE0 /* 02-redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02-redo.png"; sourceTree = "<group>"; };
@@ -3571,6 +3573,7 @@
 			children = (
 				6EAF4707172383A000D2AC31 /* VerticalCell.h */,
 				6EAF4708172383A000D2AC31 /* VerticalCell.m */,
+				6EBC409317288BD10006B425 /* VerticalCell.xib */,
 				6E26F22C170148F8009489A8 /* AppDelegate.h */,
 				6E26F22D170148F8009489A8 /* AppDelegate.m */,
 				6EF1F75517237C0400061A11 /* Imports.h */,
@@ -4415,6 +4418,7 @@
 				6E57B40D17126261009891F3 /* icon-star.png in Resources */,
 				6E57B40E17126261009891F3 /* icon-star@2x.png in Resources */,
 				6E2B11941716122A00FA23CB /* FacebookSDKResources.bundle in Resources */,
+				6EBC409417288BD10006B425 /* VerticalCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
