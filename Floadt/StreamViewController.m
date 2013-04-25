@@ -117,7 +117,7 @@ int pageCounter = 1;
     self.photos = [NSMutableArray array];
     
     // create a MasonryView in any size you want
-    self.masonryView = [[SEMasonryView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
+    self.masonryView = [[SEMasonryView alloc] initWithFrame:CGRectMake(0, 44.5, self.view.bounds.size.width, self.view.bounds.size.height)];
     
     // set delegate to self
     self.masonryView.delegate = self;
@@ -138,15 +138,17 @@ int pageCounter = 1;
     // enable paging
     self.masonryView.loadMoreEnabled = YES;
     
-    // optional
-    self.masonryView.backgroundColor = [UIColor darkGrayColor];
+    self.masonryView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bgNoise.png"]];
+    
     
     // optional
     self.masonryView.horizontalModeEnabled = NO;
-    
+
     
     // add it to your default view
     [self.view addSubview:self.masonryView];
+    
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
     
     // start fetching data from a remote API
     [self fetchData];
@@ -161,16 +163,16 @@ int pageCounter = 1;
     
     self.navBar.leftBarButtonItem = barButtonItem;
     
-    // UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    //  [settingsButton setTitle:@"" forState:UIControlStateNormal];
-    //  [settingsButton setBackgroundImage:[UIImage imageNamed:@"pen_usIMG.png"] forState:UIControlStateNormal];
-    //  [settingsButton setBackgroundImage:[UIImage imageNamed:@"pen_sIMG.png"] forState:UIControlStateHighlighted];
-    //  [settingsButton addTarget:self action:@selector(didTapSettingsButton:) forControlEvents:UIControlEventTouchUpInside];
-    //  settingsButton.frame = CGRectMake(0.0f, 0.0f, 30.0f, 30.0f);
-    // UIBarButtonItem *settingsButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingsButton];
+      [settingsButton setTitle:@"" forState:UIControlStateNormal];
+      [settingsButton setBackgroundImage:[UIImage imageNamed:@"pen_usIMG.png"] forState:UIControlStateNormal];
+      [settingsButton setBackgroundImage:[UIImage imageNamed:@"pen_sIMG.png"] forState:UIControlStateHighlighted];
+      [settingsButton addTarget:self action:@selector(didTapSettingsButton:) forControlEvents:UIControlEventTouchUpInside];
+      settingsButton.frame = CGRectMake(0.0f, 0.0f, 30.0f, 30.0f);
+     UIBarButtonItem *settingsButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingsButton];
     
-    //  self.navBar.rightBarButtonItem = settingsButtonItem;
+      self.navBar.rightBarButtonItem = settingsButtonItem;
 }
 
 - (void)didTapBarButton:(id)sender {
@@ -179,7 +181,7 @@ int pageCounter = 1;
     
 }
 
-/*
+
 - (void)didTapSettingsButton:(id)sender {
     
     TWTweetComposeViewController *twitter = [[TWTweetComposeViewController alloc] init];
@@ -190,7 +192,7 @@ int pageCounter = 1;
      [self dismissModalViewControllerAnimated:YES];
                                                                                 
 }
-*/
+
 
 #pragma mark - SEMasonryView Delegate Methods
 

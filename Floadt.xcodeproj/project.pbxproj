@@ -126,6 +126,41 @@
 		6E47167D1703430100E8DF51 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4716791703430100E8DF51 /* Default.png */; };
 		6E47167E1703430100E8DF51 /* floadtLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E47167A1703430100E8DF51 /* floadtLogo.png */; };
 		6E47167F1703430100E8DF51 /* floadtLogo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E47167B1703430100E8DF51 /* floadtLogo@2x.png */; };
+		6E4A6BFA1728AD1B00A8CE3C /* SEMasonryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4A6BF91728AD1B00A8CE3C /* SEMasonryView.framework */; };
+		6E4A6BFB1728AD1B00A8CE3C /* SEMasonryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4A6BF91728AD1B00A8CE3C /* SEMasonryView.framework */; };
+		6E4A6C1D1728AD2100A8CE3C /* SystemServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6BFE1728AD2100A8CE3C /* SystemServices.m */; };
+		6E4A6C1E1728AD2100A8CE3C /* SystemServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6BFE1728AD2100A8CE3C /* SystemServices.m */; };
+		6E4A6C1F1728AD2100A8CE3C /* SSAccelerometerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C011728AD2100A8CE3C /* SSAccelerometerInfo.m */; };
+		6E4A6C201728AD2100A8CE3C /* SSAccelerometerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C011728AD2100A8CE3C /* SSAccelerometerInfo.m */; };
+		6E4A6C211728AD2100A8CE3C /* SSAccessoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C031728AD2100A8CE3C /* SSAccessoryInfo.m */; };
+		6E4A6C221728AD2100A8CE3C /* SSAccessoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C031728AD2100A8CE3C /* SSAccessoryInfo.m */; };
+		6E4A6C231728AD2100A8CE3C /* SSApplicationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C051728AD2100A8CE3C /* SSApplicationInfo.m */; };
+		6E4A6C241728AD2100A8CE3C /* SSApplicationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C051728AD2100A8CE3C /* SSApplicationInfo.m */; };
+		6E4A6C251728AD2100A8CE3C /* SSBatteryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C071728AD2100A8CE3C /* SSBatteryInfo.m */; };
+		6E4A6C261728AD2100A8CE3C /* SSBatteryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C071728AD2100A8CE3C /* SSBatteryInfo.m */; };
+		6E4A6C271728AD2100A8CE3C /* SSCarrierInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C091728AD2100A8CE3C /* SSCarrierInfo.m */; };
+		6E4A6C281728AD2100A8CE3C /* SSCarrierInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C091728AD2100A8CE3C /* SSCarrierInfo.m */; };
+		6E4A6C291728AD2100A8CE3C /* SSDiskInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C0B1728AD2100A8CE3C /* SSDiskInfo.m */; };
+		6E4A6C2A1728AD2100A8CE3C /* SSDiskInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C0B1728AD2100A8CE3C /* SSDiskInfo.m */; };
+		6E4A6C2B1728AD2100A8CE3C /* SSHardwareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C0D1728AD2100A8CE3C /* SSHardwareInfo.m */; };
+		6E4A6C2C1728AD2100A8CE3C /* SSHardwareInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C0D1728AD2100A8CE3C /* SSHardwareInfo.m */; };
+		6E4A6C2D1728AD2100A8CE3C /* SSJailbreakCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C0F1728AD2100A8CE3C /* SSJailbreakCheck.m */; };
+		6E4A6C2E1728AD2100A8CE3C /* SSJailbreakCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C0F1728AD2100A8CE3C /* SSJailbreakCheck.m */; };
+		6E4A6C2F1728AD2100A8CE3C /* SSLocalizationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C111728AD2100A8CE3C /* SSLocalizationInfo.m */; };
+		6E4A6C301728AD2100A8CE3C /* SSLocalizationInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C111728AD2100A8CE3C /* SSLocalizationInfo.m */; };
+		6E4A6C311728AD2100A8CE3C /* SSMemoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C131728AD2100A8CE3C /* SSMemoryInfo.m */; };
+		6E4A6C321728AD2100A8CE3C /* SSMemoryInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C131728AD2100A8CE3C /* SSMemoryInfo.m */; };
+		6E4A6C331728AD2100A8CE3C /* SSNetworkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C151728AD2100A8CE3C /* SSNetworkInfo.m */; };
+		6E4A6C341728AD2100A8CE3C /* SSNetworkInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C151728AD2100A8CE3C /* SSNetworkInfo.m */; };
+		6E4A6C351728AD2100A8CE3C /* SSProcessInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C171728AD2100A8CE3C /* SSProcessInfo.m */; };
+		6E4A6C361728AD2100A8CE3C /* SSProcessInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C171728AD2100A8CE3C /* SSProcessInfo.m */; };
+		6E4A6C371728AD2100A8CE3C /* SSProcessorInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C191728AD2100A8CE3C /* SSProcessorInfo.m */; };
+		6E4A6C381728AD2100A8CE3C /* SSProcessorInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C191728AD2100A8CE3C /* SSProcessorInfo.m */; };
+		6E4A6C391728AD2100A8CE3C /* SSUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C1B1728AD2100A8CE3C /* SSUUID.m */; };
+		6E4A6C3A1728AD2100A8CE3C /* SSUUID.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A6C1B1728AD2100A8CE3C /* SSUUID.m */; };
+		6E4A6C3C1728AD6700A8CE3C /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4A6C3B1728AD6700A8CE3C /* ExternalAccessory.framework */; };
+		6E4A6C3E1728AEB000A8CE3C /* bgNoise.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4A6C3D1728AEB000A8CE3C /* bgNoise.png */; };
+		6E4A6C3F1728AEB000A8CE3C /* bgNoise.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E4A6C3D1728AEB000A8CE3C /* bgNoise.png */; };
 		6E5620BE170600E6006EF5B8 /* key-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E562086170600E6006EF5B8 /* key-blue.png */; };
 		6E5620BF170600E6006EF5B8 /* key-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E562086170600E6006EF5B8 /* key-blue.png */; };
 		6E5620C0170600E6006EF5B8 /* key-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E562087170600E6006EF5B8 /* key-blue@2x.png */; };
@@ -472,8 +507,6 @@
 		6E80376717048B750013C364 /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E80376517048B750013C364 /* iPhone.storyboard */; };
 		6EA2D0F71704ED3F00BD46C0 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA2D0F61704ED3F00BD46C0 /* CoreImage.framework */; };
 		6EA2D0F91704ED4700BD46C0 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA2D0F81704ED4700BD46C0 /* Accelerate.framework */; };
-		6EAF47051723823200D2AC31 /* SEMasonryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAF47041723823200D2AC31 /* SEMasonryView.framework */; };
-		6EAF47061723823200D2AC31 /* SEMasonryView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EAF47041723823200D2AC31 /* SEMasonryView.framework */; };
 		6EAF4709172383A000D2AC31 /* VerticalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EAF4708172383A000D2AC31 /* VerticalCell.m */; };
 		6EBBA38D172245B8000EFF73 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBBA38C172245B8000EFF73 /* ImageIO.framework */; };
 		6EBBA38F172245CE000EFF73 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBBA38E172245CE000EFF73 /* MapKit.framework */; };
@@ -1667,6 +1700,40 @@
 		6E4716791703430100E8DF51 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Custom/Default.png; sourceTree = SOURCE_ROOT; };
 		6E47167A1703430100E8DF51 /* floadtLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = floadtLogo.png; path = Resources/Custom/floadtLogo.png; sourceTree = SOURCE_ROOT; };
 		6E47167B1703430100E8DF51 /* floadtLogo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "floadtLogo@2x.png"; path = "Resources/Custom/floadtLogo@2x.png"; sourceTree = SOURCE_ROOT; };
+		6E4A6BF91728AD1B00A8CE3C /* SEMasonryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SEMasonryView.framework; path = External/SEMasonryView.framework; sourceTree = "<group>"; };
+		6E4A6BFD1728AD2100A8CE3C /* SystemServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemServices.h; sourceTree = "<group>"; };
+		6E4A6BFE1728AD2100A8CE3C /* SystemServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemServices.m; sourceTree = "<group>"; };
+		6E4A6C001728AD2100A8CE3C /* SSAccelerometerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAccelerometerInfo.h; sourceTree = "<group>"; };
+		6E4A6C011728AD2100A8CE3C /* SSAccelerometerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAccelerometerInfo.m; sourceTree = "<group>"; };
+		6E4A6C021728AD2100A8CE3C /* SSAccessoryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSAccessoryInfo.h; sourceTree = "<group>"; };
+		6E4A6C031728AD2100A8CE3C /* SSAccessoryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAccessoryInfo.m; sourceTree = "<group>"; };
+		6E4A6C041728AD2100A8CE3C /* SSApplicationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSApplicationInfo.h; sourceTree = "<group>"; };
+		6E4A6C051728AD2100A8CE3C /* SSApplicationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSApplicationInfo.m; sourceTree = "<group>"; };
+		6E4A6C061728AD2100A8CE3C /* SSBatteryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBatteryInfo.h; sourceTree = "<group>"; };
+		6E4A6C071728AD2100A8CE3C /* SSBatteryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBatteryInfo.m; sourceTree = "<group>"; };
+		6E4A6C081728AD2100A8CE3C /* SSCarrierInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCarrierInfo.h; sourceTree = "<group>"; };
+		6E4A6C091728AD2100A8CE3C /* SSCarrierInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCarrierInfo.m; sourceTree = "<group>"; };
+		6E4A6C0A1728AD2100A8CE3C /* SSDiskInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDiskInfo.h; sourceTree = "<group>"; };
+		6E4A6C0B1728AD2100A8CE3C /* SSDiskInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDiskInfo.m; sourceTree = "<group>"; };
+		6E4A6C0C1728AD2100A8CE3C /* SSHardwareInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHardwareInfo.h; sourceTree = "<group>"; };
+		6E4A6C0D1728AD2100A8CE3C /* SSHardwareInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHardwareInfo.m; sourceTree = "<group>"; };
+		6E4A6C0E1728AD2100A8CE3C /* SSJailbreakCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSJailbreakCheck.h; sourceTree = "<group>"; };
+		6E4A6C0F1728AD2100A8CE3C /* SSJailbreakCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSJailbreakCheck.m; sourceTree = "<group>"; };
+		6E4A6C101728AD2100A8CE3C /* SSLocalizationInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLocalizationInfo.h; sourceTree = "<group>"; };
+		6E4A6C111728AD2100A8CE3C /* SSLocalizationInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLocalizationInfo.m; sourceTree = "<group>"; };
+		6E4A6C121728AD2100A8CE3C /* SSMemoryInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSMemoryInfo.h; sourceTree = "<group>"; };
+		6E4A6C131728AD2100A8CE3C /* SSMemoryInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSMemoryInfo.m; sourceTree = "<group>"; };
+		6E4A6C141728AD2100A8CE3C /* SSNetworkInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSNetworkInfo.h; sourceTree = "<group>"; };
+		6E4A6C151728AD2100A8CE3C /* SSNetworkInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSNetworkInfo.m; sourceTree = "<group>"; };
+		6E4A6C161728AD2100A8CE3C /* SSProcessInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSProcessInfo.h; sourceTree = "<group>"; };
+		6E4A6C171728AD2100A8CE3C /* SSProcessInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSProcessInfo.m; sourceTree = "<group>"; };
+		6E4A6C181728AD2100A8CE3C /* SSProcessorInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSProcessorInfo.h; sourceTree = "<group>"; };
+		6E4A6C191728AD2100A8CE3C /* SSProcessorInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSProcessorInfo.m; sourceTree = "<group>"; };
+		6E4A6C1A1728AD2100A8CE3C /* SSUUID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSUUID.h; sourceTree = "<group>"; };
+		6E4A6C1B1728AD2100A8CE3C /* SSUUID.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSUUID.m; sourceTree = "<group>"; };
+		6E4A6C1C1728AD2100A8CE3C /* SystemServicesConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemServicesConstants.h; sourceTree = "<group>"; };
+		6E4A6C3B1728AD6700A8CE3C /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		6E4A6C3D1728AEB000A8CE3C /* bgNoise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgNoise.png; sourceTree = "<group>"; };
 		6E562086170600E6006EF5B8 /* key-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-blue.png"; sourceTree = "<group>"; };
 		6E562087170600E6006EF5B8 /* key-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-blue@2x.png"; sourceTree = "<group>"; };
 		6E562088170600E6006EF5B8 /* key-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "key-pressed.png"; sourceTree = "<group>"; };
@@ -1859,7 +1926,6 @@
 		6E80376517048B750013C364 /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
 		6EA2D0F61704ED3F00BD46C0 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		6EA2D0F81704ED4700BD46C0 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		6EAF47041723823200D2AC31 /* SEMasonryView.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SEMasonryView.framework; sourceTree = "<group>"; };
 		6EAF4707172383A000D2AC31 /* VerticalCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VerticalCell.h; sourceTree = "<group>"; };
 		6EAF4708172383A000D2AC31 /* VerticalCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VerticalCell.m; sourceTree = "<group>"; };
 		6EBBA38C172245B8000EFF73 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
@@ -2421,6 +2487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E4437031709FE2A00877BD0 /* Accounts.framework in Frameworks */,
+				6E4A6C3C1728AD6700A8CE3C /* ExternalAccessory.framework in Frameworks */,
 				6EF1F7531723750400061A11 /* Twitter.framework in Frameworks */,
 				6E58E06117026E4200C160BF /* Security.framework in Frameworks */,
 				6E58E05D17026E4200C160BF /* CFNetwork.framework in Frameworks */,
@@ -2446,7 +2513,7 @@
 				6EDE00B21708CDDF00C68317 /* Parse.framework in Frameworks */,
 				6E2B11931716122A00FA23CB /* FacebookSDK.framework in Frameworks */,
 				6E0AC7681720E37E009C5476 /* NewRelicAgent.framework in Frameworks */,
-				6EAF47051723823200D2AC31 /* SEMasonryView.framework in Frameworks */,
+				6E4A6BFA1728AD1B00A8CE3C /* SEMasonryView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2459,7 +2526,7 @@
 				6E26F247170148F9009489A8 /* Foundation.framework in Frameworks */,
 				6EDE00AF1708CDDF00C68317 /* KiipSDK.framework in Frameworks */,
 				6EDE00B31708CDDF00C68317 /* Parse.framework in Frameworks */,
-				6EAF47061723823200D2AC31 /* SEMasonryView.framework in Frameworks */,
+				6E4A6BFB1728AD1B00A8CE3C /* SEMasonryView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2505,7 +2572,8 @@
 		6E26F21C170148F8009489A8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6EAF47041723823200D2AC31 /* SEMasonryView.framework */,
+				6E4A6C3B1728AD6700A8CE3C /* ExternalAccessory.framework */,
+				6E4A6BF91728AD1B00A8CE3C /* SEMasonryView.framework */,
 				6EF1F7521723750400061A11 /* Twitter.framework */,
 				6EBBA38E172245CE000EFF73 /* MapKit.framework */,
 				6EBBA38C172245B8000EFF73 /* ImageIO.framework */,
@@ -2598,6 +2666,7 @@
 		6E26F25F1701495B009489A8 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				6E4A6C3D1728AEB000A8CE3C /* bgNoise.png */,
 				6E26F2641701495B009489A8 /* Regular */,
 				6E26F26B1701495B009489A8 /* Retina */,
 			);
@@ -2717,6 +2786,7 @@
 		6E26F2FC170149FE009489A8 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				6E4A6BFC1728AD2100A8CE3C /* System Services */,
 				6E2B11871716121900FA23CB /* JSFlatButton */,
 				6E57B3EB1712624F009891F3 /* AwesomeMenu */,
 				6E3C16EA1708CD790025D038 /* JASidePanel */,
@@ -2765,6 +2835,53 @@
 			);
 			name = WTStatusBar;
 			path = External/WTStatusBar;
+			sourceTree = "<group>";
+		};
+		6E4A6BFC1728AD2100A8CE3C /* System Services */ = {
+			isa = PBXGroup;
+			children = (
+				6E4A6BFD1728AD2100A8CE3C /* SystemServices.h */,
+				6E4A6BFE1728AD2100A8CE3C /* SystemServices.m */,
+				6E4A6BFF1728AD2100A8CE3C /* Utilities */,
+			);
+			name = "System Services";
+			path = "External/System Services";
+			sourceTree = "<group>";
+		};
+		6E4A6BFF1728AD2100A8CE3C /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6E4A6C001728AD2100A8CE3C /* SSAccelerometerInfo.h */,
+				6E4A6C011728AD2100A8CE3C /* SSAccelerometerInfo.m */,
+				6E4A6C021728AD2100A8CE3C /* SSAccessoryInfo.h */,
+				6E4A6C031728AD2100A8CE3C /* SSAccessoryInfo.m */,
+				6E4A6C041728AD2100A8CE3C /* SSApplicationInfo.h */,
+				6E4A6C051728AD2100A8CE3C /* SSApplicationInfo.m */,
+				6E4A6C061728AD2100A8CE3C /* SSBatteryInfo.h */,
+				6E4A6C071728AD2100A8CE3C /* SSBatteryInfo.m */,
+				6E4A6C081728AD2100A8CE3C /* SSCarrierInfo.h */,
+				6E4A6C091728AD2100A8CE3C /* SSCarrierInfo.m */,
+				6E4A6C0A1728AD2100A8CE3C /* SSDiskInfo.h */,
+				6E4A6C0B1728AD2100A8CE3C /* SSDiskInfo.m */,
+				6E4A6C0C1728AD2100A8CE3C /* SSHardwareInfo.h */,
+				6E4A6C0D1728AD2100A8CE3C /* SSHardwareInfo.m */,
+				6E4A6C0E1728AD2100A8CE3C /* SSJailbreakCheck.h */,
+				6E4A6C0F1728AD2100A8CE3C /* SSJailbreakCheck.m */,
+				6E4A6C101728AD2100A8CE3C /* SSLocalizationInfo.h */,
+				6E4A6C111728AD2100A8CE3C /* SSLocalizationInfo.m */,
+				6E4A6C121728AD2100A8CE3C /* SSMemoryInfo.h */,
+				6E4A6C131728AD2100A8CE3C /* SSMemoryInfo.m */,
+				6E4A6C141728AD2100A8CE3C /* SSNetworkInfo.h */,
+				6E4A6C151728AD2100A8CE3C /* SSNetworkInfo.m */,
+				6E4A6C161728AD2100A8CE3C /* SSProcessInfo.h */,
+				6E4A6C171728AD2100A8CE3C /* SSProcessInfo.m */,
+				6E4A6C181728AD2100A8CE3C /* SSProcessorInfo.h */,
+				6E4A6C191728AD2100A8CE3C /* SSProcessorInfo.m */,
+				6E4A6C1A1728AD2100A8CE3C /* SSUUID.h */,
+				6E4A6C1B1728AD2100A8CE3C /* SSUUID.m */,
+				6E4A6C1C1728AD2100A8CE3C /* SystemServicesConstants.h */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		6E562084170600E6006EF5B8 /* DLIDEKeyboard */ = {
@@ -4419,6 +4536,7 @@
 				6E57B40E17126261009891F3 /* icon-star@2x.png in Resources */,
 				6E2B11941716122A00FA23CB /* FacebookSDKResources.bundle in Resources */,
 				6EBC409417288BD10006B425 /* VerticalCell.xib in Resources */,
+				6E4A6C3E1728AEB000A8CE3C /* bgNoise.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5164,6 +5282,7 @@
 				6ECC22A2170BBE92006B8AE0 /* 59-info@2x.png in Resources */,
 				6ECC22A4170BBE92006B8AE0 /* 60-dialpad.png in Resources */,
 				6ECC22A6170BBE92006B8AE0 /* 60-dialpad@2x.png in Resources */,
+				6E4A6C3F1728AEB000A8CE3C /* bgNoise.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5210,6 +5329,21 @@
 				6E2B11901716121900FA23CB /* UIImage+JSFlatButton.m in Sources */,
 				6EF1F75717237C0400061A11 /* Imports.m in Sources */,
 				6EAF4709172383A000D2AC31 /* VerticalCell.m in Sources */,
+				6E4A6C1D1728AD2100A8CE3C /* SystemServices.m in Sources */,
+				6E4A6C1F1728AD2100A8CE3C /* SSAccelerometerInfo.m in Sources */,
+				6E4A6C211728AD2100A8CE3C /* SSAccessoryInfo.m in Sources */,
+				6E4A6C231728AD2100A8CE3C /* SSApplicationInfo.m in Sources */,
+				6E4A6C251728AD2100A8CE3C /* SSBatteryInfo.m in Sources */,
+				6E4A6C271728AD2100A8CE3C /* SSCarrierInfo.m in Sources */,
+				6E4A6C291728AD2100A8CE3C /* SSDiskInfo.m in Sources */,
+				6E4A6C2B1728AD2100A8CE3C /* SSHardwareInfo.m in Sources */,
+				6E4A6C2D1728AD2100A8CE3C /* SSJailbreakCheck.m in Sources */,
+				6E4A6C2F1728AD2100A8CE3C /* SSLocalizationInfo.m in Sources */,
+				6E4A6C311728AD2100A8CE3C /* SSMemoryInfo.m in Sources */,
+				6E4A6C331728AD2100A8CE3C /* SSNetworkInfo.m in Sources */,
+				6E4A6C351728AD2100A8CE3C /* SSProcessInfo.m in Sources */,
+				6E4A6C371728AD2100A8CE3C /* SSProcessorInfo.m in Sources */,
+				6E4A6C391728AD2100A8CE3C /* SSUUID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5228,6 +5362,21 @@
 				6E3C176B1708CD790025D038 /* WTStatusBar.m in Sources */,
 				6E3C176D1708CD790025D038 /* WTStatusView.m in Sources */,
 				6E3C176F1708CD790025D038 /* WTStatusWindow.m in Sources */,
+				6E4A6C1E1728AD2100A8CE3C /* SystemServices.m in Sources */,
+				6E4A6C201728AD2100A8CE3C /* SSAccelerometerInfo.m in Sources */,
+				6E4A6C221728AD2100A8CE3C /* SSAccessoryInfo.m in Sources */,
+				6E4A6C241728AD2100A8CE3C /* SSApplicationInfo.m in Sources */,
+				6E4A6C261728AD2100A8CE3C /* SSBatteryInfo.m in Sources */,
+				6E4A6C281728AD2100A8CE3C /* SSCarrierInfo.m in Sources */,
+				6E4A6C2A1728AD2100A8CE3C /* SSDiskInfo.m in Sources */,
+				6E4A6C2C1728AD2100A8CE3C /* SSHardwareInfo.m in Sources */,
+				6E4A6C2E1728AD2100A8CE3C /* SSJailbreakCheck.m in Sources */,
+				6E4A6C301728AD2100A8CE3C /* SSLocalizationInfo.m in Sources */,
+				6E4A6C321728AD2100A8CE3C /* SSMemoryInfo.m in Sources */,
+				6E4A6C341728AD2100A8CE3C /* SSNetworkInfo.m in Sources */,
+				6E4A6C361728AD2100A8CE3C /* SSProcessInfo.m in Sources */,
+				6E4A6C381728AD2100A8CE3C /* SSProcessorInfo.m in Sources */,
+				6E4A6C3A1728AD2100A8CE3C /* SSUUID.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
