@@ -7,11 +7,7 @@
 //
 
 #import "BarViewController.h"
-#import "SettingsViewController.h"
-#import <KiipSDK/KiipSDK.h>
-#import "JASidePanelController.h"
-#import "UIViewController+JASidePanel.h"
-#import "StreamViewController.h"
+#import "AFNetworking.h"
 
 
 
@@ -19,20 +15,7 @@
 
 @end
 
-typedef enum {
-    DemoTableViewRowDefaultSettings = 0,
-    DemoTableViewRowCustomProperties,
-    DemoTableViewRowCustomSubclasses,
-    DemoTableViewNumberOfRows
-} DemoTableViewRow;
-
-
 @implementation BarViewController
-
-int dialog = 0;
-
-
-
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
@@ -44,6 +27,7 @@ int dialog = 0;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view.
     
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"classy_fabric.png"]]];
@@ -97,14 +81,13 @@ int dialog = 0;
 
     
 }
-
 - (IBAction)td2:(id)sender {
     NSLog(@"The Haunted BUTTON!");
     
 }
 
 - (IBAction)td3:(id)sender {
-    
+  
 
 }
 
@@ -112,18 +95,6 @@ int dialog = 0;
 }
 
 - (IBAction)td5:(id)sender {
-    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
- // Set ourselves as the delegate
-    
-    // Create the sign up view controller
-    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-   // Set ourselves as the delegate
-    
-    // Assign our sign up controller to be displayed from the login controller
-    [logInViewController setSignUpController:signUpViewController];
-    
-    // Present the log in view controller
-    [self presentViewController:logInViewController animated:YES completion:NULL];
     
 }
 
@@ -135,65 +106,6 @@ int dialog = 0;
     
     [self.sidePanelController showCenterPanelAnimated:YES];
 
-}
-
-
-#pragma mark - PFLoginViewController
-
-- (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
-    if (username && password && username.length && password.length) {
-        return YES;
-    }
-    
-    [[[UIAlertView alloc] initWithTitle:@"Missing Information" message:@"Make sure you fill out all of the information!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
-    return NO;
-}
-
-
-- (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-    if ([PFUser currentUser]) {
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    else{
-        
-    }
-}
-
-
-- (void)logInViewController:(PFLogInViewController *)logInController didFailToLogInWithError:(NSError *)error {
-    NSLog(@"Failed to log in...");
-}
-
-
-- (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-
-#pragma mark - PFSignUpViewControllerDelegate
-
-
-- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info {
-    BOOL informationComplete = YES;
-    
-    
-    for (id key in info) {
-        NSString *field = [info objectForKey:key];
-        if (!field || !field.length) {
-            informationComplete = NO;
-            break;
-        }
-    }
-    
-    
-    if (!informationComplete) {
-        [[[UIAlertView alloc] initWithTitle:@"Missing Information" message:@"Make sure you fill out all of the information!" delegate:nil cancelButtonTitle:@"ok" otherButtonTitles:nil] show];
-    }else{
-        [self.navigationController popViewControllerAnimated:YES];
-    }
-    
-    return informationComplete;
 }
 
 - (void)didReceiveMemoryWarning
