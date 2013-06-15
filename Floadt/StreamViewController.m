@@ -8,12 +8,9 @@
 
 #import "StreamViewController.h"
 #import <SEMasonryView/SEJSONRequestOperation.h>
-#import <SEMasonryView/SEMasonryCell.h>
-#import "VerticalCell.h"
 
-@interface StreamViewController (){
+@interface StreamViewController ()
 
-}
 
 @end
 
@@ -22,14 +19,13 @@
 @synthesize masonryView;
 @synthesize photos;
 @synthesize screenWidth;
-@synthesize navBar;
 
 int pageCounter = 1;
 
 - (void) fetchData {
     
     // set your MasonryView to be in loading state
-    self.masonryView.loading = YES;
+    self.masonryView.loading = NO;
     
     // disable the reload button
     reloadButton.enabled = NO;
@@ -89,10 +85,9 @@ int pageCounter = 1;
         self.masonryView.loading = NO;
         reloadButton.enabled = YES;
     }
-                                                                                        failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+    failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
                                                                                             NSLog(@"error");
-                                                                                            // if there has been an error, again turn of MasonryView's loading state
-                                                                                            self.masonryView.loading = NO;
+                                                                                    // if there has been an error, again turn of                                                                       self.masonryView.loading = NO;
                                                                                             reloadButton.enabled = YES;
                                                                                         }];
     [operation start];
@@ -110,12 +105,11 @@ int pageCounter = 1;
     [self fetchData];
 }
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
+    
     // get the screenWidth to determine the resolution
     screenWidth = (int)[[UIScreen mainScreen] applicationFrame].size.width % 256;
     
@@ -146,20 +140,18 @@ int pageCounter = 1;
     
     self.masonryView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bgNoise.png"]];
     
+    
     // optional
     self.masonryView.horizontalModeEnabled = NO;
-    
 
+    
     // add it to your default view
     [self.view addSubview:self.masonryView];
     
+    [[self navigationController] setNavigationBarHidden:NO animated:YES];
+    
     // start fetching data from a remote API
     [self fetchData];
-
-  
-
-    
-
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [barButton setTitle:@"" forState:UIControlStateNormal];
@@ -181,10 +173,6 @@ int pageCounter = 1;
      UIBarButtonItem *settingsButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingsButton];
     
       self.navBar.rightBarButtonItem = settingsButtonItem;
-    
-    [self fetchData];
-
-    
 }
 
 - (void)didTapBarButton:(id)sender {
@@ -197,12 +185,12 @@ int pageCounter = 1;
 - (void)didTapSettingsButton:(id)sender {
     
     TWTweetComposeViewController *twitter = [[TWTweetComposeViewController alloc] init];
-    [twitter setInitialText:@""];
+    [twitter setInitialText:@"This is the message that will be tweeted!"];
                         
     [self presentViewController:twitter animated:YES completion:nil];
      twitter.completionHandler = ^(TWTweetComposeViewControllerResult res) {};
      [self dismissModalViewControllerAnimated:YES];
-                                                               
+                                                                                
 }
 
 
@@ -211,7 +199,7 @@ int pageCounter = 1;
 - (void) didEnterLoadingMode {
     
     // fetch data again if it is dragged and released in the bottom
-
+    [self fetchData];
 }
 
 - (void) didSelectItemAtIndex:(int) index {
@@ -241,5 +229,4 @@ int pageCounter = 1;
 
 
 @end
-
 
