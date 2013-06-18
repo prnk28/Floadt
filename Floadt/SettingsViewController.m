@@ -19,6 +19,17 @@
 @synthesize window = _window;
 @synthesize twitterClient = _twitterClient;
 
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:[NSDictionary dictionaryWithObject:url forKey:kAFApplicationLaunchOptionsURLKey]];
+    [[NSNotificationCenter defaultCenter] postNotification:notification];
+    
+    return YES;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -56,6 +67,10 @@
     
     UIImage *twitter = [UIImage imageNamed:@"twitter.png"];
 	UIImage *twitterH = [UIImage imageNamed:@"twitterH.png"];
+    UIImage *fb = [UIImage imageNamed:@"fb.png"];
+    UIImage *fbH = [UIImage imageNamed:@"fbH.png"];
+    UIImage *ig = [UIImage imageNamed:@"ig.png"];
+    UIImage *igH = [UIImage imageNamed:@"igH.png"];
     
 	UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
     
@@ -63,13 +78,13 @@
                                                            highlightedImage:twitterH
                                                                ContentImage:nil
                                                     highlightedContentImage:nil];
-    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-                                                           highlightedImage:storyMenuItemImagePressed
-                                                               ContentImage:starImage
+    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:fb
+                                                           highlightedImage:fbH
+                                                               ContentImage:nil
                                                     highlightedContentImage:nil];
-    AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-                                                           highlightedImage:storyMenuItemImagePressed
-                                                               ContentImage:starImage
+    AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:ig
+                                                           highlightedImage:igH
+                                                               ContentImage:nil
                                                     highlightedContentImage:nil];
     AwesomeMenuItem *starMenuItem4 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
                                                            highlightedImage:storyMenuItemImagePressed
@@ -146,23 +161,14 @@
                                                             }];
         
         
-    }else{
-        NSLog(@"Not Yet");
+    }else if(idx == 1){
+        
+        NSLog(@"FB");
     }
     
     
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
-{
-    NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:[NSDictionary dictionaryWithObject:url forKey:kAFApplicationLaunchOptionsURLKey]];
-    [[NSNotificationCenter defaultCenter] postNotification:notification];
-    
-    return YES;
-}
 
 - (void)awesomeMenuDidFinishAnimationClose:(AwesomeMenu *)menu {
 

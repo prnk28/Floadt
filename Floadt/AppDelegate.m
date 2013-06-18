@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import <KiipSDK/KiipSDK.h>
 #import <Parse/Parse.h>
-#import <NewRelicAgent/NewRelicAgent.h>
 
 @implementation AppDelegate
 
