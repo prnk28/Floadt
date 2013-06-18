@@ -12,7 +12,7 @@
 
 - (void) updateCellInfo:(NSDictionary *)data {
     
-    self.text = [NSString stringWithFormat:@"%@ %@ %@", [data stringForKey:@"title"], [data stringForKey:@"title"], [data stringForKey:@"title"]];
+    self.text = [NSString stringWithFormat:@"%@", [data stringForKey:@"title"]];
     self.imageURL = [NSString stringWithFormat:@"http://farm%d.staticflickr.com/%@/%@_%@_q.jpg", [[data valueForKey:@"farm"] intValue], [data stringForKey:@"server"], [data stringForKey:@"id"], [data stringForKey:@"secret"]];
     
     [super updateCellInfo:data];

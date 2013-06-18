@@ -163,14 +163,14 @@ int pageCounter = 1;
     
     self.navBar.leftBarButtonItem = barButtonItem;
     
-     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+     UIButton *postButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-      [settingsButton setTitle:@"" forState:UIControlStateNormal];
-      [settingsButton setBackgroundImage:[UIImage imageNamed:@"pen_usIMG.png"] forState:UIControlStateNormal];
-      [settingsButton setBackgroundImage:[UIImage imageNamed:@"pen_sIMG.png"] forState:UIControlStateHighlighted];
-      [settingsButton addTarget:self action:@selector(didTapSettingsButton:) forControlEvents:UIControlEventTouchUpInside];
-      settingsButton.frame = CGRectMake(0.0f, 0.0f, 30.0f, 30.0f);
-     UIBarButtonItem *settingsButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingsButton];
+      [postButton setTitle:@"" forState:UIControlStateNormal];
+      [postButton setBackgroundImage:[UIImage imageNamed:@"pen_usIMG.png"] forState:UIControlStateNormal];
+      [postButton setBackgroundImage:[UIImage imageNamed:@"pen_sIMG.png"] forState:UIControlStateHighlighted];
+      [postButton addTarget:self action:@selector(didTapPostButton:) forControlEvents:UIControlEventTouchUpInside];
+      postButton.frame = CGRectMake(0.0f, 0.0f, 30.0f, 30.0f);
+     UIBarButtonItem *settingsButtonItem = [[UIBarButtonItem alloc] initWithCustomView:postButton];
     
       self.navBar.rightBarButtonItem = settingsButtonItem;
 }
@@ -182,10 +182,10 @@ int pageCounter = 1;
 }
 
 
-- (void)didTapSettingsButton:(id)sender {
+- (void)didTapPostButton:(id)sender {
     
     TWTweetComposeViewController *twitter = [[TWTweetComposeViewController alloc] init];
-    [twitter setInitialText:@"This is the message that will be tweeted!"];
+    [twitter setInitialText:@""];
                         
     [self presentViewController:twitter animated:YES completion:nil];
      twitter.completionHandler = ^(TWTweetComposeViewControllerResult res) {};

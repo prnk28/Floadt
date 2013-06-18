@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -127,7 +127,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8xa-qw-6Dm" customClass="JSFlatButton">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="182" id="V35-UI-kpJ"/>
+                                    <constraint firstAttribute="height" constant="189" id="P4x-QC-BNR"/>
                                     <constraint firstAttribute="width" constant="135" id="YSe-C0-aGS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -144,7 +144,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iU4-v4-ezY" customClass="JSFlatButton">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="184" id="E7L-Ba-NYN"/>
+                                    <constraint firstAttribute="height" constant="189" id="oRX-pW-MV3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button">
@@ -173,7 +173,7 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rUg-Lf-37Y" customClass="JSFlatButton">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="183" id="JxU-bz-nKU"/>
+                                    <constraint firstAttribute="height" constant="189" id="39g-il-qpX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Button">
@@ -203,28 +203,26 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="iU4-v4-ezY" firstAttribute="top" secondItem="GUn-mk-n5e" secondAttribute="top" constant="181" id="6lH-ds-8xy"/>
+                            <constraint firstItem="rUg-Lf-37Y" firstAttribute="top" secondItem="qMZ-hg-Znt" secondAttribute="top" type="default" id="6h4-Ul-gkt"/>
                             <constraint firstItem="omu-Vb-WgK" firstAttribute="trailing" secondItem="Vl5-wQ-NbI" secondAttribute="trailing" type="default" id="7ha-Qi-9yd"/>
-                            <constraint firstItem="rUg-Lf-37Y" firstAttribute="baseline" secondItem="qMZ-hg-Znt" secondAttribute="baseline" type="default" id="Gh1-cG-6fU"/>
+                            <constraint firstItem="omu-Vb-WgK" firstAttribute="bottom" secondItem="8xa-qw-6Dm" secondAttribute="bottom" type="default" id="8DM-Ru-mS3"/>
+                            <constraint firstItem="iU4-v4-ezY" firstAttribute="top" secondItem="Vl5-wQ-NbI" secondAttribute="top" type="default" id="9Ek-3Z-nh3"/>
+                            <constraint firstItem="Vl5-wQ-NbI" firstAttribute="bottom" secondItem="iU4-v4-ezY" secondAttribute="bottom" type="default" id="DmK-aU-K2I"/>
                             <constraint firstItem="omu-Vb-WgK" firstAttribute="leading" secondItem="Vl5-wQ-NbI" secondAttribute="leading" type="default" id="O4k-sO-Cmo"/>
-                            <constraint firstItem="iU4-v4-ezY" firstAttribute="baseline" secondItem="Vl5-wQ-NbI" secondAttribute="baseline" type="default" id="OSv-89-fTx"/>
                             <constraint firstItem="iU4-v4-ezY" firstAttribute="leading" secondItem="GUn-mk-n5e" secondAttribute="leading" type="default" id="QIt-0T-bib"/>
                             <constraint firstItem="rUg-Lf-37Y" firstAttribute="bottom" secondItem="GUn-mk-n5e" secondAttribute="bottom" type="default" id="Qjc-dN-N1n"/>
                             <constraint firstItem="omu-Vb-WgK" firstAttribute="leading" secondItem="GUn-mk-n5e" secondAttribute="leading" constant="135" id="SPI-KH-YEO"/>
                             <constraint firstItem="rUg-Lf-37Y" firstAttribute="leading" secondItem="GUn-mk-n5e" secondAttribute="leading" type="default" id="UHE-hH-kPX"/>
                             <constraint firstItem="qMZ-hg-Znt" firstAttribute="trailing" secondItem="Vl5-wQ-NbI" secondAttribute="trailing" type="default" id="UJd-8d-7W7"/>
                             <constraint firstItem="iU4-v4-ezY" firstAttribute="trailing" secondItem="8xa-qw-6Dm" secondAttribute="trailing" type="default" id="W1r-QJ-bea"/>
-                            <constraint firstItem="qMZ-hg-Znt" firstAttribute="top" secondItem="rUg-Lf-37Y" secondAttribute="top" type="default" id="YId-H6-kpa"/>
+                            <constraint firstItem="qMZ-hg-Znt" firstAttribute="baseline" secondItem="rUg-Lf-37Y" secondAttribute="baseline" type="default" id="XWM-nF-Szt"/>
                             <constraint firstItem="8xa-qw-6Dm" firstAttribute="leading" secondItem="GUn-mk-n5e" secondAttribute="leading" type="default" id="aHE-rz-mwp"/>
+                            <constraint firstItem="omu-Vb-WgK" firstAttribute="top" secondItem="GUn-mk-n5e" secondAttribute="top" type="default" id="b1Q-88-2Hc"/>
+                            <constraint firstItem="8xa-qw-6Dm" firstAttribute="top" secondItem="GUn-mk-n5e" secondAttribute="top" type="default" id="b6P-l2-nyX"/>
                             <constraint firstItem="rUg-Lf-37Y" firstAttribute="trailing" secondItem="iU4-v4-ezY" secondAttribute="trailing" type="default" id="fIp-Rw-jQP"/>
-                            <constraint firstItem="omu-Vb-WgK" firstAttribute="top" secondItem="8xa-qw-6Dm" secondAttribute="top" type="default" id="fau-Pi-RUp"/>
                             <constraint firstItem="qMZ-hg-Znt" firstAttribute="bottom" secondItem="GUn-mk-n5e" secondAttribute="bottom" type="default" id="guG-a5-z4Z"/>
-                            <constraint firstItem="omu-Vb-WgK" firstAttribute="bottom" secondItem="8xa-qw-6Dm" secondAttribute="bottom" type="default" id="jao-dM-HoB"/>
-                            <constraint firstItem="8xa-qw-6Dm" firstAttribute="baseline" secondItem="omu-Vb-WgK" secondAttribute="baseline" type="default" id="pq8-Jp-uCj"/>
-                            <constraint firstItem="8xa-qw-6Dm" firstAttribute="top" secondItem="GUn-mk-n5e" secondAttribute="top" constant="-1" id="thm-LM-prt"/>
-                            <constraint firstItem="Vl5-wQ-NbI" firstAttribute="top" secondItem="iU4-v4-ezY" secondAttribute="top" type="default" id="uHX-fD-Pmx"/>
+                            <constraint firstItem="iU4-v4-ezY" firstAttribute="centerY" secondItem="GUn-mk-n5e" secondAttribute="centerY" type="default" id="wcU-7I-6ln"/>
                             <constraint firstItem="Vl5-wQ-NbI" firstAttribute="leading" secondItem="qMZ-hg-Znt" secondAttribute="leading" type="default" id="xeh-vg-2Sl"/>
-                            <constraint firstItem="Vl5-wQ-NbI" firstAttribute="bottom" secondItem="iU4-v4-ezY" secondAttribute="bottom" type="default" id="xrq-y8-P7t"/>
                         </constraints>
                     </view>
                     <connections>
@@ -241,6 +239,49 @@
             <point key="canvasLocation" x="-455" y="-175"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BarViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BarViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="td1:"/>
+                <relationship kind="action" name="td2:"/>
+                <relationship kind="action" name="td3:"/>
+                <relationship kind="action" name="td4:"/>
+                <relationship kind="action" name="td5:"/>
+                <relationship kind="action" name="td6:"/>
+                <relationship kind="outlet" name="b1" candidateClass="JSFlatButton"/>
+                <relationship kind="outlet" name="b2" candidateClass="JSFlatButton"/>
+                <relationship kind="outlet" name="b3" candidateClass="JSFlatButton"/>
+                <relationship kind="outlet" name="b4" candidateClass="JSFlatButton"/>
+                <relationship kind="outlet" name="b5" candidateClass="JSFlatButton"/>
+                <relationship kind="outlet" name="b6" candidateClass="JSFlatButton"/>
+            </relationships>
+        </class>
+        <class className="JASidePanelController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JASidePanelController.h"/>
+        </class>
+        <class className="JSFlatButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JSFlatButton.h"/>
+        </class>
+        <class className="MainViewController" superclassName="JASidePanelController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/MainViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SettingsViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+        <class className="StreamViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StreamViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

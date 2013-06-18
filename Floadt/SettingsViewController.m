@@ -16,9 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     
-    
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"classy_fabric.png"]]];
+    [self.view setBackgroundColor:[UIColor whiteColor]];
 
     
     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -39,6 +39,9 @@
 #import <SEMasonryView/SEMasonryView.h>
 #import "VerticalCell.h"
 #import <SEMasonryView/SEJSONRequestOperation.h>
+#import "AFNetworking.h"
+#import "AFOAuth2Client.h"
+#import "AFOAuth1Client.h"
 
 @interface Imports : NSObject
 
