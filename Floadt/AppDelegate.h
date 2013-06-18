@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <KiipSDK/KiipSDK.h>
+#import "AwesomeMenu.h"
 
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,KiipDelegate>{
+@interface AppDelegate : UIResponder <UIApplicationDelegate,KiipDelegate, AwesomeMenuDelegate>{
 
 }
 

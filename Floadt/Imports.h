@@ -42,6 +42,10 @@
 #import "AFNetworking.h"
 #import "AFOAuth2Client.h"
 #import "AFOAuth1Client.h"
+#import "AwesomeMenu.h"
+#import "AwesomeMenuItem.h"
+#import "AFOAuth1Client.h"
+#import "AFJSONRequestOperation.h"
 
 @interface Imports : NSObject
 

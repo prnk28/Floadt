@@ -20,9 +20,9 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VXU-04-5vK" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="0rO-OZ-wgn"/>
                             <constraint firstItem="VXU-04-5vK" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ayq-7u-DKU"/>
                             <constraint firstItem="VXU-04-5vK" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="eDM-7b-cRw"/>
+                            <constraint firstItem="VXU-04-5vK" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="mCk-DZ-omb"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -88,8 +88,8 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="BJA-L0-dKO" firstAttribute="trailing" secondItem="XgE-PK-hhi" secondAttribute="trailing" type="default" id="Mja-S3-pcP"/>
-                            <constraint firstItem="BJA-L0-dKO" firstAttribute="top" secondItem="XgE-PK-hhi" secondAttribute="top" type="default" id="N81-Rj-zyZ"/>
                             <constraint firstItem="BJA-L0-dKO" firstAttribute="leading" secondItem="XgE-PK-hhi" secondAttribute="leading" type="default" id="SWY-P3-ltn"/>
+                            <constraint firstItem="BJA-L0-dKO" firstAttribute="top" secondItem="XgE-PK-hhi" secondAttribute="top" type="default" id="ii1-Qa-0le"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="qTo-aZ-3WA"/>
