@@ -19,16 +19,6 @@
 @synthesize window = _window;
 @synthesize twitterClient = _twitterClient;
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
-{
-    NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:[NSDictionary dictionaryWithObject:url forKey:kAFApplicationLaunchOptionsURLKey]];
-    [[NSNotificationCenter defaultCenter] postNotification:notification];
-    
-    return YES;
-}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -114,6 +104,7 @@
     menu.delegate = self;
 
     [self.view addSubview:menu];
+    
      
 }
 
@@ -129,12 +120,13 @@
 {
     NSLog(@"Select the index : %d",idx);
     
-    if (idx == 0) {
+    if (idx == 0 && self.twitterClient ) {
         
         self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/"]
                                                                  key:@"4oFCF0AjP4PQDUaCh5RQ"
                                                               secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
         
+
         
         [self.twitterClient authorizeUsingOAuthWithRequestTokenPath:@"oauth/request_token"
                                               userAuthorizationPath:@"oauth/authorize"
@@ -147,6 +139,7 @@
                                                                 NSLog(@"Got it");
                                                                 
                                                                 [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+                                                                
                                                                 [self.twitterClient getPath:@"1.1/statuses/user_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                                                     NSArray *responseArray = (NSArray *)responseObject;
                                                                     [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {

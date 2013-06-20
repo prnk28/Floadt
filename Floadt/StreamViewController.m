@@ -210,8 +210,9 @@ int pageCounter = 1;
     NSDictionary *photo = [self.photos objectAtIndex:index];
     
     NSString *message = [NSString stringWithFormat:@"%@", [photo stringForKey:@"title"]];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Tapped!" message:message delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+    RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:@"Tapped" message:message];
+    [modal show];
+
 }
 
 #pragma mark - Interface Orientation Management

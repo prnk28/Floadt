@@ -46,6 +46,7 @@
 #import "AwesomeMenuItem.h"
 #import "AFOAuth1Client.h"
 #import "AFJSONRequestOperation.h"
+#import "RNBlurModalView.h"
 
 @interface Imports : NSObject
 

@@ -9,13 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <KiipSDK/KiipSDK.h>
 #import "AwesomeMenu.h"
+#import "AFOAuth1Client.h"
+#import "AFJSONRequestOperation.h"
+
 
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,KiipDelegate, AwesomeMenuDelegate>{
 
 }
-
-
 
 @property (strong, nonatomic) UIWindow *window;
 
