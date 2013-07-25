@@ -8,10 +8,10 @@
 
 #import "AppDelegate.h"
 #import <KiipSDK/KiipSDK.h>
-#import <Parse/Parse.h>
+#import "Imports.h"
+#import "SSKeychain.h"
 
 @implementation AppDelegate
-
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
@@ -20,16 +20,31 @@
     
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar.png"] forBarMetrics:UIBarMetricsDefault];
     
-    [Parse setApplicationId:@"dv6sMGqcQXmrr7lRCLqZhgtvCYb3nn6yL4PagAAe" clientKey:@"JmTZvpZO6CVukRxvpZ9fd9r7P8ITvQKNhihMTrxq"];
-    
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-    
+    // Kiip Monetization
     Kiip *kiip = [[Kiip alloc] initWithAppKey:@"01007bf4acea9a6bb2af55812d670e13" andSecret:@"98580e21b66e08b2fcc8e371dbb1adaf"];
     kiip.delegate = self;
     [Kiip setSharedInstance:kiip];
     
-    [PFTwitterUtils initializeWithConsumerKey:@"citoWm6LNlooU6jBNEarpA" consumerSecret:@"mLSwLz5o9l5TLHxDucGn9SYkXxBEHh03cUtQXu1Ts"];
+
+
+    //UIViewController *login = (UIViewController*)[mainStoryboard
+                                 //                      instantiateViewControllerWithIdentifier:
+                                 //                      @"login"];
+    
+    // UIViewController *stream = (UIViewController*)[mainStoryboard
+    //                                              instantiateViewControllerWithIdentifier:
+    //                                              @"MainViewController"];
+    
+       
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
+{
+    
+    [[InstagramClient sharedClient] handleOAuthCallbackWithURL:url];
+    return YES;
+    
 }
 							
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -59,16 +74,9 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
-- (BOOL)application:(UIApplication *)application
-            openURL:(NSURL *)url
-  sourceApplication:(NSString *)sourceApplication
-         annotation:(id)annotation
+- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
 {
-    NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:[NSDictionary dictionaryWithObject:url forKey:kAFApplicationLaunchOptionsURLKey]];
-    [[NSNotificationCenter defaultCenter] postNotification:notification];
     
-    return YES;
 }
-
 
 @end

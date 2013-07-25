@@ -5,9 +5,12 @@
 //  Created by Pradyumn Nukala on 3/31/13.
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
+#define INSTAGRAM_CLIENT_ID @"88b3fb2cd93c4aacb053b44b35b86187"
 
 #import "SettingsViewController.h"
 #import "AwesomeMenu.h"
+#import "Imports.h"
+#import "InstagramClient.h"
 
 @interface SettingsViewController ()
 
@@ -17,14 +20,13 @@
 @implementation SettingsViewController
 
 @synthesize window = _window;
-@synthesize twitterClient = _twitterClient;
-
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     
-    [self.view setBackgroundColor:[UIColor whiteColor]];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage
+    //imageNamed:@"bgNoise.png"]]];
+    
 
     
     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -102,88 +104,66 @@
     menu.startPoint = CGPointMake(50.0, 500.0);
     
     menu.delegate = self;
-
+    
     [self.view addSubview:menu];
     
-     
+    
 }
-
-
-
 
 /* ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇ */
 /* ⬇⬇⬇⬇⬇⬇ GET RESPONSE OF MENU ⬇⬇⬇⬇⬇⬇ */
 /* ⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇⬇ */
-
+- (void)authenticateWithInstagram {
+    
+    NSString *callbackUrl = @"floadt://instagram_callback";
+    
+    [[InstagramClient sharedClient] authenticateWithClientID:INSTAGRAM_CLIENT_ID callbackURL:callbackUrl];
+    
+}
 
 - (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
 {
-    NSLog(@"Select the index : %d",idx);
-    
-    if (idx == 0 && self.twitterClient ) {
-        
-        self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/"]
-                                                                 key:@"4oFCF0AjP4PQDUaCh5RQ"
-                                                              secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
-        
 
+
+    if (idx==0) {
+
+
+
+    }else if (idx == 1){
+               
+    }else if (idx == 2){
         
-        [self.twitterClient authorizeUsingOAuthWithRequestTokenPath:@"oauth/request_token"
-                                              userAuthorizationPath:@"oauth/authorize"
-                                                        callbackURL:[NSURL URLWithString:@"floadt://success"]
-                                                    accessTokenPath:@"oauth/access_token"
-                                                       accessMethod:@"POST"
-                                                              scope:nil
-                                                            success:^(AFOAuth1Token *accessToken, id response) {
-                                                                
-                                                                NSLog(@"Got it");
-                                                                
-                                                                [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-                                                                
-                                                                [self.twitterClient getPath:@"1.1/statuses/user_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                                    NSArray *responseArray = (NSArray *)responseObject;
-                                                                    [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                                                                        NSLog(@"Success: %@", obj);
-                                                                    }];
-                                                                }                                               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                    NSLog(@"Error: %@", error);
-                                                                }];
-                                                                
-                                                            } failure:^(NSError *error) {
-                                                                NSLog(@"Error: %@", error);
-                                                            }];
+        [self authenticateWithInstagram];
+        
+    }else if (idx == 3){
         
         
-    }else if(idx == 1){
+    }else{
         
-        NSLog(@"FB");
+        
     }
     
     
 }
 
 
-- (void)awesomeMenuDidFinishAnimationClose:(AwesomeMenu *)menu {
-
-    NSLog(@"Menu was closed!");
-
-}
-- (void)awesomeMenuDidFinishAnimationOpen:(AwesomeMenu *)menu {
-
-    NSLog(@"Menu is open!");
-
-}
-
-
 - (void)didTapBarButton:(id)sender {
     
     [self.sidePanelController showLeftPanelAnimated:YES];
+
     
 }
 
 - (void)didTapSettingsButton:(id)sender {
     
     
+    
 }
 
+- (IBAction)buttt:(id)sender {
+   
+
+
+
+}
 @end

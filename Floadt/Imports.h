@@ -11,10 +11,8 @@
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 #import <KiipSDK/KiipSDK.h>
-#import <Parse/Parse.h>
 #import "AppDelegate.h"
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 #import "AwesomeMenu.h"
 #import "JSFlatButton.h"
 #import "JASidePanelController.h"
@@ -31,14 +29,10 @@
 #import "UIViewController+JASidePanel.h"
 #import "StreamViewController.h"
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
 #import <KiipSDK/KiipSDK.h>
 #import "JSFlatButton.h"
 #import "JASidePanelController.h"
 #import <Twitter/Twitter.h>
-#import <SEMasonryView/SEMasonryView.h>
-#import "VerticalCell.h"
-#import <SEMasonryView/SEJSONRequestOperation.h>
 #import "AFNetworking.h"
 #import "AFOAuth2Client.h"
 #import "AFOAuth1Client.h"
@@ -47,6 +41,12 @@
 #import "AFOAuth1Client.h"
 #import "AFJSONRequestOperation.h"
 #import "RNBlurModalView.h"
+#import "SVProgressHUD.h"
+#import "CredentialStore.h"
+#import "LogInViewController.h"
+#import "MainViewController.h"
+#import "InstagramClient.h"
+
 
 @interface Imports : NSObject
 

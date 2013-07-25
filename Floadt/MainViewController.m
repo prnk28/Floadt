@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import "StreamViewController.h"
+#import "BarViewController.h"
 @interface MainViewController ()
 {
 
@@ -22,9 +24,13 @@
 
 -(void) awakeFromNib
 {
-  
-    [self setLeftPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"barController"]];
-    [self setCenterPanel:[self.storyboard instantiateViewControllerWithIdentifier:@"centerPage"]];
+   // StreamViewController *center = [[StreamViewController alloc] init];
+   // BarViewController *left = [[BarViewController alloc] init];
+    
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"iPhone" bundle:nil];
+
+    [self setCenterPanel:[board instantiateViewControllerWithIdentifier:@"centerPage"]];
+    [self setLeftPanel:[board instantiateViewControllerWithIdentifier:@"barController"]];
     
 }
 
@@ -35,7 +41,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.]
     
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"classy_fabric.png"]]];
     
     
     

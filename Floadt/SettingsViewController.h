@@ -11,12 +11,17 @@
 #import "AwesomeMenu.h"
 #import "AFJSONRequestOperation.h"
 
-@interface SettingsViewController : UIViewController <AwesomeMenuDelegate>
 
 
+@interface SettingsViewController : UIViewController <AwesomeMenuDelegate> {
+
+}
+
+
+- (IBAction)buttt:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) AFOAuth1Client *twitterClient;
-
 
 @end
