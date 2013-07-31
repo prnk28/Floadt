@@ -17,6 +17,7 @@
 
 @interface StreamViewController () <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableDictionary *timelineResponse;
+@property (nonatomic, strong) NSMutableArray *photosArray;
 @property (nonatomic, strong) CredentialStore *credentialStore;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -29,6 +30,8 @@
     
     [self authenticateWithInstagram];
     [self refreshInstagram];
+    
+    self.photosArray = [NSMutableArray new];
     
     //Refresh
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -74,6 +77,7 @@
                                         NSLog(@"Response: %@", responseObject);
                                         
                                         self.timelineResponse = [responseObject mutableCopy];
+                                        [self.photosArray addObjectsFromArray:responseObject[@"data"]];
                                         [self.collectionView reloadData];
                                         
                                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -89,8 +93,9 @@
     
     [[InstagramClient sharedClient] getPath:[NSString stringWithFormat:@"%@",nextPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
-       // self.timelineResponse = [responseObject mutableCopy];
+        self.timelineResponse = [responseObject mutableCopy];
         [self.timelineResponse addEntriesFromDictionary:responseObject];
+        [self.photosArray addObjectsFromArray:responseObject[@"data"]];
         [self.collectionView reloadData];
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -101,7 +106,7 @@
     
 }
 - (NSMutableArray *)entries {
-    return self.timelineResponse[@"data"];
+    return self.photosArray;
 }
 
 - (NSArray *)pages {
