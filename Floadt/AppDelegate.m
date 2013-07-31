@@ -10,6 +10,8 @@
 #import <KiipSDK/KiipSDK.h>
 #import "Imports.h"
 #import "SSKeychain.h"
+#import "CredentialStore.h"
+#import "UIViewController+JASidePanel.h"
 
 @implementation AppDelegate
 
@@ -17,26 +19,19 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    
+   //     CredentialStore *store = [[CredentialStore alloc] init];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar.png"] forBarMetrics:UIBarMetricsDefault];
     
     // Kiip Monetization
     Kiip *kiip = [[Kiip alloc] initWithAppKey:@"01007bf4acea9a6bb2af55812d670e13" andSecret:@"98580e21b66e08b2fcc8e371dbb1adaf"];
     kiip.delegate = self;
     [Kiip setSharedInstance:kiip];
-    
 
-
-    //UIViewController *login = (UIViewController*)[mainStoryboard
-                                 //                      instantiateViewControllerWithIdentifier:
-                                 //                      @"login"];
     
-    // UIViewController *stream = (UIViewController*)[mainStoryboard
-    //                                              instantiateViewControllerWithIdentifier:
-    //                                              @"MainViewController"];
-    
+    [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
        
     return YES;
+    
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url

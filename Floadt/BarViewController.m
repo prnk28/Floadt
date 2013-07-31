@@ -19,24 +19,12 @@
 
 @end
 
-typedef enum {
-    DemoTableViewRowDefaultSettings = 0,
-    DemoTableViewRowCustomProperties,
-    DemoTableViewRowCustomSubclasses,
-    DemoTableViewNumberOfRows
-} DemoTableViewRow;
-
 
 @implementation BarViewController
-
-int dialog = 0;
-
-
 
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:YES];
-    
     
     
 }

@@ -15,10 +15,11 @@
 #import "InstagramClient.h"
 #import "ImageCell.h"
 
-@interface StreamViewController ()
-@property (nonatomic, strong) NSDictionary *timelineResponse;
+@interface StreamViewController () <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@property (nonatomic, strong) NSMutableDictionary *timelineResponse;
 @property (nonatomic, strong) CredentialStore *credentialStore;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
 @end
 
 @implementation StreamViewController
@@ -26,15 +27,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.collectionView = _collectionView;
-    self.collectionView.dataSource = self;
-    self.collectionView.delegate = self;
+    [self authenticateWithInstagram];
+    [self refreshInstagram];
     
-  //  [self.collectionView registerClass:[ImageCell class]
-   //         forCellWithReuseIdentifier:@"imageCell"];
+    //Refresh
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(startRefresh:)
+             forControlEvents:UIControlEventValueChanged];
+    [self.collectionView addSubview:refreshControl];
     
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bgNoise.png"]];
-    
+    //Instigate Navigation Bar Buttons
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [barButton setTitle:@"" forState:UIControlStateNormal];
@@ -57,16 +59,21 @@
     
     self.navBar.rightBarButtonItem = postButtonItem;
     
+    //Reload by default
     [self.collectionView reloadData];
 
 }
 
--(void)didTapPostButton:(id)sender {
+
+//Global refresh Instagram Method
+- (void)refreshInstagram {
+
     [[InstagramClient sharedClient] getPath:@"users/self/feed"
                                  parameters:nil
                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                         NSLog(@"Response: %@", responseObject);
-                                        self.timelineResponse = responseObject;
+                                        
+                                        self.timelineResponse = [responseObject mutableCopy];
                                         [self.collectionView reloadData];
                                         
                                     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -75,32 +82,74 @@
     
 }
 
-- (NSArray *)entries {
+- (void)nextInstagramPage:(NSIndexPath *)indexPath{
+    NSDictionary *page = self.timelineResponse[@"pagination"];
+    NSString *nextPage = page[@"next_url"];
+
+    
+    [[InstagramClient sharedClient] getPath:[NSString stringWithFormat:@"%@",nextPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+
+       // self.timelineResponse = [responseObject mutableCopy];
+        [self.timelineResponse addEntriesFromDictionary:responseObject];
+        [self.collectionView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
+    
+    
+    
+}
+- (NSMutableArray *)entries {
     return self.timelineResponse[@"data"];
 }
 
+- (NSArray *)pages {
+    return self.timelineResponse[@"pagination"];
+}
+
+
 - (NSURL *)imageUrlForEntryAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *entry = [self entries][indexPath.row];
-    NSString *imageUrlString = entry[@"images"][@"low_resolution"][@"url"];
+    NSString *imageUrlString = entry[@"images"][@"standard_resolution"][@"url"];
     return [NSURL URLWithString:imageUrlString];
 }
 
 #pragma mark - UICollectionViewDelegate
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    int y = arc4random() % 200+50;
+    //int y = arc4random() % 200+50;
     
-    return CGSizeMake(150, y);
+
+    return CGSizeMake(150, 150);
+
+    
+}
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:@"Item Tapped!" message:@"Thank God its working"];
+    [modal show];
+}
+
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y == roundf(scrollView.contentSize.height-scrollView.frame.size.height)) {
+        NSLog(@"we are at the endddd");
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        
+        [self nextInstagramPage:indexPath];
+            
+
+    }
 }
 
 #pragma mark - UICollectionViewDataSource
 
--(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
-
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    
     return [[self entries] count];
+
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -110,16 +159,38 @@
     NSURL *url = [self imageUrlForEntryAtIndexPath:indexPath];
     NSLog(@"%@", url);
     [cell.imageView setImageWithURL:url];
-    cell.backgroundColor = [UIColor blackColor];
+    cell.backgroundColor = [UIColor whiteColor];
     
     return cell;
 }
 
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
 
+#pragma mark - NavigationBarButtons
 
 - (void)didTapBarButton:(id)sender {
     
     [self.sidePanelController showLeftPanelAnimated:YES];
+    
+}
+
+- (void)startRefresh:(UIRefreshControl *)sender {
+    [self refreshInstagram];
+    [sender endRefreshing];
+
+}
+
+-(void)didTapPostButton:(id)sender {
+    
+    
+}
+- (void)authenticateWithInstagram {
+    
+    NSString *callbackUrl = @"floadt://instagram_callback";
+    
+    [[InstagramClient sharedClient] authenticateWithClientID:INSTAGRAM_CLIENT_ID callbackURL:callbackUrl];
     
 }
          

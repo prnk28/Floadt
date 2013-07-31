@@ -2538,6 +2538,7 @@
 				6EEA685C1709190C0069B447 /* SettingsViewController.m */,
 				6E0D5FA417A0BB6800389771 /* StreamViewController.h */,
 				6E0D5FA517A0BB6800389771 /* StreamViewController.m */,
+				6E26F224170148F8009489A8 /* Supporting Files */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -2602,7 +2603,6 @@
 			isa = PBXGroup;
 			children = (
 				6EF1F75817237E2A00061A11 /* Classes */,
-				6E26F224170148F8009489A8 /* Supporting Files */,
 			);
 			path = Floadt;
 			sourceTree = "<group>";

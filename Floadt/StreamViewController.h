@@ -11,7 +11,7 @@
 #import "AFJSONRequestOperation.h"
 #import <UIKit/UIKit.h>
 
-@interface StreamViewController : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout> {
+@interface StreamViewController : UIViewController {
 
     
 }
