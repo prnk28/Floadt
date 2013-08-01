@@ -9,7 +9,7 @@
 #define INSTAGRAM_AUTH_URL_FORMAT @"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token"
 
 #import "InstagramClient.h"
-#import "CredentialStore.h"
+#define kAuthToken @"MyKeyString"
 
 @interface InstagramClient ()
 @property (nonatomic, copy) NSString *accessToken;
@@ -64,16 +64,15 @@
                                  NSRange accessTokenRange = [result rangeAtIndex:1];
                                  self.accessToken = [input substringWithRange:accessTokenRange];
                                  NSLog(@"Access Token: %@", self.accessToken);
-                                 NSString *authToken = self.accessToken;
-                                 [self.credentialStore setAuthToken:authToken];
+                                                                 [Lockbox setString:self.accessToken forKey:kAuthToken];
+                                 
                              }
                          }];
     
 }
 
 - (void)setAuthTokenHeader {
-    CredentialStore *store = [[CredentialStore alloc] init];
-    NSString *authToken = [store authToken];
+    NSString *authToken = [Lockbox stringForKey:kAuthToken];
     [self setDefaultHeader:@"auth_token" value:authToken];
 }
 
@@ -81,6 +80,9 @@
     [self setAuthTokenHeader];
 }
 
+- (NSString *)accessToken {
+    return [Lockbox stringForKey:kAuthToken];
+}
 
 -(AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     NSMutableURLRequest *request = [urlRequest mutableCopy];

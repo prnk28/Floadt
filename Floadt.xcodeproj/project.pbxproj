@@ -1590,6 +1590,8 @@
 		6EDE00B11708CDDF00C68317 /* KiipSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE00AC1708CDDF00C68317 /* KiipSDKResources.bundle */; };
 		6EE0AD9D17A9F3E000AB96FD /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0AD9C17A9F3E000AB96FD /* TwitterClient.m */; };
 		6EE0ADA017A9F71800AB96FD /* FacebookClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0AD9F17A9F71800AB96FD /* FacebookClient.m */; };
+		6EE0ADA417AA189900AB96FD /* Lockbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0ADA317AA189900AB96FD /* Lockbox.m */; };
+		6EE0ADA517AA189900AB96FD /* Lockbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0ADA317AA189900AB96FD /* Lockbox.m */; };
 		6EEA685D1709190C0069B447 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA685C1709190C0069B447 /* SettingsViewController.m */; };
 		6EF1F7531723750400061A11 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF1F7521723750400061A11 /* Twitter.framework */; };
 /* End PBXBuildFile section */
@@ -2479,6 +2481,8 @@
 		6EE0AD9C17A9F3E000AB96FD /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
 		6EE0AD9E17A9F71800AB96FD /* FacebookClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookClient.h; sourceTree = "<group>"; };
 		6EE0AD9F17A9F71800AB96FD /* FacebookClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookClient.m; sourceTree = "<group>"; };
+		6EE0ADA217AA189900AB96FD /* Lockbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lockbox.h; sourceTree = "<group>"; };
+		6EE0ADA317AA189900AB96FD /* Lockbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lockbox.m; sourceTree = "<group>"; };
 		6EEA685B1709190C0069B447 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		6EEA685C1709190C0069B447 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		6EF1F7521723750400061A11 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -3073,6 +3077,10 @@
 		6E785B00179D93E800A363D9 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				6EE0ADA217AA189900AB96FD /* Lockbox.h */,
+				6EE0ADA317AA189900AB96FD /* Lockbox.m */,
+				6E15944B178DF076003A0DC6 /* CredentialStore.h */,
+				6E15944C178DF076003A0DC6 /* CredentialStore.m */,
 				6EE0AD9E17A9F71800AB96FD /* FacebookClient.h */,
 				6EE0AD9F17A9F71800AB96FD /* FacebookClient.m */,
 				6E785B02179D940200A363D9 /* InstagramClient.h */,
@@ -3710,17 +3718,23 @@
 			path = symbols;
 			sourceTree = "<group>";
 		};
+		6EE0ADA117AA128B00AB96FD /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				6E0D5F9D17A0B69100389771 /* iPhone.storyboard */,
+				6EA38D76179DDF04005FA063 /* ImageCell.h */,
+				6EA38D77179DDF04005FA063 /* ImageCell.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		6EF1F75817237E2A00061A11 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				6E785B00179D93E800A363D9 /* Clients */,
 				6E26F22C170148F8009489A8 /* AppDelegate.h */,
 				6E26F22D170148F8009489A8 /* AppDelegate.m */,
-				6EA38D76179DDF04005FA063 /* ImageCell.h */,
-				6EA38D77179DDF04005FA063 /* ImageCell.m */,
-				6E15944B178DF076003A0DC6 /* CredentialStore.h */,
-				6E15944C178DF076003A0DC6 /* CredentialStore.m */,
-				6E0D5F9D17A0B69100389771 /* iPhone.storyboard */,
+				6EE0ADA117AA128B00AB96FD /* UI */,
+				6E785B00179D93E800A363D9 /* Clients */,
 				6E2451F01704B4BE002CF616 /* ViewControllers */,
 			);
 			name = Classes;
@@ -5373,6 +5387,7 @@
 				6E0D5FA617A0BB6800389771 /* StreamViewController.m in Sources */,
 				6EE0AD9D17A9F3E000AB96FD /* TwitterClient.m in Sources */,
 				6EE0ADA017A9F71800AB96FD /* FacebookClient.m in Sources */,
+				6EE0ADA417AA189900AB96FD /* Lockbox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5393,6 +5408,7 @@
 				6E15944E178DF076003A0DC6 /* CredentialStore.m in Sources */,
 				6EA38D79179DDF04005FA063 /* ImageCell.m in Sources */,
 				6E0D5FA317A0B69200389771 /* MainViewController.m in Sources */,
+				6EE0ADA517AA189900AB96FD /* Lockbox.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -6,12 +6,11 @@
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
 #define INSTAGRAM_CLIENT_ID @"88b3fb2cd93c4aacb053b44b35b86187"
-
+#import "Lockbox.h"
 
 #import "StreamViewController.h"
 #import "InstagramClient.h"
 #import "ImageCell.h"
-#import "CredentialStore.h"
 #import "InstagramClient.h"
 #import "ImageCell.h"
 
@@ -131,7 +130,9 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *entry = [self entries][indexPath.row];
-    RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:[NSString stringWithFormat:@"%@",entry[@"user"][@"full_name"]] message:@"Thank God its working"];
+    NSDictionary *text = [self entries][indexPath.row];
+    
+    RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:[NSString stringWithFormat:@"%@",entry[@"user"][@"full_name"]] message:[NSString stringWithFormat:@"%@",text[@"caption"][@"text"]]];
     [modal show];
 }
 
