@@ -6,11 +6,13 @@
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
 #define INSTAGRAM_CLIENT_ID @"88b3fb2cd93c4aacb053b44b35b86187"
+#define FACEBOOK_APP_ID @"262960803773270"
 
 #import "SettingsViewController.h"
 #import "AwesomeMenu.h"
 #import "Imports.h"
 #import "InstagramClient.h"
+#import "FacebookClient.h"
 
 @interface SettingsViewController ()
 
@@ -121,29 +123,32 @@
     
 }
 
+- (void)authenticateWithFacebook {
+    
+    NSString *callbackUrl = @"floadt://facebook_callback";
+    
+    [[FacebookClient sharedClient] authenticateWithClientID:FACEBOOK_APP_ID callbackURL:callbackUrl];
+    
+}
+
 - (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
 {
-
-
+    
     if (idx==0) {
-
-
-
+        
     }else if (idx == 1){
-               
+        
+    [self authenticateWithFacebook];
+        
     }else if (idx == 2){
         
-        [self authenticateWithInstagram];
+    [self authenticateWithInstagram];
         
     }else if (idx == 3){
         
-        
     }else{
         
-        
     }
-    
-    
 }
 
 

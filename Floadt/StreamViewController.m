@@ -27,8 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self authenticateWithInstagram];
+
     [self refreshInstagram];
     
     self.photosArray = [NSMutableArray new];
@@ -64,9 +63,7 @@
     
     //Reload by default
     [self.collectionView reloadData];
-
 }
-
 
 //Global refresh Instagram Method
 - (void)refreshInstagram {
@@ -89,7 +86,7 @@
 - (void)nextInstagramPage:(NSIndexPath *)indexPath{
     NSDictionary *page = self.timelineResponse[@"pagination"];
     NSString *nextPage = page[@"next_url"];
-
+    [SVProgressHUD showWithStatus:@"Getting Stuff..."];
     
     [[InstagramClient sharedClient] getPath:[NSString stringWithFormat:@"%@",nextPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
 
@@ -102,9 +99,10 @@
         NSLog(@"Failure: %@", error);
     }];
     
-    
+    [SVProgressHUD dismiss];
     
 }
+
 - (NSMutableArray *)entries {
     return self.photosArray;
 }
@@ -112,7 +110,6 @@
 - (NSArray *)pages {
     return self.timelineResponse[@"pagination"];
 }
-
 
 - (NSURL *)imageUrlForEntryAtIndexPath:(NSIndexPath *)indexPath {
     NSDictionary *entry = [self entries][indexPath.row];
@@ -130,12 +127,13 @@
 
     
 }
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:@"Item Tapped!" message:@"Thank God its working"];
+    NSDictionary *entry = [self entries][indexPath.row];
+    RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:[NSString stringWithFormat:@"%@",entry[@"user"][@"full_name"]] message:@"Thank God its working"];
     [modal show];
 }
-
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -191,13 +189,6 @@
     
     
 }
-- (void)authenticateWithInstagram {
-    
-    NSString *callbackUrl = @"floadt://instagram_callback";
-    
-    [[InstagramClient sharedClient] authenticateWithClientID:INSTAGRAM_CLIENT_ID callbackURL:callbackUrl];
-    
-}
-         
+
 @end
 

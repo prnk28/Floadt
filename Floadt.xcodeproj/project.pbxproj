@@ -1588,6 +1588,8 @@
 		6EDE00AF1708CDDF00C68317 /* KiipSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDE00AB1708CDDF00C68317 /* KiipSDK.framework */; };
 		6EDE00B01708CDDF00C68317 /* KiipSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE00AC1708CDDF00C68317 /* KiipSDKResources.bundle */; };
 		6EDE00B11708CDDF00C68317 /* KiipSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE00AC1708CDDF00C68317 /* KiipSDKResources.bundle */; };
+		6EE0AD9D17A9F3E000AB96FD /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0AD9C17A9F3E000AB96FD /* TwitterClient.m */; };
+		6EE0ADA017A9F71800AB96FD /* FacebookClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0AD9F17A9F71800AB96FD /* FacebookClient.m */; };
 		6EEA685D1709190C0069B447 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA685C1709190C0069B447 /* SettingsViewController.m */; };
 		6EF1F7531723750400061A11 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF1F7521723750400061A11 /* Twitter.framework */; };
 /* End PBXBuildFile section */
@@ -2473,6 +2475,10 @@
 		6ECC1E6E170BBE92006B8AE0 /* 60-dialpad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "60-dialpad@2x.png"; sourceTree = "<group>"; };
 		6EDE00AB1708CDDF00C68317 /* KiipSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiipSDK.framework; path = External/KiipSDK.framework; sourceTree = "<group>"; };
 		6EDE00AC1708CDDF00C68317 /* KiipSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KiipSDKResources.bundle; path = External/KiipSDKResources.bundle; sourceTree = "<group>"; };
+		6EE0AD9B17A9F3E000AB96FD /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
+		6EE0AD9C17A9F3E000AB96FD /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
+		6EE0AD9E17A9F71800AB96FD /* FacebookClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookClient.h; sourceTree = "<group>"; };
+		6EE0AD9F17A9F71800AB96FD /* FacebookClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookClient.m; sourceTree = "<group>"; };
 		6EEA685B1709190C0069B447 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		6EEA685C1709190C0069B447 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		6EF1F7521723750400061A11 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
@@ -3067,8 +3073,12 @@
 		6E785B00179D93E800A363D9 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				6EE0AD9E17A9F71800AB96FD /* FacebookClient.h */,
+				6EE0AD9F17A9F71800AB96FD /* FacebookClient.m */,
 				6E785B02179D940200A363D9 /* InstagramClient.h */,
 				6E785B03179D940200A363D9 /* InstagramClient.m */,
+				6EE0AD9B17A9F3E000AB96FD /* TwitterClient.h */,
+				6EE0AD9C17A9F3E000AB96FD /* TwitterClient.m */,
 			);
 			name = Clients;
 			sourceTree = "<group>";
@@ -5361,6 +5371,8 @@
 				6EA38D78179DDF04005FA063 /* ImageCell.m in Sources */,
 				6E0D5FA217A0B69200389771 /* MainViewController.m in Sources */,
 				6E0D5FA617A0BB6800389771 /* StreamViewController.m in Sources */,
+				6EE0AD9D17A9F3E000AB96FD /* TwitterClient.m in Sources */,
+				6EE0ADA017A9F71800AB96FD /* FacebookClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
