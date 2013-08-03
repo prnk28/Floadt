@@ -2,19 +2,21 @@
 //  TwitterClient.h
 //  Floadt
 //
-//  Created by Pradyumn Nukala on 7/31/13.
+//  Created by Pradyumn Nukala on 8/2/13.
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
 
+#import "AFHTTPClient.h"
 #import "Imports.h"
 #import "AFNetworking.h"
-#import "AFHTTPClient.h"
+#import "Lockbox.h"
 
 @interface TwitterClient : AFHTTPClient
 
 + (instancetype)sharedClient;
 
-- (void)authenticateWithClientID:(NSString *)clientId callbackURL:(NSString *)callbackUrl;
+- (void)authenticateWithOAuth:(NSString *)oKey;
+
 - (void)handleOAuthCallbackWithURL:(NSURL *)url;
 
 @end

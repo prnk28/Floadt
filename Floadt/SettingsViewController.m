@@ -7,17 +7,13 @@
 //
 #define INSTAGRAM_CLIENT_ID @"88b3fb2cd93c4aacb053b44b35b86187"
 #define FACEBOOK_APP_ID @"262960803773270"
+#define TWITTER_OAUTH @"CG0aslVuOiPGuYM4TRf3Sg"
 
 #import "SettingsViewController.h"
 #import "AwesomeMenu.h"
 #import "Imports.h"
 #import "InstagramClient.h"
-#import "FacebookClient.h"
-
-@interface SettingsViewController ()
-
-
-@end
+#import "TwitterClient.h"
 
 @implementation SettingsViewController
 
@@ -123,27 +119,38 @@
     
 }
 
-- (void)authenticateWithFacebook {
+- (void)authenticateWithTwitter {
     
-    NSString *callbackUrl = @"floadt://facebook_callback";
+   // NSString *callbackUrl = @"floadt://instagram_callback";
     
-    [[FacebookClient sharedClient] authenticateWithClientID:FACEBOOK_APP_ID callbackURL:callbackUrl];
-    
+    [[TwitterClient sharedClient] authenticateWithOAuth:TWITTER_OAUTH];
 }
+
 
 - (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
 {
+    NSString *InstaToken = [[InstagramClient sharedClient] accessToken];
     
     if (idx==0) {
         
+    [self authenticateWithTwitter];
+        
     }else if (idx == 1){
         
-    [self authenticateWithFacebook];
         
     }else if (idx == 2){
         
-    [self authenticateWithInstagram];
-        
+        if (InstaToken == nil) {
+            
+           [self authenticateWithInstagram];
+            
+        }else{
+            
+            RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:@"Sorry.." message:@"Instagram is Already Logged In!"];
+            [modal show];
+            
+        }
+    
     }else if (idx == 3){
         
     }else{

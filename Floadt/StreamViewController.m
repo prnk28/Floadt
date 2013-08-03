@@ -17,7 +17,6 @@
 @interface StreamViewController () <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableDictionary *timelineResponse;
 @property (nonatomic, strong) NSMutableArray *photosArray;
-@property (nonatomic, strong) CredentialStore *credentialStore;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

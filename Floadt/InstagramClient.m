@@ -13,7 +13,6 @@
 
 @interface InstagramClient ()
 @property (nonatomic, copy) NSString *accessToken;
-@property (nonatomic, strong) CredentialStore *credentialStore;
 @end
 
 @implementation InstagramClient
@@ -24,6 +23,8 @@
     dispatch_once(&onceToken, ^{
         NSURL *baseURL = [NSURL URLWithString:@"https://api.instagram.com/v1/"];
         _sharedClient = [[InstagramClient alloc] initWithBaseURL:baseURL];
+        
+        
     });
     
     return _sharedClient;
@@ -36,6 +37,7 @@
         [self setAuthTokenHeader];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
         
+    
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(tokenChanged:)
                                                      name:@"token-changed"
@@ -47,6 +49,9 @@
 - (void)authenticateWithClientID:(NSString *)clientId callbackURL:(NSString *)callbackUrl {
     NSString *urlString = [NSString stringWithFormat:INSTAGRAM_AUTH_URL_FORMAT, clientId, callbackUrl];
     NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSLog(@"%@",url);
+    
     [[UIApplication sharedApplication] openURL:url];
 }
 
@@ -89,10 +94,8 @@
     NSString *separator = [request.URL query] ? @"&" : @"?";
     NSString *newURLString = [NSString stringWithFormat:@"%@%@access_token=%@", [request.URL absoluteString], separator, self.accessToken];
     NSURL *newURL = [[NSURL alloc] initWithString:newURLString];
-    [self.credentialStore setAuthToken:_accessToken];
-    [request addValue:nil forHTTPHeaderField:@"auth_token"];
-    [request addValue:[self.credentialStore authToken] forHTTPHeaderField:@"auth_token"];
-    [request setURL:newURL];
+       [request addValue:nil forHTTPHeaderField:@"auth_token"];
+      [request setURL:newURL];
     return [super HTTPRequestOperationWithRequest:request success:success failure:failure];
     
 }

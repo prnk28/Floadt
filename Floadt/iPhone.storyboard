@@ -85,7 +85,7 @@
                                     <constraint firstAttribute="width" constant="312" type="user" id="pTF-lg-CCb"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="f9E-8j-1bN">
-                                    <size key="itemSize" width="150" height="154"/>
+                                    <size key="itemSize" width="150" height="150"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -109,8 +109,8 @@
                                         </view>
                                         <color key="backgroundColor" red="0.25641940662472984" green="0.63078305379491306" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstItem="ihZ-8c-r2g" firstAttribute="centerX" secondItem="tex-4V-zcD" secondAttribute="centerX" type="default" id="8H3-wS-Myk"/>
-                                            <constraint firstItem="ihZ-8c-r2g" firstAttribute="top" secondItem="tex-4V-zcD" secondAttribute="top" constant="7" id="eow-Kv-5PZ"/>
+                                            <constraint firstItem="ihZ-8c-r2g" firstAttribute="centerX" secondItem="tex-4V-zcD" secondAttribute="centerX" type="default" id="PjX-9O-c3Y"/>
+                                            <constraint firstItem="ihZ-8c-r2g" firstAttribute="top" secondItem="tex-4V-zcD" secondAttribute="top" constant="7" id="SMa-zg-a7y"/>
                                         </constraints>
                                         <size key="customSize" width="150" height="150"/>
                                         <connections>
@@ -348,9 +348,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

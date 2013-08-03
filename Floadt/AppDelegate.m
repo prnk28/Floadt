@@ -10,7 +10,6 @@
 #import <KiipSDK/KiipSDK.h>
 #import "Imports.h"
 #import "SSKeychain.h"
-#import "CredentialStore.h"
 #import "UIViewController+JASidePanel.h"
 
 @implementation AppDelegate

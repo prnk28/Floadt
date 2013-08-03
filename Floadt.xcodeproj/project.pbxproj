@@ -12,8 +12,6 @@
 		6E0D5FA217A0B69200389771 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5F9F17A0B69100389771 /* MainViewController.m */; };
 		6E0D5FA317A0B69200389771 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5F9F17A0B69100389771 /* MainViewController.m */; };
 		6E0D5FA617A0BB6800389771 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5FA517A0BB6800389771 /* StreamViewController.m */; };
-		6E15944D178DF076003A0DC6 /* CredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E15944C178DF076003A0DC6 /* CredentialStore.m */; };
-		6E15944E178DF076003A0DC6 /* CredentialStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E15944C178DF076003A0DC6 /* CredentialStore.m */; };
 		6E20DD7A170295BD00EE64A0 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E20DD79170295BD00EE64A0 /* CoreTelephony.framework */; };
 		6E20DD7D1702961100EE64A0 /* BarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20DD7C1702961100EE64A0 /* BarViewController.m */; };
 		6E20DD7E1702961100EE64A0 /* BarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E20DD7C1702961100EE64A0 /* BarViewController.m */; };
@@ -477,6 +475,7 @@
 		6E7920B0176CC3CD00AB3877 /* Imports.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7920AF176CC3CD00AB3877 /* Imports.m */; };
 		6E7920B1176CC3CD00AB3877 /* Imports.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7920AF176CC3CD00AB3877 /* Imports.m */; };
 		6E80F8D7178FAA54006D8D90 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80F8D6178FAA54006D8D90 /* LogInViewController.m */; };
+		6E8AA7E417ACA24600146123 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8AA7E317ACA24600146123 /* TwitterClient.m */; };
 		6EA1EB871772ADAF0096F43A /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB841772ADAF0096F43A /* SSKeychain.m */; };
 		6EA1EB881772ADAF0096F43A /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB861772ADAF0096F43A /* SSKeychainQuery.m */; };
 		6EA1EB8D1772ADB70096F43A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EA1EB8A1772ADB70096F43A /* SVProgressHUD.bundle */; };
@@ -1588,8 +1587,6 @@
 		6EDE00AF1708CDDF00C68317 /* KiipSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDE00AB1708CDDF00C68317 /* KiipSDK.framework */; };
 		6EDE00B01708CDDF00C68317 /* KiipSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE00AC1708CDDF00C68317 /* KiipSDKResources.bundle */; };
 		6EDE00B11708CDDF00C68317 /* KiipSDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EDE00AC1708CDDF00C68317 /* KiipSDKResources.bundle */; };
-		6EE0AD9D17A9F3E000AB96FD /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0AD9C17A9F3E000AB96FD /* TwitterClient.m */; };
-		6EE0ADA017A9F71800AB96FD /* FacebookClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0AD9F17A9F71800AB96FD /* FacebookClient.m */; };
 		6EE0ADA417AA189900AB96FD /* Lockbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0ADA317AA189900AB96FD /* Lockbox.m */; };
 		6EE0ADA517AA189900AB96FD /* Lockbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0ADA317AA189900AB96FD /* Lockbox.m */; };
 		6EEA685D1709190C0069B447 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA685C1709190C0069B447 /* SettingsViewController.m */; };
@@ -1612,8 +1609,6 @@
 		6E0D5F9F17A0B69100389771 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		6E0D5FA417A0BB6800389771 /* StreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamViewController.h; sourceTree = "<group>"; };
 		6E0D5FA517A0BB6800389771 /* StreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamViewController.m; sourceTree = "<group>"; };
-		6E15944B178DF076003A0DC6 /* CredentialStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CredentialStore.h; sourceTree = "<group>"; };
-		6E15944C178DF076003A0DC6 /* CredentialStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CredentialStore.m; sourceTree = "<group>"; };
 		6E20DD79170295BD00EE64A0 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		6E20DD7B1702961100EE64A0 /* BarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarViewController.h; sourceTree = "<group>"; };
 		6E20DD7C1702961100EE64A0 /* BarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarViewController.m; sourceTree = "<group>"; };
@@ -1891,6 +1886,8 @@
 		6E7920AF176CC3CD00AB3877 /* Imports.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Imports.m; sourceTree = "<group>"; };
 		6E80F8D5178FAA54006D8D90 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		6E80F8D6178FAA54006D8D90 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		6E8AA7E217ACA24600146123 /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
+		6E8AA7E317ACA24600146123 /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
 		6EA1EB831772ADAF0096F43A /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		6EA1EB841772ADAF0096F43A /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		6EA1EB851772ADAF0096F43A /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
@@ -2477,10 +2474,6 @@
 		6ECC1E6E170BBE92006B8AE0 /* 60-dialpad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "60-dialpad@2x.png"; sourceTree = "<group>"; };
 		6EDE00AB1708CDDF00C68317 /* KiipSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiipSDK.framework; path = External/KiipSDK.framework; sourceTree = "<group>"; };
 		6EDE00AC1708CDDF00C68317 /* KiipSDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = KiipSDKResources.bundle; path = External/KiipSDKResources.bundle; sourceTree = "<group>"; };
-		6EE0AD9B17A9F3E000AB96FD /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
-		6EE0AD9C17A9F3E000AB96FD /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
-		6EE0AD9E17A9F71800AB96FD /* FacebookClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookClient.h; sourceTree = "<group>"; };
-		6EE0AD9F17A9F71800AB96FD /* FacebookClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookClient.m; sourceTree = "<group>"; };
 		6EE0ADA217AA189900AB96FD /* Lockbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lockbox.h; sourceTree = "<group>"; };
 		6EE0ADA317AA189900AB96FD /* Lockbox.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lockbox.m; sourceTree = "<group>"; };
 		6EEA685B1709190C0069B447 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -3079,14 +3072,10 @@
 			children = (
 				6EE0ADA217AA189900AB96FD /* Lockbox.h */,
 				6EE0ADA317AA189900AB96FD /* Lockbox.m */,
-				6E15944B178DF076003A0DC6 /* CredentialStore.h */,
-				6E15944C178DF076003A0DC6 /* CredentialStore.m */,
-				6EE0AD9E17A9F71800AB96FD /* FacebookClient.h */,
-				6EE0AD9F17A9F71800AB96FD /* FacebookClient.m */,
 				6E785B02179D940200A363D9 /* InstagramClient.h */,
 				6E785B03179D940200A363D9 /* InstagramClient.m */,
-				6EE0AD9B17A9F3E000AB96FD /* TwitterClient.h */,
-				6EE0AD9C17A9F3E000AB96FD /* TwitterClient.m */,
+				6E8AA7E217ACA24600146123 /* TwitterClient.h */,
+				6E8AA7E317ACA24600146123 /* TwitterClient.m */,
 			);
 			name = Clients;
 			sourceTree = "<group>";
@@ -5379,15 +5368,13 @@
 				6EA1EB871772ADAF0096F43A /* SSKeychain.m in Sources */,
 				6EA1EB881772ADAF0096F43A /* SSKeychainQuery.m in Sources */,
 				6EA1EB8E1772ADB70096F43A /* SVProgressHUD.m in Sources */,
-				6E15944D178DF076003A0DC6 /* CredentialStore.m in Sources */,
 				6E80F8D7178FAA54006D8D90 /* LogInViewController.m in Sources */,
 				6E785B04179D940200A363D9 /* InstagramClient.m in Sources */,
 				6EA38D78179DDF04005FA063 /* ImageCell.m in Sources */,
 				6E0D5FA217A0B69200389771 /* MainViewController.m in Sources */,
 				6E0D5FA617A0BB6800389771 /* StreamViewController.m in Sources */,
-				6EE0AD9D17A9F3E000AB96FD /* TwitterClient.m in Sources */,
-				6EE0ADA017A9F71800AB96FD /* FacebookClient.m in Sources */,
 				6EE0ADA417AA189900AB96FD /* Lockbox.m in Sources */,
+				6E8AA7E417ACA24600146123 /* TwitterClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5405,7 +5392,6 @@
 				6E3C176D1708CD790025D038 /* WTStatusView.m in Sources */,
 				6E3C176F1708CD790025D038 /* WTStatusWindow.m in Sources */,
 				6E7920B1176CC3CD00AB3877 /* Imports.m in Sources */,
-				6E15944E178DF076003A0DC6 /* CredentialStore.m in Sources */,
 				6EA38D79179DDF04005FA063 /* ImageCell.m in Sources */,
 				6E0D5FA317A0B69200389771 /* MainViewController.m in Sources */,
 				6EE0ADA517AA189900AB96FD /* Lockbox.m in Sources */,

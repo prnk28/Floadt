@@ -42,7 +42,6 @@
 #import "AFJSONRequestOperation.h"
 #import "RNBlurModalView.h"
 #import "SVProgressHUD.h"
-#import "CredentialStore.h"
 #import "LogInViewController.h"
 #import "MainViewController.h"
 #import "InstagramClient.h"
