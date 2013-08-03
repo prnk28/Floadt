@@ -1,30 +1,28 @@
 //
-//  InstagramClient.m
-//  InstagramClient
+//  TwitterClient.m
+//  Floadt
 //
-//  Created by ben on 6/30/13.
-//  Copyright (c) 2013 Fickle Bits. All rights reserved.
+//  Created by Pradyumn Nukala on 8/2/13.
+//  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
 
-#define INSTAGRAM_AUTH_URL_FORMAT @"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token"
+#define TWITTER_AUTH_URL_FORMAT @"https://api.twitter.com/oauth/authorize?oauth_token=%@"
 
-#import "InstagramClient.h"
+#import "TwitterClient.h"
 #define kAuthToken @"MyKeyString"
 
-@interface InstagramClient ()
+@interface TwitterClient ()
 @property (nonatomic, copy) NSString *accessToken;
 @end
 
-@implementation InstagramClient
+@implementation TwitterClient
 
 + (instancetype)sharedClient {
-    static InstagramClient *_sharedClient = nil;
+    static TwitterClient *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        NSURL *baseURL = [NSURL URLWithString:@"https://api.instagram.com/v1/"];
-        _sharedClient = [[InstagramClient alloc] initWithBaseURL:baseURL];
-        
-        
+        NSURL *baseURL = [NSURL URLWithString:@"https://api.twitter.com/1/"];
+        _sharedClient = [[TwitterClient alloc] initWithBaseURL:baseURL];
     });
     
     return _sharedClient;
@@ -37,7 +35,6 @@
         [self setAuthTokenHeader];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
         
-    
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(tokenChanged:)
                                                      name:@"token-changed"
@@ -46,8 +43,8 @@
     return self;
 }
 
-- (void)authenticateWithClientID:(NSString *)clientId callbackURL:(NSString *)callbackUrl {
-    NSString *urlString = [NSString stringWithFormat:INSTAGRAM_AUTH_URL_FORMAT, clientId, callbackUrl];
+- (void)authenticateWithOAuth:(NSString *)oKey {
+    NSString *urlString = [NSString stringWithFormat:TWITTER_AUTH_URL_FORMAT, oKey];
     NSURL *url = [NSURL URLWithString:urlString];
     
     NSLog(@"%@",url);
@@ -69,7 +66,7 @@
                                  NSRange accessTokenRange = [result rangeAtIndex:1];
                                  self.accessToken = [input substringWithRange:accessTokenRange];
                                  NSLog(@"Access Token: %@", self.accessToken);
-                                                                 [Lockbox setString:self.accessToken forKey:kAuthToken];
+                                 [Lockbox setString:self.accessToken forKey:kAuthToken];
                                  
                              }
                          }];
@@ -94,8 +91,8 @@
     NSString *separator = [request.URL query] ? @"&" : @"?";
     NSString *newURLString = [NSString stringWithFormat:@"%@%@access_token=%@", [request.URL absoluteString], separator, self.accessToken];
     NSURL *newURL = [[NSURL alloc] initWithString:newURLString];
-       [request addValue:nil forHTTPHeaderField:@"auth_token"];
-      [request setURL:newURL];
+    [request addValue:nil forHTTPHeaderField:@"auth_token"];
+    [request setURL:newURL];
     return [super HTTPRequestOperationWithRequest:request success:success failure:failure];
     
 }
