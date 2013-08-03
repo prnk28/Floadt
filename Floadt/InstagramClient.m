@@ -36,12 +36,7 @@
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self setAuthTokenHeader];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
-        
     
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(tokenChanged:)
-                                                     name:@"token-changed"
-                                                   object:nil];
     }
     return self;
 }
@@ -69,8 +64,7 @@
                                  NSRange accessTokenRange = [result rangeAtIndex:1];
                                  self.accessToken = [input substringWithRange:accessTokenRange];
                                  NSLog(@"Access Token: %@", self.accessToken);
-                                                                 [Lockbox setString:self.accessToken forKey:kAuthToken];
-                                 
+                                 [Lockbox setString:self.accessToken forKey:kAuthToken];
                              }
                          }];
     
@@ -81,21 +75,12 @@
     [self setDefaultHeader:@"auth_token" value:authToken];
 }
 
-- (void)tokenChanged:(NSNotification *)notification {
-    [self setAuthTokenHeader];
-}
-
-- (NSString *)accessToken {
-    return [Lockbox stringForKey:kAuthToken];
-}
-
 -(AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
     NSMutableURLRequest *request = [urlRequest mutableCopy];
     NSString *separator = [request.URL query] ? @"&" : @"?";
     NSString *newURLString = [NSString stringWithFormat:@"%@%@access_token=%@", [request.URL absoluteString], separator, self.accessToken];
     NSURL *newURL = [[NSURL alloc] initWithString:newURLString];
-       [request addValue:nil forHTTPHeaderField:@"auth_token"];
-      [request setURL:newURL];
+    [request setURL:newURL];
     return [super HTTPRequestOperationWithRequest:request success:success failure:failure];
     
 }

@@ -475,7 +475,6 @@
 		6E7920B0176CC3CD00AB3877 /* Imports.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7920AF176CC3CD00AB3877 /* Imports.m */; };
 		6E7920B1176CC3CD00AB3877 /* Imports.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7920AF176CC3CD00AB3877 /* Imports.m */; };
 		6E80F8D7178FAA54006D8D90 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80F8D6178FAA54006D8D90 /* LogInViewController.m */; };
-		6E8AA7E417ACA24600146123 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8AA7E317ACA24600146123 /* TwitterClient.m */; };
 		6EA1EB871772ADAF0096F43A /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB841772ADAF0096F43A /* SSKeychain.m */; };
 		6EA1EB881772ADAF0096F43A /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB861772ADAF0096F43A /* SSKeychainQuery.m */; };
 		6EA1EB8D1772ADB70096F43A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EA1EB8A1772ADB70096F43A /* SVProgressHUD.bundle */; };
@@ -1886,8 +1885,6 @@
 		6E7920AF176CC3CD00AB3877 /* Imports.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Imports.m; sourceTree = "<group>"; };
 		6E80F8D5178FAA54006D8D90 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		6E80F8D6178FAA54006D8D90 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
-		6E8AA7E217ACA24600146123 /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
-		6E8AA7E317ACA24600146123 /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
 		6EA1EB831772ADAF0096F43A /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
 		6EA1EB841772ADAF0096F43A /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
 		6EA1EB851772ADAF0096F43A /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
@@ -3074,8 +3071,6 @@
 				6EE0ADA317AA189900AB96FD /* Lockbox.m */,
 				6E785B02179D940200A363D9 /* InstagramClient.h */,
 				6E785B03179D940200A363D9 /* InstagramClient.m */,
-				6E8AA7E217ACA24600146123 /* TwitterClient.h */,
-				6E8AA7E317ACA24600146123 /* TwitterClient.m */,
 			);
 			name = Clients;
 			sourceTree = "<group>";
@@ -5374,7 +5369,6 @@
 				6E0D5FA217A0B69200389771 /* MainViewController.m in Sources */,
 				6E0D5FA617A0BB6800389771 /* StreamViewController.m in Sources */,
 				6EE0ADA417AA189900AB96FD /* Lockbox.m in Sources */,
-				6E8AA7E417ACA24600146123 /* TwitterClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
