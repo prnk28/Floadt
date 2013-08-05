@@ -476,8 +476,6 @@
 		6E7920B1176CC3CD00AB3877 /* Imports.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7920AF176CC3CD00AB3877 /* Imports.m */; };
 		6E80F8D7178FAA54006D8D90 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80F8D6178FAA54006D8D90 /* LogInViewController.m */; };
 		6E8AA7E417ACA24600146123 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8AA7E317ACA24600146123 /* TwitterClient.m */; };
-		6EA1EB871772ADAF0096F43A /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB841772ADAF0096F43A /* SSKeychain.m */; };
-		6EA1EB881772ADAF0096F43A /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB861772ADAF0096F43A /* SSKeychainQuery.m */; };
 		6EA1EB8D1772ADB70096F43A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EA1EB8A1772ADB70096F43A /* SVProgressHUD.bundle */; };
 		6EA1EB8E1772ADB70096F43A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB8C1772ADB70096F43A /* SVProgressHUD.m */; };
 		6EA2D0F71704ED3F00BD46C0 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA2D0F61704ED3F00BD46C0 /* CoreImage.framework */; };
@@ -1897,10 +1895,6 @@
 		6E80F8D6178FAA54006D8D90 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		6E8AA7E217ACA24600146123 /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
 		6E8AA7E317ACA24600146123 /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
-		6EA1EB831772ADAF0096F43A /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		6EA1EB841772ADAF0096F43A /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		6EA1EB851772ADAF0096F43A /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
-		6EA1EB861772ADAF0096F43A /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		6EA1EB8A1772ADB70096F43A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		6EA1EB8B1772ADB70096F43A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		6EA1EB8C1772ADB70096F43A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -2800,7 +2794,6 @@
 			children = (
 				ACB2998417AF675500D9FD38 /* YIPopupView */,
 				6EA1EB891772ADB70096F43A /* SVProgressHUD */,
-				6EA1EB821772ADAE0096F43A /* SSKeychain */,
 				6EB331D2177109DE0034E7E2 /* AFNetworking */,
 				6EB331EA177109DE0034E7E2 /* AwesomeMenu */,
 				6E2B11871716121900FA23CB /* JSFlatButton */,
@@ -3099,18 +3092,6 @@
 				6E8AA7E317ACA24600146123 /* TwitterClient.m */,
 			);
 			name = Clients;
-			sourceTree = "<group>";
-		};
-		6EA1EB821772ADAE0096F43A /* SSKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				6EA1EB831772ADAF0096F43A /* SSKeychain.h */,
-				6EA1EB841772ADAF0096F43A /* SSKeychain.m */,
-				6EA1EB851772ADAF0096F43A /* SSKeychainQuery.h */,
-				6EA1EB861772ADAF0096F43A /* SSKeychainQuery.m */,
-			);
-			name = SSKeychain;
-			path = External/SSKeychain;
 			sourceTree = "<group>";
 		};
 		6EA1EB891772ADB70096F43A /* SVProgressHUD */ = {
@@ -5401,8 +5382,6 @@
 				6EB331F9177109DE0034E7E2 /* UIImageView+AFNetworking.m in Sources */,
 				6EB331FA177109DE0034E7E2 /* AwesomeMenu.m in Sources */,
 				6EB331FB177109DE0034E7E2 /* AwesomeMenuItem.m in Sources */,
-				6EA1EB871772ADAF0096F43A /* SSKeychain.m in Sources */,
-				6EA1EB881772ADAF0096F43A /* SSKeychainQuery.m in Sources */,
 				6EA1EB8E1772ADB70096F43A /* SVProgressHUD.m in Sources */,
 				6E80F8D7178FAA54006D8D90 /* LogInViewController.m in Sources */,
 				6E785B04179D940200A363D9 /* InstagramClient.m in Sources */,

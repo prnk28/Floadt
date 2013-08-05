@@ -10,7 +10,6 @@
 #import <KiipSDK/KiipSDK.h>
 #import "Imports.h"
 #import "AppData.h"
-#import "SSKeychain.h"
 #import "UIViewController+JASidePanel.h"
 #import "AFOAuth1Client.h"
 
