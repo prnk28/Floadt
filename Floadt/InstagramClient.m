@@ -7,7 +7,7 @@
 //
 
 #define INSTAGRAM_AUTH_URL_FORMAT @"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token"
-
+#import "AppData.h"
 #import "InstagramClient.h"
 #define kAuthToken @"MyKeyString"
 
@@ -69,8 +69,9 @@
                                  NSRange accessTokenRange = [result rangeAtIndex:1];
                                  self.accessToken = [input substringWithRange:accessTokenRange];
                                  NSLog(@"Access Token: %@", self.accessToken);
-                                                                 [Lockbox setString:self.accessToken forKey:kAuthToken];
-                                 
+                                 [Lockbox setString:self.accessToken forKey:kAuthToken];
+                                 AppData *data = [AppData sharedManager];
+                                 data.instagramActive = YES;
                              }
                          }];
     

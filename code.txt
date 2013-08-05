@@ -1,0 +1,3 @@
+16144 lines of code thus far
+
+find . -iname \*.m -o -iname \*.mm -o -iname \*.c -o -iname \*.cc -o -iname \*.h -exec wc -l '{}' \+
