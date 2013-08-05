@@ -13,6 +13,7 @@
 #import "ImageCell.h"
 #import "InstagramClient.h"
 #import "ImageCell.h"
+#import "YIPopupTextView.h"
 
 @interface StreamViewController () <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableDictionary *timelineResponse;
@@ -63,13 +64,27 @@
     [self.collectionView reloadData];
 }
 
+- (void)showPostView {
+    
+    UIView *accessoryView=[[[NSBundle mainBundle] loadNibNamed:@"AccessoryView" owner:self options:nil] lastObject];
+    
+    YIPopupTextView* popupTextView = [[YIPopupTextView alloc] initWithPlaceHolder:@"input here" maxCount:1000];
+       popupTextView.caretShiftGestureEnabled = NO;   // default = NO
+    popupTextView.inputAccessoryView = accessoryView;
+
+    [popupTextView showInView:self.view];
+
+    
+}
+
 //Global refresh Instagram Method
 - (void)refreshInstagram {
 
     [[InstagramClient sharedClient] getPath:@"users/self/feed"
                                  parameters:nil
                                     success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                        NSLog(@"Response: %@", responseObject);
+                                      //  NSLog(@"Response: %@",
+                                      //  responseObject);
                                         
                                         self.timelineResponse = [responseObject mutableCopy];
                                         [self.photosArray addObjectsFromArray:responseObject[@"data"]];
@@ -187,6 +202,7 @@
 
 -(void)didTapPostButton:(id)sender {
     
+    [self showPostView];
     
 }
 

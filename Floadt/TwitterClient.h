@@ -19,4 +19,8 @@
 
 - (void)handleOAuthCallbackWithURL:(NSURL *)url;
 
+-(void)authenticateWithTwitter;
+
+- (NSString*)accessToken;
+
 @end

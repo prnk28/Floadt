@@ -476,8 +476,6 @@
 		6E7920B1176CC3CD00AB3877 /* Imports.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7920AF176CC3CD00AB3877 /* Imports.m */; };
 		6E80F8D7178FAA54006D8D90 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80F8D6178FAA54006D8D90 /* LogInViewController.m */; };
 		6E8AA7E417ACA24600146123 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E8AA7E317ACA24600146123 /* TwitterClient.m */; };
-		6EA1EB871772ADAF0096F43A /* SSKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB841772ADAF0096F43A /* SSKeychain.m */; };
-		6EA1EB881772ADAF0096F43A /* SSKeychainQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB861772ADAF0096F43A /* SSKeychainQuery.m */; };
 		6EA1EB8D1772ADB70096F43A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EA1EB8A1772ADB70096F43A /* SVProgressHUD.bundle */; };
 		6EA1EB8E1772ADB70096F43A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB8C1772ADB70096F43A /* SVProgressHUD.m */; };
 		6EA2D0F71704ED3F00BD46C0 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA2D0F61704ED3F00BD46C0 /* CoreImage.framework */; };
@@ -1591,7 +1589,13 @@
 		6EE0ADA517AA189900AB96FD /* Lockbox.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0ADA317AA189900AB96FD /* Lockbox.m */; };
 		6EEA685D1709190C0069B447 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EEA685C1709190C0069B447 /* SettingsViewController.m */; };
 		6EF1F7531723750400061A11 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF1F7521723750400061A11 /* Twitter.framework */; };
-		ACE9B32517AEFC0D00F68A4F /* AccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACE9B32417AEFC0D00F68A4F /* AccessoryView.xib */; };
+		ACB2998317AF66A300D9FD38 /* AccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB2998217AF66A300D9FD38 /* AccessoryView.xib */; };
+		ACB2998917AF676400D9FD38 /* YIPopupTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB2998617AF676400D9FD38 /* YIPopupTextView.m */; };
+		ACB2998A17AF676400D9FD38 /* YIPopupTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB2998617AF676400D9FD38 /* YIPopupTextView.m */; };
+		ACB2998B17AF676400D9FD38 /* YISSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB2998817AF676400D9FD38 /* YISSTextView.m */; };
+		ACB2998C17AF676400D9FD38 /* YISSTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB2998817AF676400D9FD38 /* YISSTextView.m */; };
+		ACE5A2BC17AF1E15000D018C /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A2BB17AF1E15000D018C /* AppData.m */; };
+		ACE5A2BD17AF1E15000D018C /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A2BB17AF1E15000D018C /* AppData.m */; };
 		ACE9B32717AEFD7100F68A4F /* Gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE9B32617AEFD7100F68A4F /* Gradient.png */; };
 		ACE9B32817AEFD7100F68A4F /* Gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE9B32617AEFD7100F68A4F /* Gradient.png */; };
 /* End PBXBuildFile section */
@@ -1891,10 +1895,6 @@
 		6E80F8D6178FAA54006D8D90 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		6E8AA7E217ACA24600146123 /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
 		6E8AA7E317ACA24600146123 /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
-		6EA1EB831772ADAF0096F43A /* SSKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychain.h; sourceTree = "<group>"; };
-		6EA1EB841772ADAF0096F43A /* SSKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychain.m; sourceTree = "<group>"; };
-		6EA1EB851772ADAF0096F43A /* SSKeychainQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSKeychainQuery.h; sourceTree = "<group>"; };
-		6EA1EB861772ADAF0096F43A /* SSKeychainQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSKeychainQuery.m; sourceTree = "<group>"; };
 		6EA1EB8A1772ADB70096F43A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		6EA1EB8B1772ADB70096F43A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		6EA1EB8C1772ADB70096F43A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -2482,7 +2482,13 @@
 		6EEA685B1709190C0069B447 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		6EEA685C1709190C0069B447 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; wrapsLines = 0; };
 		6EF1F7521723750400061A11 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
-		ACE9B32417AEFC0D00F68A4F /* AccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessoryView.xib; sourceTree = "<group>"; };
+		ACB2998217AF66A300D9FD38 /* AccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessoryView.xib; sourceTree = "<group>"; };
+		ACB2998517AF676400D9FD38 /* YIPopupTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YIPopupTextView.h; sourceTree = "<group>"; };
+		ACB2998617AF676400D9FD38 /* YIPopupTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YIPopupTextView.m; sourceTree = "<group>"; };
+		ACB2998717AF676400D9FD38 /* YISSTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YISSTextView.h; sourceTree = "<group>"; };
+		ACB2998817AF676400D9FD38 /* YISSTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YISSTextView.m; sourceTree = "<group>"; };
+		ACE5A2BA17AF1E15000D018C /* AppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppData.h; sourceTree = "<group>"; };
+		ACE5A2BB17AF1E15000D018C /* AppData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppData.m; sourceTree = "<group>"; };
 		ACE9B32617AEFD7100F68A4F /* Gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Gradient.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -2786,8 +2792,8 @@
 		6E26F2FC170149FE009489A8 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				ACB2998417AF675500D9FD38 /* YIPopupView */,
 				6EA1EB891772ADB70096F43A /* SVProgressHUD */,
-				6EA1EB821772ADAE0096F43A /* SSKeychain */,
 				6EB331D2177109DE0034E7E2 /* AFNetworking */,
 				6EB331EA177109DE0034E7E2 /* AwesomeMenu */,
 				6E2B11871716121900FA23CB /* JSFlatButton */,
@@ -3076,6 +3082,8 @@
 		6E785B00179D93E800A363D9 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				ACE5A2BA17AF1E15000D018C /* AppData.h */,
+				ACE5A2BB17AF1E15000D018C /* AppData.m */,
 				6EE0ADA217AA189900AB96FD /* Lockbox.h */,
 				6EE0ADA317AA189900AB96FD /* Lockbox.m */,
 				6E785B02179D940200A363D9 /* InstagramClient.h */,
@@ -3084,18 +3092,6 @@
 				6E8AA7E317ACA24600146123 /* TwitterClient.m */,
 			);
 			name = Clients;
-			sourceTree = "<group>";
-		};
-		6EA1EB821772ADAE0096F43A /* SSKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				6EA1EB831772ADAF0096F43A /* SSKeychain.h */,
-				6EA1EB841772ADAF0096F43A /* SSKeychain.m */,
-				6EA1EB851772ADAF0096F43A /* SSKeychainQuery.h */,
-				6EA1EB861772ADAF0096F43A /* SSKeychainQuery.m */,
-			);
-			name = SSKeychain;
-			path = External/SSKeychain;
 			sourceTree = "<group>";
 		};
 		6EA1EB891772ADB70096F43A /* SVProgressHUD */ = {
@@ -3716,10 +3712,10 @@
 		6EE0ADA117AA128B00AB96FD /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				ACB2998217AF66A300D9FD38 /* AccessoryView.xib */,
 				6E0D5F9D17A0B69100389771 /* iPhone.storyboard */,
 				6EA38D76179DDF04005FA063 /* ImageCell.h */,
 				6EA38D77179DDF04005FA063 /* ImageCell.m */,
-				ACE9B32417AEFC0D00F68A4F /* AccessoryView.xib */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -3734,6 +3730,17 @@
 				6E2451F01704B4BE002CF616 /* ViewControllers */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		ACB2998417AF675500D9FD38 /* YIPopupView */ = {
+			isa = PBXGroup;
+			children = (
+				ACB2998517AF676400D9FD38 /* YIPopupTextView.h */,
+				ACB2998617AF676400D9FD38 /* YIPopupTextView.m */,
+				ACB2998717AF676400D9FD38 /* YISSTextView.h */,
+				ACB2998817AF676400D9FD38 /* YISSTextView.m */,
+			);
+			name = YIPopupView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -4572,8 +4579,8 @@
 				6EB33203177111F60034E7E2 /* igH@2x.png in Resources */,
 				6EA1EB8D1772ADB70096F43A /* SVProgressHUD.bundle in Resources */,
 				6E0D5FA017A0B69200389771 /* iPhone.storyboard in Resources */,
-				ACE9B32517AEFC0D00F68A4F /* AccessoryView.xib in Resources */,
 				ACE9B32717AEFD7100F68A4F /* Gradient.png in Resources */,
+				ACB2998317AF66A300D9FD38 /* AccessoryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5375,8 +5382,6 @@
 				6EB331F9177109DE0034E7E2 /* UIImageView+AFNetworking.m in Sources */,
 				6EB331FA177109DE0034E7E2 /* AwesomeMenu.m in Sources */,
 				6EB331FB177109DE0034E7E2 /* AwesomeMenuItem.m in Sources */,
-				6EA1EB871772ADAF0096F43A /* SSKeychain.m in Sources */,
-				6EA1EB881772ADAF0096F43A /* SSKeychainQuery.m in Sources */,
 				6EA1EB8E1772ADB70096F43A /* SVProgressHUD.m in Sources */,
 				6E80F8D7178FAA54006D8D90 /* LogInViewController.m in Sources */,
 				6E785B04179D940200A363D9 /* InstagramClient.m in Sources */,
@@ -5385,6 +5390,9 @@
 				6E0D5FA617A0BB6800389771 /* StreamViewController.m in Sources */,
 				6EE0ADA417AA189900AB96FD /* Lockbox.m in Sources */,
 				6E8AA7E417ACA24600146123 /* TwitterClient.m in Sources */,
+				ACE5A2BC17AF1E15000D018C /* AppData.m in Sources */,
+				ACB2998917AF676400D9FD38 /* YIPopupTextView.m in Sources */,
+				ACB2998B17AF676400D9FD38 /* YISSTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5405,6 +5413,9 @@
 				6EA38D79179DDF04005FA063 /* ImageCell.m in Sources */,
 				6E0D5FA317A0B69200389771 /* MainViewController.m in Sources */,
 				6EE0ADA517AA189900AB96FD /* Lockbox.m in Sources */,
+				ACE5A2BD17AF1E15000D018C /* AppData.m in Sources */,
+				ACB2998A17AF676400D9FD38 /* YIPopupTextView.m in Sources */,
+				ACB2998C17AF676400D9FD38 /* YISSTextView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

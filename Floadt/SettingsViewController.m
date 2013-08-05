@@ -14,6 +14,9 @@
 #import "Imports.h"
 #import "InstagramClient.h"
 #import "TwitterClient.h"
+#import "AppData.h"
+#import "AFOAuth1Client.h"
+#import "AFNetworking.h"
 
 @implementation SettingsViewController
 
@@ -22,16 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage
-    //imageNamed:@"bgNoise.png"]]];
-    
-
-    
     UIButton *settingsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [settingsButton setTitle:@"" forState:UIControlStateNormal];
-    [settingsButton setBackgroundImage:[UIImage imageNamed:@"pen_usIMG.png"] forState:UIControlStateNormal];
-    [settingsButton setBackgroundImage:[UIImage imageNamed:@"pen_sIMG.png"] forState:UIControlStateHighlighted];
+    [settingsButton setBackgroundImage:[UIImage imageNamed:@"settingsButton.png"] forState:UIControlStateNormal];
+    [settingsButton setBackgroundImage:[UIImage imageNamed:@"settingsButton_s.png"] forState:UIControlStateHighlighted];
     [settingsButton addTarget:self action:@selector(didTapSettingsButton:) forControlEvents:UIControlEventTouchUpInside];
     settingsButton.frame = CGRectMake(0.0f, 0.0f, 30.0f, 30.0f);
     UIBarButtonItem *settingsButtonItem = [[UIBarButtonItem alloc] initWithCustomView:settingsButton];
@@ -119,38 +117,45 @@
     
 }
 
-- (void)authenticateWithTwitter {
-    
-   // NSString *callbackUrl = @"floadt://instagram_callback";
-    
-    [[TwitterClient sharedClient] authenticateWithOAuth:TWITTER_OAUTH];
-}
 
 
 - (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
 {
-    NSString *InstaToken = [[InstagramClient sharedClient] accessToken];
+    AppData *data = [AppData sharedManager];
     
     if (idx==0) {
         
-    [self authenticateWithTwitter];
+        self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/"] key:@"4oFCF0AjP4PQDUaCh5RQ" secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
+        
+        [self.twitterClient authorizeUsingOAuthWithRequestTokenPath:@"oauth/request_token" userAuthorizationPath:@"oauth/authorize" callbackURL:[NSURL URLWithString:@"floadt://success"] accessTokenPath:@"oauth/access_token" accessMethod:@"POST" scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
+            [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+            [self.twitterClient getPath:@"1/statuses/user_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                NSArray *responseArray = (NSArray *)responseObject;
+                [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                    NSLog(@"Success: %@", obj);
+                }];
+            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                NSLog(@"Error: %@", error);
+            }];
+        } failure:^(NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        
+
         
     }else if (idx == 1){
         
         
     }else if (idx == 2){
         
-        if (InstaToken == nil) {
-            
-           [self authenticateWithInstagram];
-            
+        
+        if (data.instagramActive) {
+              RNBlurModalView *modal = [[RNBlurModalView alloc]initWithViewController:self title:@"Sorry.." message:@"Instagram is Already Logged In!"];
+                [modal show];
         }else{
-            
-            RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:@"Sorry.." message:@"Instagram is Already Logged In!"];
-            [modal show];
-            
-        }
-    
+           [self authenticateWithInstagram];
+        } 
+        
     }else if (idx == 3){
         
     }else{

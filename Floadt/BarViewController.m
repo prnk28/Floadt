@@ -114,6 +114,22 @@
 
 }
 
+-(IBAction)didTapTwitterAV:(id)sender {
+    NSLog(@"Twitter");
+}
+
+-(IBAction)didTapFacebookAV:(id)sender {
+    NSLog(@"Facebook");
+}
+
+-(IBAction)didTapInstagramAV:(id)sender {
+    NSLog(@"Instagram");
+}
+
+-(IBAction)didTapGoogleAV:(id)sender {
+    NSLog(@"Google");
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
