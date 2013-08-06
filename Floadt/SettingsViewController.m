@@ -125,23 +125,10 @@
     
     if (idx==0) {
         
-        self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/"] key:@"4oFCF0AjP4PQDUaCh5RQ" secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
+        AFOAuth1Client *twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://twitter.com/oauth/"] key:@"..." secret:@"..."] ;
         
-        [self.twitterClient authorizeUsingOAuthWithRequestTokenPath:@"oauth/request_token" userAuthorizationPath:@"oauth/authorize" callbackURL:[NSURL URLWithString:@"floadt://success"] accessTokenPath:@"oauth/access_token" accessMethod:@"POST" scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
-            [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-            [self.twitterClient getPath:@"1/statuses/user_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSArray *responseArray = (NSArray *)responseObject;
-                [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    NSLog(@"Success: %@", obj);
-                }];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                NSLog(@"Error: %@", error);
-            }];
-        } failure:^(NSError *error) {
-            NSLog(@"Error: %@", error);
-        }];
-        
-
+        // Your application will be sent to the background until the user authenticates, and then the app will be brought back using the callback URL
+  
         
     }else if (idx == 1){
         
