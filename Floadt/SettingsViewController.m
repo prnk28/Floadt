@@ -125,12 +125,7 @@
     
     if (idx==0) {
         
-<<<<<<< HEAD
-        AFOAuth1Client *twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://twitter.com/oauth/"] key:@"..." secret:@"..."] ;
-        
-        // Your application will be sent to the background until the user authenticates, and then the app will be brought back using the callback URL
-  
-=======
+
         self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/"]
                                                                  key:@"4oFCF0AjP4PQDUaCh5RQ"
                                                               secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
@@ -159,8 +154,6 @@
                                                             } failure:^(NSError *error) {
                                                                 NSLog(@"Error: %@", error);
                                                             }];
-
->>>>>>> 2155048b20cba2e3e973cb88a1711be0215092f2
         
     }else if (idx == 1){
         
