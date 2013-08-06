@@ -26,7 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    UIImage *patternImage = [UIImage imageNamed:@"bgNoise"];
+    self.collectionView.backgroundColor = [UIColor colorWithPatternImage:patternImage];
+    
     [self refreshInstagram];
     
     self.photosArray = [NSMutableArray new];
