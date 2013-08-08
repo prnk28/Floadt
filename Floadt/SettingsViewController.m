@@ -121,7 +121,6 @@
 
 - (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
 {
-    AppData *data = [AppData sharedManager];
     
     if (idx==0) {
         
@@ -160,13 +159,8 @@
         
     }else if (idx == 2){
         
-        
-        if (data.instagramActive) {
-              RNBlurModalView *modal = [[RNBlurModalView alloc]initWithViewController:self title:@"Sorry.." message:@"Instagram is Already Logged In!"];
-                [modal show];
-        }else{
            [self authenticateWithInstagram];
-        } 
+        
         
     }else if (idx == 3){
         

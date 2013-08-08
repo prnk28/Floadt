@@ -7,7 +7,6 @@
 //
 #define INSTAGRAM_CLIENT_ID @"88b3fb2cd93c4aacb053b44b35b86187"
 #import "Lockbox.h"
-
 #import "StreamViewController.h"
 #import "InstagramClient.h"
 #import "ImageCell.h"
@@ -26,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    
     
     UIImage *patternImage = [UIImage imageNamed:@"bgNoise"];
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:patternImage];
@@ -74,7 +75,7 @@
     YIPopupTextView* popupTextView = [[YIPopupTextView alloc] initWithPlaceHolder:@"input here" maxCount:1000];
        popupTextView.caretShiftGestureEnabled = NO;   // default = NO
     popupTextView.inputAccessoryView = accessoryView;
-
+    popupTextView.keyboardAppearance = UIKeyboardAppearanceDefault;
     [popupTextView showInView:self.view];
 
     
@@ -148,9 +149,13 @@
 {
     NSDictionary *entry = [self entries][indexPath.row];
     NSDictionary *text = [self entries][indexPath.row];
+    NSString *user = entry[@"user"][@"full_name"];
+    NSString *caption = text[@"caption"][@"text"];
     
-    RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:[NSString stringWithFormat:@"%@",entry[@"user"][@"full_name"]] message:[NSString stringWithFormat:@"%@",text[@"caption"][@"text"]]];
-    [modal show];
+    if (caption != nil && entry != [NSNull null] && text != nil && caption != [NSNull null]) {
+        RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:user message:caption];
+        [modal show];
+    }
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -209,5 +214,28 @@
     
 }
 
+- (IBAction)cameraDown:(id)sender {
+    NSLog(@"Camera Down");
+}
+
+- (IBAction)googleDown:(id)sender {
+    //UIImage *newImage = [UIImage imageNamed:@"G+H"];
+    //[_google setBackgroundImage:newImage forState:UIControlStateNormal];
+    
+    
+
+}
+
+- (IBAction)facebookDown:(id)sender {
+}
+
+- (IBAction)instagramDown:(id)sender {
+}
+
+- (IBAction)twitterDown:(id)sender {
+}
+
+- (IBAction)linkedinDown:(id)sender {
+}
 @end
 
