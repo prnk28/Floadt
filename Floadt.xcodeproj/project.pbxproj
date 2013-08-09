@@ -1099,6 +1099,7 @@
 		ACB2998317AF66A300D9FD38 /* AccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB2998217AF66A300D9FD38 /* AccessoryView.xib */; };
 		ACE5A2BC17AF1E15000D018C /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A2BB17AF1E15000D018C /* AppData.m */; };
 		ACE5A2BD17AF1E15000D018C /* AppData.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE5A2BB17AF1E15000D018C /* AppData.m */; };
+		ACF483AC17B350E80080E81E /* JTOpenDoorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF483AB17B350E80080E81E /* JTOpenDoorViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1729,6 +1730,8 @@
 		ACB2998217AF66A300D9FD38 /* AccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessoryView.xib; sourceTree = "<group>"; };
 		ACE5A2BA17AF1E15000D018C /* AppData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppData.h; sourceTree = "<group>"; };
 		ACE5A2BB17AF1E15000D018C /* AppData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppData.m; sourceTree = "<group>"; };
+		ACF483AA17B350E80080E81E /* JTOpenDoorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTOpenDoorViewController.h; sourceTree = "<group>"; };
+		ACF483AB17B350E80080E81E /* JTOpenDoorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTOpenDoorViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1909,6 +1912,7 @@
 		6E26F2FC170149FE009489A8 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				ACF483A917B350E80080E81E /* JTOpenDoor */,
 				6E5E70DD17B0BF01003F39DB /* RNBlurView */,
 				6E5E70E017B0BF01003F39DB /* YIPopupView */,
 				6EA1EB891772ADB70096F43A /* SVProgressHUD */,
@@ -2679,6 +2683,16 @@
 				6E2451F01704B4BE002CF616 /* ViewControllers */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		ACF483A917B350E80080E81E /* JTOpenDoor */ = {
+			isa = PBXGroup;
+			children = (
+				ACF483AA17B350E80080E81E /* JTOpenDoorViewController.h */,
+				ACF483AB17B350E80080E81E /* JTOpenDoorViewController.m */,
+			);
+			name = JTOpenDoor;
+			path = External/JTOpenDoor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -3833,6 +3847,7 @@
 				6E5E70E517B0BF01003F39DB /* RNBlurModalView.m in Sources */,
 				6E5E70E717B0BF01003F39DB /* YIPopupTextView.m in Sources */,
 				6E5E70E917B0BF01003F39DB /* YISSTextView.m in Sources */,
+				ACF483AC17B350E80080E81E /* JTOpenDoorViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

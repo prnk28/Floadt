@@ -152,10 +152,13 @@
     NSString *user = entry[@"user"][@"full_name"];
     NSString *caption = text[@"caption"][@"text"];
     
-    if (caption != nil && entry != [NSNull null] && text != nil && caption != [NSNull null]) {
+    if (![user isEqual:[NSNull null]] && ![caption isEqual:[NSNull null]]){
         RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:user message:caption];
         [modal show];
+    }else{
+        NSLog(@"Fuck");
     }
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

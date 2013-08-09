@@ -12,7 +12,7 @@
 #import "AFOAuth1Client.h"
 #import "AFJSONRequestOperation.h"
 #import "Imports.h"
-
+#import "JTOpenDoorViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate,KiipDelegate, AwesomeMenuDelegate>{
     
