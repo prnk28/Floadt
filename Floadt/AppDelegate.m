@@ -12,7 +12,7 @@
 #import "AppData.h"
 #import "UIViewController+JASidePanel.h"
 #import "AFOAuth1Client.h"
-
+#import "StackMob.h"
 @implementation AppDelegate
 
 
@@ -21,14 +21,14 @@
     // Override point for customization after application launch.
    //     CredentialStore *store = [[CredentialStore alloc] init];
     [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"navigationBar.png"] forBarMetrics:UIBarMetricsDefault];
-    
-    
     // Kiip Monetization
     Kiip *kiip = [[Kiip alloc] initWithAppKey:@"01007bf4acea9a6bb2af55812d670e13" andSecret:@"98580e21b66e08b2fcc8e371dbb1adaf"];
     kiip.delegate = self;
     [Kiip setSharedInstance:kiip];
-
     
+    SMClient *client;
+    client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"71f74f75-3998-4605-b994-2fb7e33ba409"];
+
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
         return YES;
     

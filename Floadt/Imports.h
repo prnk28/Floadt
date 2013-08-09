@@ -36,7 +36,6 @@
 #import "JASidePanelController.h"
 #import <Twitter/Twitter.h>
 #import "AFNetworking.h"
-#import "AFOAuth2Client.h"
 #import "AFOAuth1Client.h"
 #import "AwesomeMenu.h"
 #import "AwesomeMenuItem.h"
