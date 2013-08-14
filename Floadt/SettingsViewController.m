@@ -13,7 +13,6 @@
 #import "AwesomeMenu.h"
 #import "Imports.h"
 #import "InstagramClient.h"
-#import "TwitterClient.h"
 #import "AppData.h"
 #import "AFOAuth1Client.h"
 #import "AFNetworking.h"
@@ -124,10 +123,11 @@
     
     if (idx==0) {
         
-
         self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/"]
                                                                  key:@"4oFCF0AjP4PQDUaCh5RQ"
                                                               secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
+        
+        
         
         [self.twitterClient authorizeUsingOAuthWithRequestTokenPath:@"oauth/request_token"
                                               userAuthorizationPath:@"oauth/authorize"
@@ -136,33 +136,24 @@
                                                        accessMethod:@"POST"
                                                               scope:nil
                                                             success:^(AFOAuth1Token *accessToken, id response) {
-                                                                [self.twitterClient setAccessToken:accessToken];
-                                                                NSLog(@"Success: %@", accessToken);
+                                                                
+                                                                NSLog(@"Got it");
+                                                                
                                                                 [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-
+                                                                
                                                                 [self.twitterClient getPath:@"1.1/statuses/user_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                                    
                                                                     NSArray *responseArray = (NSArray *)responseObject;
-                                                                    
                                                                     [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                                                                        
                                                                         NSLog(@"Success: %@", obj);
-                                                                        
                                                                     }];
-                                                                    
-                                                                }                                               failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                                                                    
+                                                                } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                                     NSLog(@"Error: %@", error);
-                                                                    
                                                                 }];
                                                                 
-                                                                
-                                                                
                                                             } failure:^(NSError *error) {
-                                                                
                                                                 NSLog(@"Error: %@", error);
-                                                                
                                                             }];
+
         
     }else if (idx == 1){
         

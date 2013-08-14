@@ -13,6 +13,7 @@
 #import "InstagramClient.h"
 #import "ImageCell.h"
 #import "YIPopupTextView.h"
+#import "AFPhotoEditorController.h"
 
 @interface StreamViewController () <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableDictionary *timelineResponse;
@@ -217,16 +218,15 @@
     
 }
 
-- (IBAction)cameraDown:(id)sender {
+- (IBAction)cameraDown:(id)sender{
     NSLog(@"Camera Down");
+
+
 }
 
 - (IBAction)googleDown:(id)sender {
-    //UIImage *newImage = [UIImage imageNamed:@"G+H"];
-    //[_google setBackgroundImage:newImage forState:UIControlStateNormal];
-    
-    
-
+  //  UIImage *newImage = [UIImage imageNamed:@"G+H"];
+  //  [_google setBackgroundImage:newImage forState:UIControlStateNormal];
 }
 
 - (IBAction)facebookDown:(id)sender {

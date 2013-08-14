@@ -13,6 +13,7 @@
 #import "UIViewController+JASidePanel.h"
 #import "AFOAuth1Client.h"
 #import "StackMob.h"
+#import "AFOpenGLManager.h"
 @implementation AppDelegate
 
 
@@ -30,18 +31,38 @@
     client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"71f74f75-3998-4605-b994-2fb7e33ba409"];
 
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
+    [AFOpenGLManager beginOpenGLLoad];
+    NSMutableString *string1 = [NSMutableString stringWithString: @"The quick brown fox jumped"];
+    NSString *string2;
+    
+    string2 = [string1 substringWithRange: NSMakeRange (4, 5)];
+    
+    NSLog (@"string2 = %@", string2);
         return YES;
     
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
 {
+    NSString *daURL = [url absoluteString];
+    NSString *instagram;
+    NSString *twitter;
     
+    twitter = [daURL substringWithRange: NSMakeRange (0, 16)];
+    instagram = [daURL substringWithRange:NSMakeRange(0, 27)];
+    
+    if ([twitter isEqual: @"floadt://success"]) {
+        NSLog (@"Twitter = %@", twitter);
+        NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:[NSDictionary dictionaryWithObject:url forKey:kAFApplicationLaunchOptionsURLKey]];
+        [[NSNotificationCenter defaultCenter] postNotification:notification];
+        
+    }else{
     [[InstagramClient sharedClient] handleOAuthCallbackWithURL:url];
+    }
     return YES;
     
 }
-							
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
