@@ -11,9 +11,11 @@
 
 #import "InstagramClient.h"
 #import "Lockbox.h"
+#import "StackMob.h"
 
 @interface InstagramClient ()
 @property (nonatomic, copy) NSString *accessToken;
+
 @end
 
 @implementation InstagramClient
