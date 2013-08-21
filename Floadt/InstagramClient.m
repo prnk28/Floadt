@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Fickle Bits. All rights reserved.
 //
 
-#define kAccessTokenInstagram    @"Token"
+#define kAccessTokenInstagram    @""
 #define INSTAGRAM_AUTH_URL_FORMAT @"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token"
 
 #import "InstagramClient.h"
@@ -60,6 +60,7 @@
                                  NSRange accessTokenRange = [result rangeAtIndex:1];
                                  NSString *token = [input substringWithRange:accessTokenRange];
                                  NSLog(@"Access Token: %@", token);
+                                 [[User data]setInstagramLogged:YES];
                                  [Lockbox setString:token forKey:kAccessTokenInstagram];
                              }
                          }];

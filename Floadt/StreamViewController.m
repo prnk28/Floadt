@@ -14,11 +14,16 @@
 #import "ImageCell.h"
 #import "YIPopupTextView.h"
 #import "AFPhotoEditorController.h"
+#import "TwitterCell.h"
+#import "TwitterClient.h"
 
 @interface StreamViewController () <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 @property (nonatomic, strong) NSMutableDictionary *timelineResponse;
 @property (nonatomic, strong) NSMutableArray *photosArray;
+@property (nonatomic, strong) NSMutableDictionary *twitterResponse;
+@property (nonatomic, strong) NSMutableArray *tweetsArray;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic,strong)UIImage *imageForPost;
 
 @end
 
@@ -26,8 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    [self setAccessoryViewIcons];
     
     UIImage *patternImage = [UIImage imageNamed:@"bgNoise"];
     self.collectionView.backgroundColor = [UIColor colorWithPatternImage:patternImage];
@@ -69,6 +73,49 @@
     [self.collectionView reloadData];
 }
 
+-(void)setAccessoryViewIcons{
+    BOOL instagramLog = [[User data]returnInstagramState];
+    BOOL googleLog = [[User data] returnGoogleState];
+    BOOL facebookLog = [[User data] returnFacebookState];
+    BOOL twitterLog = [[User data] returnTwitterState];
+    BOOL linkedinLog = [[User data] returnLinkedinState];
+    
+    if (!instagramLog) {
+        UIImage *instagramInactive = [UIImage imageNamed:@"InstagramInactive.png"];
+        [self.instagram setBackgroundImage:instagramInactive forState:UIControlStateNormal];
+    }
+    if (!googleLog) {
+        UIImage *googleInactive = [UIImage imageNamed:@"GoogleInactive.png"];
+        [self.google setBackgroundImage:googleInactive forState:UIControlStateNormal];
+    }
+    if (!facebookLog) {
+        
+    }
+    if (!googleLog) {
+        
+    }
+    if (!facebookLog) {
+        
+    }
+    if (!twitterLog) {
+        
+    }
+    if (!linkedinLog) {
+        
+    }
+}
+
+-(void)displayEditorForImage:(UIImage *)imageToEdit
+
+{
+    
+    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:imageToEdit];
+    
+    [editorController setDelegate:self];
+    
+    [self presentViewController:editorController animated:YES completion:nil];
+    
+}
 - (void)showPostView {
     
     UIView *accessoryView=[[[NSBundle mainBundle] loadNibNamed:@"AccessoryView" owner:self options:nil] lastObject];
@@ -139,7 +186,6 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     //int y = arc4random() % 200+50;
-    
 
     return CGSizeMake(150, 150);
 
@@ -148,18 +194,28 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *entry = [self entries][indexPath.row];
-    NSDictionary *text = [self entries][indexPath.row];
-    NSString *user = entry[@"user"][@"full_name"];
-    NSString *caption = text[@"caption"][@"text"];
-    
-    if (![user isEqual:[NSNull null]] && ![caption isEqual:[NSNull null]]){
-        RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:user message:caption];
-        [modal show];
+    if (indexPath.row % 2 == 0) {
+        NSDictionary *entry = [self entries][indexPath.row];
+        NSDictionary *text = [self entries][indexPath.row];
+        NSString *user = entry[@"user"][@"full_name"];
+        NSString *caption = text[@"caption"][@"text"];
+        
+        if (![user isEqual:[NSNull null]] && ![caption isEqual:[NSNull null]]){
+            RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:user message:caption];
+            [modal show];
+        }else{
+            NSLog(@"Didnt Work");
+        }
+        
     }else{
-        NSLog(@"Fuck");
+
+    RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:@"Twitter" message:@"Message"];
+            [modal show];
+
+        
     }
     
+
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
@@ -187,11 +243,22 @@
     ImageCell *cell = (ImageCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"imageCell"
                                                                              forIndexPath:indexPath];
     NSURL *url = [self imageUrlForEntryAtIndexPath:indexPath];
-    NSLog(@"%@", url);
+    //NSLog(@"%@", url);
     [cell.imageView setImageWithURL:url];
     cell.backgroundColor = [UIColor whiteColor];
     
-    return cell;
+    TwitterCell *tweetCell = (TwitterCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"twitterCell" forIndexPath:indexPath];
+    
+    if(indexPath.row % 2 == 0){
+        return cell;
+    }else{
+        return tweetCell;
+        
+    }
+    
+   
+    
+    
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
@@ -218,8 +285,35 @@
     
 }
 
+- (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
+
+{
+    NSLog(@"Image Retrieved");
+    
+    image = self.imageForPost;
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
+- (void)photoEditorCanceled:(AFPhotoEditorController *)editor
+
+{
+ 
+    NSLog(@"Editor Dissmissed");
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
+
 - (IBAction)cameraDown:(id)sender{
     NSLog(@"Camera Down");
+    
+    UIImage *image = [UIImage imageNamed:@"01-refresh.png"];
+    [self displayEditorForImage:image];
 
 
 }
@@ -227,18 +321,24 @@
 - (IBAction)googleDown:(id)sender {
   //  UIImage *newImage = [UIImage imageNamed:@"G+H"];
   //  [_google setBackgroundImage:newImage forState:UIControlStateNormal];
+    NSLog(@"Google Down");
 }
 
 - (IBAction)facebookDown:(id)sender {
+    NSLog(@"Facebook Down");
 }
 
 - (IBAction)instagramDown:(id)sender {
+    NSLog(@"Instagram Down");
 }
 
 - (IBAction)twitterDown:(id)sender {
+    NSLog(@"Twitter Down");
+    [[TwitterClient sharedClient] getTimeline];
 }
 
 - (IBAction)linkedinDown:(id)sender {
+    NSLog(@"LinkedIn Down");
 }
 @end
 

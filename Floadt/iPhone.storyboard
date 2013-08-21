@@ -30,10 +30,10 @@
             </objects>
             <point key="canvasLocation" x="-993" y="-188"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings Controller2-->
         <scene sceneID="rdn-PO-QEg">
             <objects>
-                <viewController storyboardIdentifier="settingsPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cZb-qG-V8s" customClass="SettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingsPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cZb-qG-V8s" customClass="SettingsController2" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="L6g-tZ-x9t">
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,24 +47,24 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lJA-Fr-6ek">
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="toP-8N-fnV">
                                 <items>
-                                    <navigationItem id="rUR-fR-McY"/>
+                                    <navigationItem id="urA-mF-H0X"/>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lJA-Fr-6ek" firstAttribute="leading" secondItem="L6g-tZ-x9t" secondAttribute="leading" type="default" id="5WJ-mP-tTx"/>
+                            <constraint firstItem="toP-8N-fnV" firstAttribute="leading" secondItem="L6g-tZ-x9t" secondAttribute="leading" type="default" id="3nn-tO-q8p"/>
                             <constraint firstItem="reW-Nf-vaK" firstAttribute="leading" secondItem="L6g-tZ-x9t" secondAttribute="leading" constant="114" id="CRy-I8-b2f"/>
-                            <constraint firstItem="lJA-Fr-6ek" firstAttribute="trailing" secondItem="L6g-tZ-x9t" secondAttribute="trailing" type="default" id="IaF-iJ-JVZ"/>
                             <constraint firstItem="reW-Nf-vaK" firstAttribute="top" secondItem="L6g-tZ-x9t" secondAttribute="top" constant="38" id="Ufm-pc-5XC"/>
-                            <constraint firstItem="lJA-Fr-6ek" firstAttribute="top" secondItem="L6g-tZ-x9t" secondAttribute="top" type="default" id="zRZ-6T-IPR"/>
+                            <constraint firstItem="toP-8N-fnV" firstAttribute="trailing" secondItem="L6g-tZ-x9t" secondAttribute="trailing" type="default" id="YQ8-Lp-QNf"/>
+                            <constraint firstItem="toP-8N-fnV" firstAttribute="top" secondItem="L6g-tZ-x9t" secondAttribute="top" type="default" id="lpI-h1-CDM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="v2V-3Q-IDw"/>
                     <connections>
-                        <outlet property="navBar" destination="rUR-fR-McY" id="1Bg-Zn-KjO"/>
+                        <outlet property="navBar" destination="urA-mF-H0X" id="G10-4h-EFu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uBV-R3-ezT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -107,7 +107,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.25641940662472984" green="0.63078305379491306" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.9801151476533585" green="1" blue="0.46450164522137549" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="ihZ-8c-r2g" firstAttribute="centerX" secondItem="tex-4V-zcD" secondAttribute="centerX" type="default" id="PjX-9O-c3Y"/>
                                             <constraint firstItem="ihZ-8c-r2g" firstAttribute="top" secondItem="tex-4V-zcD" secondAttribute="top" constant="7" id="SMa-zg-a7y"/>
@@ -115,6 +115,32 @@
                                         <size key="customSize" width="150" height="150"/>
                                         <connections>
                                             <outlet property="imageView" destination="ihZ-8c-r2g" id="TrJ-NI-WKF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="twitterCell" reuseIdentifier="twitterCell" id="hQw-t5-eOM" customClass="TwitterCell">
+                                        <rect key="frame" x="162" y="0.0" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMU-jO-R2L">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.24978400950267554" green="0.45687854447792808" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="gMU-jO-R2L" secondAttribute="bottom" constant="20" type="default" id="1OY-KA-MJN"/>
+                                            <constraint firstItem="gMU-jO-R2L" firstAttribute="leading" secondItem="hQw-t5-eOM" secondAttribute="leading" constant="20" type="default" id="7yw-hF-vmC"/>
+                                            <constraint firstItem="gMU-jO-R2L" firstAttribute="top" secondItem="hQw-t5-eOM" secondAttribute="top" constant="20" type="default" id="WAN-a2-Mt3"/>
+                                            <constraint firstAttribute="trailing" secondItem="gMU-jO-R2L" secondAttribute="trailing" constant="20" type="default" id="cs1-GJ-HFP"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="textView" destination="gMU-jO-R2L" id="Tzk-Si-AV8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -148,6 +174,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UUW-Ao-t5M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="61" y="-812"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="925-22-XxB">
+            <objects>
+                <viewController storyboardIdentifier="settingsViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="seP-G0-6nv" customClass="SettingsViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ncQ-QJ-OiD">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IDw-dP-1OZ">
+                                <items>
+                                    <navigationItem id="42R-Xa-mkm"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="IDw-dP-1OZ" firstAttribute="top" secondItem="ncQ-QJ-OiD" secondAttribute="top" type="default" id="W4F-c8-hxT"/>
+                            <constraint firstItem="IDw-dP-1OZ" firstAttribute="trailing" secondItem="ncQ-QJ-OiD" secondAttribute="trailing" type="default" id="b15-Hb-HO5"/>
+                            <constraint firstItem="IDw-dP-1OZ" firstAttribute="leading" secondItem="ncQ-QJ-OiD" secondAttribute="leading" type="default" id="gcW-2I-Npv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navBar" destination="42R-Xa-mkm" id="dSR-6V-Jyc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xLg-Hg-Uea" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-441" y="-812"/>
         </scene>
         <!--Bar View Controller-->
         <scene sceneID="em5-2X-z3e">
@@ -286,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TKM-nZ-USY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-455" y="-175"/>
+            <point key="canvasLocation" x="-441" y="177"/>
         </scene>
     </scenes>
     <classes>
@@ -325,6 +380,13 @@
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
+        <class className="SettingsController2" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsController2.h"/>
+            <relationships>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
         <class className="SettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SettingsViewController.h"/>
             <relationships>
@@ -336,8 +398,25 @@
         <class className="StreamViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/StreamViewController.h"/>
             <relationships>
+                <relationship kind="action" name="cameraDown:"/>
+                <relationship kind="action" name="facebookDown:"/>
+                <relationship kind="action" name="googleDown:"/>
+                <relationship kind="action" name="instagramDown:"/>
+                <relationship kind="action" name="linkedinDown:"/>
+                <relationship kind="action" name="twitterDown:"/>
                 <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
+                <relationship kind="outlet" name="facebook" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="google" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="instagram" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="linkedin" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="navBar" candidateClass="UINavigationItem"/>
+                <relationship kind="outlet" name="twitter" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+        <class className="TwitterCell" superclassName="UICollectionViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwitterCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="textView" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="UICollectionReusableView" superclassName="UIView">
