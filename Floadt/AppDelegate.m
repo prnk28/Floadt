@@ -14,6 +14,7 @@
 #import "StackMob.h"
 #import "AFOpenGLManager.h"
 #import "User.h"
+#import "DefaultViewController.h"
 @implementation AppDelegate
 
 
@@ -31,12 +32,16 @@
     client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"71f74f75-3998-4605-b994-2fb7e33ba409"];
     
     BOOL returnAllOff = [[User data] returnAllOff];
-    
+    /*
     if (returnAllOff) {
+
+        self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         
-        
+    DefaultViewController *viewController = [[DefaultViewController alloc] init]; 
+        self.window.rootViewController = viewController;
+        [self.window makeKeyAndVisible];
     }
-    
+    */
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
     [AFOpenGLManager beginOpenGLLoad];
     

@@ -1068,6 +1068,30 @@
 		6EA5FEDC17B4969000DBB729 /* AFOAuth1Client.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA5FEDA17B4969000DBB729 /* AFOAuth1Client.m */; };
 		6EB331FA177109DE0034E7E2 /* AwesomeMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB331EC177109DE0034E7E2 /* AwesomeMenu.m */; };
 		6EB331FB177109DE0034E7E2 /* AwesomeMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB331EE177109DE0034E7E2 /* AwesomeMenuItem.m */; };
+		6EB7180317C7203900241618 /* RSLoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB7180217C7203900241618 /* RSLoadingIndicator.m */; };
+		6EB7180417C7203900241618 /* RSLoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB7180217C7203900241618 /* RSLoadingIndicator.m */; };
+		6EB7180717C72AE000241618 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7180517C72AE000241618 /* Login.png */; };
+		6EB7180817C72AE000241618 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7180517C72AE000241618 /* Login.png */; };
+		6EB7180917C72AE000241618 /* Register.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7180617C72AE000241618 /* Register.png */; };
+		6EB7180A17C72AE000241618 /* Register.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7180617C72AE000241618 /* Register.png */; };
+		6EB7180C17C72C2A00241618 /* pixel-art-27.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7180B17C72C2A00241618 /* pixel-art-27.jpg */; };
+		6EB7180D17C72C2A00241618 /* pixel-art-27.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7180B17C72C2A00241618 /* pixel-art-27.jpg */; };
+		6EB7180F17C72C9A00241618 /* floadtLogoS.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7180E17C72C9A00241618 /* floadtLogoS.png */; };
+		6EB7181017C72C9A00241618 /* floadtLogoS.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7180E17C72C9A00241618 /* floadtLogoS.png */; };
+		6EB7181717C7308800241618 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7181217C7308800241618 /* Login.png */; };
+		6EB7181817C7308800241618 /* Login.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7181217C7308800241618 /* Login.png */; };
+		6EB7181917C7308800241618 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7181317C7308800241618 /* OK.png */; };
+		6EB7181A17C7308800241618 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7181317C7308800241618 /* OK.png */; };
+		6EB7181B17C7308800241618 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7181417C7308800241618 /* password.png */; };
+		6EB7181C17C7308800241618 /* password.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7181417C7308800241618 /* password.png */; };
+		6EB7181D17C7308800241618 /* Register.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7181517C7308800241618 /* Register.png */; };
+		6EB7181E17C7308800241618 /* Register.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7181517C7308800241618 /* Register.png */; };
+		6EB7181F17C7308800241618 /* Username.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7181617C7308800241618 /* Username.png */; };
+		6EB7182017C7308800241618 /* Username.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7181617C7308800241618 /* Username.png */; };
+		6EB7182217C7312300241618 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7182117C7312300241618 /* Blue.png */; };
+		6EB7182317C7312300241618 /* Blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6EB7182117C7312300241618 /* Blue.png */; };
+		6EB7182817C7324700241618 /* DefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB7182717C7324700241618 /* DefaultViewController.m */; };
+		6EB7182917C7324700241618 /* DefaultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EB7182717C7324700241618 /* DefaultViewController.m */; };
 		6EBBA38D172245B8000EFF73 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBBA38C172245B8000EFF73 /* ImageIO.framework */; };
 		6EBBA38F172245CE000EFF73 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EBBA38E172245CE000EFF73 /* MapKit.framework */; };
 		6EDE00AE1708CDDF00C68317 /* KiipSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EDE00AB1708CDDF00C68317 /* KiipSDK.framework */; };
@@ -1782,6 +1806,20 @@
 		6EB331EC177109DE0034E7E2 /* AwesomeMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenu.m; sourceTree = "<group>"; };
 		6EB331ED177109DE0034E7E2 /* AwesomeMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AwesomeMenuItem.h; sourceTree = "<group>"; };
 		6EB331EE177109DE0034E7E2 /* AwesomeMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AwesomeMenuItem.m; sourceTree = "<group>"; };
+		6EB7180117C7203900241618 /* RSLoadingIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSLoadingIndicator.h; sourceTree = "<group>"; };
+		6EB7180217C7203900241618 /* RSLoadingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSLoadingIndicator.m; sourceTree = "<group>"; };
+		6EB7180517C72AE000241618 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
+		6EB7180617C72AE000241618 /* Register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Register.png; sourceTree = "<group>"; };
+		6EB7180B17C72C2A00241618 /* pixel-art-27.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "pixel-art-27.jpg"; sourceTree = "<group>"; };
+		6EB7180E17C72C9A00241618 /* floadtLogoS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = floadtLogoS.png; sourceTree = "<group>"; };
+		6EB7181217C7308800241618 /* Login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login.png; sourceTree = "<group>"; };
+		6EB7181317C7308800241618 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
+		6EB7181417C7308800241618 /* password.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = password.png; sourceTree = "<group>"; };
+		6EB7181517C7308800241618 /* Register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Register.png; sourceTree = "<group>"; };
+		6EB7181617C7308800241618 /* Username.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Username.png; sourceTree = "<group>"; };
+		6EB7182117C7312300241618 /* Blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Blue.png; sourceTree = "<group>"; };
+		6EB7182617C7324700241618 /* DefaultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultViewController.h; sourceTree = "<group>"; };
+		6EB7182717C7324700241618 /* DefaultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultViewController.m; sourceTree = "<group>"; };
 		6EBBA38C172245B8000EFF73 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		6EBBA38E172245CE000EFF73 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		6EDE00AB1708CDDF00C68317 /* KiipSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KiipSDK.framework; path = External/KiipSDK.framework; sourceTree = "<group>"; };
@@ -1892,18 +1930,8 @@
 		6E2451F01704B4BE002CF616 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				6E20DD7B1702961100EE64A0 /* BarViewController.h */,
-				6E20DD7C1702961100EE64A0 /* BarViewController.m */,
-				6E0D5F9E17A0B69100389771 /* MainViewController.h */,
-				6E0D5F9F17A0B69100389771 /* MainViewController.m */,
-				6EEA685B1709190C0069B447 /* SettingsViewController.h */,
-				6EEA685C1709190C0069B447 /* SettingsViewController.m */,
-				ACC3757A17C472B500A98933 /* SettingsController2.h */,
-				ACC3757B17C472B500A98933 /* SettingsController2.m */,
-				6E0D5FA417A0BB6800389771 /* StreamViewController.h */,
-				6E0D5FA517A0BB6800389771 /* StreamViewController.m */,
-				AC34C98E17C4762900B3D230 /* UserViewController.h */,
-				AC34C98F17C4762900B3D230 /* UserViewController.m */,
+				6EB7182517C7321600241618 /* Pre Activation */,
+				6EB7182417C7320400241618 /* After Activation */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -2013,6 +2041,8 @@
 		6E26F25E1701495B009489A8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6EB7181117C7308800241618 /* Register Page */,
+				6EB7180B17C72C2A00241618 /* pixel-art-27.jpg */,
 				ACC3753217C466EC00A98933 /* AccessoryView */,
 				6E5E6B0617B0BEEA003F39DB /* AweosomeMenu */,
 				6E5E6B1B17B0BEEA003F39DB /* Custom */,
@@ -2026,6 +2056,7 @@
 		6E26F2FC170149FE009489A8 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				6EB7180017C7203900241618 /* Loading Indicator */,
 				ACC3756917C4728000A98933 /* FlatUI */,
 				ACC3756017C4721700A98933 /* RCSwitch */,
 				6E354C3E17BB2EC100E704A2 /* AviarySDK */,
@@ -2141,6 +2172,7 @@
 		6E5E6B1B17B0BEEA003F39DB /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				6EB7180E17C72C9A00241618 /* floadtLogoS.png */,
 				6E5E6B1C17B0BEEA003F39DB /* add.png */,
 				6E5E6B1D17B0BEEA003F39DB /* add@2x.png */,
 				6E5E6B1E17B0BEEA003F39DB /* arrow.png */,
@@ -2185,6 +2217,8 @@
 		6E5E6B3317B0BEEA003F39DB /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				6EB7180517C72AE000241618 /* Login.png */,
+				6EB7180617C72AE000241618 /* Register.png */,
 				6E5E6B3417B0BEEA003F39DB /* icons */,
 				6E5E6CC517B0BEEC003F39DB /* mini-icons */,
 			);
@@ -2839,6 +2873,56 @@
 			);
 			name = AwesomeMenu;
 			path = External/AwesomeMenu;
+			sourceTree = "<group>";
+		};
+		6EB7180017C7203900241618 /* Loading Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				6EB7180117C7203900241618 /* RSLoadingIndicator.h */,
+				6EB7180217C7203900241618 /* RSLoadingIndicator.m */,
+			);
+			path = "Loading Indicator";
+			sourceTree = "<group>";
+		};
+		6EB7181117C7308800241618 /* Register Page */ = {
+			isa = PBXGroup;
+			children = (
+				6EB7182117C7312300241618 /* Blue.png */,
+				6EB7181217C7308800241618 /* Login.png */,
+				6EB7181317C7308800241618 /* OK.png */,
+				6EB7181417C7308800241618 /* password.png */,
+				6EB7181517C7308800241618 /* Register.png */,
+				6EB7181617C7308800241618 /* Username.png */,
+			);
+			path = "Register Page";
+			sourceTree = "<group>";
+		};
+		6EB7182417C7320400241618 /* After Activation */ = {
+			isa = PBXGroup;
+			children = (
+				6E20DD7B1702961100EE64A0 /* BarViewController.h */,
+				6E20DD7C1702961100EE64A0 /* BarViewController.m */,
+				6E0D5F9E17A0B69100389771 /* MainViewController.h */,
+				6E0D5F9F17A0B69100389771 /* MainViewController.m */,
+				6EEA685B1709190C0069B447 /* SettingsViewController.h */,
+				6EEA685C1709190C0069B447 /* SettingsViewController.m */,
+				ACC3757A17C472B500A98933 /* SettingsController2.h */,
+				ACC3757B17C472B500A98933 /* SettingsController2.m */,
+				6E0D5FA417A0BB6800389771 /* StreamViewController.h */,
+				6E0D5FA517A0BB6800389771 /* StreamViewController.m */,
+				AC34C98E17C4762900B3D230 /* UserViewController.h */,
+				AC34C98F17C4762900B3D230 /* UserViewController.m */,
+			);
+			name = "After Activation";
+			sourceTree = "<group>";
+		};
+		6EB7182517C7321600241618 /* Pre Activation */ = {
+			isa = PBXGroup;
+			children = (
+				6EB7182617C7324700241618 /* DefaultViewController.h */,
+				6EB7182717C7324700241618 /* DefaultViewController.m */,
+			);
+			name = "Pre Activation";
 			sourceTree = "<group>";
 		};
 		6EE0ADA117AA128B00AB96FD /* UI */ = {
@@ -3510,6 +3594,16 @@
 				ACC3755A17C466EC00A98933 /* Twitter.png in Resources */,
 				ACC3755C17C466EC00A98933 /* TwitterH.png in Resources */,
 				ACC3755E17C466EC00A98933 /* TwitterInactive.png in Resources */,
+				6EB7180717C72AE000241618 /* Login.png in Resources */,
+				6EB7180917C72AE000241618 /* Register.png in Resources */,
+				6EB7180C17C72C2A00241618 /* pixel-art-27.jpg in Resources */,
+				6EB7180F17C72C9A00241618 /* floadtLogoS.png in Resources */,
+				6EB7181717C7308800241618 /* Login.png in Resources */,
+				6EB7181917C7308800241618 /* OK.png in Resources */,
+				6EB7181B17C7308800241618 /* password.png in Resources */,
+				6EB7181D17C7308800241618 /* Register.png in Resources */,
+				6EB7181F17C7308800241618 /* Username.png in Resources */,
+				6EB7182217C7312300241618 /* Blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4027,6 +4121,16 @@
 				ACC3755B17C466EC00A98933 /* Twitter.png in Resources */,
 				ACC3755D17C466EC00A98933 /* TwitterH.png in Resources */,
 				ACC3755F17C466EC00A98933 /* TwitterInactive.png in Resources */,
+				6EB7180817C72AE000241618 /* Login.png in Resources */,
+				6EB7180A17C72AE000241618 /* Register.png in Resources */,
+				6EB7180D17C72C2A00241618 /* pixel-art-27.jpg in Resources */,
+				6EB7181017C72C9A00241618 /* floadtLogoS.png in Resources */,
+				6EB7181817C7308800241618 /* Login.png in Resources */,
+				6EB7181A17C7308800241618 /* OK.png in Resources */,
+				6EB7181C17C7308800241618 /* password.png in Resources */,
+				6EB7181E17C7308800241618 /* Register.png in Resources */,
+				6EB7182017C7308800241618 /* Username.png in Resources */,
+				6EB7182317C7312300241618 /* Blue.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4090,6 +4194,8 @@
 				ACC3757817C4729500A98933 /* StoryboardInfo.m in Sources */,
 				ACC3757C17C472B500A98933 /* SettingsController2.m in Sources */,
 				AC34C99017C4762900B3D230 /* UserViewController.m in Sources */,
+				6EB7180317C7203900241618 /* RSLoadingIndicator.m in Sources */,
+				6EB7182817C7324700241618 /* DefaultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4123,6 +4229,8 @@
 				ACC3757D17C472B500A98933 /* SettingsController2.m in Sources */,
 				AC34C99117C4762900B3D230 /* UserViewController.m in Sources */,
 				AC8C487717C5BB2900458B91 /* StreamViewController.m in Sources */,
+				6EB7180417C7203900241618 /* RSLoadingIndicator.m in Sources */,
+				6EB7182917C7324700241618 /* DefaultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

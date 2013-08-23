@@ -12,11 +12,17 @@
 #import <UIKit/UIKit.h>
 #import "AFPhotoEditorController.h"
 
-@interface StreamViewController : UIViewController<AFPhotoEditorControllerDelegate> {
+@interface StreamViewController : UIViewController<AFPhotoEditorControllerDelegate,UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
 
     
 }
-@property (readwrite,assign) int screenWidth;
+
+@property (nonatomic, strong) NSMutableDictionary *timelineResponse;
+@property (nonatomic, strong) NSMutableArray *photosArray;
+@property (nonatomic, strong) NSMutableDictionary *twitterResponse;
+@property (nonatomic, strong) NSMutableArray *tweetsArray;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (nonatomic,strong)UIImage *imageForPost;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (weak, nonatomic) IBOutlet UIButton *google;
 @property (weak, nonatomic) IBOutlet UIButton *facebook;

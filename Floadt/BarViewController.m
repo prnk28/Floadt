@@ -12,7 +12,7 @@
 #import "JASidePanelController.h"
 #import "UIViewController+JASidePanel.h"
 #import "StreamViewController.h"
-
+#import "DefaultViewController.h"
 
 
 @interface BarViewController ()
@@ -88,6 +88,11 @@
 
 - (IBAction)td2:(id)sender {
     NSLog(@"The Haunted BUTTON!");
+    UIViewController *viewController = [[DefaultViewController alloc] init];
+    
+    self.sidePanelController.centerPanel = viewController;
+    
+    [self.sidePanelController showCenterPanelAnimated:YES];
     
 }
 

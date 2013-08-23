@@ -26,7 +26,7 @@
         instagramLoggedIn = NO;
         twitterLoggedIn = NO;
         googleLoggedIn = NO;
-        facebookLoggedIn = YES;
+        facebookLoggedIn = NO;
         linkedinLoggedIn = NO;
 
     }
@@ -40,7 +40,7 @@
 
 -(BOOL)returnAllOff{
     if (!instagramLoggedIn && !twitterLoggedIn && !googleLoggedIn && !facebookLoggedIn && !linkedinLoggedIn) {
-        NSLog(@"All are off");
+        NSLog(@"No Networks Enabled");
         return YES;
     }else{
         NSLog(@"One or More Networks Enabled");

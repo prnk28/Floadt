@@ -6,26 +6,9 @@
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
 #define INSTAGRAM_CLIENT_ID @"88b3fb2cd93c4aacb053b44b35b86187"
-#import "Lockbox.h"
 #import "StreamViewController.h"
-#import "InstagramClient.h"
-#import "ImageCell.h"
-#import "InstagramClient.h"
-#import "ImageCell.h"
-#import "YIPopupTextView.h"
-#import "AFPhotoEditorController.h"
-#import "TwitterCell.h"
-#import "TwitterClient.h"
 
-@interface StreamViewController () <UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
-@property (nonatomic, strong) NSMutableDictionary *timelineResponse;
-@property (nonatomic, strong) NSMutableArray *photosArray;
-@property (nonatomic, strong) NSMutableDictionary *twitterResponse;
-@property (nonatomic, strong) NSMutableArray *tweetsArray;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic,strong)UIImage *imageForPost;
 
-@end
 
 @implementation StreamViewController
 
@@ -194,7 +177,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (indexPath.row % 2 == 0) {
+
         NSDictionary *entry = [self entries][indexPath.row];
         NSDictionary *text = [self entries][indexPath.row];
         NSString *user = entry[@"user"][@"full_name"];
@@ -207,14 +190,14 @@
             NSLog(@"Didnt Work");
         }
         
-    }else{
+
 
    // RNBlurModalView *modal = [[RNBlurModalView alloc]
    // initWithViewController:self title:@"Twitter" message:@"Message"];
    //     [modal show];
 
         
-    }
+    
     
 
 }
