@@ -100,7 +100,12 @@
 }
 
 - (IBAction)td5:(id)sender {
-
+    
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"settingsViewController"];
+    
+    self.sidePanelController.centerPanel = viewController;
+    
+    [self.sidePanelController showCenterPanelAnimated:YES];
     
 }
 

@@ -9,6 +9,7 @@
 #import "AFNetworking.h"
 #import "AFHTTPClient.h"
 #import "Lockbox.h"
+#import "User.h"
 
 @interface InstagramClient : AFHTTPClient
 

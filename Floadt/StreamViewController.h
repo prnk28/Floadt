@@ -10,8 +10,9 @@
 #import "AFOAuth1Client.h"
 #import "AFJSONRequestOperation.h"
 #import <UIKit/UIKit.h>
+#import "AFPhotoEditorController.h"
 
-@interface StreamViewController : UIViewController {
+@interface StreamViewController : UIViewController<AFPhotoEditorControllerDelegate> {
 
     
 }

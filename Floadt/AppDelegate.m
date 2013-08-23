@@ -9,11 +9,11 @@
 #import "AppDelegate.h"
 #import <KiipSDK/KiipSDK.h>
 #import "Imports.h"
-#import "AppData.h"
 #import "UIViewController+JASidePanel.h"
 #import "AFOAuth1Client.h"
 #import "StackMob.h"
 #import "AFOpenGLManager.h"
+#import "User.h"
 @implementation AppDelegate
 
 
@@ -29,17 +29,18 @@
     
     SMClient *client;
     client = [[SMClient alloc] initWithAPIVersion:@"0" publicKey:@"71f74f75-3998-4605-b994-2fb7e33ba409"];
-
+    
+    BOOL returnAllOff = [[User data] returnAllOff];
+    
+    if (returnAllOff) {
+        
+        
+    }
+    
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];
     [AFOpenGLManager beginOpenGLLoad];
-    NSMutableString *string1 = [NSMutableString stringWithString: @"The quick brown fox jumped"];
-    NSString *string2;
     
-    string2 = [string1 substringWithRange: NSMakeRange (4, 5)];
-    
-    NSLog (@"string2 = %@", string2);
-        return YES;
-    
+    return YES;
 }
 
 - (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url

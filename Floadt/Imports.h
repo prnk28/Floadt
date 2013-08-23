@@ -5,7 +5,13 @@
 //  Created by Pradyumn Nukala on 4/20/13.
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
-
+#import "AppDelegate.h"
+#import <KiipSDK/KiipSDK.h>
+#import "Imports.h"
+#import "UIViewController+JASidePanel.h"
+#import "AFOAuth1Client.h"
+#import "StackMob.h"
+#import "AFOpenGLManager.h"
 #import "InstagramClient.h"
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
@@ -13,6 +19,13 @@
 #import "UIViewController+JASidePanel.h"
 #import <KiipSDK/KiipSDK.h>
 #import "AppDelegate.h"
+#import <UIKit/UIKit.h>
+#import <KiipSDK/KiipSDK.h>
+#import "AwesomeMenu.h"
+#import "AFOAuth1Client.h"
+#import "AFJSONRequestOperation.h"
+#import "Imports.h"
+#import "JTOpenDoorViewController.h"
 #import <UIKit/UIKit.h>
 #import "AwesomeMenu.h"
 #import "JSFlatButton.h"
@@ -42,7 +55,6 @@
 #import "AFJSONRequestOperation.h"
 #import "RNBlurModalView.h"
 #import "SVProgressHUD.h"
-#import "LogInViewController.h"
 #import "MainViewController.h"
 #import "InstagramClient.h"
 
