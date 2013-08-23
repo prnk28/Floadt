@@ -1053,7 +1053,6 @@
 		6E785B04179D940200A363D9 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E785B03179D940200A363D9 /* InstagramClient.m */; };
 		6E7920B0176CC3CD00AB3877 /* Imports.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7920AF176CC3CD00AB3877 /* Imports.m */; };
 		6E7920B1176CC3CD00AB3877 /* Imports.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E7920AF176CC3CD00AB3877 /* Imports.m */; };
-		6E80F8D7178FAA54006D8D90 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E80F8D6178FAA54006D8D90 /* LogInViewController.m */; };
 		6EA1EB8D1772ADB70096F43A /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6EA1EB8A1772ADB70096F43A /* SVProgressHUD.bundle */; };
 		6EA1EB8E1772ADB70096F43A /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EA1EB8C1772ADB70096F43A /* SVProgressHUD.m */; };
 		6EA2D0F71704ED3F00BD46C0 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EA2D0F61704ED3F00BD46C0 /* CoreImage.framework */; };
@@ -1083,6 +1082,7 @@
 		AC34C99117C4762900B3D230 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34C98F17C4762900B3D230 /* UserViewController.m */; };
 		AC7DC35D17BF19EA00151A37 /* TwitterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7DC35C17BF19EA00151A37 /* TwitterCell.m */; };
 		AC7DC35E17BF19EA00151A37 /* TwitterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7DC35C17BF19EA00151A37 /* TwitterCell.m */; };
+		AC8C487717C5BB2900458B91 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5FA517A0BB6800389771 /* StreamViewController.m */; };
 		AC9D51A917BE9A910069BAAD /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9D51A817BE9A910069BAAD /* TwitterClient.m */; };
 		ACB2998317AF66A300D9FD38 /* AccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = ACB2998217AF66A300D9FD38 /* AccessoryView.xib */; };
 		ACC3753017C457FF00A98933 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC3752F17C457FF00A98933 /* User.m */; };
@@ -1714,8 +1714,6 @@
 		6E785B03179D940200A363D9 /* InstagramClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramClient.m; sourceTree = "<group>"; };
 		6E7920AE176CC3CD00AB3877 /* Imports.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Imports.h; sourceTree = "<group>"; };
 		6E7920AF176CC3CD00AB3877 /* Imports.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Imports.m; sourceTree = "<group>"; };
-		6E80F8D5178FAA54006D8D90 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
-		6E80F8D6178FAA54006D8D90 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
 		6EA1EB8A1772ADB70096F43A /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		6EA1EB8B1772ADB70096F43A /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		6EA1EB8C1772ADB70096F43A /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
@@ -1896,8 +1894,6 @@
 			children = (
 				6E20DD7B1702961100EE64A0 /* BarViewController.h */,
 				6E20DD7C1702961100EE64A0 /* BarViewController.m */,
-				6E80F8D5178FAA54006D8D90 /* LogInViewController.h */,
-				6E80F8D6178FAA54006D8D90 /* LogInViewController.m */,
 				6E0D5F9E17A0B69100389771 /* MainViewController.h */,
 				6E0D5F9F17A0B69100389771 /* MainViewController.m */,
 				6EEA685B1709190C0069B447 /* SettingsViewController.h */,
@@ -4073,7 +4069,6 @@
 				6EB331FA177109DE0034E7E2 /* AwesomeMenu.m in Sources */,
 				6EB331FB177109DE0034E7E2 /* AwesomeMenuItem.m in Sources */,
 				6EA1EB8E1772ADB70096F43A /* SVProgressHUD.m in Sources */,
-				6E80F8D7178FAA54006D8D90 /* LogInViewController.m in Sources */,
 				6E785B04179D940200A363D9 /* InstagramClient.m in Sources */,
 				6EA38D78179DDF04005FA063 /* ImageCell.m in Sources */,
 				6E0D5FA217A0B69200389771 /* MainViewController.m in Sources */,
@@ -4127,6 +4122,7 @@
 				ACC3757917C4729500A98933 /* StoryboardInfo.m in Sources */,
 				ACC3757D17C472B500A98933 /* SettingsController2.m in Sources */,
 				AC34C99117C4762900B3D230 /* UserViewController.m in Sources */,
+				AC8C487717C5BB2900458B91 /* StreamViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

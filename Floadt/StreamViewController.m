@@ -209,8 +209,9 @@
         
     }else{
 
-    RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:@"Twitter" message:@"Message"];
-            [modal show];
+   // RNBlurModalView *modal = [[RNBlurModalView alloc]
+   // initWithViewController:self title:@"Twitter" message:@"Message"];
+   //     [modal show];
 
         
     }
@@ -247,14 +248,16 @@
     [cell.imageView setImageWithURL:url];
     cell.backgroundColor = [UIColor whiteColor];
     
-    TwitterCell *tweetCell = (TwitterCell *)[collectionView dequeueReusableCellWithReuseIdentifier:@"twitterCell" forIndexPath:indexPath];
+   // TwitterCell *tweetCell = (TwitterCell *)[collectionView
+   // dequeueReusableCellWithReuseIdentifier:@"twitterCell"
+   // forIndexPath:indexPath];
     
-    if(indexPath.row % 2 == 0){
+    //if(indexPath.row % 2 == 0){
         return cell;
-    }else{
-        return tweetCell;
+  //  }else{
+  //      return tweetCell;
         
-    }
+    //}
     
    
     

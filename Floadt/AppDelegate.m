@@ -33,7 +33,8 @@
     BOOL returnAllOff = [[User data] returnAllOff];
     
     if (returnAllOff) {
-        NSLog(@"All are off");
+        
+        
     }
     
     [[UIApplication sharedApplication] setStatusBarHidden:NO withAnimation:UIStatusBarAnimationNone];

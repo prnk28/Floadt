@@ -26,7 +26,7 @@
         instagramLoggedIn = NO;
         twitterLoggedIn = NO;
         googleLoggedIn = NO;
-        facebookLoggedIn = NO;
+        facebookLoggedIn = YES;
         linkedinLoggedIn = NO;
 
     }
@@ -35,13 +35,15 @@
 
 -(void)setInstagramLogged:(BOOL *)turtle{
     
-    instagramLoggedIn = turtle;
+    turtle = &(instagramLoggedIn);
 }
 
 -(BOOL)returnAllOff{
     if (!instagramLoggedIn && !twitterLoggedIn && !googleLoggedIn && !facebookLoggedIn && !linkedinLoggedIn) {
+        NSLog(@"All are off");
         return YES;
     }else{
+        NSLog(@"One or More Networks Enabled");
         return NO;
     }
 }

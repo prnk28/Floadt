@@ -62,6 +62,8 @@
 
 -(void)getTimeline{
     
+    StreamViewController *vc = [[StreamViewController alloc] init];
+    
     if (self.accessToken) {
         [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self.twitterClient getPath:@"1.1/statuses/user_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -76,7 +78,7 @@
         }];
         
     }else{
-        RNBlurModalView *modalView = [[RNBlurModalView alloc] initWithViewController:self title:@"Sorry" message:@"Not Logged In!"];
+        RNBlurModalView *modalView = [[RNBlurModalView alloc] initWithViewController:vc title:@"Sorry" message:@"Not Logged In!"];
         [modalView show];
     }
     
