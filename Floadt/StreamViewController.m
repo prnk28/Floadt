@@ -56,6 +56,20 @@
     [self.collectionView reloadData];
 }
 
+- (void)transitionDropDown
+{
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"modalView"];
+    MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithViewController:vc];
+    formSheet.transitionStyle = MZFormSheetTransitionStyleDropDown;
+    formSheet.shouldDismissOnBackgroundViewTap = YES;
+    [formSheet presentAnimated:YES completionHandler:^(UIViewController *presentedFSViewController) {
+        
+    }];
+    formSheet.didTapOnBackgroundViewCompletionHandler = ^(CGPoint location)
+    {
+        
+    };
+}
 -(void)setAccessoryViewIcons{
     BOOL instagramLog = [[User data]returnInstagramState];
     BOOL googleLog = [[User data] returnGoogleState];
@@ -177,7 +191,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
+/*
         NSDictionary *entry = [self entries][indexPath.row];
         NSDictionary *text = [self entries][indexPath.row];
         NSString *user = entry[@"user"][@"full_name"];
@@ -189,17 +203,8 @@
         }else{
             NSLog(@"Didnt Work");
         }
-        
-
-
-   // RNBlurModalView *modal = [[RNBlurModalView alloc]
-   // initWithViewController:self title:@"Twitter" message:@"Message"];
-   //     [modal show];
-
-        
-    
-    
-
+*/
+    [self transitionDropDown];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView

@@ -1104,6 +1104,18 @@
 		6EF1F7531723750400061A11 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF1F7521723750400061A11 /* Twitter.framework */; };
 		AC34C99017C4762900B3D230 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34C98F17C4762900B3D230 /* UserViewController.m */; };
 		AC34C99117C4762900B3D230 /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC34C98F17C4762900B3D230 /* UserViewController.m */; };
+		AC3D942B17C85AE70094A116 /* MZAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D942417C85AE70094A116 /* MZAppearance.m */; };
+		AC3D942C17C85AE70094A116 /* MZAppearance.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D942417C85AE70094A116 /* MZAppearance.m */; };
+		AC3D942D17C85AE70094A116 /* NSInvocation+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D942617C85AE70094A116 /* NSInvocation+Copy.m */; };
+		AC3D942E17C85AE70094A116 /* NSInvocation+Copy.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D942617C85AE70094A116 /* NSInvocation+Copy.m */; };
+		AC3D942F17C85AE70094A116 /* MZFormSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D942817C85AE70094A116 /* MZFormSheetController.m */; };
+		AC3D943017C85AE70094A116 /* MZFormSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D942817C85AE70094A116 /* MZFormSheetController.m */; };
+		AC3D943117C85AE70094A116 /* MZFormSheetSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D942A17C85AE70094A116 /* MZFormSheetSegue.m */; };
+		AC3D943217C85AE70094A116 /* MZFormSheetSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D942A17C85AE70094A116 /* MZFormSheetSegue.m */; };
+		AC3D943517C85C9A0094A116 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D943417C85C9A0094A116 /* ModalViewController.m */; };
+		AC3D943617C85C9A0094A116 /* ModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D943417C85C9A0094A116 /* ModalViewController.m */; };
+		AC3D943817C871800094A116 /* placeholder_png.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC3D943717C871800094A116 /* placeholder_png.jpg */; };
+		AC3D943917C871800094A116 /* placeholder_png.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AC3D943717C871800094A116 /* placeholder_png.jpg */; };
 		AC7DC35D17BF19EA00151A37 /* TwitterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7DC35C17BF19EA00151A37 /* TwitterCell.m */; };
 		AC7DC35E17BF19EA00151A37 /* TwitterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC7DC35C17BF19EA00151A37 /* TwitterCell.m */; };
 		AC8C487717C5BB2900458B91 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E0D5FA517A0BB6800389771 /* StreamViewController.m */; };
@@ -1831,6 +1843,17 @@
 		6EF1F7521723750400061A11 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
 		AC34C98E17C4762900B3D230 /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		AC34C98F17C4762900B3D230 /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		AC3D942317C85AE70094A116 /* MZAppearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZAppearance.h; sourceTree = "<group>"; };
+		AC3D942417C85AE70094A116 /* MZAppearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZAppearance.m; sourceTree = "<group>"; };
+		AC3D942517C85AE70094A116 /* NSInvocation+Copy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSInvocation+Copy.h"; sourceTree = "<group>"; };
+		AC3D942617C85AE70094A116 /* NSInvocation+Copy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+Copy.m"; sourceTree = "<group>"; };
+		AC3D942717C85AE70094A116 /* MZFormSheetController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZFormSheetController.h; sourceTree = "<group>"; };
+		AC3D942817C85AE70094A116 /* MZFormSheetController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZFormSheetController.m; sourceTree = "<group>"; };
+		AC3D942917C85AE70094A116 /* MZFormSheetSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MZFormSheetSegue.h; sourceTree = "<group>"; };
+		AC3D942A17C85AE70094A116 /* MZFormSheetSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MZFormSheetSegue.m; sourceTree = "<group>"; };
+		AC3D943317C85C9A0094A116 /* ModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModalViewController.h; sourceTree = "<group>"; };
+		AC3D943417C85C9A0094A116 /* ModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModalViewController.m; sourceTree = "<group>"; };
+		AC3D943717C871800094A116 /* placeholder_png.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder_png.jpg; sourceTree = "<group>"; };
 		AC7DC35B17BF19EA00151A37 /* TwitterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCell.h; sourceTree = "<group>"; };
 		AC7DC35C17BF19EA00151A37 /* TwitterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterCell.m; sourceTree = "<group>"; };
 		AC9D51A717BE9A910069BAAD /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
@@ -2041,6 +2064,7 @@
 		6E26F25E1701495B009489A8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AC3D943717C871800094A116 /* placeholder_png.jpg */,
 				6EB7181117C7308800241618 /* Register Page */,
 				6EB7180B17C72C2A00241618 /* pixel-art-27.jpg */,
 				ACC3753217C466EC00A98933 /* AccessoryView */,
@@ -2056,6 +2080,7 @@
 		6E26F2FC170149FE009489A8 /* External */ = {
 			isa = PBXGroup;
 			children = (
+				AC3D942117C85AE70094A116 /* MZFormSheetController */,
 				6EB7180017C7203900241618 /* Loading Indicator */,
 				ACC3756917C4728000A98933 /* FlatUI */,
 				ACC3756017C4721700A98933 /* RCSwitch */,
@@ -2904,6 +2929,8 @@
 				6E20DD7C1702961100EE64A0 /* BarViewController.m */,
 				6E0D5F9E17A0B69100389771 /* MainViewController.h */,
 				6E0D5F9F17A0B69100389771 /* MainViewController.m */,
+				AC3D943317C85C9A0094A116 /* ModalViewController.h */,
+				AC3D943417C85C9A0094A116 /* ModalViewController.m */,
 				6EEA685B1709190C0069B447 /* SettingsViewController.h */,
 				6EEA685C1709190C0069B447 /* SettingsViewController.m */,
 				ACC3757A17C472B500A98933 /* SettingsController2.h */,
@@ -2949,6 +2976,29 @@
 				6E26F224170148F8009489A8 /* Supporting Files */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		AC3D942117C85AE70094A116 /* MZFormSheetController */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D942217C85AE70094A116 /* Additional */,
+				AC3D942717C85AE70094A116 /* MZFormSheetController.h */,
+				AC3D942817C85AE70094A116 /* MZFormSheetController.m */,
+				AC3D942917C85AE70094A116 /* MZFormSheetSegue.h */,
+				AC3D942A17C85AE70094A116 /* MZFormSheetSegue.m */,
+			);
+			path = MZFormSheetController;
+			sourceTree = "<group>";
+		};
+		AC3D942217C85AE70094A116 /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				AC3D942317C85AE70094A116 /* MZAppearance.h */,
+				AC3D942417C85AE70094A116 /* MZAppearance.m */,
+				AC3D942517C85AE70094A116 /* NSInvocation+Copy.h */,
+				AC3D942617C85AE70094A116 /* NSInvocation+Copy.m */,
+			);
+			path = Additional;
 			sourceTree = "<group>";
 		};
 		ACC3753217C466EC00A98933 /* AccessoryView */ = {
@@ -3604,6 +3654,7 @@
 				6EB7181D17C7308800241618 /* Register.png in Resources */,
 				6EB7181F17C7308800241618 /* Username.png in Resources */,
 				6EB7182217C7312300241618 /* Blue.png in Resources */,
+				AC3D943817C871800094A116 /* placeholder_png.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4131,6 +4182,7 @@
 				6EB7181E17C7308800241618 /* Register.png in Resources */,
 				6EB7182017C7308800241618 /* Username.png in Resources */,
 				6EB7182317C7312300241618 /* Blue.png in Resources */,
+				AC3D943917C871800094A116 /* placeholder_png.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4196,6 +4248,11 @@
 				AC34C99017C4762900B3D230 /* UserViewController.m in Sources */,
 				6EB7180317C7203900241618 /* RSLoadingIndicator.m in Sources */,
 				6EB7182817C7324700241618 /* DefaultViewController.m in Sources */,
+				AC3D942B17C85AE70094A116 /* MZAppearance.m in Sources */,
+				AC3D942D17C85AE70094A116 /* NSInvocation+Copy.m in Sources */,
+				AC3D942F17C85AE70094A116 /* MZFormSheetController.m in Sources */,
+				AC3D943117C85AE70094A116 /* MZFormSheetSegue.m in Sources */,
+				AC3D943517C85C9A0094A116 /* ModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4231,6 +4288,11 @@
 				AC8C487717C5BB2900458B91 /* StreamViewController.m in Sources */,
 				6EB7180417C7203900241618 /* RSLoadingIndicator.m in Sources */,
 				6EB7182917C7324700241618 /* DefaultViewController.m in Sources */,
+				AC3D942C17C85AE70094A116 /* MZAppearance.m in Sources */,
+				AC3D942E17C85AE70094A116 /* NSInvocation+Copy.m in Sources */,
+				AC3D943017C85AE70094A116 /* MZFormSheetController.m in Sources */,
+				AC3D943217C85AE70094A116 /* MZFormSheetSegue.m in Sources */,
+				AC3D943617C85C9A0094A116 /* ModalViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
