@@ -2,43 +2,29 @@
 //  StreamViewController.h
 //  Floadt
 //
-//  Created by Pradyumn Nukala on 3/26/13.
-//  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
+//  Created by Pradyumn Nukala on 11/10/13.
+//  Copyright (c) 2013 Floadt. All rights reserved.
 //
 
-#import "Imports.h"
-#import "AFOAuth1Client.h"
-#import "AFJSONRequestOperation.h"
 #import <UIKit/UIKit.h>
-#import "AFPhotoEditorController.h"
+#import "Data.h"
+#import "TTUITableViewZoomController.h"
 
-@interface StreamViewController : UIViewController<AFPhotoEditorControllerDelegate,UITextFieldDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
+@interface StreamViewController : UITableViewController {
 
+    NSString *tweetCreation;
+    NSMutableDictionary *totalFeed;
+    NSString *instagramCreation;
     
 }
 
+- (void)updateArrays;
+
+// Properties
 @property (nonatomic, strong) NSMutableDictionary *timelineResponse;
-@property (nonatomic, strong) NSMutableArray *photosArray;
-@property (nonatomic, strong) NSMutableDictionary *twitterResponse;
-@property (nonatomic, strong) NSMutableArray *tweetsArray;
-@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
-@property (nonatomic,strong)UIImage *imageForPost;
-@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
-@property (weak, nonatomic) IBOutlet UIButton *google;
-@property (weak, nonatomic) IBOutlet UIButton *facebook;
-@property (weak, nonatomic) IBOutlet UIButton *instagram;
-@property (weak, nonatomic) IBOutlet UIButton *twitter;
-@property (weak, nonatomic) IBOutlet UIButton *linkedin;
-
-
-
-//Actions for AccessoryView
-- (IBAction)cameraDown:(id)sender;
-- (IBAction)googleDown:(id)sender;
-- (IBAction)facebookDown:(id)sender;
-- (IBAction)instagramDown:(id)sender;
-- (IBAction)twitterDown:(id)sender;
-- (IBAction)linkedinDown:(id)sender;
-
+@property (strong, nonatomic) NSMutableArray *instaPics;
+@property (strong, nonatomic) AFOAuth1Client *twitterClient;
+@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
+@property (strong, nonatomic) NSMutableArray *tweets;
 
 @end

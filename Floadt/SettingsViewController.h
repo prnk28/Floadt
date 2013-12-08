@@ -6,22 +6,14 @@
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
 
-#import "Imports.h"
-#import "AFOAuth1Client.h"
-#import "AwesomeMenu.h"
-#import "AFJSONRequestOperation.h"
+#import "Data.h"
 
 
-
-@interface SettingsViewController : UIViewController <AwesomeMenuDelegate> {
-
+@interface SettingsViewController : UIViewController <RRCircularMenuDelegate> {
+    RRCircularMenu *menu;
 }
 
+@property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 
-- (IBAction)buttt:(id)sender;
-@property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) IBOutlet UINavigationItem *navBar;
-@property (strong, nonatomic) UIWindow *window;
-@property (strong, nonatomic) AFOAuth1Client *twitterClient;
 
 @end

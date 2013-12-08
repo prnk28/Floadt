@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0460"
+   LastUpgradeVersion = "0500"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E26F219170148F8009489A8"
+               BlueprintIdentifier = "ACC4C6FB18062C82000A3BA8"
                BuildableName = "Floadt.app"
                BlueprintName = "Floadt"
                ReferencedContainer = "container:Floadt.xcodeproj">
@@ -32,8 +32,8 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6E26F242170148F9009489A8"
-               BuildableName = "FloadtTests.octest"
+               BlueprintIdentifier = "ACC4C71C18062C83000A3BA8"
+               BuildableName = "FloadtTests.xctest"
                BlueprintName = "FloadtTests"
                ReferencedContainer = "container:Floadt.xcodeproj">
             </BuildableReference>
@@ -42,7 +42,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E26F219170148F8009489A8"
+            BlueprintIdentifier = "ACC4C6FB18062C82000A3BA8"
             BuildableName = "Floadt.app"
             BlueprintName = "Floadt"
             ReferencedContainer = "container:Floadt.xcodeproj">
@@ -61,7 +61,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E26F219170148F8009489A8"
+            BlueprintIdentifier = "ACC4C6FB18062C82000A3BA8"
             BuildableName = "Floadt.app"
             BlueprintName = "Floadt"
             ReferencedContainer = "container:Floadt.xcodeproj">
@@ -79,7 +79,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "6E26F219170148F8009489A8"
+            BlueprintIdentifier = "ACC4C6FB18062C82000A3BA8"
             BuildableName = "Floadt.app"
             BlueprintName = "Floadt"
             ReferencedContainer = "container:Floadt.xcodeproj">

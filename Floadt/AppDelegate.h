@@ -2,25 +2,19 @@
 //  AppDelegate.h
 //  Floadt
 //
-//  Created by Pradyumn Nukala on 3/25/13.
-//  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
+//  Created by Pradyumn Nukala on 10/9/13.
+//  Copyright (c) 2013 Floadt. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import <KiipSDK/KiipSDK.h>
-#import "AwesomeMenu.h"
-#import "AFOAuth1Client.h"
-#import "AFJSONRequestOperation.h"
-#import "Imports.h"
-#import "JTOpenDoorViewController.h"
+#import "Data.h"
 
-@interface AppDelegate : UIResponder <UIApplicationDelegate,KiipDelegate, AwesomeMenuDelegate>{
-    
-
-
-}
+@interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+
+@property (strong, nonatomic) WelcomeScreenViewController *viewController;
+@property (strong, nonatomic) RootMenuController *updatedRootViewController;
 
 
 @end

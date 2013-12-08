@@ -7,10 +7,12 @@
 //
 
 #import "AFOAuth1Client.h"
-#import "Imports.h"
+#import "Data.h"
 #import "Lockbox.h"
 
-@interface TwitterClient : AFOAuth1Client
+@interface TwitterClient : AFOAuth1Client {
+    NSUserDefaults *user;
+}
 
 + (instancetype)sharedClient;
 -(void)authenticateWithTwitter;

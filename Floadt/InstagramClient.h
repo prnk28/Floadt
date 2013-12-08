@@ -5,11 +5,8 @@
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
 
-#import "Imports.h"
-#import "AFNetworking.h"
-#import "AFHTTPClient.h"
-#import "Lockbox.h"
-#import "User.h"
+#import "Data.h"
+
 
 @interface InstagramClient : AFHTTPClient
 
