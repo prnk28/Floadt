@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>86D91112-1EFB-40D6-842F-C1AF4E263FB4</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Floadt</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>984D3534-381B-40AD-B3C5-3DE08D8240EE</key>
+		<string>https://github.com/Floadt/_iPhone.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Floadt.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>984D3534-381B-40AD-B3C5-3DE08D8240EE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Floadt/_iPhone.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>984D3534-381B-40AD-B3C5-3DE08D8240EE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>984D3534-381B-40AD-B3C5-3DE08D8240EE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>_iPhone</string>
+		</dict>
+	</array>
+</dict>
+</plist>
