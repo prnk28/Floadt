@@ -46,9 +46,36 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     
     self.navBar.rightBarButtonItem = postButtonItem;
     
+<<<<<<< HEAD
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
+=======
+    //Reload by default
+    [self.collectionView reloadData];
+}
+
+- (void)transitionDropDown
+{
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"modalView"];
+    MZFormSheetController *formSheet = [[MZFormSheetController alloc] initWithViewController:vc];
+    formSheet.transitionStyle = MZFormSheetTransitionStyleDropDown;
+    formSheet.shouldDismissOnBackgroundViewTap = YES;
+    [formSheet presentAnimated:YES completionHandler:^(UIViewController *presentedFSViewController) {
+        
+    }];
+    formSheet.didTapOnBackgroundViewCompletionHandler = ^(CGPoint location)
+    {
+        
+    };
+}
+-(void)setAccessoryViewIcons{
+    BOOL instagramLog = [[User data]returnInstagramState];
+    BOOL googleLog = [[User data] returnGoogleState];
+    BOOL facebookLog = [[User data] returnFacebookState];
+    BOOL twitterLog = [[User data] returnTwitterState];
+    BOOL linkedinLog = [[User data] returnLinkedinState];
+>>>>>>> c483d7c54a496624bd7d224fb23d93f86591f8d7
     
     [self.tableView reloadData];
 }
@@ -200,6 +227,7 @@ static NSString *InstagramIdentifier = @"InstagramCell";
 
 - (void)didTapBarButton:(id)sender
 {
+<<<<<<< HEAD
     [self.sidePanelController showLeftPanelAnimated:YES];   
 }
 
@@ -224,6 +252,22 @@ static NSString *InstagramIdentifier = @"InstagramCell";
         NSLog(@"Failure: %@", error);
     }];
     
+=======
+/*
+        NSDictionary *entry = [self entries][indexPath.row];
+        NSDictionary *text = [self entries][indexPath.row];
+        NSString *user = entry[@"user"][@"full_name"];
+        NSString *caption = text[@"caption"][@"text"];
+        
+        if (![user isEqual:[NSNull null]] && ![caption isEqual:[NSNull null]]){
+            RNBlurModalView *modal = [[RNBlurModalView alloc] initWithViewController:self title:user message:caption];
+            [modal show];
+        }else{
+            NSLog(@"Didnt Work");
+        }
+*/
+    [self transitionDropDown];
+>>>>>>> c483d7c54a496624bd7d224fb23d93f86591f8d7
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
