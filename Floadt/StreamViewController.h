@@ -12,7 +12,7 @@
 @interface StreamViewController : UITableViewController {
 
     NSString *tweetCreation;
-    NSMutableDictionary *totalFeed;
+    NSArray *totalFeed;
     NSString *instagramCreation;
     
 }

@@ -96,6 +96,8 @@
 		AC0E1591184BEFB600B7DDDD /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E1575184BEFB600B7DDDD /* UIImage+WebP.m */; };
 		AC0E1592184BEFB600B7DDDD /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E1577184BEFB600B7DDDD /* UIImageView+WebCache.m */; };
 		AC0E1593184BEFB600B7DDDD /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0E1577184BEFB600B7DDDD /* UIImageView+WebCache.m */; };
+		AC250928185663BC005DB5CA /* libAviarySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC250925185663BC005DB5CA /* libAviarySDK.a */; };
+		AC250929185663BC005DB5CA /* AviarySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC250927185663BC005DB5CA /* AviarySDKResources.bundle */; };
 		AC443F171837E87D00EE3DF7 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC443F161837E87D00EE3DF7 /* StreamViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		AC4A6E161844408A00FDA6ED /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4A6E111844408A00FDA6ED /* Background.png */; };
 		AC4A6E171844408A00FDA6ED /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4A6E111844408A00FDA6ED /* Background.png */; };
@@ -349,6 +351,16 @@
 		AC0E1575184BEFB600B7DDDD /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		AC0E1576184BEFB600B7DDDD /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		AC0E1577184BEFB600B7DDDD /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		AC25091D185663BC005DB5CA /* AFOpenGLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOpenGLManager.h; sourceTree = "<group>"; };
+		AC25091E185663BC005DB5CA /* AFPhotoEditorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorContext.h; sourceTree = "<group>"; };
+		AC25091F185663BC005DB5CA /* AFPhotoEditorController+InAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFPhotoEditorController+InAppPurchase.h"; sourceTree = "<group>"; };
+		AC250920185663BC005DB5CA /* AFPhotoEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorController.h; sourceTree = "<group>"; };
+		AC250921185663BC005DB5CA /* AFPhotoEditorControllerOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorControllerOptions.h; sourceTree = "<group>"; };
+		AC250922185663BC005DB5CA /* AFPhotoEditorCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorCustomization.h; sourceTree = "<group>"; };
+		AC250923185663BC005DB5CA /* AFPhotoEditorProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorProduct.h; sourceTree = "<group>"; };
+		AC250924185663BC005DB5CA /* AFPhotoEditorSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorSession.h; sourceTree = "<group>"; };
+		AC250925185663BC005DB5CA /* libAviarySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAviarySDK.a; sourceTree = "<group>"; };
+		AC250927185663BC005DB5CA /* AviarySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AviarySDKResources.bundle; sourceTree = "<group>"; };
 		AC443F151837E87D00EE3DF7 /* StreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StreamViewController.h; sourceTree = "<group>"; };
 		AC443F161837E87D00EE3DF7 /* StreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StreamViewController.m; sourceTree = "<group>"; };
 		AC4A6E111844408A00FDA6ED /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
@@ -497,7 +509,11 @@
 				6EE0348518544BEE0055AA0F /* Accelerate.framework in Frameworks */,
 				6EE0348618544BEE0055AA0F /* CoreData.framework in Frameworks */,
 				ACC4C70218062C82000A3BA8 /* CoreGraphics.framework in Frameworks */,
+<<<<<<< HEAD
 				6E548B2B185589B0005FC599 /* libAviarySDK.a in Frameworks */,
+=======
+				AC250928185663BC005DB5CA /* libAviarySDK.a in Frameworks */,
+>>>>>>> aac4f15f46e1a7aacdf1210250e2f269ccf3dc3b
 				6EE0348718544BEE0055AA0F /* CoreText.framework in Frameworks */,
 				ACC4C70018062C82000A3BA8 /* Foundation.framework in Frameworks */,
 				6EE0348818544BEE0055AA0F /* libsqlite3.0.dylib in Frameworks */,
@@ -515,7 +531,10 @@
 			files = (
 				ACC4C71F18062C83000A3BA8 /* XCTest.framework in Frameworks */,
 				ACC4C72118062C83000A3BA8 /* UIKit.framework in Frameworks */,
+<<<<<<< HEAD
 				6E548B2C185589B0005FC599 /* libAviarySDK.a in Frameworks */,
+=======
+>>>>>>> aac4f15f46e1a7aacdf1210250e2f269ccf3dc3b
 				ACC4C72018062C83000A3BA8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -553,6 +572,7 @@
 			path = AviarySDK;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		6E548B1F185589B0005FC599 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +605,8 @@
 			name = "User Interface";
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> aac4f15f46e1a7aacdf1210250e2f269ccf3dc3b
 		AC0BF96118402EC900177106 /* Social */ = {
 			isa = PBXGroup;
 			children = (
@@ -638,6 +660,39 @@
 				AC0E1577184BEFB600B7DDDD /* UIImageView+WebCache.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		AC25091B185663BC005DB5CA /* AviarySDK */ = {
+			isa = PBXGroup;
+			children = (
+				AC25091C185663BC005DB5CA /* Headers */,
+				AC250925185663BC005DB5CA /* libAviarySDK.a */,
+				AC250926185663BC005DB5CA /* Resources */,
+			);
+			path = AviarySDK;
+			sourceTree = "<group>";
+		};
+		AC25091C185663BC005DB5CA /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				AC25091D185663BC005DB5CA /* AFOpenGLManager.h */,
+				AC25091E185663BC005DB5CA /* AFPhotoEditorContext.h */,
+				AC25091F185663BC005DB5CA /* AFPhotoEditorController+InAppPurchase.h */,
+				AC250920185663BC005DB5CA /* AFPhotoEditorController.h */,
+				AC250921185663BC005DB5CA /* AFPhotoEditorControllerOptions.h */,
+				AC250922185663BC005DB5CA /* AFPhotoEditorCustomization.h */,
+				AC250923185663BC005DB5CA /* AFPhotoEditorProduct.h */,
+				AC250924185663BC005DB5CA /* AFPhotoEditorSession.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		AC250926185663BC005DB5CA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC250927185663BC005DB5CA /* AviarySDKResources.bundle */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		AC2A59BD183C412300940609 /* LockBox */ = {
@@ -911,7 +966,11 @@
 		ACCF7656180F6FB800E0CA67 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				6E548B1E185589B0005FC599 /* AviarySDK */,
+=======
+				AC25091B185663BC005DB5CA /* AviarySDK */,
+>>>>>>> aac4f15f46e1a7aacdf1210250e2f269ccf3dc3b
 				6E4A5BCD185450C60096B354 /* REComposeViewController */,
 				AC0E155A184BEFB600B7DDDD /* SDWebImage */,
 				AC5283B3183EF9670002590D /* RRCircularMenu */,
@@ -1031,7 +1090,11 @@
 			files = (
 				AC4A6E1C1844408A00FDA6ED /* HorizBorder.png in Resources */,
 				ACB8DD161845A76C00A3A498 /* indiegogo.png in Resources */,
+<<<<<<< HEAD
 				6E548B2D185589B0005FC599 /* AviarySDKResources.bundle in Resources */,
+=======
+				AC250929185663BC005DB5CA /* AviarySDKResources.bundle in Resources */,
+>>>>>>> aac4f15f46e1a7aacdf1210250e2f269ccf3dc3b
 				ACC4C71818062C82000A3BA8 /* Images.xcassets in Resources */,
 				ACB8DD461845A76C00A3A498 /* twitter circ.png in Resources */,
 				ACB8DD041845A76C00A3A498 /* digg.png in Resources */,
@@ -1405,7 +1468,11 @@
 					/Users/Pradyumn/Desktop/Floadt/Floadt/AviarySDK,
 					"$(SDKROOT)/usr/lib/system",
 					"$(SDKROOT)/usr/lib/system/introspection",
+<<<<<<< HEAD
 					/Developer/_iPhone/Floadt/AviarySDK,
+=======
+					/Users/prad/Developer/_iPhone/Floadt/AviarySDK,
+>>>>>>> aac4f15f46e1a7aacdf1210250e2f269ccf3dc3b
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1430,7 +1497,11 @@
 					/Users/Pradyumn/Desktop/Floadt/Floadt/AviarySDK,
 					"$(SDKROOT)/usr/lib/system",
 					"$(SDKROOT)/usr/lib/system/introspection",
+<<<<<<< HEAD
 					/Developer/_iPhone/Floadt/AviarySDK,
+=======
+					/Users/prad/Developer/_iPhone/Floadt/AviarySDK,
+>>>>>>> aac4f15f46e1a7aacdf1210250e2f269ccf3dc3b
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
