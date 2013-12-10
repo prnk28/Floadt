@@ -15,13 +15,6 @@
     #ifdef DEBUG
     NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     #endif
-
-    UINavigationController *navigationController = [[UINavigationController alloc] initWithNavigationBarClass:[CRGradientNavigationBar class] toolbarClass:nil];
-    UIColor *firstColor = [UIColor colorWithRed:255.0f/255.0f green:42.0f/255.0f blue:104.0f/255.0f alpha:1.0f];
-    UIColor *secondColor = [UIColor colorWithRed:255.0f/255.0f green:90.0f/255.0f blue:58.0f/255.0f alpha:1.0f];
-    NSArray *colors = [NSArray arrayWithObjects:firstColor, secondColor, nil];
-    [[CRGradientNavigationBar appearance] setBarTintGradientColors:colors];
-    [[navigationController navigationBar] setTranslucent:NO];
     
     UIFont *newFont = [UIFont fontWithName:@"Aerovias_Brasil_NF" size:14];
     [[UILabel appearance] setFont:newFont];

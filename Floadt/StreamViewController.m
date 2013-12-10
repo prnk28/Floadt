@@ -50,6 +50,7 @@ static NSString *InstagramIdentifier = @"InstagramCell";
                                                            [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
     
+    
     [self.tableView reloadData];
 }
 
@@ -75,6 +76,57 @@ static NSString *InstagramIdentifier = @"InstagramCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
+    
+    
+    
+    static NSString *tweetsCellIdentifier = @"tweetsCell";
+    static NSString *instaCellIdentifier = @"instaCell";
+    UITableViewCell *cell = nil;
+    BOOL tweets = NO;
+    
+    // Now you get dictionary that may be of tweets array or instagram array
+    // Due to its different structure
+    // I thinks your both dictionaries have different structure
+    NSDictionary *totalDictionary = totalFeed[indexPath.row];
+    if (your_check_condition for tweets dictionary) {
+        tweets = YES;
+    }
+    
+    // Get cell according to your dictionary data that may be from tweets or instagram
+    if (tweets) {
+        cell = [tableView dequeueReusableCellWithIdentifier:tweetsCellIdentifier];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:instaCellIdentifier];
+    }
+    
+    if (cell == nil) {
+        // Design your cell as you desired;
+        if (tweets) {
+            // Design cell for tweets
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tweetsCellIdentifier];
+        } else {
+            // Design cell for instagram
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:instaCellIdentifier];
+        }
+        
+    }
+    
+    
+    // Write your login to get dictionary picture data
+    // Tweets and Instagram array are merged. So get appropriate data with your logic
+    // May be both dictionaries structure are different. so write your logic to get picture data
+    // Fill data according tweets dict or instgram
+    // Get cell elements in which you will show dict data i.e. images, title etc.
+    if (tweets) {
+        // Fill cell data for tweets
+    } else {
+        // Fill cell data for instagram
+    }
+    
+    return cell;
+    
+
     
         if (indexPath.row % 2 == 0)  {
             static NSString *CellIdentifier = @"TweetCell";
@@ -203,28 +255,7 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     [self.sidePanelController showLeftPanelAnimated:YES];   
 }
 
-- (void)updateArrays {
-    instaPics = self.timelineResponse[@"data"];
-    totalFeed = [tweets arrayByAddingObjectsFromArray:instaPics];
 
-}
-
-- (void)nextInstagramPage:(NSIndexPath *)indexPath{
-    NSDictionary *page = self.timelineResponse[@"pagination"];
-    NSString *nextPage = page[@"next_url"];
-    
-    [[InstagramClient sharedClient] getPath:[NSString stringWithFormat:@"%@",nextPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        self.timelineResponse = [responseObject mutableCopy];
-        [self.timelineResponse addEntriesFromDictionary:responseObject];
-        [self.instaPics addObjectsFromArray:responseObject[@"data"]];
-        [self.tableView reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Failure: %@", error);
-    }];
-    
-}
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -251,9 +282,46 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     composeViewController.title = @"Social Network";
     composeViewController.hasAttachment = YES;
     composeViewController.delegate = self;
-    composeViewController.text = @"Test";
-    //[composeViewController.inputAccessoryView isEqual:accessoryView];
     [composeViewController presentFromRootViewController];
+    
+    composeViewController.completionHandler = ^(REComposeViewController *composeViewController, REComposeResult result) {
+        [composeViewController dismissViewControllerAnimated:YES completion:nil];
+        
+        if (result == REComposeResultCancelled) {
+            NSLog(@"Cancelled");
+        }
+        
+        if (result == REComposeResultPosted) {
+            NSLog(@"Text: %@", composeViewController.text);
+        }
+    };
+    
+    [composeViewController presentFromRootViewController];
+    
+}
+
+#pragma mark - Fetching Posts.
+
+- (void)updateArrays {
+    instaPics = self.timelineResponse[@"data"];
+    totalFeed = [tweets arrayByAddingObjectsFromArray:instaPics];
+    
+}
+
+- (void)nextInstagramPage:(NSIndexPath *)indexPath{
+    NSDictionary *page = self.timelineResponse[@"pagination"];
+    NSString *nextPage = page[@"next_url"];
+    
+    [[InstagramClient sharedClient] getPath:[NSString stringWithFormat:@"%@",nextPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        self.timelineResponse = [responseObject mutableCopy];
+        [self.timelineResponse addEntriesFromDictionary:responseObject];
+        [self.instaPics addObjectsFromArray:responseObject[@"data"]];
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
     
 }
 
@@ -311,49 +379,8 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     [refreshControl endRefreshing];
 }
 
-- (void)composeViewController:(REComposeViewController *)composeViewController didFinishWithResult:(REComposeResult)result
-{
-    [composeViewController dismissViewControllerAnimated:YES completion:nil];
-    
-    if (result == REComposeResultCancelled) {
-        NSLog(@"Cancelled");
-    }
-    
-    if (result == REComposeResultPosted) {
-        UIImage *image = [UIImage imageNamed:@"01-refresh.png"];
-        [self displayEditorForImage:image];
-    }
-}
 
-- (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
-
-{
-    UIImage *imageP = [UIImage imageNamed:@"addThis.png"];
-    image = imageP;
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-
-- (void)photoEditorCanceled:(AFPhotoEditorController *)editor
-
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"Photo Editor Closed");
-}
-
--(void)displayEditorForImage:(UIImage *)imageToEdit
-
-{
-    
-    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:imageToEdit];
-    
-    [editorController setDelegate:self];
-    
-    [self presentViewController:editorController animated:YES completion:nil];
-    
-}
+#pragma mark - Seague
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

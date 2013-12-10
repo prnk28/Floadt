@@ -328,6 +328,7 @@
 
 - (void)didTapAttachmentView:(id)sender
 {
+    /*
     UIImagePickerController *picker = [[UIImagePickerController alloc] init];
     // If our device has a cmera, we want to take a picture, otherwise we just pick from the library
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
@@ -337,7 +338,9 @@
     }
 
     picker.delegate = self;
-    [self presentViewController:picker animated:YES completion:nil];
+    [self presentViewController:picker animated:YES completion:nil];*/
+    UIImage *image = [UIImage imageNamed:@"01-refresh.png"];
+    [self displayEditorForImage:image];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
@@ -353,6 +356,53 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
     [self.sheetView.textView becomeFirstResponder];
 }
+
+#pragma mark - Photo Editor.
+
+- (void)composeViewController:(REComposeViewController *)composeViewController didFinishWithResult:(REComposeResult)result
+{
+    [composeViewController dismissViewControllerAnimated:YES completion:nil];
+    
+    if (result == REComposeResultCancelled) {
+        NSLog(@"Cancelled");
+    }
+    
+    if (result == REComposeResultPosted) {
+        UIImage *image = [UIImage imageNamed:@"01-refresh.png"];
+        [self displayEditorForImage:image];
+    }
+}
+
+- (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
+
+{
+    UIImage *imageP = [UIImage imageNamed:@"addThis.png"];
+    image = imageP;
+    
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+
+- (void)photoEditorCanceled:(AFPhotoEditorController *)editor
+
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    NSLog(@"Photo Editor Closed");
+}
+
+-(void)displayEditorForImage:(UIImage *)imageToEdit
+
+{
+    
+    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:imageToEdit];
+    
+    [editorController setDelegate:self];
+    
+       [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
 
 #pragma mark -
 #pragma mark Orientation

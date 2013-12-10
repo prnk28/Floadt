@@ -34,7 +34,6 @@
 #import "RootMenuController.h"
 #import "WelcomeScreenViewController.h"
 #import "UIViewController+JASidePanel.h"
-#import "CRGradientNavigationBar.h"
 #import "ProfileViewController.h"
 #import "AFNetworking.h"
 #import "AFHTTPRequestOperation.h"
