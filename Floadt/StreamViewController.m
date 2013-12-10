@@ -23,6 +23,12 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     [super viewDidLoad];
     [self fetchTimeline];
     
+    [NSTimer scheduledTimerWithTimeInterval:15.0
+                                     target:self
+                                   selector:@selector(timerRefresh:)
+                                   userInfo:nil
+                                    repeats:NO];
+    
     //Setup UI
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
@@ -50,6 +56,8 @@ static NSString *InstagramIdentifier = @"InstagramCell";
                                                            [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
     
+    
+    
     [self.tableView reloadData];
 }
 
@@ -57,6 +65,23 @@ static NSString *InstagramIdentifier = @"InstagramCell";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)didTapPostButton:(id)sender
+{
+    
+    REComposeViewController *composeViewController = [[REComposeViewController alloc] init];
+    composeViewController.title = @"Social Network";
+    composeViewController.hasAttachment = YES;
+    composeViewController.delegate = self;
+    composeViewController.text = @"Test";
+    //[composeViewController.inputAccessoryView isEqual:accessoryView];
+    [composeViewController presentFromRootViewController];
+    
+}
+
+- (void)didTapBarButton:(id)sender
+{
+    [self.sidePanelController showLeftPanelAnimated:YES];
 }
 
 #pragma mark - Table view data source
@@ -75,7 +100,7 @@ static NSString *InstagramIdentifier = @"InstagramCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    NSDictionary *totalFeedDict = totalFeed[indexPath.row];
         if (indexPath.row % 2 == 0)  {
             static NSString *CellIdentifier = @"TweetCell";
             UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -194,19 +219,22 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     }
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData]; });
-
-
 }
 
-- (void)didTapBarButton:(id)sender
-{
-    [self.sidePanelController showLeftPanelAnimated:YES];   
-}
+
 
 - (void)updateArrays {
     instaPics = self.timelineResponse[@"data"];
     totalFeed = [tweets arrayByAddingObjectsFromArray:instaPics];
+    [self orderArraysByDate:totalFeed];
+    
+}
 
+- (void)orderArraysByDate:(NSArray *)array {
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"created_at" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    array = [array sortedArrayUsingDescriptors:sortDescriptors];
+    
 }
 
 - (void)nextInstagramPage:(NSIndexPath *)indexPath{
@@ -225,7 +253,7 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     }];
     
 }
-
+/*
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (scrollView.contentOffset.y == roundf(scrollView.contentSize.height-scrollView.frame.size.height)) {
@@ -241,21 +269,12 @@ static NSString *InstagramIdentifier = @"InstagramCell";
         }
         
     }
-}
+ }
+ */
 
 
-- (void)didTapPostButton:(id)sender
-{
-   
-    REComposeViewController *composeViewController = [[REComposeViewController alloc] init];
-    composeViewController.title = @"Social Network";
-    composeViewController.hasAttachment = YES;
-    composeViewController.delegate = self;
-    composeViewController.text = @"Test";
-    //[composeViewController.inputAccessoryView isEqual:accessoryView];
-    [composeViewController presentFromRootViewController];
-    
-}
+
+
 
 - (void)fetchTimeline {
     [self fetchInstagramPics];
@@ -292,6 +311,10 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     }];
 }
 
+- (void)timerRefresh:(id)sender{
+    [self refetchTimeline];
+}
+
 - (void)fetchTweets{
         [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -320,40 +343,10 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     }
     
     if (result == REComposeResultPosted) {
-        UIImage *image = [UIImage imageNamed:@"01-refresh.png"];
-        [self displayEditorForImage:image];
+
     }
 }
 
-- (void)photoEditor:(AFPhotoEditorController *)editor finishedWithImage:(UIImage *)image
-
-{
-    UIImage *imageP = [UIImage imageNamed:@"addThis.png"];
-    image = imageP;
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
-
-- (void)photoEditorCanceled:(AFPhotoEditorController *)editor
-
-{
-    [self dismissViewControllerAnimated:YES completion:nil];
-    NSLog(@"Photo Editor Closed");
-}
-
--(void)displayEditorForImage:(UIImage *)imageToEdit
-
-{
-    
-    AFPhotoEditorController *editorController = [[AFPhotoEditorController alloc] initWithImage:imageToEdit];
-    
-    [editorController setDelegate:self];
-    
-    [self presentViewController:editorController animated:YES completion:nil];
-    
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
