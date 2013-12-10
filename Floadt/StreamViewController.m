@@ -101,6 +101,7 @@ static NSString *InstagramIdentifier = @"InstagramCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSDictionary *totalFeedDictionary = totalFeed[indexPath.row];
+    //NSLog(@"");
         if (indexPath.row % 2 == 0)  {
             static NSString *CellIdentifier = @"TweetCell";
             UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
