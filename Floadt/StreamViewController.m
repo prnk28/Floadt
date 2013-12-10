@@ -100,14 +100,65 @@ static NSString *InstagramIdentifier = @"InstagramCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *totalFeedDictionary = totalFeed[indexPath.row];
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    static NSString *tweetsCellIdentifier = @"tweetsCell";
+    static NSString *instaCellIdentifier = @"instaCell";
+    UITableViewCell *cell = nil;
+    BOOL tweets = NO;
+    BOOL twitterLoggedIn = [user boolForKey:@"twitterLoggedIn"];
+    
+    // Now you get dictionary that may be of tweets array or instagram array
+    // Due to its different structure
+    // I thinks your both dictionaries have different structure
+    //NSDictionary *totalFeedDictionary = totalFeed[indexPath.row];
+    /*
+    if (your_check_condition for tweets dictionary) {
+        tweets = YES;
+    }
+    
+    // Get cell according to your dictionary data that may be from tweets or instagram
+    if (tweets) {
+        cell = [tableView dequeueReusableCellWithIdentifier:tweetsCellIdentifier];
+    } else {
+        cell = [tableView dequeueReusableCellWithIdentifier:instaCellIdentifier];
+    }
+    
+    if (cell == nil) {
+        // Design your cell as you desired;
+        if (tweets) {
+            // Design cell for tweets
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tweetsCellIdentifier];
+        } else {
+            // Design cell for instagram
+            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:instaCellIdentifier];
+        }
+        
+    }
+    */
+    
+    // Write your login to get dictionary picture data
+    // Tweets and Instagram array are merged. So get appropriate data with your logic
+    // May be both dictionaries structure are different. so write your logic to get picture data
+    // Fill data according tweets dict or instgram
+    // Get cell elements in which you will show dict data i.e. images, title etc.
+    if (tweets) {
+        // Fill cell data for tweets
+    } else {
+        // Fill cell data for instagram
+    }
+    
+    return cell;
+    
+    
+    
+   // NSDictionary *totalFeedDictionary = totalFeed[indexPath.row];
     NSLog(@"");
         if (indexPath.row % 2 == 0)  {
             static NSString *CellIdentifier = @"TweetCell";
             UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
            
-            NSDictionary *tweet = tweets[indexPath.row / 2];
+            NSDictionary *tweet = totalFeed[indexPath.row / 2];
 
             //Set username for twitter
             NSString *name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
