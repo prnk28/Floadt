@@ -5,7 +5,7 @@
 //  Created by Pradyumn Nukala on 11/19/13.
 //  Copyright (c) 2013 Floadt. All rights reserved.
 //
-
+#import "Data.h"
 #import <UIKit/UIKit.h>
 
 @interface InstaPicDetailViewController : UIViewController

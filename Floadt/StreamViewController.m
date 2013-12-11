@@ -55,9 +55,6 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
-    
-    
-    
     [self.tableView reloadData];
 }
 
@@ -95,64 +92,11 @@ static NSString *InstagramIdentifier = @"InstagramCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 35;
+    return 15;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    static NSString *tweetsCellIdentifier = @"tweetsCell";
-    static NSString *instaCellIdentifier = @"instaCell";
-    UITableViewCell *cell = nil;
-    BOOL tweets = NO;
-    BOOL twitterLoggedIn = [user boolForKey:@"twitterLoggedIn"];
-    
-    // Now you get dictionary that may be of tweets array or instagram array
-    // Due to its different structure
-    // I thinks your both dictionaries have different structure
-    //NSDictionary *totalFeedDictionary = totalFeed[indexPath.row];
-    /*
-    if (your_check_condition for tweets dictionary) {
-        tweets = YES;
-    }
-    
-    // Get cell according to your dictionary data that may be from tweets or instagram
-    if (tweets) {
-        cell = [tableView dequeueReusableCellWithIdentifier:tweetsCellIdentifier];
-    } else {
-        cell = [tableView dequeueReusableCellWithIdentifier:instaCellIdentifier];
-    }
-    
-    if (cell == nil) {
-        // Design your cell as you desired;
-        if (tweets) {
-            // Design cell for tweets
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tweetsCellIdentifier];
-        } else {
-            // Design cell for instagram
-            cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:instaCellIdentifier];
-        }
-        
-    }
-    */
-    
-    // Write your login to get dictionary picture data
-    // Tweets and Instagram array are merged. So get appropriate data with your logic
-    // May be both dictionaries structure are different. so write your logic to get picture data
-    // Fill data according tweets dict or instgram
-    // Get cell elements in which you will show dict data i.e. images, title etc.
-    if (tweets) {
-        // Fill cell data for tweets
-    } else {
-        // Fill cell data for instagram
-    }
-    
-    return cell;
-    
-    
-    
-   // NSDictionary *totalFeedDictionary = totalFeed[indexPath.row];
-    NSLog(@"");
         if (indexPath.row % 2 == 0)  {
             static NSString *CellIdentifier = @"TweetCell";
             UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -166,30 +110,24 @@ static NSString *InstagramIdentifier = @"InstagramCell";
             [twitterNameLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0]];
             [twitterNameLabel setText:name];
             
-            
             //Set status for twitter
             NSString *text = [tweet objectForKey:@"text"];
             UILabel *twitterTweetLabel = (UILabel *)[cell viewWithTag:203];
             [twitterTweetLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:10.0]];
             [twitterTweetLabel setText:text];
             
-            
             //Set Profile Pic for twitter
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                NSString *imageUrl = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
-                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+            UIImageView *profilePic = (UIImageView *)[cell viewWithTag:201];
+            NSURL *imageUrl = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
+            [profilePic setImageWithURL:imageUrl completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
                 
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    UIImageView *profilePic = (UIImageView *)[cell viewWithTag:201];
-                    profilePic.image = [UIImage imageWithData:data];
-                    
-                    //Make the Profile Pic ImageView Circular
-                    CALayer *imageLayer = profilePic.layer;
-                    [imageLayer setCornerRadius:25];
-                    [imageLayer setMasksToBounds:YES];
-                });
-            });
-            
+                profilePic.image = image;
+                //Make the Profile Pic ImageView Circular
+                CALayer *imageLayer = profilePic.layer;
+                [imageLayer setCornerRadius:25];
+                [imageLayer setMasksToBounds:YES];
+                
+            }];
             
             //Set number of Favorites for Tweet
             NSString *favoritesCount = [[tweet objectForKey:@"user"]objectForKey:@"favourites_count"];
@@ -201,24 +139,27 @@ static NSString *InstagramIdentifier = @"InstagramCell";
             return cell;
 
         }else {
-            
-            
             static NSString *CellIdentifier = @"InstagramCell";
             UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:CellIdentifier];
             cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
             
             NSDictionary *entry = instaPics[indexPath.row / 2];
        
-            NSString *imageUrlString = entry[@"images"][@"low_resolution"][@"url"];
-            NSURL *url = [NSURL URLWithString:imageUrlString];
+            // Set Image
+            NSURL *pictureUrl = entry[@"images"][@"low_resolution"][@"url"];
             UIImageView *instagramImageView = (UIImageView *)[cell viewWithTag:104];
-            [instagramImageView setImageWithURL:url];
+            [instagramImageView setImageWithURL:pictureUrl completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                instagramImageView.image = image;
+            }];
+           
             
+            // Set User Name
             NSString *user =  entry[@"user"][@"full_name"];
             UILabel *instagramUserLabel = (UILabel *)[cell viewWithTag:102];
             [instagramUserLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:16.0]];
             [instagramUserLabel setText:user];
             
+            // If no Caption
             if (entry[@"caption"] != [NSNull null] && entry[@"caption"][@"text"] != [NSNull null])            {
             NSString *caption = entry[@"caption"][@"text"];
             UILabel *instagramCaptionLabel = (UILabel *)[cell viewWithTag:103];
@@ -231,12 +172,25 @@ static NSString *InstagramIdentifier = @"InstagramCell";
                 [instagramCaptionLabel setText:caption];
             }
             
-            NSString *imageUserPicUrl = entry[@"user"][@"profile_pic"][@"url"];
-
-            NSURL *profileURL = [NSURL URLWithString:imageUserPicUrl];
-            UIImageView *instagramProfilePic = (UIImageView *)[cell viewWithTag:101];
-            instagramProfilePic.frame = CGRectMake(35, 31, 50, 50);
-            [instagramProfilePic setImageWithURL:profileURL];
+            // Add Profile Image
+            UIImageView *profilePic = (UIImageView *)[cell viewWithTag:101];
+            NSURL *imageUrl = entry[@"user"][@"profile_picture"];
+            [profilePic setImageWithURL:imageUrl completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+                
+                profilePic.image = image;
+                //Make the Profile Pic ImageView Circular
+                CALayer *imageLayer = profilePic.layer;
+                [imageLayer setCornerRadius:25];
+                [imageLayer setMasksToBounds:YES];
+             
+            }];
+            
+            // Add likes Count
+            NSString *likesCount = entry[@"likes"][@"count"];
+            UIButton *likesButton = (UIButton *)[cell viewWithTag:105];
+            [likesButton setTitle:[NSString stringWithFormat:@"  %@",likesCount] forState:UIControlStateNormal];
+            [likesButton setTitle:[NSString stringWithFormat:@"  %@",likesCount] forState:UIControlStateHighlighted];
+            likesButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
             
             return cell;
         }
@@ -260,7 +214,7 @@ static NSString *InstagramIdentifier = @"InstagramCell";
         [[InstagramClient sharedClient] getPath:@"users/self/feed"
                                      parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                            // NSLog(@"Response: %@", responseObject);
+                                            NSLog(@"Response: %@", responseObject);
                                             self.timelineResponse = [responseObject mutableCopy];
                                             [self.instaPics addObjectsFromArray:responseObject[@"data"]];
                                             [self updateArrays];
@@ -273,20 +227,37 @@ static NSString *InstagramIdentifier = @"InstagramCell";
         [self.tableView reloadData]; });
 }
 
-
-
-- (void)updateArrays {
-    instaPics = self.timelineResponse[@"data"];
-    totalFeed = [tweets arrayByAddingObjectsFromArray:instaPics];
-    [self orderArraysByDate:totalFeed];
+- (void)fetchTweetsAuth {
+    self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"] key:@"4oFCF0AjP4PQDUaCh5RQ" secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
     
+    [self.twitterClient authorizeUsingOAuthWithRequestTokenPath:@"/oauth/request_token" userAuthorizationPath:@"/oauth/authorize" callbackURL:[NSURL URLWithString:@"floadt://success"] accessTokenPath:@"/oauth/access_token" accessMethod:@"POST" scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
+        [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+        [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSArray *responseArray = (NSArray *)responseObject;
+            [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+                tweets = responseArray;
+            }];
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Error: %@", error);
+        }];
+        
+    } failure:^(NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
-- (void)orderArraysByDate:(NSArray *)array {
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"created_at" ascending:YES];
-    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
-    array = [array sortedArrayUsingDescriptors:sortDescriptors];
-    
+- (void)fetchTweets{
+    [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *responseArray = (NSArray *)responseObject;
+        [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            
+            tweets = [tweets copy];
+            tweets = responseArray;
+        }];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
 
 - (void)nextInstagramPage:(NSIndexPath *)indexPath{
@@ -305,6 +276,22 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     }];
     
 }
+
+- (void)updateArrays {
+    instaPics = self.timelineResponse[@"data"];
+    totalFeed = [tweets arrayByAddingObjectsFromArray:instaPics];
+    [self orderArraysByDate:totalFeed];
+    
+}
+
+- (void)orderArraysByDate:(NSArray *)array {
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"created_at" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
+    array = [array sortedArrayUsingDescriptors:sortDescriptors];
+    
+}
+
+
 /*
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
@@ -324,10 +311,6 @@ static NSString *InstagramIdentifier = @"InstagramCell";
  }
  */
 
-
-
-
-
 - (void)fetchTimeline {
     [self fetchInstagramPics];
     [self fetchTweetsAuth];
@@ -343,42 +326,11 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     
 }
 
-- (void)fetchTweetsAuth {
-    self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"] key:@"4oFCF0AjP4PQDUaCh5RQ" secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
-    
-    [self.twitterClient authorizeUsingOAuthWithRequestTokenPath:@"/oauth/request_token" userAuthorizationPath:@"/oauth/authorize" callbackURL:[NSURL URLWithString:@"floadt://success"] accessTokenPath:@"/oauth/access_token" accessMethod:@"POST" scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
-        [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-        [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSArray *responseArray = (NSArray *)responseObject;
-            [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                NSLog(@"Success: %@", obj);
-                tweets = responseArray;
-            }];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error: %@", error);
-        }];
-        
-    } failure:^(NSError *error) {
-        NSLog(@"Error: %@", error);
-    }];
-}
+
+
 
 - (void)timerRefresh:(id)sender{
     [self refetchTimeline];
-}
-
-- (void)fetchTweets{
-        [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-        [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSArray *responseArray = (NSArray *)responseObject;
-            [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                NSLog(@"Success: %@", obj);
-                tweets = [tweets copy];
-                tweets = responseArray;
-            }];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error: %@", error);
-        }];
 }
 
 - (void)refresh:(UIRefreshControl *)refreshControl {
@@ -399,22 +351,17 @@ static NSString *InstagramIdentifier = @"InstagramCell";
     }
 }
 
-
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"showTweet"]) {
-        
         NSInteger row = [[self tableView].indexPathForSelectedRow row]/2;
         NSDictionary *tweet = [tweets objectAtIndex:row];
-        
         TweetDetailViewController *detailController = segue.destinationViewController;
         detailController.detailItem = tweet;
     }
     else if ([segue.identifier isEqualToString:@"showInstaPic"]) {
-        
         NSInteger row = [[self tableView].indexPathForSelectedRow row]/2;
         NSDictionary *pics = [instaPics objectAtIndex:row];
-        
         InstaPicDetailViewController *detailController = segue.destinationViewController;
         detailController.detailItem = pics;
     }

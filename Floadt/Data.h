@@ -13,6 +13,7 @@
 #import "REComposeSheetView.h"
 #import "REComposeViewController.h"
 #import "AFPhotoEditorController.h"
+#import "UIImageView+AFNetworking.h"
 #import "AFNetworking.h"
 #import "SDImageCache.h"
 #import "SDWebImageCompat.h"

@@ -23,18 +23,25 @@
     [_imageView addGestureRecognizer:doubleTapImage];
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStyleBordered target:nil action:nil];
     [[self navigationItem] setBackBarButtonItem:backButton];
+    NSDictionary *instaPics = self.detailItem;
     
+    NSString *user =  instaPics[@"user"][@"full_name"];
+    NSString *createdAt =instaPics[@"created_time"];
+    int createdAtN = [createdAt intValue];
+    NSTimeInterval timestamp = (NSTimeInterval)createdAtN;
+    NSDate *creationDate = [NSDate dateWithTimeIntervalSince1970:timestamp];
+    NSLog(@"%@",creationDate);
+   
+    _userName.text = user;
     if (self.detailItem) {
         NSDictionary *instaPics = self.detailItem;
         if (instaPics[@"caption"] != [NSNull null] && instaPics[@"caption"][@"text"] != [NSNull null])            {
-            NSString *user =  instaPics[@"user"][@"full_name"];
             NSString *caption = instaPics[@"caption"][@"text"];
-            _caption.text = caption;
-            _userName.text = user;
-            
+         _caption.text = caption;
         }else{
             NSLog(@"No Caption");
         }
+        
         
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSString *imageUrl = [[[instaPics objectForKey:@"images"] objectForKey:@"standard_resolution"] objectForKey:@"url"];
@@ -49,7 +56,7 @@
         });
     }
     
-  
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }
