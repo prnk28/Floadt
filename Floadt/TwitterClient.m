@@ -74,7 +74,7 @@
 
 
 
--(void)getTimeline{
+- (void)getTimeline{
         [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self.twitterClient getPath:@"1.1/statuses/user_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             

@@ -27,11 +27,12 @@
     
     NSString *user =  instaPics[@"user"][@"full_name"];
     NSString *createdAt =instaPics[@"created_time"];
+    NSString *mediaID = instaPics[@"id"];
     int createdAtN = [createdAt intValue];
     NSTimeInterval timestamp = (NSTimeInterval)createdAtN;
     NSDate *creationDate = [NSDate dateWithTimeIntervalSince1970:timestamp];
-    NSLog(@"%@",creationDate);
-   
+    NSLog(@"Instagram Time: %@",creationDate);
+    NSLog(@"Instagram Media ID: %@",mediaID);
     _userName.text = user;
     if (self.detailItem) {
         NSDictionary *instaPics = self.detailItem;

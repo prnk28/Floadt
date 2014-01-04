@@ -25,7 +25,8 @@
         NSString *statusCount = [[tweet objectForKey:@"user"] objectForKey:@"statuses_count"];
         NSString *followingCount = [[tweet objectForKey:@"user"] objectForKey:@"following"];
         NSString *followersCount = [[tweet objectForKey:@"user"] objectForKey:@"followers_count"];
-        
+        NSString *createdAt =[tweet objectForKey:@"created_at"];
+        NSLog(@"Twitter: %@",createdAt);
         _name.text = name;
         _tweetLabel.text = [NSString stringWithFormat:@"%@",text];
         _tweetLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:15];

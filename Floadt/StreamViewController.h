@@ -12,7 +12,6 @@
 @interface StreamViewController : UITableViewController {
 
     NSString *tweetCreation;
-    NSArray *totalFeed;
     NSString *instagramCreation;
     
 }
@@ -25,5 +24,6 @@
 @property (strong, nonatomic) AFOAuth1Client *twitterClient;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic) NSMutableArray *tweets;
+@property (strong, nonatomic) NSMutableArray *totalFeed;
 
 @end

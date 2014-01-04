@@ -121,6 +121,7 @@
 		AC57CD68183C4B3100916B12 /* InstaPicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC57CD67183C4B3100916B12 /* InstaPicDetailViewController.m */; };
 		AC792F751831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
 		AC792F761831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
+		AC9D0A4E1861528E00AEFB68 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC443F161837E87D00EE3DF7 /* StreamViewController.m */; };
 		AC9FAF5A1810D0E800A605E5 /* WelcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9FAF591810D0E800A605E5 /* WelcomeScreenViewController.m */; };
 		ACB216A8183C0C7C00DC741D /* Lockbox.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB216A7183C0C7C00DC741D /* Lockbox.m */; };
 		ACB8DCFA1845A76C00A3A498 /* addthis.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCCE1845A76C00A3A498 /* addthis.png */; };
@@ -1276,6 +1277,7 @@
 				6E4A5BE8185450C60096B354 /* REComposeViewController.m in Sources */,
 				ACD70FB918394F1500C28489 /* SettingsViewController.m in Sources */,
 				ACC1E98F1825E49F00DCA712 /* JSFlatButton.m in Sources */,
+				AC9D0A4E1861528E00AEFB68 /* StreamViewController.m in Sources */,
 				ACC4C72B18062C83000A3BA8 /* FloadtTests.m in Sources */,
 				AC0E1579184BEFB600B7DDDD /* MKAnnotationView+WebCache.m in Sources */,
 				AC5283BE183EF9670002590D /* RRCircularItem.m in Sources */,

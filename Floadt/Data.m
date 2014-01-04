@@ -19,7 +19,6 @@
     return _sharedClient;
 }
 
-
 - (UIImage*) maskImage:(UIImage *)image withMask:(UIImage *)maskImage {
     
     CGImageRef maskRef = maskImage.CGImage;
@@ -35,6 +34,5 @@
     return [UIImage imageWithCGImage:masked];
     
 }
-
 
 @end
