@@ -25,10 +25,6 @@
 		6E4A5BEB185451700096B354 /* AccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4A5BE9185451700096B354 /* AccessoryView.xib */; };
 		6E55593118217A2D00546428 /* CRGradientNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E55593018217A2D00546428 /* CRGradientNavigationBar.m */; };
 		6E55593418217BCA00546428 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E55593318217BCA00546428 /* ProfileViewController.m */; };
-		6E6A66D41857DD8100C37F47 /* libAviarySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6A66D11857DD8100C37F47 /* libAviarySDK.a */; };
-		6E6A66D51857DD8100C37F47 /* libAviarySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E6A66D11857DD8100C37F47 /* libAviarySDK.a */; };
-		6E6A66D61857DD8100C37F47 /* AviarySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E6A66D31857DD8100C37F47 /* AviarySDKResources.bundle */; };
-		6E6A66D71857DD8100C37F47 /* AviarySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E6A66D31857DD8100C37F47 /* AviarySDKResources.bundle */; };
 		6EE0348518544BEE0055AA0F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE0347D18544BEE0055AA0F /* Accelerate.framework */; };
 		6EE0348618544BEE0055AA0F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE0347E18544BEE0055AA0F /* CoreData.framework */; };
 		6EE0348718544BEE0055AA0F /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE0347F18544BEE0055AA0F /* CoreText.framework */; };
@@ -119,8 +115,27 @@
 		AC5283C3183EF9670002590D /* RRCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5283BC183EF9670002590D /* RRCircularSlider.m */; };
 		AC5283C4183EF9670002590D /* RRCircularSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5283BC183EF9670002590D /* RRCircularSlider.m */; };
 		AC57CD68183C4B3100916B12 /* InstaPicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC57CD67183C4B3100916B12 /* InstaPicDetailViewController.m */; };
+		AC71F5E11877CDF8000FF534 /* libAviarySDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC71F5DE1877CDF8000FF534 /* libAviarySDK.a */; };
+		AC71F5E21877CDF8000FF534 /* AviarySDKResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AC71F5E01877CDF8000FF534 /* AviarySDKResources.bundle */; };
 		AC792F751831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
 		AC792F761831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
+		AC92CC841877D16C006257CE /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC641877D16C006257CE /* ActivityView.xib */; };
+		AC92CC851877D16C006257CE /* MyActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC92CC661877D16C006257CE /* MyActivityIndicator.m */; };
+		AC92CC861877D16C006257CE /* MDBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AC92CC691877D16C006257CE /* MDBrowser.m */; };
+		AC92CC871877D16C006257CE /* MDBrowserAnimatorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = AC92CC6D1877D16C006257CE /* MDBrowserAnimatorFactory.m */; };
+		AC92CC881877D16C006257CE /* PopUpBrowserAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC92CC721877D16C006257CE /* PopUpBrowserAnimator.m */; };
+		AC92CC891877D16C006257CE /* SlideFromBottomBrowserAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC92CC751877D16C006257CE /* SlideFromBottomBrowserAnimator.m */; };
+		AC92CC8A1877D16C006257CE /* MJPopupBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC92CC781877D16C006257CE /* MJPopupBackgroundView.m */; };
+		AC92CC8B1877D16C006257CE /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC7A1877D16C006257CE /* back.png */; };
+		AC92CC8C1877D16C006257CE /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC7B1877D16C006257CE /* back@2x.png */; };
+		AC92CC8D1877D16C006257CE /* back_active.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC7C1877D16C006257CE /* back_active.png */; };
+		AC92CC8E1877D16C006257CE /* back_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC7D1877D16C006257CE /* back_active@2x.png */; };
+		AC92CC8F1877D16C006257CE /* close.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC7E1877D16C006257CE /* close.png */; };
+		AC92CC901877D16C006257CE /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC7F1877D16C006257CE /* close@2x.png */; };
+		AC92CC911877D16C006257CE /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC801877D16C006257CE /* next.png */; };
+		AC92CC921877D16C006257CE /* next@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC811877D16C006257CE /* next@2x.png */; };
+		AC92CC931877D16C006257CE /* next_active.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC821877D16C006257CE /* next_active.png */; };
+		AC92CC941877D16C006257CE /* next_active@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC831877D16C006257CE /* next_active@2x.png */; };
 		AC9D0A4E1861528E00AEFB68 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC443F161837E87D00EE3DF7 /* StreamViewController.m */; };
 		AC9FAF5A1810D0E800A605E5 /* WelcomeScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC9FAF591810D0E800A605E5 /* WelcomeScreenViewController.m */; };
 		ACB216A8183C0C7C00DC741D /* Lockbox.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB216A7183C0C7C00DC741D /* Lockbox.m */; };
@@ -287,16 +302,6 @@
 		6E55593018217A2D00546428 /* CRGradientNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRGradientNavigationBar.m; sourceTree = "<group>"; };
 		6E55593218217BCA00546428 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
 		6E55593318217BCA00546428 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
-		6E6A66C91857DD8100C37F47 /* AFOpenGLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOpenGLManager.h; sourceTree = "<group>"; };
-		6E6A66CA1857DD8100C37F47 /* AFPhotoEditorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorContext.h; sourceTree = "<group>"; };
-		6E6A66CB1857DD8100C37F47 /* AFPhotoEditorController+InAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFPhotoEditorController+InAppPurchase.h"; sourceTree = "<group>"; };
-		6E6A66CC1857DD8100C37F47 /* AFPhotoEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorController.h; sourceTree = "<group>"; };
-		6E6A66CD1857DD8100C37F47 /* AFPhotoEditorControllerOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorControllerOptions.h; sourceTree = "<group>"; };
-		6E6A66CE1857DD8100C37F47 /* AFPhotoEditorCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorCustomization.h; sourceTree = "<group>"; };
-		6E6A66CF1857DD8100C37F47 /* AFPhotoEditorProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorProduct.h; sourceTree = "<group>"; };
-		6E6A66D01857DD8100C37F47 /* AFPhotoEditorSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorSession.h; sourceTree = "<group>"; };
-		6E6A66D11857DD8100C37F47 /* libAviarySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAviarySDK.a; sourceTree = "<group>"; };
-		6E6A66D31857DD8100C37F47 /* AviarySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AviarySDKResources.bundle; sourceTree = "<group>"; };
 		6EE0347D18544BEE0055AA0F /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		6EE0347E18544BEE0055AA0F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		6EE0347F18544BEE0055AA0F /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -373,8 +378,42 @@
 		AC5283BC183EF9670002590D /* RRCircularSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RRCircularSlider.m; sourceTree = "<group>"; };
 		AC57CD66183C4B3100916B12 /* InstaPicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaPicDetailViewController.h; sourceTree = "<group>"; };
 		AC57CD67183C4B3100916B12 /* InstaPicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaPicDetailViewController.m; sourceTree = "<group>"; };
+		AC71F5D61877CDF8000FF534 /* AFOpenGLManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOpenGLManager.h; sourceTree = "<group>"; };
+		AC71F5D71877CDF8000FF534 /* AFPhotoEditorContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorContext.h; sourceTree = "<group>"; };
+		AC71F5D81877CDF8000FF534 /* AFPhotoEditorController+InAppPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AFPhotoEditorController+InAppPurchase.h"; sourceTree = "<group>"; };
+		AC71F5D91877CDF8000FF534 /* AFPhotoEditorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorController.h; sourceTree = "<group>"; };
+		AC71F5DA1877CDF8000FF534 /* AFPhotoEditorControllerOptions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorControllerOptions.h; sourceTree = "<group>"; };
+		AC71F5DB1877CDF8000FF534 /* AFPhotoEditorCustomization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorCustomization.h; sourceTree = "<group>"; };
+		AC71F5DC1877CDF8000FF534 /* AFPhotoEditorProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorProduct.h; sourceTree = "<group>"; };
+		AC71F5DD1877CDF8000FF534 /* AFPhotoEditorSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFPhotoEditorSession.h; sourceTree = "<group>"; };
+		AC71F5DE1877CDF8000FF534 /* libAviarySDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAviarySDK.a; sourceTree = "<group>"; };
+		AC71F5E01877CDF8000FF534 /* AviarySDKResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AviarySDKResources.bundle; sourceTree = "<group>"; };
 		AC792F731831BF7E00946DBE /* TweetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailViewController.h; sourceTree = "<group>"; };
 		AC792F741831BF7E00946DBE /* TweetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetailViewController.m; sourceTree = "<group>"; };
+		AC92CC641877D16C006257CE /* ActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
+		AC92CC651877D16C006257CE /* MyActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActivityIndicator.h; sourceTree = "<group>"; };
+		AC92CC661877D16C006257CE /* MyActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivityIndicator.m; sourceTree = "<group>"; };
+		AC92CC681877D16C006257CE /* MDBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBrowser.h; sourceTree = "<group>"; };
+		AC92CC691877D16C006257CE /* MDBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBrowser.m; sourceTree = "<group>"; };
+		AC92CC6C1877D16C006257CE /* MDBrowserAnimatorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBrowserAnimatorFactory.h; sourceTree = "<group>"; };
+		AC92CC6D1877D16C006257CE /* MDBrowserAnimatorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MDBrowserAnimatorFactory.m; sourceTree = "<group>"; };
+		AC92CC6F1877D16C006257CE /* MDBrowserAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MDBrowserAnimator.h; sourceTree = "<group>"; };
+		AC92CC711877D16C006257CE /* PopUpBrowserAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopUpBrowserAnimator.h; sourceTree = "<group>"; };
+		AC92CC721877D16C006257CE /* PopUpBrowserAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopUpBrowserAnimator.m; sourceTree = "<group>"; };
+		AC92CC741877D16C006257CE /* SlideFromBottomBrowserAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlideFromBottomBrowserAnimator.h; sourceTree = "<group>"; };
+		AC92CC751877D16C006257CE /* SlideFromBottomBrowserAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlideFromBottomBrowserAnimator.m; sourceTree = "<group>"; };
+		AC92CC771877D16C006257CE /* MJPopupBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJPopupBackgroundView.h; sourceTree = "<group>"; };
+		AC92CC781877D16C006257CE /* MJPopupBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJPopupBackgroundView.m; sourceTree = "<group>"; };
+		AC92CC7A1877D16C006257CE /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
+		AC92CC7B1877D16C006257CE /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		AC92CC7C1877D16C006257CE /* back_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_active.png; sourceTree = "<group>"; };
+		AC92CC7D1877D16C006257CE /* back_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_active@2x.png"; sourceTree = "<group>"; };
+		AC92CC7E1877D16C006257CE /* close.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = close.png; sourceTree = "<group>"; };
+		AC92CC7F1877D16C006257CE /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		AC92CC801877D16C006257CE /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		AC92CC811877D16C006257CE /* next@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next@2x.png"; sourceTree = "<group>"; };
+		AC92CC821877D16C006257CE /* next_active.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next_active.png; sourceTree = "<group>"; };
+		AC92CC831877D16C006257CE /* next_active@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "next_active@2x.png"; sourceTree = "<group>"; };
 		AC9FAF581810D0E800A605E5 /* WelcomeScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeScreenViewController.h; sourceTree = "<group>"; };
 		AC9FAF591810D0E800A605E5 /* WelcomeScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeScreenViewController.m; sourceTree = "<group>"; };
 		ACB216A6183C0C7C00DC741D /* Lockbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lockbox.h; sourceTree = "<group>"; };
@@ -501,7 +540,7 @@
 				6EE0348518544BEE0055AA0F /* Accelerate.framework in Frameworks */,
 				6EE0348618544BEE0055AA0F /* CoreData.framework in Frameworks */,
 				ACC4C70218062C82000A3BA8 /* CoreGraphics.framework in Frameworks */,
-				6E6A66D41857DD8100C37F47 /* libAviarySDK.a in Frameworks */,
+				AC71F5E11877CDF8000FF534 /* libAviarySDK.a in Frameworks */,
 				6EE0348718544BEE0055AA0F /* CoreText.framework in Frameworks */,
 				ACC4C70018062C82000A3BA8 /* Foundation.framework in Frameworks */,
 				6EE0348818544BEE0055AA0F /* libsqlite3.0.dylib in Frameworks */,
@@ -519,7 +558,6 @@
 			files = (
 				ACC4C71F18062C83000A3BA8 /* XCTest.framework in Frameworks */,
 				ACC4C72118062C83000A3BA8 /* UIKit.framework in Frameworks */,
-				6E6A66D51857DD8100C37F47 /* libAviarySDK.a in Frameworks */,
 				ACC4C72018062C83000A3BA8 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -554,39 +592,6 @@
 				6E55593018217A2D00546428 /* CRGradientNavigationBar.m */,
 			);
 			path = CRGradientNavigationBar;
-			sourceTree = "<group>";
-		};
-		6E6A66C71857DD8100C37F47 /* AviarySDK */ = {
-			isa = PBXGroup;
-			children = (
-				6E6A66C81857DD8100C37F47 /* Headers */,
-				6E6A66D11857DD8100C37F47 /* libAviarySDK.a */,
-				6E6A66D21857DD8100C37F47 /* Resources */,
-			);
-			path = AviarySDK;
-			sourceTree = "<group>";
-		};
-		6E6A66C81857DD8100C37F47 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				6E6A66C91857DD8100C37F47 /* AFOpenGLManager.h */,
-				6E6A66CA1857DD8100C37F47 /* AFPhotoEditorContext.h */,
-				6E6A66CB1857DD8100C37F47 /* AFPhotoEditorController+InAppPurchase.h */,
-				6E6A66CC1857DD8100C37F47 /* AFPhotoEditorController.h */,
-				6E6A66CD1857DD8100C37F47 /* AFPhotoEditorControllerOptions.h */,
-				6E6A66CE1857DD8100C37F47 /* AFPhotoEditorCustomization.h */,
-				6E6A66CF1857DD8100C37F47 /* AFPhotoEditorProduct.h */,
-				6E6A66D01857DD8100C37F47 /* AFPhotoEditorSession.h */,
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
-		6E6A66D21857DD8100C37F47 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				6E6A66D31857DD8100C37F47 /* AviarySDKResources.bundle */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		6E90EE431854F60900487E07 /* User Interface */ = {
@@ -709,6 +714,142 @@
 			);
 			name = RRCircularMenu;
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		AC71F5D41877CDF8000FF534 /* AviarySDK */ = {
+			isa = PBXGroup;
+			children = (
+				AC71F5D51877CDF8000FF534 /* Headers */,
+				AC71F5DE1877CDF8000FF534 /* libAviarySDK.a */,
+				AC71F5DF1877CDF8000FF534 /* Resources */,
+			);
+			path = AviarySDK;
+			sourceTree = "<group>";
+		};
+		AC71F5D51877CDF8000FF534 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				AC71F5D61877CDF8000FF534 /* AFOpenGLManager.h */,
+				AC71F5D71877CDF8000FF534 /* AFPhotoEditorContext.h */,
+				AC71F5D81877CDF8000FF534 /* AFPhotoEditorController+InAppPurchase.h */,
+				AC71F5D91877CDF8000FF534 /* AFPhotoEditorController.h */,
+				AC71F5DA1877CDF8000FF534 /* AFPhotoEditorControllerOptions.h */,
+				AC71F5DB1877CDF8000FF534 /* AFPhotoEditorCustomization.h */,
+				AC71F5DC1877CDF8000FF534 /* AFPhotoEditorProduct.h */,
+				AC71F5DD1877CDF8000FF534 /* AFPhotoEditorSession.h */,
+			);
+			path = Headers;
+			sourceTree = "<group>";
+		};
+		AC71F5DF1877CDF8000FF534 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AC71F5E01877CDF8000FF534 /* AviarySDKResources.bundle */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		AC92CC621877D16C006257CE /* MDBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AC92CC631877D16C006257CE /* ActivityIndicator */,
+				AC92CC671877D16C006257CE /* MDBrowser */,
+				AC92CC6A1877D16C006257CE /* MDBrowserAnimator */,
+				AC92CC761877D16C006257CE /* OverLayView */,
+				AC92CC791877D16C006257CE /* UIImages */,
+			);
+			path = MDBrowser;
+			sourceTree = "<group>";
+		};
+		AC92CC631877D16C006257CE /* ActivityIndicator */ = {
+			isa = PBXGroup;
+			children = (
+				AC92CC641877D16C006257CE /* ActivityView.xib */,
+				AC92CC651877D16C006257CE /* MyActivityIndicator.h */,
+				AC92CC661877D16C006257CE /* MyActivityIndicator.m */,
+			);
+			path = ActivityIndicator;
+			sourceTree = "<group>";
+		};
+		AC92CC671877D16C006257CE /* MDBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				AC92CC681877D16C006257CE /* MDBrowser.h */,
+				AC92CC691877D16C006257CE /* MDBrowser.m */,
+			);
+			path = MDBrowser;
+			sourceTree = "<group>";
+		};
+		AC92CC6A1877D16C006257CE /* MDBrowserAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				AC92CC6B1877D16C006257CE /* MDBrowserAnimatorFactory */,
+				AC92CC6E1877D16C006257CE /* MDBrowserAnimatorProtocol */,
+				AC92CC701877D16C006257CE /* PopUpBrowserAnimator */,
+				AC92CC731877D16C006257CE /* SlideFromBottomBrowserAnimator */,
+			);
+			path = MDBrowserAnimator;
+			sourceTree = "<group>";
+		};
+		AC92CC6B1877D16C006257CE /* MDBrowserAnimatorFactory */ = {
+			isa = PBXGroup;
+			children = (
+				AC92CC6C1877D16C006257CE /* MDBrowserAnimatorFactory.h */,
+				AC92CC6D1877D16C006257CE /* MDBrowserAnimatorFactory.m */,
+			);
+			path = MDBrowserAnimatorFactory;
+			sourceTree = "<group>";
+		};
+		AC92CC6E1877D16C006257CE /* MDBrowserAnimatorProtocol */ = {
+			isa = PBXGroup;
+			children = (
+				AC92CC6F1877D16C006257CE /* MDBrowserAnimator.h */,
+			);
+			path = MDBrowserAnimatorProtocol;
+			sourceTree = "<group>";
+		};
+		AC92CC701877D16C006257CE /* PopUpBrowserAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				AC92CC711877D16C006257CE /* PopUpBrowserAnimator.h */,
+				AC92CC721877D16C006257CE /* PopUpBrowserAnimator.m */,
+			);
+			path = PopUpBrowserAnimator;
+			sourceTree = "<group>";
+		};
+		AC92CC731877D16C006257CE /* SlideFromBottomBrowserAnimator */ = {
+			isa = PBXGroup;
+			children = (
+				AC92CC741877D16C006257CE /* SlideFromBottomBrowserAnimator.h */,
+				AC92CC751877D16C006257CE /* SlideFromBottomBrowserAnimator.m */,
+			);
+			path = SlideFromBottomBrowserAnimator;
+			sourceTree = "<group>";
+		};
+		AC92CC761877D16C006257CE /* OverLayView */ = {
+			isa = PBXGroup;
+			children = (
+				AC92CC771877D16C006257CE /* MJPopupBackgroundView.h */,
+				AC92CC781877D16C006257CE /* MJPopupBackgroundView.m */,
+			);
+			path = OverLayView;
+			sourceTree = "<group>";
+		};
+		AC92CC791877D16C006257CE /* UIImages */ = {
+			isa = PBXGroup;
+			children = (
+				AC92CC7A1877D16C006257CE /* back.png */,
+				AC92CC7B1877D16C006257CE /* back@2x.png */,
+				AC92CC7C1877D16C006257CE /* back_active.png */,
+				AC92CC7D1877D16C006257CE /* back_active@2x.png */,
+				AC92CC7E1877D16C006257CE /* close.png */,
+				AC92CC7F1877D16C006257CE /* close@2x.png */,
+				AC92CC801877D16C006257CE /* next.png */,
+				AC92CC811877D16C006257CE /* next@2x.png */,
+				AC92CC821877D16C006257CE /* next_active.png */,
+				AC92CC831877D16C006257CE /* next_active@2x.png */,
+			);
+			path = UIImages;
 			sourceTree = "<group>";
 		};
 		ACB8DCCD1845A76C00A3A498 /* CircularSocialMedia */ = {
@@ -924,7 +1065,8 @@
 		ACCF7656180F6FB800E0CA67 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				6E6A66C71857DD8100C37F47 /* AviarySDK */,
+				AC92CC621877D16C006257CE /* MDBrowser */,
+				AC71F5D41877CDF8000FF534 /* AviarySDK */,
 				6E4A5BCD185450C60096B354 /* REComposeViewController */,
 				AC0E155A184BEFB600B7DDDD /* SDWebImage */,
 				AC5283B3183EF9670002590D /* RRCircularMenu */,
@@ -1043,15 +1185,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC92CC921877D16C006257CE /* next@2x.png in Resources */,
 				AC4A6E1C1844408A00FDA6ED /* HorizBorder.png in Resources */,
 				ACB8DD161845A76C00A3A498 /* indiegogo.png in Resources */,
-				6E6A66D61857DD8100C37F47 /* AviarySDKResources.bundle in Resources */,
+				AC71F5E21877CDF8000FF534 /* AviarySDKResources.bundle in Resources */,
 				ACC4C71818062C82000A3BA8 /* Images.xcassets in Resources */,
 				ACB8DD461845A76C00A3A498 /* twitter circ.png in Resources */,
 				ACB8DD041845A76C00A3A498 /* digg.png in Resources */,
+				AC92CC8E1877D16C006257CE /* back_active@2x.png in Resources */,
 				ACB8DD3C1845A76C00A3A498 /* spotify.png in Resources */,
 				AC4A6E1E1844408A00FDA6ED /* VertBorder.png in Resources */,
 				ACB8DD3E1845A76C00A3A498 /* stackoverflow.png in Resources */,
+				AC92CC8F1877D16C006257CE /* close.png in Resources */,
+				AC92CC931877D16C006257CE /* next_active.png in Resources */,
 				ACB8DD201845A76C00A3A498 /* linkedin circ.png in Resources */,
 				AC0BF96E18402EC900177106 /* facebook.off@2x.png in Resources */,
 				ACB8DD0A1845A76C00A3A498 /* facebook circ.png in Resources */,
@@ -1063,10 +1209,12 @@
 				ACB8DD121845A76C00A3A498 /* gplus circ.png in Resources */,
 				ACB8DD381845A76C00A3A498 /* skype.png in Resources */,
 				ACB8DCFE1845A76C00A3A498 /* behance.png in Resources */,
+				AC92CC8B1877D16C006257CE /* back.png in Resources */,
 				ACB8DD501845A76C00A3A498 /* youtube.png in Resources */,
 				ACB8DD2A1845A76C00A3A498 /* orkut.png in Resources */,
 				ACB8DD281845A76C00A3A498 /* myspace2.png in Resources */,
 				ACB8DD4C1845A76C00A3A498 /* wordpress.png in Resources */,
+				AC92CC8C1877D16C006257CE /* back@2x.png in Resources */,
 				ACC4C70A18062C82000A3BA8 /* InfoPlist.strings in Resources */,
 				ACB8DCFA1845A76C00A3A498 /* addthis.png in Resources */,
 				AC0BF98018402EC900177106 /* pinterest@2x.png in Resources */,
@@ -1077,18 +1225,23 @@
 				ACB8DD1E1845A76C00A3A498 /* like.png in Resources */,
 				ACB8DD081845A76C00A3A498 /* email.png in Resources */,
 				AC0BF97218402EC900177106 /* google.off@2x.png in Resources */,
+				AC92CC911877D16C006257CE /* next.png in Resources */,
 				ACB8DD0E1845A76C00A3A498 /* foursquare.png in Resources */,
 				ACB8DD421845A76C00A3A498 /* Thumbs.db in Resources */,
 				AC51018E184653FF00CD09E7 /* Darkening.png in Resources */,
 				ACB8DD1C1845A76C00A3A498 /* lastfm.png in Resources */,
 				ACC4C71318062C82000A3BA8 /* Main.storyboard in Resources */,
+				AC92CC901877D16C006257CE /* close@2x.png in Resources */,
+				AC92CC941877D16C006257CE /* next_active@2x.png in Resources */,
 				ACB8DD261845A76C00A3A498 /* myspace.png in Resources */,
+				AC92CC8D1877D16C006257CE /* back_active.png in Resources */,
 				ACB8DD221845A76C00A3A498 /* livejournal.png in Resources */,
 				ACB8DD001845A76C00A3A498 /* blogger.png in Resources */,
 				ACB8DD1A1845A76C00A3A498 /* kickstarter.png in Resources */,
 				AC0BF97018402EC900177106 /* facebook@2x.png in Resources */,
 				ACB8DD4A1845A76C00A3A498 /* vimeo.png in Resources */,
 				AC0BF97C18402EC900177106 /* linkedIn@2x.png in Resources */,
+				AC92CC841877D16C006257CE /* ActivityView.xib in Resources */,
 				AC4A6E161844408A00FDA6ED /* Background.png in Resources */,
 				ACB8DD341845A76C00A3A498 /* rss.png in Resources */,
 				ACB8DD0C1845A76C00A3A498 /* flickr.png in Resources */,
@@ -1134,7 +1287,6 @@
 				ACB8DD291845A76C00A3A498 /* myspace2.png in Resources */,
 				ACB8DD171845A76C00A3A498 /* indiegogo.png in Resources */,
 				ACB8DD331845A76C00A3A498 /* reddit.png in Resources */,
-				6E6A66D71857DD8100C37F47 /* AviarySDKResources.bundle in Resources */,
 				ACB8DD111845A76C00A3A498 /* github.png in Resources */,
 				ACB8DD031845A76C00A3A498 /* deviantart.png in Resources */,
 				AC4A6E191844408A00FDA6ED /* comment.png in Resources */,
@@ -1197,6 +1349,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6EE0363118544F810055AA0F /* Helpers.h in Sources */,
+				AC92CC871877D16C006257CE /* MDBrowserAnimatorFactory.m in Sources */,
 				ACEBB1C7182C852500A4CE2F /* UIImageView+AFNetworking.m in Sources */,
 				ACC4C73A18062D95000A3BA8 /* Data.m in Sources */,
 				ACC1E98E1825E49F00DCA712 /* JSFlatButton.m in Sources */,
@@ -1206,10 +1359,12 @@
 				ACEBB1C2182C852500A4CE2F /* AFJSONRequestOperation.m in Sources */,
 				ACEBB1C5182C852500A4CE2F /* AFURLConnectionOperation.m in Sources */,
 				6E4A5BDD185450C60096B354 /* DEComposeTextView.m in Sources */,
+				AC92CC881877D16C006257CE /* PopUpBrowserAnimator.m in Sources */,
 				ACEEF64C1814275E002B61B9 /* MenuViewController.m in Sources */,
 				ACD70FB818394F1500C28489 /* SettingsViewController.m in Sources */,
 				6E55593418217BCA00546428 /* ProfileViewController.m in Sources */,
 				ACEBB1C3182C852500A4CE2F /* AFNetworkActivityIndicatorManager.m in Sources */,
+				AC92CC851877D16C006257CE /* MyActivityIndicator.m in Sources */,
 				AC0E1586184BEFB600B7DDDD /* SDWebImageManager.m in Sources */,
 				AC0BF988184041D400177106 /* TwitterClient.m in Sources */,
 				ACB216A8183C0C7C00DC741D /* Lockbox.m in Sources */,
@@ -1221,6 +1376,7 @@
 				AC443F171837E87D00EE3DF7 /* StreamViewController.m in Sources */,
 				ACEBB1C1182C852500A4CE2F /* AFImageRequestOperation.m in Sources */,
 				ACC4C73718062CCD000A3BA8 /* User.m in Sources */,
+				AC92CC891877D16C006257CE /* SlideFromBottomBrowserAnimator.m in Sources */,
 				ACEBB1C6182C852500A4CE2F /* AFXMLRequestOperation.m in Sources */,
 				AC0E1584184BEFB600B7DDDD /* SDWebImageDownloaderOperation.m in Sources */,
 				AC0E157A184BEFB600B7DDDD /* NSData+GIF.m in Sources */,
@@ -1233,6 +1389,7 @@
 				ACEEF649181426FE002B61B9 /* RootMenuController.m in Sources */,
 				AC5283C3183EF9670002590D /* RRCircularSlider.m in Sources */,
 				6E4A5BE7185450C60096B354 /* REComposeViewController.m in Sources */,
+				AC92CC8A1877D16C006257CE /* MJPopupBackgroundView.m in Sources */,
 				AC0E158E184BEFB600B7DDDD /* UIImage+MultiFormat.m in Sources */,
 				AC0E1580184BEFB600B7DDDD /* SDWebImageDecoder.m in Sources */,
 				AC792F751831BF7E00946DBE /* TweetDetailViewController.m in Sources */,
@@ -1251,6 +1408,7 @@
 				ACC1E9881825E45100DCA712 /* JASidePanelController.m in Sources */,
 				ACC1E9951825E4CD00DCA712 /* UIColor+JSFlatButton.m in Sources */,
 				6E4A5BDB185450C60096B354 /* DEComposeRuledView.m in Sources */,
+				AC92CC861877D16C006257CE /* MDBrowser.m in Sources */,
 				AC0E157E184BEFB600B7DDDD /* SDWebImageCompat.m in Sources */,
 				AC0E157C184BEFB600B7DDDD /* SDImageCache.m in Sources */,
 			);
@@ -1423,6 +1581,7 @@
 					"$(SDKROOT)/usr/lib/system/introspection",
 					/Users/prad/Developer/_iPhone/Floadt/AviarySDK,
 					"/Developer/Floadt\\ iPhone\\ App/Floadt/AviarySDK",
+					"/Users/prad/Developer/Floadt\\ for\\ iPhone/Floadt/AviarySDK",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1449,6 +1608,7 @@
 					"$(SDKROOT)/usr/lib/system/introspection",
 					/Users/prad/Developer/_iPhone/Floadt/AviarySDK,
 					"/Developer/Floadt\\ iPhone\\ App/Floadt/AviarySDK",
+					"/Users/prad/Developer/Floadt\\ for\\ iPhone/Floadt/AviarySDK",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",

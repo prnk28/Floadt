@@ -13,6 +13,7 @@
 @synthesize tweets;
 @synthesize instaPics;
 @synthesize totalFeed;
+@synthesize instagramResponse;
 
 - (void)viewDidLoad
 {
@@ -147,11 +148,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 15;
+    return 17;
 }
 
 - (void)updateArrays {
-    instaPics = self.timelineResponse[@"data"];
+    instaPics = instagramResponse[@"data"];
     totalFeed = [tweets arrayByAddingObjectsFromArray:instaPics];
     //[self sortArrayBasedOndate];
     
@@ -168,7 +169,7 @@
                                      parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
                                             NSLog(@"Response: %@", responseObject);
-                                            self.timelineResponse = [responseObject mutableCopy];
+                                            instagramResponse = [responseObject mutableCopy];
                                             [self.instaPics addObjectsFromArray:responseObject[@"data"]];
                                             [self updateArrays];
                                             [self.tableView reloadData];
@@ -213,21 +214,23 @@
     }];
 }
 
-- (void)nextInstagramPage:(NSIndexPath *)indexPath{
-    NSDictionary *page = self.timelineResponse[@"pagination"];
-    NSString *nextPage = page[@"next_url"];
-    
-    [[InstagramClient sharedClient] getPath:[NSString stringWithFormat:@"%@",nextPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y == roundf(scrollView.contentSize.height-scrollView.frame.size.height)) {
+        NSDictionary *page = instagramResponse[@"pagination"];
+        NSString *nextPage = page[@"next_url"];
         
-        self.timelineResponse = [responseObject mutableCopy];
-        [self.timelineResponse addEntriesFromDictionary:responseObject];
-        [self.instaPics addObjectsFromArray:responseObject[@"data"]];
-        [self.tableView reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Failure: %@", error);
-    }];
-    
+        [[InstagramClient sharedClient] getPath:[NSString stringWithFormat:@"%@",nextPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            
+            instagramResponse = [responseObject mutableCopy];
+            [instagramResponse addEntriesFromDictionary:responseObject];
+            [instaPics addObjectsFromArray:responseObject[@"data"]];
+            [self.tableView reloadData];
+            
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Failure: %@", error);
+        }];
+    }
 }
 
 - (void)fetchTimeline {
@@ -302,10 +305,6 @@
 
 
 #pragma mark - Miscallaneous
-- (BOOL)comparatorForSN:(NSIndexPath *)indexPath{
-    
-    return YES;
-}
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {

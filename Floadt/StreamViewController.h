@@ -19,8 +19,9 @@
 - (void)updateArrays;
 
 // Properties
-@property (nonatomic, strong) NSMutableDictionary *timelineResponse;
-@property (strong, nonatomic) NSMutableArray *instaPics;
+@property (nonatomic, strong) NSMutableDictionary *instagramResponse;
+@property (nonatomic, strong) NSMutableArray *instaPics;
+
 @property (strong, nonatomic) AFOAuth1Client *twitterClient;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic) NSMutableArray *tweets;

@@ -79,8 +79,6 @@
         }
         
         [[InstagramClient sharedClient] authenticateWithClientID:INSTAGRAM_CLIENT_ID callbackURL:callbackUrl];
-    }else if (!active && [menu isLabelActive]){
-        [menu setLabelActive:NO];
   
     }else if (active && ![menu isLabelActive] && [item.text  isEqual: @"Twitter"]){
         [[TwitterClient sharedClient] authenticateWithTwitter];
