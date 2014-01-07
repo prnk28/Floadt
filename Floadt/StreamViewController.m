@@ -11,9 +11,10 @@
 
 @implementation StreamViewController
 @synthesize tweets;
-@synthesize instaPics;
+@synthesize instapics;
 @synthesize totalFeed;
 @synthesize instagramResponse;
+@synthesize gIndexPath;
 
 - (void)viewDidLoad
 {
@@ -34,6 +35,8 @@
         twitter.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
         
         NSDictionary *totalArray = totalFeed[indexPath.row];;
+        
+        indexPath = gIndexPath;
         
         //Set username for twitter
         NSString *name = [[totalArray objectForKey:@"user"] objectForKey:@"name"];
@@ -77,7 +80,7 @@
         instagram.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
         
         
-        NSDictionary *entry = instaPics[indexPath.row];
+        NSDictionary *entry = instapics[indexPath.row];
         
         // Set Image
         NSString *imageUrlString = entry[@"images"][@"low_resolution"][@"url"];
@@ -148,12 +151,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 17;
+    return 10;
+}
+
+- (NSMutableArray *)entries {
+    return instapics;
 }
 
 - (void)updateArrays {
-    instaPics = instagramResponse[@"data"];
-    totalFeed = [tweets arrayByAddingObjectsFromArray:instaPics];
+    instapics = instagramResponse[@"data"];
+    totalFeed = [tweets arrayByAddingObjectsFromArray:instapics];
     //[self sortArrayBasedOndate];
     
 }
@@ -161,16 +168,15 @@
 
 #pragma mark - Network Pulling
 - (void)fetchInstagramPics {
-    instaPics = [[NSMutableArray alloc] init];
+    instapics = [[NSMutableArray alloc] init];
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
     BOOL *status = [user boolForKey:@"isInstagramLoggedIn"];
     if (status) {
         [[InstagramClient sharedClient] getPath:@"users/self/feed"
                                      parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                            NSLog(@"Response: %@", responseObject);
                                             instagramResponse = [responseObject mutableCopy];
-                                            [self.instaPics addObjectsFromArray:responseObject[@"data"]];
+                                            [self.instapics addObjectsFromArray:responseObject[@"data"]];
                                             [self updateArrays];
                                             [self.tableView reloadData];
                                         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -205,7 +211,7 @@
     [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSArray *responseArray = (NSArray *)responseObject;
         [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-            
+            NSLog(@"%@", tweets);
             tweets = [tweets copy];
             tweets = responseArray;
         }];
@@ -214,22 +220,52 @@
     }];
 }
 
+- (void)nextTweets:(NSIndexPath *)indexPath{
+    // Create Path
+    NSDictionary *twitter = totalFeed[indexPath.row];
+    NSString *maxIDString = [twitter objectForKey:@"id"];
+    int maxIDA = [maxIDString intValue];
+    int maxIDB = maxIDA - 20;
+    NSString *path = [NSString stringWithFormat:@"statuses/home_timeline.json?max_id=%@",maxIDB];
+    NSLog(@"PATH: %@", path);
+    
+    /*
+    [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    [self.twitterClient getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *responseArray = (NSArray *)responseObject;
+        [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            tweets = [tweets copy];
+            tweets = responseArray;
+        }];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];*/
+}
+
+- (void)nextInstagramPage:(NSIndexPath *)indexPath{
+    // Create Path
+    NSDictionary *page = instagramResponse[@"pagination"];
+    NSString *nextPage = page[@"next_url"];
+    
+    [[InstagramClient sharedClient] getPath:[NSString stringWithFormat:@"%@",nextPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        instagramResponse = [responseObject mutableCopy];
+        [instagramResponse addEntriesFromDictionary:responseObject];
+        [instapics addObjectsFromArray:responseObject[@"data"]];
+        [self updateArrays];
+        [self.tableView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
+}
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (scrollView.contentOffset.y == roundf(scrollView.contentSize.height-scrollView.frame.size.height)) {
-        NSDictionary *page = instagramResponse[@"pagination"];
-        NSString *nextPage = page[@"next_url"];
-        
-        [[InstagramClient sharedClient] getPath:[NSString stringWithFormat:@"%@",nextPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            
-            instagramResponse = [responseObject mutableCopy];
-            [instagramResponse addEntriesFromDictionary:responseObject];
-            [instaPics addObjectsFromArray:responseObject[@"data"]];
-            [self.tableView reloadData];
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Failure: %@", error);
-        }];
+        NSLog(@"we are at the endddd");
+        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        [self nextTweets:gIndexPath];
+        //[self nextInstagramPage:indexPath];
     }
 }
 
@@ -249,9 +285,7 @@
 }
 
 - (void)sortArrayBasedOndate {
-   
-    
-    instaPics; // your instagrams
+    instapics; // your instagrams
     tweets;    // your tweets
     totalFeed = [NSMutableArray array]; // the common array
     
@@ -261,7 +295,7 @@
     [fmtDate setDateFormat:@"yyyy-MM-dd"];
     
     // Add all instagrams:
-    for (NSMutableDictionary *instagram in instaPics) {
+    for (NSMutableDictionary *instagram in instapics) {
         NSString *createdAt = instagram[@"created_time"];
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:[createdAt doubleValue]];
         instagram[@"creationDate"] = date;
@@ -316,7 +350,7 @@
     }
     else if ([segue.identifier isEqualToString:@"showInstaPic"]) {
         NSInteger row = [[self tableView].indexPathForSelectedRow row];
-        NSDictionary *pics = [instaPics objectAtIndex:row];
+        NSDictionary *pics = [instapics objectAtIndex:row];
         InstaPicDetailViewController *detailController = segue.destinationViewController;
         detailController.detailItem = pics;
     }
