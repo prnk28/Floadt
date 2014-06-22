@@ -231,7 +231,7 @@
             NSLog(@"Failure: %@", error);
         }];
     }
-}
+}  
 
 - (void)fetchTimeline {
     [self fetchInstagramPics];
