@@ -25,53 +25,9 @@
 }
 
 #pragma mark - Table View
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id object = [totalFeed objectAtIndex:indexPath.row];
-    if ([tweets containsObject:object]) {
-        static NSString *Twitter = @"TweetCell";
-        UITableViewCell *twitter = [self.tableView dequeueReusableCellWithIdentifier:Twitter];
-        twitter.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
-        
-        NSDictionary *totalArray = totalFeed[indexPath.row];;
-        
-        //Set username for twitter
-        NSString *name = [[totalArray objectForKey:@"user"] objectForKey:@"name"];
-        UILabel *twitterNameLabel = (UILabel *)[twitter viewWithTag:202];
-        [twitterNameLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0]];
-        [twitterNameLabel setText:name];
-        
-        //Set status for twitter
-        NSString *text = [totalArray objectForKey:@"text"];
-        UILabel *twitterTweetLabel = (UILabel *)[twitter viewWithTag:203];
-        [twitterTweetLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:10.0]];
-        [twitterTweetLabel setText:text];
-        
-        //Set Profile Pic for Twitter
-        UIImageView *profilePic = (UIImageView *)[twitter viewWithTag:201];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSString *imageUrl = [[totalArray objectForKey:@"user"] objectForKey:@"profile_image_url"];
-            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                //Make the Profile Pic ImageView Circular
-                profilePic.image = [UIImage imageWithData:data];
-                CALayer *imageLayer = profilePic.layer;
-                [imageLayer setCornerRadius:25];
-                [imageLayer setMasksToBounds:YES];
-            });
-        });
-        
-        //Set number of Favorites for Tweet
-        NSString *favoritesCount = [[totalArray objectForKey:@"user"]objectForKey:@"favourites_count"];
-        UIButton *favoritesButton = (UIButton *)[twitter viewWithTag:204];
-        [favoritesButton setTitle:[NSString stringWithFormat:@"  %@",favoritesCount] forState:UIControlStateNormal];
-        [favoritesButton setTitle:[NSString stringWithFormat:@"  %@",favoritesCount] forState:UIControlStateHighlighted];
-        favoritesButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
-        
-        return twitter;
-
-    }else{
         static NSString *Instagram = @"InstagramCell";
         UITableViewCell *instagram = [self.tableView dequeueReusableCellWithIdentifier:Instagram];
         instagram.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
@@ -107,7 +63,7 @@
         
         // Add Profile Image
         UIImageView *profilePic = (UIImageView *)[instagram viewWithTag:101];
-       
+        
         NSURL *imageUrl = entry[@"user"][@"profile_picture"];
         [profilePic setImageWithURL:imageUrl completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
             profilePic.image = image;
@@ -125,30 +81,89 @@
         likesButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
         
         return instagram;
- 
-    }
-    
+}
+ */
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self basicCellAtIndexPath:indexPath];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell*)basicCellAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *Twitter = @"TweetCell";
+    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:Twitter forIndexPath:indexPath];
+    [self configureBasicCell:cell atIndexPath:indexPath];
+    return cell;
+}
+
+- (void)configureBasicCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
     id object = [totalFeed objectAtIndex:indexPath.row];
     if ([tweets containsObject:object]) {
-        return 184;
-    } else {
-        return 300;
+        static NSString *Twitter = @"TweetCell";
+        UITableViewCell *twitter = [self.tableView dequeueReusableCellWithIdentifier:Twitter];
+        twitter.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+        
+        NSDictionary *totalArray = totalFeed[indexPath.row];;
+        
+        //Set username for twitter
+        NSString *name = [[totalArray objectForKey:@"user"] objectForKey:@"name"];
+        UILabel *twitterNameLabel = (UILabel *)[twitter viewWithTag:202];
+        [twitterNameLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0]];
+        //[twitterNameLabel setText:name];
+        
+        //Set status for twitter
+        NSString *subtitle = [totalArray objectForKey:@"text"];
+        UILabel *twitterTweetLabel = (UILabel *)[twitter viewWithTag:203];
+        [twitterTweetLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:10.0]];
+        if (subtitle.length > 200) {
+            subtitle = [NSString stringWithFormat:@"%@...", [subtitle substringToIndex:200]];
+        }
+        [twitterTweetLabel setText:subtitle];
+        
+        //Set Profile Pic for Twitter
+        UIImageView *profilePic = (UIImageView *)[twitter viewWithTag:201];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSString *imageUrl = [[totalArray objectForKey:@"user"] objectForKey:@"profile_image_url"];
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //Make the Profile Pic ImageView Circular
+                profilePic.image = [UIImage imageWithData:data];
+                CALayer *imageLayer = profilePic.layer;
+                [imageLayer setCornerRadius:25];
+                [imageLayer setMasksToBounds:YES];
+            });
+        });
+        
+        //Set number of Favorites for Tweet
+        NSString *favoritesCount = [[totalArray objectForKey:@"user"]objectForKey:@"favourites_count"];
+        UIButton *favoritesButton = (UIButton *)[twitter viewWithTag:204];
+        [favoritesButton setTitle:[NSString stringWithFormat:@"  %@",favoritesCount] forState:UIControlStateNormal];
+        [favoritesButton setTitle:[NSString stringWithFormat:@"  %@",favoritesCount] forState:UIControlStateHighlighted];
+        favoritesButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
     }
 }
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self heightForBasicCellAtIndexPath:indexPath];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return 17;
+- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
+    static TwitterCell *sizingCell = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:@"TweetCell"];
+    });
+    
+    [self configureBasicCell:sizingCell atIndexPath:indexPath];
+    return [self calculateHeightForConfiguredSizingCell:sizingCell];
+}
+
+- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
+    [sizingCell setNeedsLayout];
+    [sizingCell layoutIfNeeded];
+    
+    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+    return size.height;
 }
 
 - (void)updateArrays {
@@ -231,7 +246,7 @@
             NSLog(@"Failure: %@", error);
         }];
     }
-}  
+}
 
 - (void)fetchTimeline {
     [self fetchInstagramPics];
@@ -249,7 +264,6 @@
 }
 
 - (void)sortArrayBasedOndate {
-   
     
     instaPics; // your instagrams
     tweets;    // your tweets
@@ -281,7 +295,6 @@
     
 }
 
-
 #pragma mark - Refresh
 - (void)refresh:(UIRefreshControl *)refreshControl {
     [self refetchTimeline];
@@ -299,7 +312,7 @@
     }
     
     if (result == REComposeResultPosted) {
-
+        
     }
 }
 
@@ -320,7 +333,7 @@
         InstaPicDetailViewController *detailController = segue.destinationViewController;
         detailController.detailItem = pics;
     }
-
+    
 }
 
 - (void)didTapPostButton:(id)sender

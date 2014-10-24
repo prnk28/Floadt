@@ -10,7 +10,7 @@
 #import "Data.h"
 
 @interface StreamViewController : UITableViewController {
-
+    
     NSString *tweetCreation;
     NSString *instagramCreation;
     
