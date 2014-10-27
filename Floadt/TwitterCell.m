@@ -10,6 +10,7 @@
 
 @implementation TwitterCell
 
+<<<<<<< HEAD
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -19,6 +20,8 @@
     return self;
 }
 
+=======
+>>>>>>> FETCH_HEAD
 - (void)awakeFromNib {
     // Initialization code
 }

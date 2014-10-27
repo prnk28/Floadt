@@ -1115,7 +1115,7 @@
 		ACC4C6F418062C82000A3BA8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = Floadt;
 				TargetAttributes = {
 					ACC4C71C18062C83000A3BA8 = {
@@ -1448,7 +1448,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1487,7 +1486,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1525,6 +1523,18 @@
 				GCC_PREFIX_HEADER = "Floadt/Floadt-Prefix.pch";
 				INFOPLIST_FILE = "Floadt/Floadt-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+<<<<<<< HEAD
+=======
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Pradyumn/Desktop/Floadt/Floadt/AviarySDK,
+					"$(SDKROOT)/usr/lib/system",
+					"$(SDKROOT)/usr/lib/system/introspection",
+					/Users/prad/Developer/_iPhone/Floadt/AviarySDK,
+					"/Developer/Floadt\\ iPhone\\ App/Floadt/AviarySDK",
+					"/Users/prad/Developer/Floadt\\ for\\ iPhone/Floadt/AviarySDK",
+				);
+>>>>>>> FETCH_HEAD
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1544,6 +1554,18 @@
 				GCC_PREFIX_HEADER = "Floadt/Floadt-Prefix.pch";
 				INFOPLIST_FILE = "Floadt/Floadt-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+<<<<<<< HEAD
+=======
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/Pradyumn/Desktop/Floadt/Floadt/AviarySDK,
+					"$(SDKROOT)/usr/lib/system",
+					"$(SDKROOT)/usr/lib/system/introspection",
+					/Users/prad/Developer/_iPhone/Floadt/AviarySDK,
+					"/Developer/Floadt\\ iPhone\\ App/Floadt/AviarySDK",
+					"/Users/prad/Developer/Floadt\\ for\\ iPhone/Floadt/AviarySDK",
+				);
+>>>>>>> FETCH_HEAD
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1557,7 +1579,6 @@
 		ACC4C73218062C83000A3BA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Floadt.app/Floadt";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -1585,7 +1606,6 @@
 		ACC4C73318062C83000A3BA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Floadt.app/Floadt";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
