@@ -65,7 +65,7 @@
     [[items lastObject] setLastOne:YES];
     
     // disable last border for symmetry
-    [[items lastObject] setBorderWidth:0];
+    //[[items lastObject] setBorderWidth:0];
     
     // Add center label
     label = [[RRCircularMenuLabel alloc] initWithFrame:CGRectMake(10 + (self.frame.size.width - 20) / 2 - 50, self.frame.size.height - 50 - 20, 100, 100)];

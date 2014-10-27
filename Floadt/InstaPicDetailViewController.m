@@ -17,12 +17,24 @@
 
 - (void)viewDidLoad
 {
+    
+    // Setup Back Button
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    [backButton setTitle:@"" forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"backButton.png"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
+    backButton.frame = CGRectMake(0.0f, 0.0f, 15.0f, 15.0f);
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    
+    self.navItem.leftBarButtonItem = backButtonItem;
+
+    
     UITapGestureRecognizer *doubleTapImage = [[UITapGestureRecognizer alloc] initWithTarget:_imageView action:@selector(doubleTapImage:)];
     doubleTapImage.numberOfTapsRequired = 2;
     
     [_imageView addGestureRecognizer:doubleTapImage];
-    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@" " style:UIBarButtonItemStyleBordered target:nil action:nil];
-    [[self navigationItem] setBackBarButtonItem:backButton];
+
     NSDictionary *instaPics = self.detailItem;
     
     NSString *user =  instaPics[@"user"][@"full_name"];
@@ -64,6 +76,10 @@
 
 - (void)doubleTapImage:(id)sender {
     NSLog(@"Double Tapped, Will be liked");
+}
+
+-(void) popBack {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,6 +10,8 @@
 
 @interface InstaPicDetailViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UINavigationItem *navItem;
+
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 
 @property (strong, nonatomic) IBOutlet UILabel *caption;

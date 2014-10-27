@@ -12,6 +12,7 @@
 
 
 }
+@property (strong, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (strong, nonatomic) IBOutlet UILabel *tweetLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *profilePic;
 @property (strong, nonatomic) IBOutlet UILabel *name;

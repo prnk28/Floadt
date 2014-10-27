@@ -16,6 +16,17 @@
 
 - (void)viewDidLoad
 {
+    // Setup Back Button
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    [backButton setTitle:@"" forState:UIControlStateNormal];
+    [backButton setBackgroundImage:[UIImage imageNamed:@"backButton.png"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
+    backButton.frame = CGRectMake(0.0f, 0.0f, 15.0f, 15.0f);
+    UIBarButtonItem *backButtonItem = [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    
+    self.navItem.leftBarButtonItem = backButtonItem;
+    
     [super viewDidLoad];
     if (self.detailItem) {
             NSDictionary *tweet = self.detailItem;
@@ -50,6 +61,11 @@
             });
         
     }
+}
+
+// Pop Back ViewControllers
+-(void) popBack {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning
