@@ -5,6 +5,8 @@
 //  Copyright (c) 2012 Hawk iMedia. All rights reserved.
 //
 
+#import <UIKit/UIKit.h>
+
 @interface Lockbox : NSObject
 
 +(BOOL)setString:(NSString *)value forKey:(NSString *)key;
@@ -18,6 +20,10 @@
 +(BOOL)setSet:(NSSet *)value forKey:(NSString *)key;
 +(BOOL)setSet:(NSSet *)value forKey:(NSString *)key accessibility:(CFTypeRef)accessibility;
 +(NSSet *)setForKey:(NSString *)key;
+
++(BOOL)setDictionary:(NSDictionary *)value forKey:(NSString *)key;
++(BOOL)setDictionary:(NSDictionary *)value forKey:(NSString *)key accessibility:(CFTypeRef)accessibility;
++(NSDictionary *)dictionaryForKey:(NSString *)key;
 
 +(BOOL)setDate:(NSDate *)value forKey:(NSString *)key;
 +(BOOL)setDate:(NSDate *)value forKey:(NSString *)key accessibility:(CFTypeRef)accessibility;

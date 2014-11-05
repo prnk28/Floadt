@@ -168,7 +168,82 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KIK-fs-2DK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="820"/>
+            <point key="canvasLocation" x="327" y="820"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="5sw-94-CZT">
+            <objects>
+                <tableViewController storyboardIdentifier="search" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wwh-7K-E7f" customClass="SearchTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="107" sectionHeaderHeight="22" sectionFooterHeight="22" id="c17-S1-Qqn">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="mPr-ah-rBu">
+                            <rect key="frame" x="-33" y="-12" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="instagramSearchCell" rowHeight="107" id="eto-fp-0l7" customClass="InstagramResultsCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eto-fp-0l7" id="Y5a-ie-FOh">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqs-BV-3Ae">
+                                            <rect key="frame" x="110" y="17" width="202" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hA6-0q-BfN">
+                                            <rect key="frame" x="8" y="8" width="80" height="80"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpx-Kl-z10">
+                                            <rect key="frame" x="110" y="31" width="190" height="45"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageView" destination="hA6-0q-BfN" id="O4g-Ar-ngA"/>
+                                    <outlet property="nameLabel" destination="iqs-BV-3Ae" id="hb3-ra-1dh"/>
+                                    <outlet property="usernameLabel" destination="gpx-Kl-z10" id="lt8-J1-Mqf"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Wwh-7K-E7f" id="OIR-e3-HOp"/>
+                            <outlet property="delegate" destination="Wwh-7K-E7f" id="suF-af-Aq5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Search" id="NBx-wr-yg6"/>
+                    <connections>
+                        <outlet property="TableView" destination="c17-S1-Qqn" id="CxW-gi-VfS"/>
+                        <outlet property="navBar" destination="NBx-wr-yg6" id="pHE-hV-qEb"/>
+                        <outlet property="searchBar" destination="mPr-ah-rBu" id="7Gw-fo-hsm"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dNs-E4-fcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="327" y="1530"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="97u-ZK-Zjm">
+            <objects>
+                <navigationController storyboardIdentifier="NavSearch" useStoryboardIdentifierAsRestorationIdentifier="YES" id="smK-RJ-IKb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qsv-pS-Fwk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Wwh-7K-E7f" kind="relationship" relationship="rootViewController" id="9QF-H8-6Jo"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EtD-AZ-mXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-109" y="1532"/>
         </scene>
         <!--Profile-->
         <scene sceneID="7zX-iZ-8uO">
@@ -198,34 +273,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="InstagramCell" rowHeight="344" id="mP8-ZQ-7nV">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationWidth="0.0" shouldIndentWhileEditing="NO" reuseIdentifier="InstagramCell" rowHeight="260" id="mP8-ZQ-7nV">
                                 <rect key="frame" x="0.0" y="86" width="320" height="300"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mP8-ZQ-7nV" id="P19-SF-FJC">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="299"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HorizBorder.png" translatesAutoresizingMaskIntoConstraints="NO" id="kzx-aW-szc">
-                                            <rect key="frame" x="-6" y="250" width="462" height="2"/>
-                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.39999999999999963" height="0.049999999999999684"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VertBorder.png" translatesAutoresizingMaskIntoConstraints="NO" id="3km-7m-ir1">
-                                            <rect key="frame" x="160" y="251" width="1" height="63"/>
-                                        </imageView>
-                                        <button opaque="NO" tag="105" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDk-yG-NTj">
-                                            <rect key="frame" x="42" y="264" width="65" height="20"/>
-                                            <state key="normal" title="  22" image="heart.png">
-                                                <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="106" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KFt-bE-dBn">
-                                            <rect key="frame" x="190" y="261" width="70" height="24"/>
-                                            <state key="normal" title="  33" image="comment.png">
-                                                <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                         <imageView userInteractionEnabled="NO" tag="104" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J66-vr-iFk">
                                             <rect key="frame" x="10" y="58" width="299" height="183"/>
                                         </imageView>
@@ -259,18 +313,13 @@
                                     <segue destination="PxS-fi-nty" kind="push" identifier="showInstaPic" id="EgU-c1-JTS"/>
                                 </connections>
                             </tableViewCell>
-<<<<<<< HEAD
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TwitterCell" rowHeight="141" id="kO6-TU-cI6" customClass="TwitterCell">
-=======
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="184" id="kO6-TU-cI6" customClass="TwitterCell">
->>>>>>> FETCH_HEAD
                                 <rect key="frame" x="0.0" y="386" width="320" height="184"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kO6-TU-cI6" id="bc4-rS-k15">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="183"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-<<<<<<< HEAD
                                         <imageView userInteractionEnabled="NO" tag="201" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qc6-Pk-Ulb">
                                             <rect key="frame" x="20" y="20" width="100" height="100"/>
                                             <constraints>
@@ -286,57 +335,19 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" placeholderIntrinsicWidth="172" placeholderIntrinsicHeight="21" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="172" translatesAutoresizingMaskIntoConstraints="NO" id="HjC-0t-aaY">
                                             <rect key="frame" x="128" y="22" width="172" height="21"/>
-=======
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="VertBorder.png" translatesAutoresizingMaskIntoConstraints="NO" id="KyV-ng-AQ3">
-                                            <rect key="frame" x="168" y="139" width="1" height="44"/>
-                                        </imageView>
-                                        <button opaque="NO" tag="204" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jTe-Mm-z9m">
-                                            <rect key="frame" x="56" y="153" width="80" height="20"/>
-                                            <state key="normal" title="  22" image="heart.png">
-                                                <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                            </state>
-                                        </button>
-                                        <button opaque="NO" tag="205" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psZ-hd-cec">
-                                            <rect key="frame" x="195" y="149" width="105" height="24"/>
-                                            <state key="normal" title="  33" image="comment.png">
-                                                <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <imageView userInteractionEnabled="NO" tag="201" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qc6-Pk-Ulb">
-                                            <rect key="frame" x="20" y="8" width="50" height="50"/>
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="203" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" misplaced="YES" placeholderIntrinsicWidth="280" placeholderIntrinsicHeight="72" text="Label" lineBreakMode="characterWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsLetterSpacingToFitWidth="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPa-Pf-gBg">
-                                            <rect key="frame" x="20" y="66" width="280" height="72"/>
->>>>>>> FETCH_HEAD
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-<<<<<<< HEAD
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twitter circ.png" translatesAutoresizingMaskIntoConstraints="NO" id="4WL-zX-Vbq">
                                             <rect key="frame" x="285" y="8" width="15" height="15"/>
-=======
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="HorizBorder.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jpk-dy-Crm">
-                                            <rect key="frame" x="-92" y="139" width="462" height="2"/>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="twitter circ.png" translatesAutoresizingMaskIntoConstraints="NO" id="4WL-zX-Vbq">
-                                            <rect key="frame" x="285" y="20" width="15" height="15"/>
->>>>>>> FETCH_HEAD
-                                        </imageView>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="202" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="189" placeholderIntrinsicHeight="21" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N82-5J-mrH">
-                                            <rect key="frame" x="88" y="8" width="189" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
-<<<<<<< HEAD
                                         <constraint firstItem="Qc6-Pk-Ulb" firstAttribute="leading" secondItem="bc4-rS-k15" secondAttribute="leadingMargin" constant="20" id="86w-ED-tD4"/>
                                         <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="WPa-Pf-gBg" secondAttribute="bottom" constant="20" id="BOe-uk-z38"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="WPa-Pf-gBg" secondAttribute="trailing" constant="20" id="RuU-Fv-yCu"/>
-                                        <constraint firstItem="WPa-Pf-gBg" firstAttribute="leading" secondItem="Qc6-Pk-Ulb" secondAttribute="trailing" constant="20" id="TVP-Le-Ts8"/>
+                                        <constraint firstItem="WPa-Pf-gBg" firstAttribute="leading" secondItem="Qc6-Pk-Ulb" secondAttribute="trailing" constant="30" id="TVP-Le-Ts8"/>
                                         <constraint firstItem="Qc6-Pk-Ulb" firstAttribute="top" secondItem="bc4-rS-k15" secondAttribute="topMargin" constant="20" id="X8X-KU-Iyi"/>
                                         <constraint firstItem="HjC-0t-aaY" firstAttribute="leading" secondItem="Qc6-Pk-Ulb" secondAttribute="trailing" constant="20" id="bka-a2-g0T"/>
                                         <constraint firstItem="HjC-0t-aaY" firstAttribute="top" secondItem="bc4-rS-k15" secondAttribute="topMargin" constant="20" id="go9-F8-EF7"/>
@@ -346,23 +357,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameLabel" destination="HjC-0t-aaY" id="Usm-mR-OGg"/>
-=======
-                                        <constraint firstItem="WPa-Pf-gBg" firstAttribute="top" secondItem="N82-5J-mrH" secondAttribute="bottom" id="0od-xk-Bh6"/>
-                                        <constraint firstItem="N82-5J-mrH" firstAttribute="top" secondItem="bc4-rS-k15" secondAttribute="topMargin" constant="8" id="1Mw-79-0Yu"/>
-                                        <constraint firstItem="N82-5J-mrH" firstAttribute="leading" secondItem="Qc6-Pk-Ulb" secondAttribute="trailing" constant="20" id="Fne-rh-YFH"/>
-                                        <constraint firstItem="4WL-zX-Vbq" firstAttribute="leading" secondItem="N82-5J-mrH" secondAttribute="trailing" constant="20" id="NJP-9d-qmT"/>
-                                        <constraint firstItem="WPa-Pf-gBg" firstAttribute="leading" secondItem="bc4-rS-k15" secondAttribute="leadingMargin" constant="20" id="TlO-Uj-VkF"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="WPa-Pf-gBg" secondAttribute="trailing" constant="20" id="XW8-vy-jMH"/>
-                                        <constraint firstItem="N82-5J-mrH" firstAttribute="leading" secondItem="Qc6-Pk-Ulb" secondAttribute="trailing" constant="88" id="cM6-u2-j6I"/>
-                                        <constraint firstItem="N82-5J-mrH" firstAttribute="top" secondItem="bc4-rS-k15" secondAttribute="topMargin" constant="8" id="fb6-eN-j7X"/>
-                                        <constraint firstItem="N82-5J-mrH" firstAttribute="top" secondItem="bc4-rS-k15" secondAttribute="topMargin" constant="8" id="mTq-HV-coC"/>
-                                        <constraint firstItem="N82-5J-mrH" firstAttribute="leading" secondItem="Qc6-Pk-Ulb" secondAttribute="trailing" constant="88" id="ovW-XE-OTk"/>
-                                        <constraint firstItem="WPa-Pf-gBg" firstAttribute="top" secondItem="Qc6-Pk-Ulb" secondAttribute="bottom" id="uDk-Qe-qi9"/>
-                                    </constraints>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="nameLabel" destination="N82-5J-mrH" id="d2r-mB-rCY"/>
->>>>>>> FETCH_HEAD
                                     <outlet property="profilePic" destination="Qc6-Pk-Ulb" id="vTe-cm-s10"/>
                                     <outlet property="stampImage" destination="4WL-zX-Vbq" id="bAi-KZ-b3A"/>
                                     <outlet property="tweetLabel" destination="WPa-Pf-gBg" id="3os-rO-3Na"/>
@@ -582,12 +576,8 @@
         <image name="Blue" width="268" height="281"/>
         <image name="Darkening.png" width="640" height="116"/>
         <image name="HeaderPicture.png" width="640" height="281"/>
-        <image name="HorizBorder.png" width="609" height="4"/>
         <image name="Login" width="199" height="60"/>
         <image name="Register" width="199" height="60"/>
-        <image name="VertBorder.png" width="2" height="62"/>
-        <image name="comment.png" width="33" height="34"/>
-        <image name="heart.png" width="34" height="34"/>
         <image name="instagram circ.png" width="32" height="32"/>
         <image name="twitter circ.png" width="32" height="32"/>
     </resources>

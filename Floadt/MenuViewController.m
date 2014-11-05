@@ -83,6 +83,9 @@
 }
 
 - (IBAction)td4:(id)sender {
+    UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NavSearch"];
+    self.sidePanelController.centerPanel = viewController;
+    [self.sidePanelController showCenterPanelAnimated:YES];
 }
 
 - (IBAction)td5:(id)sender {

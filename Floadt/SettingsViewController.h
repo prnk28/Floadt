@@ -9,8 +9,8 @@
 #import "Data.h"
 
 
-@interface SettingsViewController : UIViewController <RRCircularMenuDelegate> {
-    RRCircularMenu *menu;
+@interface SettingsViewController : UIViewController <AwesomeMenuDelegate> {
+
 }
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;

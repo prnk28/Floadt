@@ -69,25 +69,6 @@
                                                         } failure:^(NSError *error) {
                                                             NSLog(@"Error: %@", error);
                                                         }];
-    
-}
-
-
-
-- (void)getTimeline{
-        [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-        [self.twitterClient getPath:@"1.1/statuses/user_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            
-            NSArray *responseArray = (NSArray *)responseObject;
-            [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                NSLog(@"Success: %@", obj);
-                //StreamViewController *vc = [[StreamViewController alloc] init];
-                //vc.tweets = responseArray;
-            }];
-            
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error: %@", error);
-        }];
 }
 
 @end

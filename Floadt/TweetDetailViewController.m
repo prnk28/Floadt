@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad
 {
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0F alpha:1.00f]];
     // Setup Back Button
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -34,8 +35,10 @@
         NSString *name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
         NSString *text = [tweet objectForKey:@"text"];
         NSString *statusCount = [[tweet objectForKey:@"user"] objectForKey:@"statuses_count"];
-        NSString *followingCount = [[tweet objectForKey:@"user"] objectForKey:@"following"];
-        NSString *followersCount = [[tweet objectForKey:@"user"] objectForKey:@"followers_count"];
+        NSNumber *followingCount = [[tweet objectForKey:@"user"] objectForKey:@"friends_count"];
+        NSString *following = [self numberWithShortcut:followingCount];
+        NSNumber *followersCount = [[tweet objectForKey:@"user"] objectForKey:@"followers_count"];
+        NSString *followers = [self numberWithShortcut:followersCount];
         NSString *createdAt =[tweet objectForKey:@"created_at"];
         NSLog(@"Twitter: %@",createdAt);
         _name.text = name;
@@ -43,9 +46,9 @@
         _tweetLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:15];
         _tweetsCount.text = [NSString stringWithFormat:@"%@",statusCount];
         _tweetsLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
-        _followersCount.text = [NSString stringWithFormat:@"%@",followersCount];
+        _followersCount.text = [NSString stringWithFormat:@"%@",followers];
         _followersLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
-        _followingCount.text = [NSString stringWithFormat:@"%@",followingCount];
+        _followingCount.text = [NSString stringWithFormat:@"%@",following];
         _followingLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
         
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
@@ -61,6 +64,23 @@
             });
         
     }
+}
+
+- (NSString*)numberWithShortcut:(NSNumber*)number
+{
+    unsigned long long value = [number longLongValue];
+    
+    NSUInteger index = 0;
+    double dvalue = (double)value;
+    
+    NSArray *suffix = @[ @"", @"K", @"M", @"B", @"T", @"P", @"E" ];
+    
+    while ((value /= 1000) && ++index) dvalue /= 1000;
+    
+    NSString *svalue = [NSString stringWithFormat:@"%@%@",[NSNumber numberWithDouble:dvalue], [suffix objectAtIndex:index]];
+    
+    
+    return svalue;
 }
 
 // Pop Back ViewControllers

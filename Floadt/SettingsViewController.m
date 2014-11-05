@@ -5,14 +5,16 @@
 //  Created by Pradyumn Nukala on 3/31/13.
 //  Copyright (c) 2013 Pradyumn Nukala. All rights reserved.
 //
+
 #define INSTAGRAM_CLIENT_ID @"88b3fb2cd93c4aacb053b44b35b86187"
 #import "SettingsViewController.h"
 
 @implementation SettingsViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1.0f green:0.505f blue:0.0 alpha:1.00f]];
     
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -25,69 +27,81 @@
     
     self.navBar.leftBarButtonItem = barButtonItem;
     
-    UIButton *postButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    // Setup Add Menu
+    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
+    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
     
-    [postButton setTitle:@"" forState:UIControlStateNormal];
-    [postButton setBackgroundImage:[UIImage imageNamed:@"plusButton.png"] forState:UIControlStateNormal];
-    //[postButton setBackgroundImage:[UIImage imageNamed:@"pen_sIMG.png"] forState:UIControlStateHighlighted];
-    [postButton addTarget:self action:@selector(didTapPostButton:) forControlEvents:UIControlEventTouchUpInside];
-    postButton.frame = CGRectMake(0.0f, 0.0f, 15.0f, 15.0f);
-    UIBarButtonItem *postButtonItem = [[UIBarButtonItem alloc] initWithCustomView:postButton];
+    UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
+    UIImage *plus = [UIImage imageNamed:@"addCircleButton.png"];
     
-    self.navBar.rightBarButtonItem = postButtonItem;
+    
+    
     
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
-                                                           [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
+    [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+    [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
+    
+    AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+    highlightedImage:storyMenuItemImagePressed
+    ContentImage:starImage
+    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+    highlightedImage:storyMenuItemImagePressed
+    ContentImage:starImage
+    highlightedContentImage:nil];
+    AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
+    highlightedImage:storyMenuItemImagePressed
+    ContentImage:starImage
+    highlightedContentImage:nil];
+    
+    NSArray *menus = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, nil];
+    
+    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"addCircleButton.png"]
+    highlightedImage:[UIImage imageNamed:nil]
+    ContentImage:[UIImage imageNamed:@"addCircleButton.png"]
+    highlightedContentImage:nil];
+    
+    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds startItem:startItem optionMenus:menus];
+    menu.delegate = self;
+    
+    menu.menuWholeAngle = M_PI_2;
+    menu.farRadius = 110.0f;
+    menu.rotateAngle = 5.0f;
+    menu.endRadius = 100.0f;
+    menu.nearRadius = 90.0f;
+    menu.animationDuration = 0.3f;
+    menu.startPoint = CGPointMake(250.0, 520.0);
+    
+    [self.view addSubview:menu];
     
 }
-
+    
 - (void)didTapBarButton:(id)sender
 {
     [self.sidePanelController showLeftPanelAnimated:YES];
 }
-
-- (void)didTapPostButton:(id)sender
+    
+    //Menu Response
+- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
 {
-    if (menu) {
-        [menu hideWithAnimationBlock:^{
-            self.view.backgroundColor = [UIColor whiteColor];
-        }];
-        menu = nil;
-    } else {
-        menu = [[RRCircularMenu alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 180, self.view.frame.size.width, 180)];
-        menu.delegate = self;
-        [self.view addSubview:menu];
-        [menu showWithAnimationBlock:^{
-            self.view.backgroundColor = [UIColor darkGrayColor];
-        } settingSliderTo:3];
-    }
-}
-
-- (void) menuItem:(RRCircularItem *)item didChangeActive:(BOOL)active {
-    NSLog(@"Item %@ did change state to %d", item.text, active);
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
     
     BOOL *instagramActive = [user boolForKey:@"isInstagramLoggedIn"];
     BOOL *twitterActive = [user boolForKey:@"TwitterAuthenticated"];
     
-    if (active && ![menu isLabelActive] && [item.text  isEqual: @"Instagram"]) {
-        [menu setLabelActive:YES];
+    if (idx == 0) {
+        
         NSString *callbackUrl = @"floadt://instagram_callback";
-        if (instagramActive) {
-            [menu setLabelActive:YES];
-        }
         
         [[InstagramClient sharedClient] authenticateWithClientID:INSTAGRAM_CLIENT_ID callbackURL:callbackUrl];
-  
-    }else if (active && ![menu isLabelActive] && [item.text  isEqual: @"Twitter"]){
+        
+    } else if (idx == 1) {
+        NSLog(@"twitter");
         [[TwitterClient sharedClient] authenticateWithTwitter];
+        
+    }else{
+        NSLog(@"Facebook Auth");
     }
-}
-
-- (BOOL) ignoreClickFor:(RRCircularItem *)item {
-    NSLog(@"Checking whether to ignore click for item %@", item.text);
-    return NO;
 }
 
 @end

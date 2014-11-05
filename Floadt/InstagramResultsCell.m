@@ -1,14 +1,14 @@
 //
-//  TwitterCell.m
+//  InstagramResultsCell.m
 //  Floadt
 //
-//  Created by Pradyumn Nukala on 10/23/14.
+//  Created by Pradyumn Nukala on 11/3/14.
 //  Copyright (c) 2014 Floadt. All rights reserved.
 //
 
-#import "TwitterCell.h"
+#import "InstagramResultsCell.h"
 
-@implementation TwitterCell
+@implementation InstagramResultsCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
