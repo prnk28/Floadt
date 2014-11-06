@@ -83,6 +83,7 @@
 		AC57CD68183C4B3100916B12 /* InstaPicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC57CD67183C4B3100916B12 /* InstaPicDetailViewController.m */; };
 		AC792F751831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
 		AC792F761831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
+		AC8D89341A0AC32800978356 /* InteractionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8D89331A0AC32800978356 /* InteractionsTableViewController.m */; };
 		AC92CC841877D16C006257CE /* ActivityView.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC92CC641877D16C006257CE /* ActivityView.xib */; };
 		AC92CC851877D16C006257CE /* MyActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC92CC661877D16C006257CE /* MyActivityIndicator.m */; };
 		AC92CC861877D16C006257CE /* MDBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = AC92CC691877D16C006257CE /* MDBrowser.m */; };
@@ -331,6 +332,8 @@
 		AC57CD67183C4B3100916B12 /* InstaPicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaPicDetailViewController.m; sourceTree = "<group>"; };
 		AC792F731831BF7E00946DBE /* TweetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailViewController.h; sourceTree = "<group>"; };
 		AC792F741831BF7E00946DBE /* TweetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetailViewController.m; sourceTree = "<group>"; };
+		AC8D89321A0AC32800978356 /* InteractionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionsTableViewController.h; sourceTree = "<group>"; };
+		AC8D89331A0AC32800978356 /* InteractionsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionsTableViewController.m; sourceTree = "<group>"; };
 		AC92CC641877D16C006257CE /* ActivityView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityView.xib; sourceTree = "<group>"; };
 		AC92CC651877D16C006257CE /* MyActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyActivityIndicator.h; sourceTree = "<group>"; };
 		AC92CC661877D16C006257CE /* MyActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyActivityIndicator.m; sourceTree = "<group>"; };
@@ -1023,6 +1026,8 @@
 		ACD7D03E1A0572650090093B /* Main Pages */ = {
 			isa = PBXGroup;
 			children = (
+				AC8D89321A0AC32800978356 /* InteractionsTableViewController.h */,
+				AC8D89331A0AC32800978356 /* InteractionsTableViewController.m */,
 				6E55593218217BCA00546428 /* ProfileViewController.h */,
 				6E55593318217BCA00546428 /* ProfileViewController.m */,
 				ACD7D0441A0574120090093B /* SearchTableViewController.h */,
@@ -1351,6 +1356,7 @@
 				ACEBB1C5182C852500A4CE2F /* AFURLConnectionOperation.m in Sources */,
 				6E4A5BDD185450C60096B354 /* DEComposeTextView.m in Sources */,
 				AC92CC881877D16C006257CE /* PopUpBrowserAnimator.m in Sources */,
+				AC8D89341A0AC32800978356 /* InteractionsTableViewController.m in Sources */,
 				ACEEF64C1814275E002B61B9 /* MenuViewController.m in Sources */,
 				ACD70FB818394F1500C28489 /* SettingsViewController.m in Sources */,
 				ACA30F5919F99FB80018BDB7 /* SDWebImageDownloader.m in Sources */,

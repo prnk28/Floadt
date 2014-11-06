@@ -11,11 +11,12 @@
 
 @implementation SettingsViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:1.0f green:0.505f blue:0.0 alpha:1.00f]];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1.0f green:0.505f blue:0.0 alpha:1.00f]];
-    
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [barButton setTitle:@"" forState:UIControlStateNormal];
@@ -38,7 +39,6 @@
     
     
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-    [UIColor colorWithRed:0/255.0 green:0/255.0 blue:0/255.0 alpha:1.0], NSForegroundColorAttributeName,
     [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
     
     AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage

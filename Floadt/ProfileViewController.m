@@ -16,13 +16,22 @@
 
 @implementation ProfileViewController
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.32f green:0.14f blue:0.32f alpha:1.00f]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
-    
+    [self setUpUI];
     //Setup UI
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1.0f green:0.16f blue:0.2f alpha:1.00f]];
+}
+
+- (void)showPopupFullscreen:(id)sender {
+    [self showPopupWithStyle:CNPPopupStyleFullscreen];
+}
+
+- (void)setUpUI{
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [barButton setTitle:@"" forState:UIControlStateNormal];
@@ -32,7 +41,6 @@
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:barButton];
     
     self.navBar.leftBarButtonItem = barButtonItem;
-
     UIButton *postButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [postButton setTitle:@"" forState:UIControlStateNormal];
@@ -46,10 +54,6 @@
     [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
-}
-
-- (void)showPopupFullscreen:(id)sender {
-    [self showPopupWithStyle:CNPPopupStyleFullscreen];
 }
 
 - (void)didTapBarButton:(id)sender

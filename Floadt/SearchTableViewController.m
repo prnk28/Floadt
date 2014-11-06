@@ -21,7 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setUpUI];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,9 +36,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     return [self instagramSearchCellAtIndexPath:indexPath];
-    
 }
 
 - (InstagramResultsCell *)instagramSearchCellAtIndexPath:(NSIndexPath *)indexPath {
@@ -60,6 +57,8 @@
     NSString *subtitle = totalArray [@"username"];
     [cell.usernameLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:11.0]];
     [cell.usernameLabel setText:subtitle];
+    
+    [cell.imageView sd_setImageWithURL:totalArray[@"profile_picture"] placeholderImage:nil options:indexPath.row == 0 ? SDWebImageRefreshCached : 0];
 }
 
 
@@ -101,7 +100,13 @@
                                     }];
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    [self setUpUI];
+}
+
 - (void)setUpUI{
+    
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.278f green:0.337f blue:0.439f alpha:1.00f]];
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [barButton setTitle:@"" forState:UIControlStateNormal];
     [barButton setBackgroundImage:[UIImage imageNamed:@"menuButton.png"] forState:UIControlStateNormal];

@@ -16,7 +16,6 @@
 
 - (void)viewDidLoad
 {
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:1.0f green:1.0f blue:1.0F alpha:1.00f]];
     // Setup Back Button
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -30,10 +29,17 @@
     
     [super viewDidLoad];
     if (self.detailItem) {
-            NSDictionary *tweet = self.detailItem;
+        NSDictionary *tweet = self.detailItem;
             
         NSString *name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
         NSString *text = [tweet objectForKey:@"text"];
+        
+        if ([text rangeOfString:@"http://"].location == NSNotFound) {
+            NSLog(@"string does not contain http://");
+        } else {
+            NSLog(@"string contains http://");
+        }
+        
         NSString *statusCount = [[tweet objectForKey:@"user"] objectForKey:@"statuses_count"];
         NSNumber *followingCount = [[tweet objectForKey:@"user"] objectForKey:@"friends_count"];
         NSString *following = [self numberWithShortcut:followingCount];
@@ -78,7 +84,6 @@
     while ((value /= 1000) && ++index) dvalue /= 1000;
     
     NSString *svalue = [NSString stringWithFormat:@"%@%@",[NSNumber numberWithDouble:dvalue], [suffix objectAtIndex:index]];
-    
     
     return svalue;
 }
