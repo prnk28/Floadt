@@ -59,7 +59,7 @@
                                  NSRange accessTokenRange = [result rangeAtIndex:1];
                                  NSString *token = [input substringWithRange:accessTokenRange];
                                  NSLog(@"Access Token: %@", token);
-                                 [user setBool:YES forKey:@"isInstagramLoggedIn"];
+                                 [user setBool:YES forKey:@"InstagramActive"];
                                  [Lockbox setString:token forKey:kAccessTokenInstagram];
                              }
                          }];

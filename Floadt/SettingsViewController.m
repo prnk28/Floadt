@@ -34,13 +34,11 @@
     
     UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
     UIImage *plus = [UIImage imageNamed:@"addCircleButton.png"];
-    
-    
-    
-    
-    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-    [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
-    
+   
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                      [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                                      [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
+ 
     AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
     highlightedImage:storyMenuItemImagePressed
     ContentImage:starImage
@@ -85,9 +83,6 @@
 - (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
 {
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    
-    BOOL *instagramActive = [user boolForKey:@"isInstagramLoggedIn"];
-    BOOL *twitterActive = [user boolForKey:@"TwitterAuthenticated"];
     
     if (idx == 0) {
         

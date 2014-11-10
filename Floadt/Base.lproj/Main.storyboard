@@ -233,6 +233,101 @@
             </objects>
             <point key="canvasLocation" x="-109" y="1532"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="olV-NB-fwR">
+            <objects>
+                <navigationController storyboardIdentifier="NavPost" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2SJ-kJ-HQt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dAP-pC-FRA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="PVl-fd-QsH" kind="relationship" relationship="rootViewController" id="P31-Mb-ugN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bIq-mE-zPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-109" y="2231"/>
+        </scene>
+        <!--Post-->
+        <scene sceneID="5aU-ma-FtE">
+            <objects>
+                <viewController storyboardIdentifier="postViewController" modalPresentationStyle="pageSheet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="PVl-fd-QsH" customClass="PostController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ZCa-RG-e8g"/>
+                        <viewControllerLayoutGuide type="bottom" id="3dU-41-boS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dkf-ct-lc5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gil-yf-n44">
+                                <rect key="frame" x="0.0" y="309" width="64" height="44"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cameraDown:" destination="PVl-fd-QsH" eventType="touchCancel" id="FFe-8X-JQm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XmG-2j-33y">
+                                <rect key="frame" x="64" y="309" width="64" height="44"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="facebookDown:" destination="PVl-fd-QsH" eventType="touchDown" id="qyk-2H-azI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9mW-bd-LTS">
+                                <rect key="frame" x="192" y="309" width="64" height="44"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="twitterDown:" destination="PVl-fd-QsH" eventType="touchDown" id="9jX-9j-glh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVv-LW-DLM">
+                                <rect key="frame" x="128" y="309" width="64" height="44"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="instagramDown:" destination="PVl-fd-QsH" eventType="touchDown" id="ZU6-8K-QpH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ew-v1-ick">
+                                <rect key="frame" x="264" y="309" width="56" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O7G-qC-CMu">
+                                <rect key="frame" x="0.0" y="64" width="320" height="237"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Post" id="TcO-Za-PYW"/>
+                    <connections>
+                        <outlet property="camera" destination="gil-yf-n44" id="fBw-hG-btO"/>
+                        <outlet property="facebook" destination="XmG-2j-33y" id="351-fy-zUc"/>
+                        <outlet property="instagram" destination="cVv-LW-DLM" id="deK-Ty-fQI"/>
+                        <outlet property="navBar" destination="TcO-Za-PYW" id="vru-tL-4jQ"/>
+                        <outlet property="textCount" destination="3ew-v1-ick" id="cqA-sh-9hE"/>
+                        <outlet property="textView" destination="O7G-qC-CMu" id="eIK-hD-JOg"/>
+                        <outlet property="twitter" destination="9mW-bd-LTS" id="0ph-ku-c7J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wth-ci-AKn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="327" y="2231"/>
+        </scene>
         <!--Floadt-->
         <scene sceneID="12Z-sJ-slO">
             <objects>

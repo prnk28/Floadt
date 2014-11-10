@@ -21,8 +21,6 @@
 		6E4A5BE6185450C60096B354 /* REComposeViewController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E4A5BD8185450C60096B354 /* REComposeViewController.bundle */; };
 		6E4A5BE7185450C60096B354 /* REComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A5BDA185450C60096B354 /* REComposeViewController.m */; };
 		6E4A5BE8185450C60096B354 /* REComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E4A5BDA185450C60096B354 /* REComposeViewController.m */; };
-		6E4A5BEA185451700096B354 /* AccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4A5BE9185451700096B354 /* AccessoryView.xib */; };
-		6E4A5BEB185451700096B354 /* AccessoryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E4A5BE9185451700096B354 /* AccessoryView.xib */; };
 		6E55593118217A2D00546428 /* CRGradientNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E55593018217A2D00546428 /* CRGradientNavigationBar.m */; };
 		6E55593418217BCA00546428 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E55593318217BCA00546428 /* ProfileViewController.m */; };
 		6EE0348518544BEE0055AA0F /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE0347D18544BEE0055AA0F /* Accelerate.framework */; };
@@ -64,6 +62,7 @@
 		AC0BF98518402EC900177106 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BF96D18402EC900177106 /* twitter@2x.png */; };
 		AC0BF988184041D400177106 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0BF987184041D400177106 /* TwitterClient.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		AC0BF989184041D400177106 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0BF987184041D400177106 /* TwitterClient.m */; };
+		AC1CE1E51A0E7DDE00B2A70D /* PostController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1CE1E41A0E7DDE00B2A70D /* PostController.m */; };
 		AC3246E019F9CDA000397C1A /* TwitterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3246DF19F9CDA000397C1A /* TwitterCell.m */; };
 		AC35D35C1A00A31F00F1C797 /* CNPPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC35D35B1A00A31F00F1C797 /* CNPPopupController.m */; };
 		AC443F171837E87D00EE3DF7 /* StreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC443F161837E87D00EE3DF7 /* StreamViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
@@ -119,6 +118,8 @@
 		ACA30F6119F99FB80018BDB7 /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA30F4F19F99FB80018BDB7 /* UIImageView+HighlightedWebCache.m */; };
 		ACA30F6219F99FB80018BDB7 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA30F5119F99FB80018BDB7 /* UIImageView+WebCache.m */; };
 		ACA30F6319F99FB80018BDB7 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA30F5319F99FB80018BDB7 /* UIView+WebCacheOperation.m */; };
+		ACAAD8DC1A0EE930008A5E5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAAD8DB1A0EE930008A5E5E /* Images.xcassets */; };
+		ACB52FD51A0E894100419F76 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB52FD41A0E894100419F76 /* SettingsViewController.m */; };
 		ACB8DCFA1845A76C00A3A498 /* addthis.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCCE1845A76C00A3A498 /* addthis.png */; };
 		ACB8DCFB1845A76C00A3A498 /* addthis.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCCE1845A76C00A3A498 /* addthis.png */; };
 		ACB8DCFC1845A76C00A3A498 /* appnet.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCCF1845A76C00A3A498 /* appnet.png */; };
@@ -226,7 +227,6 @@
 		ACC4C70C18062C82000A3BA8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC4C70B18062C82000A3BA8 /* main.m */; };
 		ACC4C71018062C82000A3BA8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC4C70F18062C82000A3BA8 /* AppDelegate.m */; };
 		ACC4C71318062C82000A3BA8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACC4C71118062C82000A3BA8 /* Main.storyboard */; };
-		ACC4C71818062C82000A3BA8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC4C71718062C82000A3BA8 /* Images.xcassets */; };
 		ACC4C71F18062C83000A3BA8 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4C71E18062C83000A3BA8 /* XCTest.framework */; };
 		ACC4C72018062C83000A3BA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4C6FF18062C82000A3BA8 /* Foundation.framework */; };
 		ACC4C72118062C83000A3BA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4C70318062C82000A3BA8 /* UIKit.framework */; };
@@ -236,8 +236,6 @@
 		ACC4C73A18062D95000A3BA8 /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC4C73918062D95000A3BA8 /* Data.m */; };
 		ACD70FAB1839477800C28489 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD70FAA1839477800C28489 /* InstagramClient.m */; };
 		ACD70FAC1839477800C28489 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD70FAA1839477800C28489 /* InstagramClient.m */; };
-		ACD70FB818394F1500C28489 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD70FB718394F1500C28489 /* SettingsViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		ACD70FB918394F1500C28489 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD70FB718394F1500C28489 /* SettingsViewController.m */; };
 		ACD7D0461A0574120090093B /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD7D0451A0574120090093B /* SearchTableViewController.m */; };
 		ACEBB1BF182C852500A4CE2F /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEBB1AD182C852500A4CE2F /* AFHTTPClient.m */; };
 		ACEBB1C0182C852500A4CE2F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEBB1AF182C852500A4CE2F /* AFHTTPRequestOperation.m */; };
@@ -281,7 +279,6 @@
 		6E4A5BD8185450C60096B354 /* REComposeViewController.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = REComposeViewController.bundle; sourceTree = "<group>"; };
 		6E4A5BD9185450C60096B354 /* REComposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REComposeViewController.h; sourceTree = "<group>"; };
 		6E4A5BDA185450C60096B354 /* REComposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REComposeViewController.m; sourceTree = "<group>"; };
-		6E4A5BE9185451700096B354 /* AccessoryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AccessoryView.xib; sourceTree = "<group>"; };
 		6E55592F18217A2D00546428 /* CRGradientNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRGradientNavigationBar.h; sourceTree = "<group>"; };
 		6E55593018217A2D00546428 /* CRGradientNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRGradientNavigationBar.m; sourceTree = "<group>"; };
 		6E55593218217BCA00546428 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -313,6 +310,8 @@
 		AC0BF96D18402EC900177106 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
 		AC0BF986184041D400177106 /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
 		AC0BF987184041D400177106 /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
+		AC1CE1E31A0E7DDE00B2A70D /* PostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostController.h; sourceTree = "<group>"; };
+		AC1CE1E41A0E7DDE00B2A70D /* PostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostController.m; sourceTree = "<group>"; };
 		AC3246DE19F9CDA000397C1A /* TwitterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCell.h; sourceTree = "<group>"; };
 		AC3246DF19F9CDA000397C1A /* TwitterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterCell.m; sourceTree = "<group>"; };
 		AC35D35A1A00A31F00F1C797 /* CNPPopupController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNPPopupController.h; sourceTree = "<group>"; };
@@ -393,6 +392,9 @@
 		ACA30F5119F99FB80018BDB7 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		ACA30F5219F99FB80018BDB7 /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		ACA30F5319F99FB80018BDB7 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
+		ACAAD8DB1A0EE930008A5E5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ACB52FD31A0E894100419F76 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		ACB52FD41A0E894100419F76 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		ACB8DCCE1845A76C00A3A498 /* addthis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addthis.png; sourceTree = "<group>"; };
 		ACB8DCCF1845A76C00A3A498 /* appnet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appnet.png; sourceTree = "<group>"; };
 		ACB8DCD01845A76C00A3A498 /* behance.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = behance.png; sourceTree = "<group>"; };
@@ -459,7 +461,6 @@
 		ACC4C70E18062C82000A3BA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		ACC4C70F18062C82000A3BA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		ACC4C71218062C82000A3BA8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ACC4C71718062C82000A3BA8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACC4C71D18062C83000A3BA8 /* FloadtTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FloadtTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC4C71E18062C83000A3BA8 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		ACC4C72618062C83000A3BA8 /* FloadtTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FloadtTests-Info.plist"; sourceTree = "<group>"; };
@@ -471,8 +472,6 @@
 		ACC4C73918062D95000A3BA8 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
 		ACD70FA91839477800C28489 /* InstagramClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramClient.h; sourceTree = "<group>"; };
 		ACD70FAA1839477800C28489 /* InstagramClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramClient.m; sourceTree = "<group>"; };
-		ACD70FB618394F1500C28489 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		ACD70FB718394F1500C28489 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.simpleColoring; };
 		ACD7D0441A0574120090093B /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
 		ACD7D0451A0574120090093B /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
 		ACEBB1AC182C852500A4CE2F /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -579,7 +578,6 @@
 		6E90EE431854F60900487E07 /* User Interface */ = {
 			isa = PBXGroup;
 			children = (
-				6E4A5BE9185451700096B354 /* AccessoryView.xib */,
 				ACC4C71118062C82000A3BA8 /* Main.storyboard */,
 			);
 			name = "User Interface";
@@ -898,6 +896,7 @@
 				ACC4C72418062C83000A3BA8 /* FloadtTests */,
 				ACC4C6FE18062C82000A3BA8 /* Frameworks */,
 				ACC4C6FD18062C82000A3BA8 /* Products */,
+				ACAAD8DB1A0EE930008A5E5E /* Images.xcassets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -942,7 +941,6 @@
 				ACCF7656180F6FB800E0CA67 /* Components */,
 				ACC4C73B18062DA2000A3BA8 /* Core */,
 				ACC4C73F18064283000A3BA8 /* View Controllers */,
-				ACC4C71718062C82000A3BA8 /* Images.xcassets */,
 				ACC4C70618062C82000A3BA8 /* Supporting Files */,
 			);
 			path = Floadt;
@@ -1032,8 +1030,8 @@
 				6E55593318217BCA00546428 /* ProfileViewController.m */,
 				ACD7D0441A0574120090093B /* SearchTableViewController.h */,
 				ACD7D0451A0574120090093B /* SearchTableViewController.m */,
-				ACD70FB618394F1500C28489 /* SettingsViewController.h */,
-				ACD70FB718394F1500C28489 /* SettingsViewController.m */,
+				ACB52FD31A0E894100419F76 /* SettingsViewController.h */,
+				ACB52FD41A0E894100419F76 /* SettingsViewController.m */,
 				AC443F151837E87D00EE3DF7 /* StreamViewController.h */,
 				AC443F161837E87D00EE3DF7 /* StreamViewController.m */,
 			);
@@ -1056,6 +1054,8 @@
 			children = (
 				ACEEF64A1814275E002B61B9 /* MenuViewController.h */,
 				ACEEF64B1814275E002B61B9 /* MenuViewController.m */,
+				AC1CE1E31A0E7DDE00B2A70D /* PostController.h */,
+				AC1CE1E41A0E7DDE00B2A70D /* PostController.m */,
 				ACEEF647181426FE002B61B9 /* RootMenuController.h */,
 				ACEEF648181426FE002B61B9 /* RootMenuController.m */,
 				AC9FAF581810D0E800A605E5 /* WelcomeScreenViewController.h */,
@@ -1184,7 +1184,6 @@
 				AC92CC921877D16C006257CE /* next@2x.png in Resources */,
 				AC4A6E1C1844408A00FDA6ED /* HorizBorder.png in Resources */,
 				ACB8DD161845A76C00A3A498 /* indiegogo.png in Resources */,
-				ACC4C71818062C82000A3BA8 /* Images.xcassets in Resources */,
 				ACB8DD461845A76C00A3A498 /* twitter circ.png in Resources */,
 				ACB8DD041845A76C00A3A498 /* digg.png in Resources */,
 				AC92CC8E1877D16C006257CE /* back_active@2x.png in Resources */,
@@ -1198,7 +1197,6 @@
 				ACB8DD0A1845A76C00A3A498 /* facebook circ.png in Resources */,
 				ACB8DD241845A76C00A3A498 /* messenger-generic.png in Resources */,
 				ACB8DD061845A76C00A3A498 /* dribbble.png in Resources */,
-				6E4A5BEA185451700096B354 /* AccessoryView.xib in Resources */,
 				ACB8DD401845A76C00A3A498 /* stumbleupon.png in Resources */,
 				ACB8DD141845A76C00A3A498 /* gplus.png in Resources */,
 				ACB8DD121845A76C00A3A498 /* gplus circ.png in Resources */,
@@ -1234,6 +1232,7 @@
 				ACB8DD001845A76C00A3A498 /* blogger.png in Resources */,
 				ACB8DD1A1845A76C00A3A498 /* kickstarter.png in Resources */,
 				AC0BF97018402EC900177106 /* facebook@2x.png in Resources */,
+				ACAAD8DC1A0EE930008A5E5E /* Images.xcassets in Resources */,
 				ACB8DD4A1845A76C00A3A498 /* vimeo.png in Resources */,
 				AC0BF97C18402EC900177106 /* linkedIn@2x.png in Resources */,
 				AC92CC841877D16C006257CE /* ActivityView.xib in Resources */,
@@ -1312,7 +1311,6 @@
 				AC0BF98518402EC900177106 /* twitter@2x.png in Resources */,
 				AC4A6E1D1844408A00FDA6ED /* HorizBorder.png in Resources */,
 				ACB8DD2D1845A76C00A3A498 /* paypal.png in Resources */,
-				6E4A5BEB185451700096B354 /* AccessoryView.xib in Resources */,
 				ACC4C72918062C83000A3BA8 /* InfoPlist.strings in Resources */,
 				AC0BF97F18402EC900177106 /* pinterest.off@2x.png in Resources */,
 				AC0BF97B18402EC900177106 /* linkedin.off@2x.png in Resources */,
@@ -1358,7 +1356,6 @@
 				AC92CC881877D16C006257CE /* PopUpBrowserAnimator.m in Sources */,
 				AC8D89341A0AC32800978356 /* InteractionsTableViewController.m in Sources */,
 				ACEEF64C1814275E002B61B9 /* MenuViewController.m in Sources */,
-				ACD70FB818394F1500C28489 /* SettingsViewController.m in Sources */,
 				ACA30F5919F99FB80018BDB7 /* SDWebImageDownloader.m in Sources */,
 				ACA30F5B19F99FB80018BDB7 /* SDWebImageManager.m in Sources */,
 				6E55593418217BCA00546428 /* ProfileViewController.m in Sources */,
@@ -1387,11 +1384,13 @@
 				ACC1E9971825E4CD00DCA712 /* UIImage+JSFlatButton.m in Sources */,
 				ACA30F5819F99FB80018BDB7 /* SDWebImageDecoder.m in Sources */,
 				ACEEF649181426FE002B61B9 /* RootMenuController.m in Sources */,
+				ACB52FD51A0E894100419F76 /* SettingsViewController.m in Sources */,
 				ACA30F6219F99FB80018BDB7 /* UIImageView+WebCache.m in Sources */,
 				6E4A5BE7185450C60096B354 /* REComposeViewController.m in Sources */,
 				AC92CC8A1877D16C006257CE /* MJPopupBackgroundView.m in Sources */,
 				ACA30F6019F99FB80018BDB7 /* UIImage+WebP.m in Sources */,
 				AC792F751831BF7E00946DBE /* TweetDetailViewController.m in Sources */,
+				AC1CE1E51A0E7DDE00B2A70D /* PostController.m in Sources */,
 				ACFD861E1A004A400094567A /* AwesomeMenu.m in Sources */,
 				ACD7D0461A0574120090093B /* SearchTableViewController.m in Sources */,
 				ACFD86221A0050DD0094567A /* Lockbox.m in Sources */,
@@ -1425,7 +1424,6 @@
 				ACD70FAC1839477800C28489 /* InstagramClient.m in Sources */,
 				6E4A5BE0185450C60096B354 /* RECommonFunctions.m in Sources */,
 				6E4A5BE8185450C60096B354 /* REComposeViewController.m in Sources */,
-				ACD70FB918394F1500C28489 /* SettingsViewController.m in Sources */,
 				ACC1E98F1825E49F00DCA712 /* JSFlatButton.m in Sources */,
 				AC9D0A4E1861528E00AEFB68 /* StreamViewController.m in Sources */,
 				ACC4C72B18062C83000A3BA8 /* FloadtTests.m in Sources */,

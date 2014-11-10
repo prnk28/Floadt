@@ -173,7 +173,7 @@ static NSString * const TwitterCellIdentifier = @"TwitterCell";
 - (void)fetchInstagramPics {
     instaPics = [[NSMutableArray alloc] init];
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    BOOL *status = [user boolForKey:@"isInstagramLoggedIn"];
+    BOOL *status = [user boolForKey:@"InstagramActive"];
     if (status) {
         [[InstagramClient sharedClient] getPath:@"users/self/feed"
                                      parameters:nil
@@ -191,29 +191,11 @@ static NSString * const TwitterCellIdentifier = @"TwitterCell";
         [self.tableView reloadData]; });
 }
 
--(void)fetchTweetsWith:(BOOL*)auth {
-    if (auth) {
-        self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"] key:@"4oFCF0AjP4PQDUaCh5RQ" secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
-        
-        [self.twitterClient authorizeUsingOAuthWithRequestTokenPath:@"/oauth/request_token" userAuthorizationPath:@"/oauth/authorize" callbackURL:[NSURL URLWithString:@"floadt://success"] accessTokenPath:@"/oauth/access_token" accessMethod:@"POST" scope:nil success:^(AFOAuth1Token *accessToken, id responseObject) {
-            [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-            [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                NSArray *responseArray = (NSArray *)responseObject;
-                NSLog(@"Response: %@", responseObject);
-                [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                    tweets = responseArray;
-                }];
-                [self.tableView reloadData];
-            } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                NSLog(@"Error: %@", error);
-            }];
-            
-        } failure:^(NSError *error) {
-            NSLog(@"Error: %@", error);
-        }];
-    }else{
-        [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-        [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+-(void)fetchTweets {
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    BOOL *twitterActive = [user boolForKey:@"TwitterActive"];
+    if (twitterActive) {
+        [[TwitterClient sharedClient] getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             NSArray *responseArray = (NSArray *)responseObject;
             [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
                 tweets = [tweets copy];
@@ -283,14 +265,14 @@ static NSString * const TwitterCellIdentifier = @"TwitterCell";
 
 - (void)fetchTimeline {
     [self fetchInstagramPics];
-    [self fetchTweetsWith:true];
+    [self fetchTweets];
     [self updateArrays];
     [self.tableView reloadData];
 }
 
 - (void)refetchTimeline {
   //[self fetchInstagramPics];
-    [self fetchTweetsWith:false];
+    [self fetchTweets];
     [self updateArrays];
     [self.tableView reloadData];
     
@@ -371,14 +353,8 @@ static NSString * const TwitterCellIdentifier = @"TwitterCell";
 
 - (void)didTapPostButton:(id)sender
 {
-    REComposeViewController *composeViewController = [[REComposeViewController alloc] init];
-    composeViewController.title = @"Social Network";
-    composeViewController.hasAttachment = YES;
-    composeViewController.delegate = self;
-    composeViewController.text = @"Test";
-    //[composeViewController.inputAccessoryView isEqual:accessoryView];
-    [composeViewController presentFromRootViewController];
-    
+     UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NavPost"];
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 - (void)didTapBarButton:(id)sender

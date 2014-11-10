@@ -36,23 +36,18 @@
     if (self) {
         [self registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self setDefaultHeader:@"Accept" value:@"application/json"];
-        
-        BOOL *twitterEnabled = [user boolForKey:@"TwitterAuthenticated"];
-        
+        bool *twitterEnabled = [user boolForKey:@"TwitterActive"];
         if (twitterEnabled) {
-            
-            AFOAuth1Token *token = [AFOAuth1Token retrieveCredentialWithIdentifier:@"TweetKey"];
+            AFOAuth1Token *token = [AFOAuth1Token retrieveCredentialWithIdentifier:@"TwitterAuth"];
             token = self.aToken;
         }
-
     }
     return self;
 }
 
-
-
 -(void)authenticateWithTwitter{
     user = [NSUserDefaults standardUserDefaults];
+    if (self.aToken == nil) {
     self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/"]
                                                              key:@"4oFCF0AjP4PQDUaCh5RQ"
                                                           secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
@@ -64,11 +59,22 @@
                                                    accessMethod:@"GET"
                                                           scope:nil
                                                         success:^(AFOAuth1Token *accessToken, id response) {
-                                                            [AFOAuth1Token storeCredential:accessToken withIdentifier:@"TwitterKey"];                                                            self.aToken = accessToken;
-                                                            [user setBool:YES forKey:@"TwitterAuthenticated"];
+                                                            [AFOAuth1Token storeCredential:accessToken withIdentifier:@"TwitterAuth"];                                                            self.aToken = accessToken;
+                                                            [user setBool:YES forKey:@"TwitterActive"];
                                                         } failure:^(NSError *error) {
                                                             NSLog(@"Error: %@", error);
                                                         }];
+    }
+}
+
+-(AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {
+    NSMutableURLRequest *request = [urlRequest mutableCopy];
+    NSString *separator = [request.URL query] ? @"&" : @"?";
+    NSString *newURLString = [NSString stringWithFormat:@"%@%@access_token=%@", [request.URL absoluteString], separator, self.aToken];
+    NSURL *newURL = [[NSURL alloc] initWithString:newURLString];
+    [request setURL:newURL];
+    return [super HTTPRequestOperationWithRequest:request success:success failure:failure];
+    
 }
 
 @end

@@ -18,7 +18,6 @@
 
 - (IBAction)td1:(id)sender;
 - (IBAction)td2:(id)sender;
-- (IBAction)td3:(id)sender;
 - (IBAction)td4:(id)sender;
 - (IBAction)td5:(id)sender;
 - (IBAction)td6:(id)sender;

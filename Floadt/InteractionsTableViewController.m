@@ -32,13 +32,11 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
+    //eturn the number of sections.
     return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return 0;
 }
@@ -110,7 +108,7 @@
     barButton.frame = CGRectMake(0.0f, 0.0f, 15.0f, 15.0f);
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:barButton];
     
-    self.navBar.leftBarButtonItem = barButtonItem;
+    self.navigationItem.leftBarButtonItem = barButtonItem;
     UIButton *postButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [postButton setTitle:@"" forState:UIControlStateNormal];
@@ -119,11 +117,11 @@
     postButton.frame = CGRectMake(0.0f, 0.0f, 15.0f, 15.0f);
     UIBarButtonItem *postButtonItem = [[UIBarButtonItem alloc] initWithCustomView:postButton];
     
-    self.navBar.rightBarButtonItem = postButtonItem;
-    
-    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                           [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
-                                                           [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
+    self.navigationItem.rightBarButtonItem = postButtonItem;
+  
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                      [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                                      [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
 }
 
 @end

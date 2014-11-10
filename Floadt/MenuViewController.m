@@ -65,7 +65,6 @@
 }
 
 - (IBAction)td1:(id)sender {
-    
     UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NavStream"];
     self.sidePanelController.centerPanel = viewController;
     [self.sidePanelController showCenterPanelAnimated:YES];
