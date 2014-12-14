@@ -60,8 +60,6 @@
 		AC0BF98318402EC900177106 /* twitter.off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BF96C18402EC900177106 /* twitter.off@2x.png */; };
 		AC0BF98418402EC900177106 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BF96D18402EC900177106 /* twitter@2x.png */; };
 		AC0BF98518402EC900177106 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BF96D18402EC900177106 /* twitter@2x.png */; };
-		AC0BF988184041D400177106 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0BF987184041D400177106 /* TwitterClient.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		AC0BF989184041D400177106 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0BF987184041D400177106 /* TwitterClient.m */; };
 		AC1CE1E51A0E7DDE00B2A70D /* PostController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC1CE1E41A0E7DDE00B2A70D /* PostController.m */; };
 		AC3246E019F9CDA000397C1A /* TwitterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3246DF19F9CDA000397C1A /* TwitterCell.m */; };
 		AC35D35C1A00A31F00F1C797 /* CNPPopupController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC35D35B1A00A31F00F1C797 /* CNPPopupController.m */; };
@@ -80,6 +78,22 @@
 		AC51018E184653FF00CD09E7 /* Darkening.png in Resources */ = {isa = PBXBuildFile; fileRef = AC51018C184653FF00CD09E7 /* Darkening.png */; };
 		AC51018F184653FF00CD09E7 /* HeaderPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = AC51018D184653FF00CD09E7 /* HeaderPicture.png */; };
 		AC57CD68183C4B3100916B12 /* InstaPicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC57CD67183C4B3100916B12 /* InstaPicDetailViewController.m */; };
+		AC6D99A91A3E43A500CB5CCF /* NSAlert+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99911A3E43A500CB5CCF /* NSAlert+MKNetworkKitAdditions.m */; };
+		AC6D99AA1A3E43A500CB5CCF /* NSData+MKBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99931A3E43A500CB5CCF /* NSData+MKBase64.m */; };
+		AC6D99AB1A3E43A500CB5CCF /* NSDate+RFC1123.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99951A3E43A500CB5CCF /* NSDate+RFC1123.m */; };
+		AC6D99AC1A3E43A500CB5CCF /* NSDictionary+RequestEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99971A3E43A500CB5CCF /* NSDictionary+RequestEncoding.m */; };
+		AC6D99AD1A3E43A500CB5CCF /* NSString+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99991A3E43A500CB5CCF /* NSString+MKNetworkKitAdditions.m */; };
+		AC6D99AE1A3E43A500CB5CCF /* UIAlertView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D999B1A3E43A500CB5CCF /* UIAlertView+MKNetworkKitAdditions.m */; };
+		AC6D99AF1A3E43A500CB5CCF /* UIImageView+MKNetworkKitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D999D1A3E43A500CB5CCF /* UIImageView+MKNetworkKitAdditions.m */; };
+		AC6D99B01A3E43A500CB5CCF /* MKNetworkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D999F1A3E43A500CB5CCF /* MKNetworkEngine.m */; };
+		AC6D99B11A3E43A500CB5CCF /* MKNetworkOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99A21A3E43A500CB5CCF /* MKNetworkOperation.m */; };
+		AC6D99B21A3E43A500CB5CCF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99A51A3E43A500CB5CCF /* Reachability.m */; };
+		AC6D99B31A3E43A500CB5CCF /* RSOAuthEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99A81A3E43A500CB5CCF /* RSOAuthEngine.m */; };
+		AC6D99B91A3E43B200CB5CCF /* MYBlurIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99B61A3E43B200CB5CCF /* MYBlurIntroductionView.m */; };
+		AC6D99BA1A3E43B200CB5CCF /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99B81A3E43B200CB5CCF /* MYIntroductionPanel.m */; };
+		AC6D99BD1A3E43D100CB5CCF /* RSTwitterEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99BC1A3E43D100CB5CCF /* RSTwitterEngine.m */; };
+		AC6D99C11A3E43DD00CB5CCF /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AC6D99BE1A3E43DD00CB5CCF /* WebViewController.xib */; };
+		AC6D99C21A3E43DD00CB5CCF /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99C01A3E43DD00CB5CCF /* WebViewController.m */; };
 		AC792F751831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
 		AC792F761831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
 		AC8D89341A0AC32800978356 /* InteractionsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC8D89331A0AC32800978356 /* InteractionsTableViewController.m */; };
@@ -308,8 +322,6 @@
 		AC0BF96B18402EC900177106 /* pinterest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pinterest@2x.png"; sourceTree = "<group>"; };
 		AC0BF96C18402EC900177106 /* twitter.off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter.off@2x.png"; sourceTree = "<group>"; };
 		AC0BF96D18402EC900177106 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
-		AC0BF986184041D400177106 /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
-		AC0BF987184041D400177106 /* TwitterClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterClient.m; sourceTree = "<group>"; };
 		AC1CE1E31A0E7DDE00B2A70D /* PostController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostController.h; sourceTree = "<group>"; };
 		AC1CE1E41A0E7DDE00B2A70D /* PostController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostController.m; sourceTree = "<group>"; };
 		AC3246DE19F9CDA000397C1A /* TwitterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCell.h; sourceTree = "<group>"; };
@@ -329,6 +341,38 @@
 		AC51018D184653FF00CD09E7 /* HeaderPicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderPicture.png; sourceTree = "<group>"; };
 		AC57CD66183C4B3100916B12 /* InstaPicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaPicDetailViewController.h; sourceTree = "<group>"; };
 		AC57CD67183C4B3100916B12 /* InstaPicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaPicDetailViewController.m; sourceTree = "<group>"; };
+		AC6D99901A3E43A500CB5CCF /* NSAlert+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAlert+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		AC6D99911A3E43A500CB5CCF /* NSAlert+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAlert+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		AC6D99921A3E43A500CB5CCF /* NSData+MKBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+MKBase64.h"; sourceTree = "<group>"; };
+		AC6D99931A3E43A500CB5CCF /* NSData+MKBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+MKBase64.m"; sourceTree = "<group>"; };
+		AC6D99941A3E43A500CB5CCF /* NSDate+RFC1123.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+RFC1123.h"; sourceTree = "<group>"; };
+		AC6D99951A3E43A500CB5CCF /* NSDate+RFC1123.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+RFC1123.m"; sourceTree = "<group>"; };
+		AC6D99961A3E43A500CB5CCF /* NSDictionary+RequestEncoding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+RequestEncoding.h"; sourceTree = "<group>"; };
+		AC6D99971A3E43A500CB5CCF /* NSDictionary+RequestEncoding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+RequestEncoding.m"; sourceTree = "<group>"; };
+		AC6D99981A3E43A500CB5CCF /* NSString+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		AC6D99991A3E43A500CB5CCF /* NSString+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		AC6D999A1A3E43A500CB5CCF /* UIAlertView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		AC6D999B1A3E43A500CB5CCF /* UIAlertView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		AC6D999C1A3E43A500CB5CCF /* UIImageView+MKNetworkKitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+MKNetworkKitAdditions.h"; sourceTree = "<group>"; };
+		AC6D999D1A3E43A500CB5CCF /* UIImageView+MKNetworkKitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+MKNetworkKitAdditions.m"; sourceTree = "<group>"; };
+		AC6D999E1A3E43A500CB5CCF /* MKNetworkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkEngine.h; sourceTree = "<group>"; };
+		AC6D999F1A3E43A500CB5CCF /* MKNetworkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkEngine.m; sourceTree = "<group>"; };
+		AC6D99A01A3E43A500CB5CCF /* MKNetworkKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkKit.h; sourceTree = "<group>"; };
+		AC6D99A11A3E43A500CB5CCF /* MKNetworkOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MKNetworkOperation.h; sourceTree = "<group>"; };
+		AC6D99A21A3E43A500CB5CCF /* MKNetworkOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MKNetworkOperation.m; sourceTree = "<group>"; };
+		AC6D99A41A3E43A500CB5CCF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		AC6D99A51A3E43A500CB5CCF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		AC6D99A71A3E43A500CB5CCF /* RSOAuthEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSOAuthEngine.h; sourceTree = "<group>"; };
+		AC6D99A81A3E43A500CB5CCF /* RSOAuthEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSOAuthEngine.m; sourceTree = "<group>"; };
+		AC6D99B51A3E43B200CB5CCF /* MYBlurIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBlurIntroductionView.h; sourceTree = "<group>"; };
+		AC6D99B61A3E43B200CB5CCF /* MYBlurIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBlurIntroductionView.m; sourceTree = "<group>"; };
+		AC6D99B71A3E43B200CB5CCF /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
+		AC6D99B81A3E43B200CB5CCF /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
+		AC6D99BB1A3E43D100CB5CCF /* RSTwitterEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSTwitterEngine.h; sourceTree = "<group>"; };
+		AC6D99BC1A3E43D100CB5CCF /* RSTwitterEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSTwitterEngine.m; sourceTree = "<group>"; };
+		AC6D99BE1A3E43DD00CB5CCF /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
+		AC6D99BF1A3E43DD00CB5CCF /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		AC6D99C01A3E43DD00CB5CCF /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		AC792F731831BF7E00946DBE /* TweetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailViewController.h; sourceTree = "<group>"; };
 		AC792F741831BF7E00946DBE /* TweetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetailViewController.m; sourceTree = "<group>"; };
 		AC8D89321A0AC32800978356 /* InteractionsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionsTableViewController.h; sourceTree = "<group>"; };
@@ -646,10 +690,10 @@
 		AC4B4B7E18307E2F00F6BDD3 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				AC6D99BB1A3E43D100CB5CCF /* RSTwitterEngine.h */,
+				AC6D99BC1A3E43D100CB5CCF /* RSTwitterEngine.m */,
 				ACD70FA91839477800C28489 /* InstagramClient.h */,
 				ACD70FAA1839477800C28489 /* InstagramClient.m */,
-				AC0BF986184041D400177106 /* TwitterClient.h */,
-				AC0BF987184041D400177106 /* TwitterClient.m */,
 			);
 			name = Clients;
 			sourceTree = "<group>";
@@ -661,6 +705,70 @@
 				AC51018D184653FF00CD09E7 /* HeaderPicture.png */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		AC6D998E1A3E43A500CB5CCF /* MKNetworkKit */ = {
+			isa = PBXGroup;
+			children = (
+				AC6D998F1A3E43A500CB5CCF /* Categories */,
+				AC6D999E1A3E43A500CB5CCF /* MKNetworkEngine.h */,
+				AC6D999F1A3E43A500CB5CCF /* MKNetworkEngine.m */,
+				AC6D99A01A3E43A500CB5CCF /* MKNetworkKit.h */,
+				AC6D99A11A3E43A500CB5CCF /* MKNetworkOperation.h */,
+				AC6D99A21A3E43A500CB5CCF /* MKNetworkOperation.m */,
+				AC6D99A31A3E43A500CB5CCF /* Reachability */,
+			);
+			path = MKNetworkKit;
+			sourceTree = "<group>";
+		};
+		AC6D998F1A3E43A500CB5CCF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				AC6D99901A3E43A500CB5CCF /* NSAlert+MKNetworkKitAdditions.h */,
+				AC6D99911A3E43A500CB5CCF /* NSAlert+MKNetworkKitAdditions.m */,
+				AC6D99921A3E43A500CB5CCF /* NSData+MKBase64.h */,
+				AC6D99931A3E43A500CB5CCF /* NSData+MKBase64.m */,
+				AC6D99941A3E43A500CB5CCF /* NSDate+RFC1123.h */,
+				AC6D99951A3E43A500CB5CCF /* NSDate+RFC1123.m */,
+				AC6D99961A3E43A500CB5CCF /* NSDictionary+RequestEncoding.h */,
+				AC6D99971A3E43A500CB5CCF /* NSDictionary+RequestEncoding.m */,
+				AC6D99981A3E43A500CB5CCF /* NSString+MKNetworkKitAdditions.h */,
+				AC6D99991A3E43A500CB5CCF /* NSString+MKNetworkKitAdditions.m */,
+				AC6D999A1A3E43A500CB5CCF /* UIAlertView+MKNetworkKitAdditions.h */,
+				AC6D999B1A3E43A500CB5CCF /* UIAlertView+MKNetworkKitAdditions.m */,
+				AC6D999C1A3E43A500CB5CCF /* UIImageView+MKNetworkKitAdditions.h */,
+				AC6D999D1A3E43A500CB5CCF /* UIImageView+MKNetworkKitAdditions.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		AC6D99A31A3E43A500CB5CCF /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				AC6D99A41A3E43A500CB5CCF /* Reachability.h */,
+				AC6D99A51A3E43A500CB5CCF /* Reachability.m */,
+			);
+			path = Reachability;
+			sourceTree = "<group>";
+		};
+		AC6D99A61A3E43A500CB5CCF /* RSOAuthEngine */ = {
+			isa = PBXGroup;
+			children = (
+				AC6D99A71A3E43A500CB5CCF /* RSOAuthEngine.h */,
+				AC6D99A81A3E43A500CB5CCF /* RSOAuthEngine.m */,
+			);
+			path = RSOAuthEngine;
+			sourceTree = "<group>";
+		};
+		AC6D99B41A3E43B200CB5CCF /* MYBlurIntroductionView */ = {
+			isa = PBXGroup;
+			children = (
+				AC6D99B51A3E43B200CB5CCF /* MYBlurIntroductionView.h */,
+				AC6D99B61A3E43B200CB5CCF /* MYBlurIntroductionView.m */,
+				AC6D99B71A3E43B200CB5CCF /* MYIntroductionPanel.h */,
+				AC6D99B81A3E43B200CB5CCF /* MYIntroductionPanel.m */,
+			);
+			path = MYBlurIntroductionView;
 			sourceTree = "<group>";
 		};
 		AC92CC621877D16C006257CE /* MDBrowser */ = {
@@ -1007,6 +1115,9 @@
 		ACCF7656180F6FB800E0CA67 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AC6D99B41A3E43B200CB5CCF /* MYBlurIntroductionView */,
+				AC6D998E1A3E43A500CB5CCF /* MKNetworkKit */,
+				AC6D99A61A3E43A500CB5CCF /* RSOAuthEngine */,
 				AC35D3591A00A31F00F1C797 /* CNPPopupController */,
 				ACFD86191A004A400094567A /* AwesomeMenu */,
 				ACA30F3219F99FB80018BDB7 /* SDWebImage */,
@@ -1058,6 +1169,9 @@
 				AC1CE1E41A0E7DDE00B2A70D /* PostController.m */,
 				ACEEF647181426FE002B61B9 /* RootMenuController.h */,
 				ACEEF648181426FE002B61B9 /* RootMenuController.m */,
+				AC6D99BF1A3E43DD00CB5CCF /* WebViewController.h */,
+				AC6D99BE1A3E43DD00CB5CCF /* WebViewController.xib */,
+				AC6D99C01A3E43DD00CB5CCF /* WebViewController.m */,
 				AC9FAF581810D0E800A605E5 /* WelcomeScreenViewController.h */,
 				AC9FAF591810D0E800A605E5 /* WelcomeScreenViewController.m */,
 			);
@@ -1184,6 +1298,7 @@
 				AC92CC921877D16C006257CE /* next@2x.png in Resources */,
 				AC4A6E1C1844408A00FDA6ED /* HorizBorder.png in Resources */,
 				ACB8DD161845A76C00A3A498 /* indiegogo.png in Resources */,
+				AC6D99C11A3E43DD00CB5CCF /* WebViewController.xib in Resources */,
 				ACB8DD461845A76C00A3A498 /* twitter circ.png in Resources */,
 				ACB8DD041845A76C00A3A498 /* digg.png in Resources */,
 				AC92CC8E1877D16C006257CE /* back_active@2x.png in Resources */,
@@ -1344,14 +1459,17 @@
 				AC92CC871877D16C006257CE /* MDBrowserAnimatorFactory.m in Sources */,
 				ACEBB1C7182C852500A4CE2F /* UIImageView+AFNetworking.m in Sources */,
 				ACA30F5C19F99FB80018BDB7 /* SDWebImagePrefetcher.m in Sources */,
+				AC6D99B21A3E43A500CB5CCF /* Reachability.m in Sources */,
 				ACC4C73A18062D95000A3BA8 /* Data.m in Sources */,
 				ACC1E98E1825E49F00DCA712 /* JSFlatButton.m in Sources */,
 				AC57CD68183C4B3100916B12 /* InstaPicDetailViewController.m in Sources */,
 				ACEBB1CA182C86A300A4CE2F /* AFOAuth1Client.m in Sources */,
 				ACEBB1BF182C852500A4CE2F /* AFHTTPClient.m in Sources */,
+				AC6D99B91A3E43B200CB5CCF /* MYBlurIntroductionView.m in Sources */,
 				AC35D35C1A00A31F00F1C797 /* CNPPopupController.m in Sources */,
 				ACEBB1C2182C852500A4CE2F /* AFJSONRequestOperation.m in Sources */,
 				ACEBB1C5182C852500A4CE2F /* AFURLConnectionOperation.m in Sources */,
+				AC6D99AA1A3E43A500CB5CCF /* NSData+MKBase64.m in Sources */,
 				6E4A5BDD185450C60096B354 /* DEComposeTextView.m in Sources */,
 				AC92CC881877D16C006257CE /* PopUpBrowserAnimator.m in Sources */,
 				AC8D89341A0AC32800978356 /* InteractionsTableViewController.m in Sources */,
@@ -1360,12 +1478,14 @@
 				ACA30F5B19F99FB80018BDB7 /* SDWebImageManager.m in Sources */,
 				6E55593418217BCA00546428 /* ProfileViewController.m in Sources */,
 				ACA30F5E19F99FB80018BDB7 /* UIImage+GIF.m in Sources */,
+				AC6D99BD1A3E43D100CB5CCF /* RSTwitterEngine.m in Sources */,
 				ACEBB1C3182C852500A4CE2F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				AC92CC851877D16C006257CE /* MyActivityIndicator.m in Sources */,
+				AC6D99BA1A3E43B200CB5CCF /* MYIntroductionPanel.m in Sources */,
 				ACFD861F1A004A400094567A /* AwesomeMenuItem.m in Sources */,
+				AC6D99AB1A3E43A500CB5CCF /* NSDate+RFC1123.m in Sources */,
 				ACA30F5D19F99FB80018BDB7 /* UIButton+WebCache.m in Sources */,
 				ACA30F5A19F99FB80018BDB7 /* SDWebImageDownloaderOperation.m in Sources */,
-				AC0BF988184041D400177106 /* TwitterClient.m in Sources */,
 				ACC1E98A1825E45100DCA712 /* UIViewController+JASidePanel.m in Sources */,
 				AC9FAF5A1810D0E800A605E5 /* WelcomeScreenViewController.m in Sources */,
 				ACA30F6319F99FB80018BDB7 /* UIView+WebCacheOperation.m in Sources */,
@@ -1379,27 +1499,35 @@
 				AC92CC891877D16C006257CE /* SlideFromBottomBrowserAnimator.m in Sources */,
 				ACEBB1C6182C852500A4CE2F /* AFXMLRequestOperation.m in Sources */,
 				ACEBB1C0182C852500A4CE2F /* AFHTTPRequestOperation.m in Sources */,
+				AC6D99B31A3E43A500CB5CCF /* RSOAuthEngine.m in Sources */,
+				AC6D99AC1A3E43A500CB5CCF /* NSDictionary+RequestEncoding.m in Sources */,
 				6E4A5BDF185450C60096B354 /* RECommonFunctions.m in Sources */,
 				AC4A7A191A0855040032E1D0 /* InstagramResultsCell.m in Sources */,
 				ACC1E9971825E4CD00DCA712 /* UIImage+JSFlatButton.m in Sources */,
 				ACA30F5819F99FB80018BDB7 /* SDWebImageDecoder.m in Sources */,
 				ACEEF649181426FE002B61B9 /* RootMenuController.m in Sources */,
 				ACB52FD51A0E894100419F76 /* SettingsViewController.m in Sources */,
+				AC6D99B01A3E43A500CB5CCF /* MKNetworkEngine.m in Sources */,
 				ACA30F6219F99FB80018BDB7 /* UIImageView+WebCache.m in Sources */,
 				6E4A5BE7185450C60096B354 /* REComposeViewController.m in Sources */,
+				AC6D99AE1A3E43A500CB5CCF /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				AC92CC8A1877D16C006257CE /* MJPopupBackgroundView.m in Sources */,
 				ACA30F6019F99FB80018BDB7 /* UIImage+WebP.m in Sources */,
+				AC6D99A91A3E43A500CB5CCF /* NSAlert+MKNetworkKitAdditions.m in Sources */,
 				AC792F751831BF7E00946DBE /* TweetDetailViewController.m in Sources */,
 				AC1CE1E51A0E7DDE00B2A70D /* PostController.m in Sources */,
 				ACFD861E1A004A400094567A /* AwesomeMenu.m in Sources */,
+				AC6D99AD1A3E43A500CB5CCF /* NSString+MKNetworkKitAdditions.m in Sources */,
 				ACD7D0461A0574120090093B /* SearchTableViewController.m in Sources */,
 				ACFD86221A0050DD0094567A /* Lockbox.m in Sources */,
 				ACC4C71018062C82000A3BA8 /* AppDelegate.m in Sources */,
 				ACC4C70C18062C82000A3BA8 /* main.m in Sources */,
+				AC6D99AF1A3E43A500CB5CCF /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				ACD70FAB1839477800C28489 /* InstagramClient.m in Sources */,
 				ACEBB1CD182C86AD00A4CE2F /* AFOAuth2Client.m in Sources */,
 				ACA30F5519F99FB80018BDB7 /* NSData+ImageContentType.m in Sources */,
 				AC3246E019F9CDA000397C1A /* TwitterCell.m in Sources */,
+				AC6D99B11A3E43A500CB5CCF /* MKNetworkOperation.m in Sources */,
 				ACA30F5F19F99FB80018BDB7 /* UIImage+MultiFormat.m in Sources */,
 				ACA30F6119F99FB80018BDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				6E4A5BE3185450C60096B354 /* REComposeSheetView.m in Sources */,
@@ -1407,6 +1535,7 @@
 				ACC1E9881825E45100DCA712 /* JASidePanelController.m in Sources */,
 				ACC1E9951825E4CD00DCA712 /* UIColor+JSFlatButton.m in Sources */,
 				6E4A5BDB185450C60096B354 /* DEComposeRuledView.m in Sources */,
+				AC6D99C21A3E43DD00CB5CCF /* WebViewController.m in Sources */,
 				AC92CC861877D16C006257CE /* MDBrowser.m in Sources */,
 				ACA30F5719F99FB80018BDB7 /* SDWebImageCompat.m in Sources */,
 			);
@@ -1427,7 +1556,6 @@
 				ACC1E98F1825E49F00DCA712 /* JSFlatButton.m in Sources */,
 				AC9D0A4E1861528E00AEFB68 /* StreamViewController.m in Sources */,
 				ACC4C72B18062C83000A3BA8 /* FloadtTests.m in Sources */,
-				AC0BF989184041D400177106 /* TwitterClient.m in Sources */,
 				ACC1E9961825E4CD00DCA712 /* UIColor+JSFlatButton.m in Sources */,
 				6E4A5BE2185450C60096B354 /* REComposeBackgroundView.m in Sources */,
 				ACC1E9891825E45100DCA712 /* JASidePanelController.m in Sources */,

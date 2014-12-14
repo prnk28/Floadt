@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.twitterEngine = [[RSTwitterEngine alloc] initWithDelegate:self];
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [barButton setTitle:@"" forState:UIControlStateNormal];
@@ -92,11 +93,42 @@
         
     } else if (idx == 1) {
         NSLog(@"twitter");
-        [[TwitterClient sharedClient] authenticateWithTwitter];
-        
+        [self.twitterEngine authenticateWithCompletionBlock:^(NSError *error) {
+           
+        }];
     }else{
         NSLog(@"Facebook Auth");
     }
 }
+
+#pragma mark - RSTwitterEngine Delegate Methods
+
+- (void)twitterEngine:(RSTwitterEngine *)engine needsToOpenURL:(NSURL *)url
+{
+    WebViewController *vc = [[WebViewController alloc] initWithURL:url];
+    vc.delegate = self;
+    
+    [self presentModalViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES];
+}
+
+#pragma mark - WebViewController Delegate Methods
+
+- (void)dismissWebView
+{
+    [self dismissModalViewControllerAnimated:YES];
+    if (self.twitterEngine) [self.twitterEngine cancelAuthentication];
+}
+
+- (void)handleURL:(NSURL *)url
+{
+    [self dismissModalViewControllerAnimated:YES];
+    
+    if ([url.query hasPrefix:@"denied"]) {
+        if (self.twitterEngine) [self.twitterEngine cancelAuthentication];
+    } else {
+        if (self.twitterEngine) [self.twitterEngine resumeAuthenticationFlowWithURL:url];
+    }
+}
+
 
 @end

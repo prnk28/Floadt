@@ -7,12 +7,12 @@
 //
 
 #import "Data.h"
+#import "RSTwitterEngine.h"
+#import "WebViewController.h"
 
+@interface SettingsViewController : UIViewController <AwesomeMenuDelegate,RSTwitterEngineDelegate, WebViewControllerDelegate>
 
-@interface SettingsViewController : UIViewController <AwesomeMenuDelegate> {
-
-}
-
+@property (strong, nonatomic) RSTwitterEngine *twitterEngine;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 
 

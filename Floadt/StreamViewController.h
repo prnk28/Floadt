@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Data.h"
 
-@interface StreamViewController : UITableViewController {
+@interface StreamViewController : UITableViewController <MYIntroductionDelegate> {
     
     NSString *tweetCreation;
     NSString *instagramCreation;
