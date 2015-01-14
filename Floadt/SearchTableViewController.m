@@ -9,6 +9,7 @@
 #import "SearchTableViewController.h"
 
 @interface SearchTableViewController ()
+
 @end
 
 @implementation SearchTableViewController
@@ -21,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _searchBar.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,20 +63,9 @@
     [cell.imageView sd_setImageWithURL:totalArray[@"profile_picture"] placeholderImage:nil options:indexPath.row == 0 ? SDWebImageRefreshCached : 0];
 }
 
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 - (void)didTapPostButton:(id)sender
 {
-    [self fetchInstagramResultsWith:_searchBar.text];
+
 }
 
 - (void)didTapBarButton:(id)sender
@@ -104,6 +95,17 @@
     [self setUpUI];
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [self fetchInstagramResultsWith:_searchBar.text];
+    [self.view endEditing:YES];
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    
+}
+
 - (void)setUpUI{
     
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.278f green:0.337f blue:0.439f alpha:1.00f]];
@@ -118,7 +120,7 @@
     UIButton *postButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [postButton setTitle:@"" forState:UIControlStateNormal];
-    [postButton setBackgroundImage:[UIImage imageNamed:@"plusButton.png"] forState:UIControlStateNormal];
+    [postButton setBackgroundImage:[UIImage imageNamed:@"shareButton.png"] forState:UIControlStateNormal];
     [postButton addTarget:self action:@selector(didTapPostButton:) forControlEvents:UIControlEventTouchUpInside];
     postButton.frame = CGRectMake(0.0f, 0.0f, 15.0f, 15.0f);
     UIBarButtonItem *postButtonItem = [[UIBarButtonItem alloc] initWithCustomView:postButton];

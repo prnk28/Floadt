@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Data.h"
 
-@interface StreamViewController : UITableViewController <MYIntroductionDelegate> {
+@interface StreamViewController : UITableViewController {
     
     NSString *tweetCreation;
     NSString *instagramCreation;
@@ -20,11 +20,11 @@
 
 // Properties
 @property (nonatomic, strong) NSMutableDictionary *instagramResponse;
-@property (nonatomic, strong) NSMutableArray *instaPics;
-
+@property (strong, nonatomic) NSMutableArray *instaPics;
 @property (strong, nonatomic) AFOAuth1Client *twitterClient;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic) NSMutableArray *tweets;
 @property (strong, nonatomic) NSMutableArray *totalFeed;
+@property (nonatomic, strong) UITextView *message;
 
 @end

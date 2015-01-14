@@ -36,15 +36,18 @@
     [_imageView addGestureRecognizer:doubleTapImage];
 
     NSDictionary *instaPics = self.detailItem;
-    
     NSString *user =  instaPics[@"user"][@"full_name"];
-    NSString *createdAt =instaPics[@"created_time"];
-    NSString *mediaID = instaPics[@"id"];
-    int createdAtN = [createdAt intValue];
-    NSTimeInterval timestamp = (NSTimeInterval)createdAtN;
-    NSDate *creationDate = [NSDate dateWithTimeIntervalSince1970:timestamp];
-    NSLog(@"Instagram Time: %@",creationDate);
-    NSLog(@"Instagram Media ID: %@",mediaID);
+
+
+
+    _ImagesCountLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:15];
+    _FollowersCountLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:15];
+    _FollowingCountLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:15];
+    
+    _ImagesLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+    _FollowersLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+    _FollowingLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+    
     _userName.text = user;
     if (self.detailItem) {
         NSDictionary *instaPics = self.detailItem;
@@ -55,15 +58,22 @@
             NSLog(@"No Caption");
         }
         
-        
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
             NSString *imageUrl = [[[instaPics objectForKey:@"images"] objectForKey:@"standard_resolution"] objectForKey:@"url"];
             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
             
             dispatch_async(dispatch_get_main_queue(), ^{
                 _imageView.image = [UIImage imageWithData:data];
-                CALayer *imageLayer = _imageView.layer;
-                [imageLayer setCornerRadius:25];
+            });
+        });
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSString *imageUrl = instaPics[@"user"][@"profile_picture"];
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _profilePicture.image = [UIImage imageWithData:data];
+                CALayer *imageLayer = _profilePicture.layer;
+                [imageLayer setCornerRadius:40];
                 [imageLayer setMasksToBounds:YES];
             });
         });

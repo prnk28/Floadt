@@ -15,171 +15,181 @@
 @synthesize totalFeed;
 @synthesize instagramResponse;
 
-static NSString * const TwitterCellIdentifier = @"TwitterCell";
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self buildIntro];
-    [self fetchTimeline];
-    [self setUpUI];
+    // Override point for customization after application launch.
     
-    [self.tableView reloadData];
+    // If the User has launched the app for the First Time run the Intro
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self setUpUI];
+        [self buildIntro];
+    }else{
+     
+        // Fetch Timeline
+        [self setUpUI];
+        [self fetchTimeline];
+        // Setup the User Interface
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - Table View
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-
-        return [self twitterCellAtIndexPath:indexPath];
-    
-}
-
-- (TwitterCell *)twitterCellAtIndexPath:(NSIndexPath *)indexPath {
-    TwitterCell *cell = [self.tableView dequeueReusableCellWithIdentifier:TwitterCellIdentifier forIndexPath:indexPath];
-    [self configureTwitterCell:cell atIndexPath:indexPath];
-    return cell;
-}
-
-- (void)configureTwitterCell:(TwitterCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    TwitterCell *twitter = [self.tableView dequeueReusableCellWithIdentifier:TwitterCellIdentifier];
-    twitter.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
-    
-    NSDictionary *totalArray = totalFeed[indexPath.row];
-    
-    //Set username for twitter
-    NSString *name = [[totalArray objectForKey:@"user"] objectForKey:@"name"];
-    [cell.nameLabel setFont:[UIFont fontWithName:@"Helvetica-Regular" size:13.0]];
-    [cell.nameLabel setText:name];
-    
-    //Set status for twitter
-    NSString *subtitle = [totalArray objectForKey:@"text"];
-    [cell.tweetLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:11.0]];
-    if (subtitle.length > 200) {
-        subtitle = [NSString stringWithFormat:@"%@...", [subtitle substringToIndex:200]];
-    }
-    [cell.tweetLabel setText:subtitle];
-    
-    //Set Profile Pic for Twitter
-    UIImageView *profilePic = (UIImageView *)[twitter viewWithTag:201];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *imageUrl = [[totalArray objectForKey:@"user"] objectForKey:@"profile_image_url"];
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //id object = [totalFeed objectAtIndex:indexPath.row];
+    if (indexPath.row%2==0) {
+        static NSString *Twitter = @"TwitterCell";
+        UITableViewCell *twitter = [self.tableView dequeueReusableCellWithIdentifier:Twitter];
+        twitter.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
         
-        dispatch_async(dispatch_get_main_queue(), ^{
+        NSDictionary *totalArray = totalFeed[indexPath.row];;
+        
+        //Set username for twitter
+        NSString *name = [[totalArray objectForKey:@"user"] objectForKey:@"name"];
+        UILabel *twitterNameLabel = (UILabel *)[twitter viewWithTag:202];
+        [twitterNameLabel setFont:[UIFont fontWithName:@"Helvetica-Regular" size:12.0]];
+        [twitterNameLabel setText:name];
+        
+        //Set status for twitter
+        NSString *text = [totalArray objectForKey:@"text"];
+        UILabel *twitterTweetLabel = (UILabel *)[twitter viewWithTag:203];
+        [twitterTweetLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:10.0]];
+        [twitterTweetLabel setText:text];
+        
+        //Set Profile Pic for Twitter
+        UIImageView *profilePic = (UIImageView *)[twitter viewWithTag:201];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSString *imageUrl = [[totalArray objectForKey:@"user"] objectForKey:@"profile_image_url"];
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                //Make the Profile Pic ImageView Circular
+                profilePic.image = [UIImage imageWithData:data];
+                CALayer *imageLayer = profilePic.layer;
+                [imageLayer setCornerRadius:25];
+                [imageLayer setMasksToBounds:YES];
+            });
+        });
+        
+        //Set number of Favorites for Tweet
+        NSString *favoritesCount = [[totalArray objectForKey:@"user"]objectForKey:@"favourites_count"];
+        UIButton *favoritesButton = (UIButton *)[twitter viewWithTag:204];
+        [favoritesButton setTitle:[NSString stringWithFormat:@"  %@",favoritesCount] forState:UIControlStateNormal];
+        [favoritesButton setTitle:[NSString stringWithFormat:@"  %@",favoritesCount] forState:UIControlStateHighlighted];
+        favoritesButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+        
+        return twitter;
+        
+    }else{
+        static NSString *Instagram = @"InstagramCell";
+        UITableViewCell *instagram = [self.tableView dequeueReusableCellWithIdentifier:Instagram];
+        instagram.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+        
+        
+        NSDictionary *entry = instaPics[indexPath.row];
+        
+        // Set Image
+        NSString *imageUrlString = entry[@"images"][@"low_resolution"][@"url"];
+        NSURL *url = [NSURL URLWithString:imageUrlString];
+        UIImageView *instagramImageView = (UIImageView *)[instagram viewWithTag:104];
+        [instagramImageView setImageWithURL:url];
+        
+        
+        // Set User Name
+        NSString *user =  entry[@"user"][@"full_name"];
+        UILabel *instagramUserLabel = (UILabel *)[instagram viewWithTag:102];
+        [instagramUserLabel setFont:[UIFont fontWithName:@"Helvetica-Regular" size:16.0]];
+        [instagramUserLabel setText:user];
+        
+        // If no Caption
+        if (entry[@"caption"] != [NSNull null] && entry[@"caption"][@"text"] != [NSNull null])            {
+            NSString *caption = entry[@"caption"][@"text"];
+            UILabel *instagramCaptionLabel = (UILabel *)[instagram viewWithTag:103];
+            [instagramCaptionLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0]];
+            [instagramCaptionLabel setText:caption];
+        }else{
+            NSString *caption = @"";
+            UILabel *instagramCaptionLabel = (UILabel *)[instagram viewWithTag:103];
+            [instagramCaptionLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0]];
+            [instagramCaptionLabel setText:caption];
+        }
+        
+        // Add Profile Image
+        UIImageView *profilePic = (UIImageView *)[instagram viewWithTag:101];
+        
+        NSURL *imageUrl = entry[@"user"][@"profile_picture"];
+        [profilePic setImageWithURL:imageUrl completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+            profilePic.image = image;
             //Make the Profile Pic ImageView Circular
-            profilePic.image = [UIImage imageWithData:data];
             CALayer *imageLayer = profilePic.layer;
             [imageLayer setCornerRadius:25];
             [imageLayer setMasksToBounds:YES];
-        });
-    });
-}
-
-- (UITableViewCell *)instagramCellAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *Instagram = @"InstagramCell";
-    UITableViewCell *instagram = [self.tableView dequeueReusableCellWithIdentifier:Instagram];
-    [self configureTwitterCell:instagram atIndexPath:indexPath];
-    return instagram;
-}
-
-- (void)configureInstagramCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    
-    static NSString *Instagram = @"InstagramCell";
-    UITableViewCell *instagram = [self.tableView dequeueReusableCellWithIdentifier:Instagram];
-    instagram.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
-    
-    NSDictionary *entry = instaPics[indexPath.row];
-    
-    // Set Image
-    NSString *imageUrlString = entry[@"images"][@"low_resolution"][@"url"];
-    NSURL *url = [NSURL URLWithString:imageUrlString];
-    UIImageView *instagramImageView = (UIImageView *)[instagram viewWithTag:104];
-    [instagramImageView setImageWithURL:url];
-    
-    
-    // Set User Name
-    NSString *user =  entry[@"user"][@"full_name"];
-    UILabel *instagramUserLabel = (UILabel *)[instagram viewWithTag:102];
-    [instagramUserLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:16.0]];
-    [instagramUserLabel setText:user];
-    
-    // If no Caption
-    if (entry[@"caption"] != [NSNull null] && entry[@"caption"][@"text"] != [NSNull null])            {
-        NSString *caption = entry[@"caption"][@"text"];
-        UILabel *instagramCaptionLabel = (UILabel *)[instagram viewWithTag:103];
-        [instagramCaptionLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0]];
-        [instagramCaptionLabel setText:caption];
-    }else{
-        NSString *caption = @"";
-        UILabel *instagramCaptionLabel = (UILabel *)[instagram viewWithTag:103];
-        [instagramCaptionLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0]];
-        [instagramCaptionLabel setText:caption];
+        }];
+        
+        // Add likes Count
+        NSString *likesCount = entry[@"likes"][@"count"];
+        UIButton *likesButton = (UIButton *)[instagram viewWithTag:105];
+        [likesButton setTitle:[NSString stringWithFormat:@"  %@",likesCount] forState:UIControlStateNormal];
+        [likesButton setTitle:[NSString stringWithFormat:@"  %@",likesCount] forState:UIControlStateHighlighted];
+        likesButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+        
+        return instagram;
+        
     }
     
-    // Add Profile Image
-    UIImageView *profilePic = (UIImageView *)[instagram viewWithTag:101];
-    
-    NSURL *imageUrl = entry[@"user"][@"profile_picture"];
-    [profilePic setImageWithURL:imageUrl completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-        profilePic.image = image;
-        //Make the Profile Pic ImageView Circular
-        CALayer *imageLayer = profilePic.layer;
-        [imageLayer setCornerRadius:25];
-        [imageLayer setMasksToBounds:YES];
-    }];
 }
 
-/*
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return [self heightForBasicCellAtIndexPath:indexPath];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    id object = [totalFeed objectAtIndex:indexPath.row];
+    if (indexPath.row%2==0) {
+        return 184;
+    } else {
+        return 319;
+    }
 }
 
-- (CGFloat)heightForBasicCellAtIndexPath:(NSIndexPath *)indexPath {
-    static TwitterCell *sizingCell = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sizingCell = [self.tableView dequeueReusableCellWithIdentifier:TwitterCellIdentifier];
-    });
-    
-    [self configureTwitterCell:sizingCell atIndexPath:indexPath];
-    return [self calculateHeightForConfiguredSizingCell:sizingCell];
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
 }
 
-- (CGFloat)calculateHeightForConfiguredSizingCell:(UITableViewCell *)sizingCell {
-    [sizingCell setNeedsLayout];
-    [sizingCell layoutIfNeeded];
-    
-    CGSize size = [sizingCell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-    return size.height;
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 15;
 }
-*/
 
 - (void)updateArrays {
     instaPics = instagramResponse[@"data"];
     totalFeed = [tweets arrayByAddingObjectsFromArray:instaPics];
-    //[self sortArrayBasedOndate];
-    
+    [self sortArrayBasedOndate];
 }
 
+// Returns instaPics as a Mutable Array in order to Add more InstaPics
 - (NSMutableArray *)entries {
     return instaPics;
 }
 
 
 #pragma mark - Network Pulling
+
+// Fetches OG Instagram Pics
 - (void)fetchInstagramPics {
     instaPics = [[NSMutableArray alloc] init];
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    BOOL *status = [user boolForKey:@"InstagramActive"];
+    BOOL *status = [user boolForKey:@"instagramActive"];
     if (status) {
         [[InstagramClient sharedClient] getPath:@"users/self/feed"
                                      parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                            //NSLog(@"Response: %@", responseObject);
+                                            NSLog(@"Response: %@", responseObject);
                                             instagramResponse = [responseObject mutableCopy];
                                             [self.instaPics addObjectsFromArray:responseObject[@"data"]];
                                             [self updateArrays];
@@ -192,25 +202,36 @@ static NSString * const TwitterCellIdentifier = @"TwitterCell";
         [self.tableView reloadData]; });
 }
 
-/*
+// Fetches the OG set of Tweets
 -(void)fetchTweets {
-    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    BOOL *twitterActive = [user boolForKey:@"TwitterActive"];
-    if (twitterActive) {
-        [[TwitterClient sharedClient] getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSArray *responseArray = (NSArray *)responseObject;
-            [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-                tweets = [tweets copy];
-                tweets = responseArray;
-            }];
-             [self.tableView reloadData];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"Error: %@", error);
+    self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"] key:@"tA5TT8uEtg88FwAHnVpBcbUoq" secret:@"L5whWoi91HmzjrE5bNPNUgoMXWnImvpnkIPHZWQ4VmymaoXyYV"];
+    
+    AFOAuth1Token *twitterToken = [AFOAuth1Token retrieveCredentialWithIdentifier:@"TwitterToken"];
+    [self.twitterClient setAccessToken:twitterToken];
+    [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+    [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSArray *responseArray = (NSArray *)responseObject;
+       // NSLog(@"Response: %@", responseObject);
+        [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            tweets = [tweets copy];
+            tweets = responseArray;
         }];
-    }
+        [self updateArrays];
+        [self.tableView reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
 }
-*/
- 
+
+// Fetches the OG set of FB Statuses
+-(void)fetchFacebook {
+    [SCFacebook myFeedCallBack:^(BOOL success, id result) {
+        // NSLog(success);
+        NSLog(result);
+    }];
+}
+
+// Fetches the Next Instagram Page
 - (void)fetchNextInstagramPage {
     NSDictionary *page = instagramResponse[@"pagination"];
     NSString *nextPage = page[@"next_url"];
@@ -228,54 +249,38 @@ static NSString * const TwitterCellIdentifier = @"TwitterCell";
 
 }
 
-- (void)fetchNextTwitterPage {
-    //NSLog(tweets);
-    for (NSString *line in totalFeed) {
-    // Results from NSLog are in the Console
-    NSLog([NSString stringWithFormat:@"line: %@", line]);
-}  
-
-    //NSIndexPath *indexpath;
-    //NSDictionary *entry = tweets[indexpath.row];
-    //NSNumber *stufa;
-    
-    //id stuff =entry[@"id"];
-    //NSLog(stuff);
-    
-    //NSDictionary *parameters = @{
-    //                            @"max_id" :stufa
-    //                            };
-    
-    //[self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
-    //[self.twitterClient getPath:@"statuses/home_timeline.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-      //  NSArray *responseArray = (NSArray *)responseObject;
-      //  [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-      //      tweets = [tweets copy];
-      //      tweets = responseArray;
-      //  }];
-    //} failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-    //    NSLog(@"Error: %@", error);
-   // }];
-}
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (scrollView.contentOffset.y == roundf(scrollView.contentSize.height-scrollView.frame.size.height)) {
         //[self fetchNextInstagramPage];
-        [self fetchNextTwitterPage];
+        //[self fetchNextTwitterPage];
     }
 }
 
 - (void)fetchTimeline {
-    [self fetchInstagramPics];
-   // [self fetchTweets];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"instagramActive"]) {
+        [self fetchInstagramPics];
+    }
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"twitterActive"]) {
+        [self fetchTweets];
+    }
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"facebookActive"]) {
+        [self fetchFacebook];
+    }
     [self updateArrays];
     [self.tableView reloadData];
 }
 
 - (void)refetchTimeline {
-  //[self fetchInstagramPics];
-   // [self fetchTweets];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"instagramActive"]) {
+        [self fetchInstagramPics];
+    }
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"twitterActive"]) {
+        [self fetchTweets];
+    }
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"facebookActive"]) {
+        [self fetchFacebook];
+    }
     [self updateArrays];
     [self.tableView reloadData];
     
@@ -312,26 +317,10 @@ static NSString * const TwitterCellIdentifier = @"TwitterCell";
     
 }
 
-
 #pragma mark - Refresh
 - (void)refresh:(UIRefreshControl *)refreshControl {
-    [self refetchTimeline];
+    [self fetchTimeline];
     [refreshControl endRefreshing];
-}
-
-
-#pragma mark - Composer View Controller
-- (void)composeViewController:(REComposeViewController *)composeViewController didFinishWithResult:(REComposeResult)result
-{
-    [composeViewController dismissViewControllerAnimated:YES completion:nil];
-    
-    if (result == REComposeResultCancelled) {
-        NSLog(@"Cancelled");
-    }
-    
-    if (result == REComposeResultPosted) {
-        
-    }
 }
 
 
@@ -344,20 +333,31 @@ static NSString * const TwitterCellIdentifier = @"TwitterCell";
         NSDictionary *tweet = [tweets objectAtIndex:row];
         TweetDetailViewController *detailController = segue.destinationViewController;
         detailController.detailItem = tweet;
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
     }
     else if ([segue.identifier isEqualToString:@"showInstaPic"]) {
         NSInteger row = [[self tableView].indexPathForSelectedRow row];
         NSDictionary *pics = [instaPics objectAtIndex:row];
         InstaPicDetailViewController *detailController = segue.destinationViewController;
         detailController.detailItem = pics;
+        [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
     }
     
 }
 
 - (void)didTapPostButton:(id)sender
 {
-     UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"NavPost"];
-    [self presentViewController:viewController animated:YES completion:nil];
+    RRSendMessageViewController *controller = [[RRSendMessageViewController alloc] init];
+    
+    [controller presentController:self blockCompletion:^(RRMessageModel *model, BOOL isCancel) {
+        if (isCancel == true) {
+            self.message.text = @"";
+        }
+        else {
+            self.message.text = model.text;
+        }
+        [controller dismissViewControllerAnimated:YES completion:nil];
+    }];
 }
 
 - (void)didTapBarButton:(id)sender
@@ -398,7 +398,7 @@ static NSString * const TwitterCellIdentifier = @"TwitterCell";
     
     self.navBar.rightBarButtonItem = postButtonItem;
     
-    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                            [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                            [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
 }
@@ -410,8 +410,9 @@ static NSString * const TwitterCellIdentifier = @"TwitterCell";
     //Create Stock Panel With Image
     MYIntroductionPanel *panel2 = [[MYIntroductionPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) title:@"Automated Stock Panels" description:@"Need a quick-and-dirty solution for your app introduction? MYBlurIntroductionView comes with customizable stock panels that make writing an introduction a walk in the park. Stock panels come with optional blurring (iOS 7) and background image. A full panel is just one method away!" image:[UIImage imageNamed:@"ForkImage.png"]];
     
+   // AddSocialPanel *panel3 = [[AddSocialPanel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) nibNamed:@"AddSocialPanel"];
     //Add panels to an array
-    NSArray *panels = @[panel1, panel2,];
+    NSArray *panels = @[panel1, panel2];
     
     //Create the introduction view and set its delegate
     MYBlurIntroductionView *introductionView = [[MYBlurIntroductionView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];

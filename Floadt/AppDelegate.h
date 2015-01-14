@@ -12,9 +12,6 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
-@property (strong, nonatomic) WelcomeScreenViewController *viewController;
-@property (strong, nonatomic) RootMenuController *updatedRootViewController;
-
+@property (strong, nonatomic) AFOAuth1Client *twitterClient;
 
 @end

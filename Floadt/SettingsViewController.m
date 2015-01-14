@@ -17,7 +17,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.twitterEngine = [[RSTwitterEngine alloc] initWithDelegate:self];
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [barButton setTitle:@"" forState:UIControlStateNormal];
@@ -28,51 +27,17 @@
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:barButton];
     
     self.navBar.leftBarButtonItem = barButtonItem;
-    
-    // Setup Add Menu
-    UIImage *storyMenuItemImage = [UIImage imageNamed:@"bg-menuitem.png"];
-    UIImage *storyMenuItemImagePressed = [UIImage imageNamed:@"bg-menuitem-highlighted.png"];
-    
-    UIImage *starImage = [UIImage imageNamed:@"icon-star.png"];
-    UIImage *plus = [UIImage imageNamed:@"addCircleButton.png"];
    
     [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                                       [UIColor whiteColor], NSForegroundColorAttributeName,
                                                                       [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
  
-    AwesomeMenuItem *starMenuItem1 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-    highlightedImage:storyMenuItemImagePressed
-    ContentImage:starImage
-    highlightedContentImage:nil];
-    AwesomeMenuItem *starMenuItem2 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-    highlightedImage:storyMenuItemImagePressed
-    ContentImage:starImage
-    highlightedContentImage:nil];
-    AwesomeMenuItem *starMenuItem3 = [[AwesomeMenuItem alloc] initWithImage:storyMenuItemImage
-    highlightedImage:storyMenuItemImagePressed
-    ContentImage:starImage
-    highlightedContentImage:nil];
+    GHContextMenuView* overlay = [[GHContextMenuView alloc] init];
+    overlay.dataSource = self;
+    overlay.delegate = self;
     
-    NSArray *menus = [NSArray arrayWithObjects:starMenuItem1, starMenuItem2, starMenuItem3, nil];
-    
-    AwesomeMenuItem *startItem = [[AwesomeMenuItem alloc] initWithImage:[UIImage imageNamed:@"addCircleButton.png"]
-    highlightedImage:[UIImage imageNamed:nil]
-    ContentImage:[UIImage imageNamed:@"addCircleButton.png"]
-    highlightedContentImage:nil];
-    
-    AwesomeMenu *menu = [[AwesomeMenu alloc] initWithFrame:self.view.bounds startItem:startItem optionMenus:menus];
-    menu.delegate = self;
-    
-    menu.menuWholeAngle = M_PI_2;
-    menu.farRadius = 110.0f;
-    menu.rotateAngle = 5.0f;
-    menu.endRadius = 100.0f;
-    menu.nearRadius = 90.0f;
-    menu.animationDuration = 0.3f;
-    menu.startPoint = CGPointMake(250.0, 520.0);
-    
-    [self.view addSubview:menu];
-    
+    UILongPressGestureRecognizer* _longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:overlay action:@selector(longPressDetected:)];
+    [self.view addGestureRecognizer:_longPressRecognizer];
 }
     
 - (void)didTapBarButton:(id)sender
@@ -80,55 +45,121 @@
     [self.sidePanelController showLeftPanelAnimated:YES];
 }
     
-    //Menu Response
-- (void)awesomeMenu:(AwesomeMenu *)menu didSelectIndex:(NSInteger)idx
+- (NSInteger) numberOfMenuItems
 {
-    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
-    
-    if (idx == 0) {
-        
-        NSString *callbackUrl = @"floadt://instagram_callback";
-        
-        [[InstagramClient sharedClient] authenticateWithClientID:INSTAGRAM_CLIENT_ID callbackURL:callbackUrl];
-        
-    } else if (idx == 1) {
-        NSLog(@"twitter");
-        [self.twitterEngine authenticateWithCompletionBlock:^(NSError *error) {
-           
-        }];
-    }else{
-        NSLog(@"Facebook Auth");
+    return 3;
+}
+
+-(UIImage*) imageForItemAtIndex:(NSInteger)index
+{
+    NSString* imageName = nil;
+    switch (index) {
+        case 0:
+            imageName = @"twitter dark";
+            break;
+        case 1:
+            imageName = @"facebook dark";
+            break;
+        case 2:
+            imageName = @"instagram dark";
+            break;
+            
+        default:
+            break;
+    }
+    return [UIImage imageNamed:imageName];
+}
+
+- (void) didSelectItemAtIndex:(NSInteger)selectedIndex forMenuAtPoint:(CGPoint)point
+{
+    switch (selectedIndex) {
+        case 0:
+            if (![[NSUserDefaults standardUserDefaults] boolForKey:@"twitterActive"]) {
+                self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/"]
+                                                                         key:@"4oFCF0AjP4PQDUaCh5RQ"
+                                                                      secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
+                
+                [self.twitterClient authorizeUsingOAuthWithRequestTokenPath:@"oauth/request_token"
+                                                      userAuthorizationPath:@"oauth/authorize"
+                                                                callbackURL:[NSURL URLWithString:@"floadt://success"]
+                                                            accessTokenPath:@"oauth/access_token"
+                                                               accessMethod:@"GET"
+                                                                      scope:nil
+                                                                    success:^(AFOAuth1Token *accessToken, id response) {
+                                                                        [AFOAuth1Token storeCredential:accessToken withIdentifier:@"TwitterToken"];                                                            
+                                                                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"twitterActive"];
+                                                                    } failure:^(NSError *error) {
+                                                                        NSLog(@"Error: %@", error);
+                                                                    }];
+            } else {
+                UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Really Logout of Twitter?"
+                                                                         delegate:self
+                                                                cancelButtonTitle:@"Cancel"
+                                                           destructiveButtonTitle:@"Logout"
+                                                                otherButtonTitles:nil];
+                actionSheet.tag = 100;
+                [actionSheet showInView:self.view];
+            }
+            break;
+        case 1:
+            if (![[NSUserDefaults standardUserDefaults] boolForKey:@"facebookActive"]) {
+                [SCFacebook loginCallBack:^(BOOL success, id result) {
+                    if (success) {
+                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"facebookActive"];
+                    }
+                }];
+            } else {
+                UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Really Logout of Facebook?"
+                                                                         delegate:self
+                                                                cancelButtonTitle:@"Cancel"
+                                                           destructiveButtonTitle:@"Logout"
+                                                                otherButtonTitles:nil];
+                actionSheet.tag = 200;
+                [actionSheet showInView:self.view];
+            }
+            break;
+        case 2:
+            if (![[NSUserDefaults standardUserDefaults] boolForKey:@"instagramActive"]) {
+                [[InstagramClient sharedClient] authenticateWithClientID:@"88b3fb2cd93c4aacb053b44b35b86187" callbackURL:@"floadt://instagram_callback"];
+            } else {
+                UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Really Logout of Instagram?"
+                                                                         delegate:self
+                                                                cancelButtonTitle:@"Cancel"
+                                                           destructiveButtonTitle:@"Logout"
+                                                                otherButtonTitles:nil];
+                
+                actionSheet.tag = 300;
+                [actionSheet showInView:self.view];
+            }
+            break;
+        default:
+            break;
     }
 }
 
-#pragma mark - RSTwitterEngine Delegate Methods
-
-- (void)twitterEngine:(RSTwitterEngine *)engine needsToOpenURL:(NSURL *)url
-{
-    WebViewController *vc = [[WebViewController alloc] initWithURL:url];
-    vc.delegate = self;
-    
-    [self presentModalViewController:[[UINavigationController alloc] initWithRootViewController:vc] animated:YES];
-}
-
-#pragma mark - WebViewController Delegate Methods
-
-- (void)dismissWebView
-{
-    [self dismissModalViewControllerAnimated:YES];
-    if (self.twitterEngine) [self.twitterEngine cancelAuthentication];
-}
-
-- (void)handleURL:(NSURL *)url
-{
-    [self dismissModalViewControllerAnimated:YES];
-    
-    if ([url.query hasPrefix:@"denied"]) {
-        if (self.twitterEngine) [self.twitterEngine cancelAuthentication];
-    } else {
-        if (self.twitterEngine) [self.twitterEngine resumeAuthenticationFlowWithURL:url];
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (actionSheet.tag == 100) {
+        if(buttonIndex == 0){
+            NSLog(@"pressed index 0");
+            [AFOAuthCredential deleteCredentialWithIdentifier:@"TwitterToken"];
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"twitterActive"];
+        }
+    }
+    else if (actionSheet.tag == 200){
+        if(buttonIndex == 0){
+            [SCFacebook loginCallBack:^(BOOL success, id result) {
+                if (success) {
+                    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"facebookActive"];
+                }
+            }];
+        }
+    }
+    else{
+        if(buttonIndex == 0){
+            [JNKeychain deleteValueForKey:@"instaToken"];
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"instagramActive"];
+        }
     }
 }
-
 
 @end

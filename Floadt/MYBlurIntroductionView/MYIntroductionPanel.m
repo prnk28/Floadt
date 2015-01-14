@@ -5,7 +5,7 @@
 //  Created by Matthew York on 10/16/13.
 //  Copyright (c) 2013 Matthew York. All rights reserved.
 //
-
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 #import "MYIntroductionPanel.h"
 
 @interface MYIntroductionPanel ()
@@ -230,6 +230,6 @@
 -(void)panelDidDisappear{
     //Implemented by subclass
 }
-
+#pragma GCC diagnostic warning "-Wdeprecated-declarations"
 
 @end

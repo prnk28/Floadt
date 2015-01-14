@@ -59,15 +59,15 @@
                                  NSRange accessTokenRange = [result rangeAtIndex:1];
                                  NSString *token = [input substringWithRange:accessTokenRange];
                                  NSLog(@"Access Token: %@", token);
-                                 [user setBool:YES forKey:@"InstagramActive"];
-                                 [Lockbox setString:token forKey:kAccessTokenInstagram];
+                                 [user setBool:YES forKey:@"instagramActive"];
+                                 [JNKeychain saveValue:token forKey:@"instaToken"];
                              }
                          }];
     
 }
 
 - (NSString *)accessToken {
-    return [Lockbox stringForKey:kAccessTokenInstagram];
+    return [JNKeychain loadValueForKey:@"instaToken"];
 }
 
 -(AFHTTPRequestOperation *)HTTPRequestOperationWithRequest:(NSURLRequest *)urlRequest success:(void (^)(AFHTTPRequestOperation *, id))success failure:(void (^)(AFHTTPRequestOperation *, NSError *))failure {

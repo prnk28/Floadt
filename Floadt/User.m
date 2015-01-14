@@ -10,4 +10,29 @@
 
 @implementation User
 
+// Twitter Properties
+@synthesize twitterFollowerCount;
+@synthesize twitterFollowingCount;
+@synthesize twitterFullName;
+@synthesize twitterProfilePic;
+@synthesize twitterUsername;
+
+
++ (instancetype)sharedClient {
+    static User *_sharedClient = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+    });
+    
+    return _sharedClient;
+}
+
+- (void)setTwitterInfoWithUsername:(NSString *)username withFullName:(NSString *)fullName WithProfilePic:(NSString *)profilePic withFollowerCount:(NSString *)followerCount withFollowingCount:(NSString *)followingCount{
+    twitterUsername = username;
+    twitterProfilePic = profilePic;
+    twitterFullName = fullName;
+    twitterFollowingCount = followingCount;
+    twitterFollowerCount = followerCount;
+}
+
 @end

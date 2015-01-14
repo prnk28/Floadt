@@ -7,7 +7,7 @@
 //
 
 #import "MYBlurIntroductionView.h"
-
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
 @implementation MYBlurIntroductionView
 @synthesize delegate;
 
@@ -395,5 +395,5 @@
         self.BackgroundColorView.backgroundColor = backgroundColor;
     }
 }
-
+#pragma GCC diagnostic warning "-Wdeprecated-declarations"
 @end
