@@ -10,15 +10,32 @@
 
 @implementation TwitterCell
 
+@synthesize nameLabel;
+@synthesize profilePic;
+@synthesize tweetLabel;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        // Name
+        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(66, 17, 172, 21)];
+        [self.nameLabel setFont:[UIFont fontWithName:@"Helvetica-Regular" size:16.0]];
+        [self addSubview:self.nameLabel];
+        
+        // Profile Pic
+        self.profilePic = [[UIImageView alloc] initWithFrame:CGRectMake(8, 8, 50, 50)];
+        [self addSubview:self.profilePic];
+        
+        // Caption Label
+        self.tweetLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 66, 292, 54)];
+        [self.tweetLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0]];
+        tweetLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        tweetLabel.numberOfLines = 0;
+        [self addSubview:self.tweetLabel];
     }
     return self;
 }
-
 - (void)awakeFromNib {
     // Initialization code
 }

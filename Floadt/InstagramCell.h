@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface InstagramCell : UITableViewCell
+@property (strong, nonatomic)  UIImageView *profilePic;
+@property (strong, nonatomic)  UILabel *nameLabel;
+@property (strong, nonatomic)  UILabel *captionLabel;
+@property (strong, nonatomic)  UIImageView *instagramPic;
 
 @end

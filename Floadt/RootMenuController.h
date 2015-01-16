@@ -10,6 +10,4 @@
 
 @interface RootMenuController : JASidePanelController
 
--(void)authenticateTwitter;
-
 @end

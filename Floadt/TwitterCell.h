@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface TwitterCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *profilePic;
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *stampImage;
-@property (strong, nonatomic) IBOutlet UILabel *tweetLabel;
+@property (strong, nonatomic)  UIImageView *profilePic;
+@property (strong, nonatomic)  UILabel *nameLabel;
+@property (strong, nonatomic)  UIImageView *stampImage;
+@property (strong, nonatomic)  UILabel *tweetLabel;
 
 @end

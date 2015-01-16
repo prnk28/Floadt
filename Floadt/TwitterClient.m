@@ -56,7 +56,6 @@
                                                             [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"twitterActive"];
                                                             [[NSUserDefaults standardUserDefaults] synchronize];
                                                             [self.twitterClient getPath:@"account/verify_credentials.json" parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                                                NSLog(responseObject);
                                                             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                                                 NSLog(@"Error: %@", error);
                                                             }];

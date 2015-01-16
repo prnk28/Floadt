@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Data.h"
 
-@interface SearchTableViewController : UITableViewController
+@interface SearchTableViewController : UITableViewController <UISearchBarDelegate>
 
 @property (nonatomic, strong) NSMutableArray *instagramResults;
 @property (nonatomic, strong) NSMutableDictionary *instagramDict;

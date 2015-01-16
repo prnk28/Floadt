@@ -46,11 +46,7 @@
     if ([[url scheme] isEqualToString:@"floadt"] == NO) return NO;
     
     NSString *daURL = [url absoluteString];
-    NSLog(daURL);
     NSString *instagram;
-    
-    BOOL wasHandled = [FBAppCall handleOpenURL:url
-                             sourceApplication:sourceApplication];
     
     instagram = [daURL substringWithRange:NSMakeRange(0, 27)];
     

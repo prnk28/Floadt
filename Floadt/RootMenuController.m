@@ -21,7 +21,7 @@
 	// Do any additional setup after loading the view.
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-    self.centerPanel = [storyboard instantiateViewControllerWithIdentifier:@"NavStream"];
+    self.centerPanel = [storyboard instantiateViewControllerWithIdentifier:@"NavInfinity"];
     self.leftPanel = [storyboard instantiateViewControllerWithIdentifier:@"Menu"];
 }
 

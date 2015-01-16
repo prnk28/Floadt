@@ -698,7 +698,6 @@ bool *instagramEnabled;
         [self.twitterClient setAccessToken:twitterToken];
         [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
         [self.twitterClient postPath:@"media/upload.json" parameters:images success:^(AFHTTPRequestOperation *operation, id responseObject) {
-            NSLog(responseObject);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             
         }];

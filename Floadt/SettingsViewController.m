@@ -76,8 +76,8 @@
         case 0:
             if (![[NSUserDefaults standardUserDefaults] boolForKey:@"twitterActive"]) {
                 self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/"]
-                                                                         key:@"4oFCF0AjP4PQDUaCh5RQ"
-                                                                      secret:@"NxAihESVsdUXSUxtHrml2VBHA0xKofYKmmGS01KaSs"];
+                                                                         key:@"tA5TT8uEtg88FwAHnVpBcbUoq"
+                                                                secret:@"L5whWoi91HmzjrE5bNPNUgoMXWnImvpnkIPHZWQ4VmymaoXyYV"];
                 
                 [self.twitterClient authorizeUsingOAuthWithRequestTokenPath:@"oauth/request_token"
                                                       userAuthorizationPath:@"oauth/authorize"
