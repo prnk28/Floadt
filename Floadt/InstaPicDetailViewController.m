@@ -14,10 +14,8 @@
 
 @implementation InstaPicDetailViewController
 
-
 - (void)viewDidLoad
 {
-    
     // Setup Back Button
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -37,8 +35,6 @@
 
     NSDictionary *instaPics = self.detailItem;
     NSString *user =  instaPics[@"user"][@"full_name"];
-
-
 
     _ImagesCountLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:15];
     _FollowersCountLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:15];
@@ -78,10 +74,7 @@
             });
         });
     }
-    
-    
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)doubleTapImage:(id)sender {
@@ -95,7 +88,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

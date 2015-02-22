@@ -115,7 +115,6 @@
         [[InstagramClient sharedClient] getPath:@"users/self/feed"
                                      parameters:nil
                                         success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                                            NSLog(@"Response: %@", responseObject);
                                             instagramResponse = [responseObject mutableCopy];
                                             [self.instaPics addObjectsFromArray:responseObject[@"data"]];
                                             [self.tableView reloadData];
@@ -126,6 +125,15 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.tableView reloadData];
     });
+}
+
+- (void)likeInstagramPictureWithID:(NSString *)idcode {
+    NSString *path = [NSString stringWithFormat:@"media/%@/likes", idcode];
+    [[InstagramClient sharedClient] postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Successfully Liked Picture");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
 }
 
 - (void)fetchNextInstagramPage {
@@ -159,11 +167,12 @@
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = [[self tableView].indexPathForSelectedRow row];
-    NSDictionary *pics = [instaPics objectAtIndex:row];
-    InstaPicDetailViewController *detailController = [[InstaPicDetailViewController alloc] init];
-    detailController.detailItem = pics;
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-    [self.navigationController pushViewController:detailController animated:YES];
-    
+    NSDictionary *insta = [self.instaPics objectAtIndex:row];
+    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"
+                                                  bundle:nil];
+    InstaPicDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:@"InstagramDetail"];
+    vc.detailItem = insta;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

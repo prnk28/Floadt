@@ -12,4 +12,7 @@
 
 @interface FacebookTableViewController : UITableViewController <XLPagerTabStripChildItem>
 
+@property (nonatomic, strong) NSMutableDictionary *facebookResponse;
+@property (strong, nonatomic) NSMutableArray *facebookPosts;
+
 @end

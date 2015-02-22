@@ -33,12 +33,7 @@
             
         NSString *name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
         NSString *text = [tweet objectForKey:@"text"];
-        
-        if ([text rangeOfString:@"http://"].location == NSNotFound) {
-            NSLog(@"string does not contain http://");
-        } else {
-            NSLog(@"string contains http://");
-        }
+        [self imageSetup];
         
         NSString *statusCount = [[tweet objectForKey:@"user"] objectForKey:@"statuses_count"];
         NSNumber *followingCount = [[tweet objectForKey:@"user"] objectForKey:@"friends_count"];
@@ -64,11 +59,10 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     _profilePic.image = [UIImage imageWithData:data];
                     CALayer *imageLayer = _profilePic.layer;
-                    [imageLayer setCornerRadius:40];
+                    [imageLayer setCornerRadius:25];
                     [imageLayer setMasksToBounds:YES];
                 });
             });
-        
     }
 }
 
@@ -88,8 +82,19 @@
     return svalue;
 }
 
+- (void)imageSetup {
+    NSDictionary *tweet = self.detailItem;
+    
+    if ([[tweet objectForKey:@"entities"] objectForKey:@"media"]) {
+        NSLog(@"something here");
+        NSString *picurl = tweet[@"entities"][@"media"][@"media_url"];
+    } else {
+        NSLog(@"nothing here");
+    }
+}
+
 // Pop Back ViewControllers
--(void) popBack {
+-(void)popBack {
     [self.navigationController popViewControllerAnimated:YES];
 }
 

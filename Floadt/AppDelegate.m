@@ -14,26 +14,21 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     #ifdef DEBUG
-    NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
+    //NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     #endif
     
-    //Init SCFacebook
-    //Add the necessary permissions
-    [SCFacebook initWithPermissions:@[@"user_about_me",
-                                      @"user_birthday",
-                                      @"email",
-                                      @"user_photos",
-                                      @"publish_stream",
-                                      @"user_events",
-                                      @"friends_events",
-                                      @"manage_pages",
-                                      @"share_item",
-                                      @"publish_actions",
-                                      @"user_friends",
-                                      @"manage_pages",
-                                      @"user_videos",
-                                      @"public_profile"]];
-
+    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+        
+        // If there's one, just open the session silently, without showing the user the login UI
+        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
+                                           allowLoginUI:NO
+                                      completionHandler:^(FBSession *sessison, FBSessionState state, NSError *error) {
+                                          // Handler for session state changes
+                                          // Call this method EACH time the session state changes,
+                                          //  NOT just when the session open
+                                          //[self sessionStateChanged:session state:state error:error];
+                                      }];
+    }
     UIFont *newFont = [UIFont fontWithName:@"Aerovias_Brasil_NF" size:14];
     [[UILabel appearance] setFont:newFont];
     
@@ -43,20 +38,65 @@
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication
          annotation:(id)annotation
 {
-    if ([[url scheme] isEqualToString:@"floadt"] == NO) return NO;
     
     NSString *daURL = [url absoluteString];
     NSString *instagram;
+    NSString *twitter;
     
+    twitter = [daURL substringWithRange: NSMakeRange (0, 16)];
     instagram = [daURL substringWithRange:NSMakeRange(0, 27)];
     
-    if ([instagram isEqual: @"floadt://instagram_callback"]) {
-        [[InstagramClient sharedClient] handleOAuthCallbackWithURL:url];
-    }else{
+    if ([twitter isEqual: @"floadt://success"]) {
         NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:[NSDictionary dictionaryWithObject:url forKey:kAFApplicationLaunchOptionsURLKey]];
         [[NSNotificationCenter defaultCenter] postNotification:notification];
+        
+    }else if([instagram isEqual: @"floadt://instagram_callback"]){
+        [[InstagramClient sharedClient] handleOAuthCallbackWithURL:url];
+    }else{
+     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
     }
     return YES;
+}
+
+- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
+{
+    if (!error && state == FBSessionStateOpen){
+        NSLog(@"Session opened");
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"facebookActive"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        return;
+    }
+    if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
+        NSLog(@"Session closed");
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"facebookActive"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+    
+    if (error){
+        NSLog(@"Error");
+        NSString *alertText;
+        NSString *alertTitle;
+        if ([FBErrorUtility shouldNotifyUserForError:error] == YES){
+            alertTitle = @"Something went wrong";
+            alertText = [FBErrorUtility userMessageForError:error];
+        } else {
+            if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
+                NSLog(@"User cancelled login");
+            } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession){
+                alertTitle = @"Session Error";
+                alertText = @"Your current session is no longer valid. Please log in again.";
+                // https://developers.facebook.com/docs/ios/errors/
+            } else {
+                NSDictionary *errorInformation = [[[error.userInfo objectForKey:@"com.facebook.sdk:ParsedJSONResponseKey"] objectForKey:@"body"] objectForKey:@"error"];
+                
+                alertTitle = @"Something went wrong";
+                alertText = [NSString stringWithFormat:@"Please retry. \n\n If the problem persists contact us and mention this error code: %@", [errorInformation objectForKey:@"message"]];
+            }
+        }
+        [FBSession.activeSession closeAndClearTokenInformation];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"facebookActive"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -74,11 +114,6 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application

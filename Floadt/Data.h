@@ -9,10 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 #import "UIPlaceholderTextView.h"
+#import "Reachability.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "FacebookTableViewController.h"
+#import "FacebookCell.h"
 #import "InstagramTableViewController.h"
 #import "TwitterTableViewController.h"
+#import "SCFacebook.h"
+#import "MCSwipeTableViewCell.h"
 #import "TimelineContainerViewController.h"
 #import "TimelineControllerViewController.h"
 #import "RRCustomScrollView.h"
@@ -24,7 +28,6 @@
 #import "AFNetworking.h"
 #import "SDImageCache.h"
 #import "InstagramCell.h"
-#import "SCFacebook.h"
 #import "UICollectionViewCellPhoto.h"
 #import "ImageCell.h"
 #import <AVFoundation/AVFoundation.h>
@@ -35,7 +38,7 @@
 #import "SDWebImageDownloaderOperation.h"
 #import "SDWebImageManager.h"
 #import "SDWebImageOperation.h"
-#import "SDWebImagePrefetcher.h"
+#import "SDWebImagePrefetcher.h" 
 #import "InstaPicDetailViewController.h"
 #import "RRCustomScrollView.h"
 #import "AFHTTPClient.h"

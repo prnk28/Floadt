@@ -28,7 +28,7 @@
     self.b2.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
     self.b2.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
     [self.b2 setFlatTitle:nil];
-    [self.b2 setFlatImage:[UIImage imageNamed:@"101-gameplan.png"]];
+    [self.b2 setFlatImage:[UIImage imageNamed:@"269-bell.png"]];
     
     /*
     self.b3.buttonBackgroundColor = [UIColor colorWithRed:0.0f green:0.4f blue:1.0f alpha:1.00f]; //[UIColor colorWithHue:0.0f saturation:0.0f brightness:0.60f alpha:1.0f];
