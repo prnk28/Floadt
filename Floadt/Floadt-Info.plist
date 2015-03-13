@@ -13,7 +13,7 @@
 	<key>CFBundleIcons~ipad</key>
 	<dict/>
 	<key>CFBundleIdentifier</key>
-	<string>Floadt.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.Floadt.$(PRODUCT_NAME:rfc1034identifier)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -24,10 +24,6 @@
 	<string>1.0</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
-	<key>FacebookAppID</key>
-	<string>356107287871866</string>
-	<key>FacebookDisplayName</key>
-	<string>Floadt</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -44,6 +40,10 @@
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
+	<key>FacebookAppID</key>
+	<string>356107287871866</string>
+	<key>FacebookDisplayName</key>
+	<string>Floadt</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>

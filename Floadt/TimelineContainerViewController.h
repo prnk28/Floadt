@@ -11,7 +11,7 @@
 #import "GHContextMenuView.h"
 #import "AFOAuth1Client.h"
 
-@interface TimelineContainerViewController : UIViewController<GHContextOverlayViewDataSource, GHContextOverlayViewDelegate, UIActionSheetDelegate>
+@interface TimelineContainerViewController : UIViewController< UIActionSheetDelegate>
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (nonatomic, strong) UITextView *message;
 @property (nonatomic, strong) AFOAuth1Client *twitterClient;

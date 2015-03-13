@@ -115,7 +115,7 @@
         [FBSession.activeSession closeAndClearTokenInformation];
         [FBSession setActiveSession:nil];
     }
-    
+        
     NSHTTPCookieStorage* cookies = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     NSArray* facebookCookies = [cookies cookiesForURL:[NSURL URLWithString:@"https://facebook.com/"]];
     

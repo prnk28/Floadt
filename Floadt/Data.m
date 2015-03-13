@@ -32,7 +32,6 @@
     
     CGImageRef masked = CGImageCreateWithMask([image CGImage], mask);
     return [UIImage imageWithCGImage:masked];
-    
 }
 
 @end

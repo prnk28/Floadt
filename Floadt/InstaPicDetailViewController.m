@@ -14,10 +14,9 @@
 
 @implementation InstaPicDetailViewController
 
-
 - (void)viewDidLoad
 {
-    
+    [super viewDidLoad];
     // Setup Back Button
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -38,22 +37,12 @@
     NSDictionary *instaPics = self.detailItem;
     NSString *user =  instaPics[@"user"][@"full_name"];
 
-
-
-    _ImagesCountLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:15];
-    _FollowersCountLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:15];
-    _FollowingCountLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:15];
-    
-    _ImagesLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
-    _FollowersLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
-    _FollowingLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
-    
-    _userName.text = user;
+    _name.text = user;
     if (self.detailItem) {
         NSDictionary *instaPics = self.detailItem;
         if (instaPics[@"caption"] != [NSNull null] && instaPics[@"caption"][@"text"] != [NSNull null])            {
             NSString *caption = instaPics[@"caption"][@"text"];
-         _caption.text = caption;
+         _captionLabel.text = caption;
         }else{
             NSLog(@"No Caption");
         }
@@ -71,17 +60,13 @@
             NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
             
             dispatch_async(dispatch_get_main_queue(), ^{
-                _profilePicture.image = [UIImage imageWithData:data];
-                CALayer *imageLayer = _profilePicture.layer;
-                [imageLayer setCornerRadius:40];
+                _profilePic.image = [UIImage imageWithData:data];
+                CALayer *imageLayer = _profilePic.layer;
+                [imageLayer setCornerRadius:25];
                 [imageLayer setMasksToBounds:YES];
             });
         });
     }
-    
-    
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)doubleTapImage:(id)sender {
@@ -95,7 +80,6 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

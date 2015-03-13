@@ -17,6 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *singleFingerTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleSingleTap:)];
+    singleFingerTap.numberOfTapsRequired = 30;
+    [self.view addGestureRecognizer:singleFingerTap];
+    
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [barButton setTitle:@"" forState:UIControlStateNormal];
@@ -103,11 +110,20 @@
             break;
         case 1:
             if (![[NSUserDefaults standardUserDefaults] boolForKey:@"facebookActive"]) {
-                [SCFacebook loginCallBack:^(BOOL success, id result) {
-                    if (success) {
-                        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"facebookActive"];
-                    }
-                }];
+                
+                if (FBSession.activeSession.state == FBSessionStateOpen
+                    || FBSession.activeSession.state == FBSessionStateOpenTokenExtended) {
+                    [FBSession.activeSession closeAndClearTokenInformation];
+                } else {
+                    [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
+                                                       allowLoginUI:YES
+                                                  completionHandler:
+                     ^(FBSession *session, FBSessionState state, NSError *error) {
+                         AppDelegate* appDelegate = [UIApplication sharedApplication].delegate;
+                         [appDelegate sessionStateChanged:session state:state error:error];
+                     }];
+                }
+                
             } else {
                 UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Really Logout of Facebook?"
                                                                          delegate:self
@@ -137,27 +153,33 @@
     }
 }
 
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
+    CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"#Za2Pect" message:@"I <3 Zaara Dean" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
+    // optional - add more buttons:
+    [alert addButtonWithTitle:@"Ok"];
+    [alert show];
+}
+
 -(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (actionSheet.tag == 100) {
         if(buttonIndex == 0){
             NSLog(@"pressed index 0");
             [AFOAuthCredential deleteCredentialWithIdentifier:@"TwitterToken"];
             [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"twitterActive"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
     }
     else if (actionSheet.tag == 200){
         if(buttonIndex == 0){
-            [SCFacebook loginCallBack:^(BOOL success, id result) {
-                if (success) {
-                    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"facebookActive"];
-                }
-            }];
+        
         }
     }
     else{
         if(buttonIndex == 0){
             [JNKeychain deleteValueForKey:@"instaToken"];
             [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"instagramActive"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
     }
 }

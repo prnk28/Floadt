@@ -1,18 +1,18 @@
 //
-//  TwitterCell.m
+//  FacebookCell.m
 //  Floadt
 //
-//  Created by Pradyumn Nukala on 10/23/14.
-//  Copyright (c) 2014 Floadt. All rights reserved.
+//  Created by Pradyumn Nukala on 2/16/15.
+//  Copyright (c) 2015 Floadt. All rights reserved.
 //
 
-#import "TwitterCell.h"
+#import "FacebookCell.h"
 
-@implementation TwitterCell
+@implementation FacebookCell
 
 @synthesize nameLabel;
 @synthesize profilePic;
-@synthesize tweetLabel;
+@synthesize textLabel;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -28,11 +28,11 @@
         [self addSubview:self.profilePic];
         
         // Caption Label
-        self.tweetLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 66, 292, 54)];
-        [self.tweetLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0]];
-        tweetLabel.lineBreakMode = NSLineBreakByWordWrapping;
-        tweetLabel.numberOfLines = 0;
-        [self addSubview:self.tweetLabel];
+        self.textLabel = [[UILabel alloc] initWithFrame:CGRectMake(8, 66, 292, 54)];
+        [self.textLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:12.0]];
+        textLabel.lineBreakMode = NSLineBreakByWordWrapping;
+        textLabel.numberOfLines = 0;
+        [self addSubview:self.textLabel];
     }
     return self;
 }
@@ -42,7 +42,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
+    
     // Configure the view for the selected state
 }
 

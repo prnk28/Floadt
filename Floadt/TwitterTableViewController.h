@@ -10,10 +10,13 @@
 #import "Data.h"
 #import "XLPagerTabStripViewController.h"
 #import "AFOAuth1Client.h"
+#import "MCSwipeTableViewCell.h"
 
-@interface TwitterTableViewController : UITableViewController <XLPagerTabStripChildItem>
+@interface TwitterTableViewController : UITableViewController <XLPagerTabStripChildItem, MCSwipeTableViewCellDelegate>
 
+@property (nonatomic, strong) NSMutableDictionary *twitterResponse;
 @property (strong, nonatomic) NSMutableArray *tweets;
+@property (strong, nonatomic) NSDictionary *userLookup;
 @property (strong, nonatomic) AFOAuth1Client *twitterClient;
 
 @end

@@ -720,10 +720,6 @@ bool *instagramEnabled;
 }
 
 - (void)postToFacebook:(RRMessageModel *)message{
-    [SCFacebook feedPostWithMessage:message.text callBack:^(BOOL success, id result) {
-      if (success) {
-         
-      }
-  }];
+
 }
 @end
