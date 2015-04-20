@@ -186,7 +186,6 @@
     }];
 }
 
-<<<<<<< HEAD
 - (void)getLocationWithLatitude:(NSString *)lat andLongitude:(NSString *)lon {
     NSURL *url = [NSURL URLWithString:@"https://maps.googleapis.com/maps/api/geocode/json"];
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
@@ -203,8 +202,6 @@
     }];
 }
 
-=======
->>>>>>> origin/master
 - (void)fetchNextInstagramPage {
     NSDictionary *page = instagramResponse[@"pagination"];
     NSString *nextPage = page[@"next_url"];
@@ -233,18 +230,4 @@
     [refreshControl endRefreshing];
 }
 
-<<<<<<< HEAD
-=======
-- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger row = [[self tableView].indexPathForSelectedRow row];
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-    NSDictionary *insta = [self.instaPics objectAtIndex:row];
-    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"
-                                                  bundle:nil];
-    InstaPicDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:@"InstagramDetail"];
-    vc.detailItem = insta;
-    [self.navigationController pushViewController:vc animated:YES];
-}
->>>>>>> origin/master
 @end

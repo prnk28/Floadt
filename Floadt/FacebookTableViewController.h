@@ -15,7 +15,4 @@
 @property (nonatomic, strong) NSMutableDictionary *facebookResponse;
 @property (strong, nonatomic) NSMutableArray *facebookPosts;
 
-@property (nonatomic, strong) NSMutableDictionary *facebookResponse;
-@property (strong, nonatomic) NSMutableArray *facebookPosts;
-
 @end

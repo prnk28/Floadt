@@ -75,16 +75,10 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TwitterCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TwitterCell"];
-<<<<<<< HEAD
-=======
-    cell.tweetLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.tweetLabel.numberOfLines = 0;
->>>>>>> origin/master
     
     if (cell == nil) {
         cell = [[TwitterCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TwitterCell"];
     }
-<<<<<<< HEAD
     NSDictionary *data = tweets[indexPath.row];
     
     //
@@ -115,62 +109,11 @@
         NSString *name = [[totalArray objectForKey:@"user"] objectForKey:@"name"];
         NSString *retName = [NSString stringWithFormat:@"Retweeted by %@",name];
         [cell.retweetLabel setText:retName];
-=======
-    NSDictionary *totalArray = tweets[indexPath.row];
-    
-    //
-    // RETWEET CELL
-    //
-    /*
-    if ([self Contains:@"RT" on:[totalArray objectForKey:@"text"]]) {
-        TwitterCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TwitterCell"];
-        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
-        if (cell == nil) {
-            cell = [[TwitterCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TwitterCell"];
-        }
-
-        // Lookup RT User
-        NSString *text = [totalArray objectForKey:@"text"];
-        
-        NSRange start = [text rangeOfString:@"RT @"];
-        NSRange end = [text rangeOfString:@":"];
-        NSString *shortString = [text substringWithRange:NSMakeRange(start.location, end.location)];
-        NSString *evenShorterString = [shortString substringFromIndex:4];
-        NSLog(@"%@", evenShorterString);
-        [self lookupTwitterUser:evenShorterString];
-        
-        //Set username for twitter
-        NSString *name = userLookup[@"name"];
-        [cell.nameLabel setText:name];
-    
-        //Set status for twitter
-        NSString *status = userLookup[@"status"][@"text"];
-        [cell.tweetLabel setText:status];
-    
-        //Set Profile Pic for Twitter
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *imageUrl = userLookup[@"profile_background_image_url"];
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                cell.profilePic.image = [UIImage imageWithData:data];
-                CALayer *imageLayer = cell.profilePic.layer;
-                [imageLayer setCornerRadius:25];
-                [imageLayer setMasksToBounds:YES];
-            });
-        });
-        return cell;
-    }
-    */
-    //
-    // REGULAR CELL
-    //
->>>>>>> origin/master
     
         //Set status for twitter
         // NSString *status = userLookup[@"status"][@"text"];
         //[cell.tweetLabel setText:shortString];
     
-<<<<<<< HEAD
         //Set Profile Pic for Twitter
         return cell;
     }
@@ -185,18 +128,9 @@
     // Set values
     cell.nameLabel.text = nameString;
     cell.tweetLabel.text = bioString;
-=======
-    //Set status for twitter
-    NSString *text = [totalArray objectForKey:@"text"];
-    [cell.textLabel setText:text];
->>>>>>> origin/master
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-<<<<<<< HEAD
         NSString *imageUrl = [[data objectForKey:@"user"] objectForKey:@"profile_image_url"];
-=======
-        NSString *imageUrl = [[totalArray objectForKey:@"user"] objectForKey:@"profile_image_url"];
->>>>>>> origin/master
         NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
         dispatch_async(dispatch_get_main_queue(), ^{
             cell.profilePicture.image = [UIImage imageWithData:data];
@@ -215,12 +149,8 @@
     
     NSDictionary *parameters = @{
                                  @"count" :@"50",
-<<<<<<< HEAD
                                  @"contributor_details" :@"true",
                                  @"exclude_replies" :@"true"
-=======
-                                 @"contributor_details" :@"true"
->>>>>>> origin/master
                                  };
     
     AFOAuth1Token *twitterToken = [AFOAuth1Token retrieveCredentialWithIdentifier:@"TwitterToken"];
@@ -228,10 +158,6 @@
     [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSMutableArray *responseArray = (NSMutableArray *)responseObject;
-<<<<<<< HEAD
-=======
-        NSLog(@"Response: %@", responseObject);
->>>>>>> origin/master
         [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             tweets = [tweets copy];
             tweets = responseArray;
@@ -254,11 +180,7 @@
     [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         // NSMutableArray *responseArray = (NSMutableArray *)responseObject;
-<<<<<<< HEAD
         // NSLog(@"Response: %@", responseObject);
-=======
-        NSLog(@"Response: %@", responseObject);
->>>>>>> origin/master
         // tweets = [tweets copy];
         // [tweets addObjectsFromArray:responseArray];
         // [self.tableView reloadData];
@@ -289,10 +211,6 @@
     [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self.twitterClient getPath:@"users/lookup.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         userLookup = responseObject;
-<<<<<<< HEAD
-=======
-        //NSLog(@"Response: %@", responseObject);
->>>>>>> origin/master
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -309,7 +227,6 @@
                           options:NSCaseInsensitiveSearch].location != NSNotFound;
 }
 
-<<<<<<< HEAD
 - (void) setupNavbarGestureRecognizer {
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navBarTap)];
     gestureRecognizer.numberOfTapsRequired = 1;
@@ -325,8 +242,6 @@
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
 
-=======
->>>>>>> origin/master
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSInteger row = [[self tableView].indexPathForSelectedRow row];
