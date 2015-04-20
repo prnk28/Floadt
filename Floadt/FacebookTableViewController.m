@@ -18,9 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+<<<<<<< HEAD
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
+=======
+>>>>>>> origin/master
     [self.tableView registerClass:[FacebookCell class] forCellReuseIdentifier:@"FacebookCell"];
     [self fetchFacebookPosts];
 }
@@ -42,6 +45,11 @@
         }
     }];
 }
+<<<<<<< HEAD
+=======
+
+#pragma mark - Table view data source
+>>>>>>> origin/master
 
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -50,7 +58,37 @@
     return 1;
 }
 
+<<<<<<< HEAD
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+=======
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    // Return the number of rows in the section.
+    return facebookPosts.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    FacebookCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FacebookCell"];
+    cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
+    
+    if (cell == nil) {
+        cell = [[FacebookCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"FacebookCell"];
+    }
+    
+    NSDictionary *entry = facebookPosts[indexPath.row];
+    
+    // Set Image
+    
+    // Set User Name
+    NSString *user =  entry[@"story"];
+    [cell.textLabel setText:user];
+    
+    return cell;
+}
+
+#pragma mark - XLPagerTabStripViewControllerDelegate
+
+-(NSString *)titleForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController
+>>>>>>> origin/master
 {
     return 184;
 }
@@ -60,6 +98,7 @@
     return 10;
 }
 
+<<<<<<< HEAD
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FacebookCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"FacebookCell"];
     cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
@@ -96,4 +135,10 @@
     return [UIColor whiteColor];
 }
 
+=======
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 200;
+}
+>>>>>>> origin/master
 @end

@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "User.h"
 #import "UIPlaceholderTextView.h"
+<<<<<<< HEAD
 #import "Masonry.h"
 #import "StrechyParallaxScrollView.h"
+=======
+>>>>>>> origin/master
 #import "Reachability.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "FacebookTableViewController.h"
@@ -43,6 +46,10 @@
 #import "SDWebImageManager.h"
 #import "SDWebImageOperation.h"
 #import "SDWebImagePrefetcher.h" 
+<<<<<<< HEAD
+=======
+#import "InstaPicDetailViewController.h"
+>>>>>>> origin/master
 #import "RRCustomScrollView.h"
 #import "AFHTTPClient.h"
 #import "TwitterClient.h"

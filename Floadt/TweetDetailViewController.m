@@ -32,9 +32,46 @@
     self.navItem.leftBarButtonItem = backButtonItem;
     
     if (self.detailItem) {
+<<<<<<< HEAD
         NSLog(@"%@", self.detailItem);
         [self setUpLogo];
         [self detectEntitesAndOrganize];
+=======
+        NSDictionary *tweet = self.detailItem;
+            
+        NSString *name = [[tweet objectForKey:@"user"] objectForKey:@"name"];
+        NSString *text = [tweet objectForKey:@"text"];
+        [self imageSetup];
+        
+        NSString *statusCount = [[tweet objectForKey:@"user"] objectForKey:@"statuses_count"];
+        NSNumber *followingCount = [[tweet objectForKey:@"user"] objectForKey:@"friends_count"];
+        NSString *following = [self numberWithShortcut:followingCount];
+        NSNumber *followersCount = [[tweet objectForKey:@"user"] objectForKey:@"followers_count"];
+        NSString *followers = [self numberWithShortcut:followersCount];
+        NSString *createdAt =[tweet objectForKey:@"created_at"];
+        NSLog(@"Twitter: %@",createdAt);
+        _name.text = name;
+        _tweetLabel.text = [NSString stringWithFormat:@"%@",text];
+        _tweetLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:15];
+        _tweetsCount.text = [NSString stringWithFormat:@"%@",statusCount];
+        _tweetsLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+        _followersCount.text = [NSString stringWithFormat:@"%@",followers];
+        _followersLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+        _followingCount.text = [NSString stringWithFormat:@"%@",following];
+        _followingLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:12];
+        
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                NSString *imageUrl = [[tweet objectForKey:@"user"] objectForKey:@"profile_image_url"];
+                NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+                
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    _profilePic.image = [UIImage imageWithData:data];
+                    CALayer *imageLayer = _profilePic.layer;
+                    [imageLayer setCornerRadius:25];
+                    [imageLayer setMasksToBounds:YES];
+                });
+            });
+>>>>>>> origin/master
     }
 }
 - (NSString*)numberWithShortcut:(NSNumber*)number
@@ -58,12 +95,17 @@
     
     if ([[tweet objectForKey:@"entities"] objectForKey:@"media"]) {
         NSLog(@"something here");
+<<<<<<< HEAD
        // NSString *picurl = tweet[@"entities"][@"media"][@"media_url"];
+=======
+        NSString *picurl = tweet[@"entities"][@"media"][@"media_url"];
+>>>>>>> origin/master
     } else {
         NSLog(@"nothing here");
     }
 }
 
+<<<<<<< HEAD
 - (void)setUpLogo {
     NSDictionary *tweet = self.detailItem;
     
@@ -202,6 +244,9 @@
     return [UIColor colorWithHue:hue saturation:saturation brightness:brightness alpha:1];
 }
 
+=======
+// Pop Back ViewControllers
+>>>>>>> origin/master
 -(void)popBack {
     [self.navigationController popViewControllerAnimated:YES];
 }

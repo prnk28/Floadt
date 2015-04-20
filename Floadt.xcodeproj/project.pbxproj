@@ -126,6 +126,7 @@
 		AC6D99B91A3E43B200CB5CCF /* MYBlurIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99B61A3E43B200CB5CCF /* MYBlurIntroductionView.m */; };
 		AC6D99BA1A3E43B200CB5CCF /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99B81A3E43B200CB5CCF /* MYIntroductionPanel.m */; };
 		AC6E2C501A92856100670FEB /* FacebookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6E2C4F1A92856100670FEB /* FacebookCell.m */; };
+<<<<<<< HEAD
 		AC6FB9901ADCBBFD00B9FFCD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB98F1ADCBBFD00B9FFCD /* MBProgressHUD.m */; };
 		AC6FB9911ADCBBFD00B9FFCD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB98F1ADCBBFD00B9FFCD /* MBProgressHUD.m */; };
 		AC6FB99B1ADCC3A600B9FFCD /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9941ADCC3A600B9FFCD /* MessageViewController.m */; };
@@ -154,6 +155,8 @@
 		AC6FB9C71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m */; };
 		AC6FB9CB1ADCC57F00B9FFCD /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9CA1ADCC57F00B9FFCD /* LoremIpsum.m */; };
 		AC6FB9CC1ADCC57F00B9FFCD /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9CA1ADCC57F00B9FFCD /* LoremIpsum.m */; };
+=======
+>>>>>>> origin/master
 		AC792F751831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
 		AC792F761831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
 		AC80D9331A78787D000801A8 /* SearchContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC80D9321A78787D000801A8 /* SearchContainerViewController.m */; };
@@ -272,7 +275,10 @@
 		ACB8DD4F1845A76C00A3A498 /* yelp.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCF81845A76C00A3A498 /* yelp.png */; };
 		ACB8DD501845A76C00A3A498 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCF91845A76C00A3A498 /* youtube.png */; };
 		ACB8DD511845A76C00A3A498 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCF91845A76C00A3A498 /* youtube.png */; };
+<<<<<<< HEAD
 		ACBAAEB01ADDCFE5006986FC /* FacebookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBAAEAF1ADDCFE5006986FC /* FacebookTableViewController.m */; };
+=======
+>>>>>>> origin/master
 		ACBAAF671A706F28006BD83F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBAAF661A706F28006BD83F /* Reachability.m */; };
 		ACC1E9881825E45100DCA712 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E9851825E45100DCA712 /* JASidePanelController.m */; };
 		ACC1E9891825E45100DCA712 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E9851825E45100DCA712 /* JASidePanelController.m */; };
@@ -333,8 +339,11 @@
 		ACEBB1CD182C86AD00A4CE2F /* AFOAuth2Client.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEBB1CC182C86AD00A4CE2F /* AFOAuth2Client.m */; };
 		ACEEF649181426FE002B61B9 /* RootMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEEF648181426FE002B61B9 /* RootMenuController.m */; };
 		ACEEF64C1814275E002B61B9 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEEF64B1814275E002B61B9 /* MenuViewController.m */; };
+<<<<<<< HEAD
 		ACF59A401AB1600A00A72F4C /* AMAttributedHighlightLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF59A3F1AB1600A00A72F4C /* AMAttributedHighlightLabel.m */; };
 		ACF59A411AB1600A00A72F4C /* AMAttributedHighlightLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF59A3F1AB1600A00A72F4C /* AMAttributedHighlightLabel.m */; };
+=======
+>>>>>>> origin/master
 		ACFF6FE51A84940300B8423F /* TwitterSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF6FE41A84940300B8423F /* TwitterSearchViewController.m */; };
 		ACFF6FE81A84941B00B8423F /* FacebookSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF6FE71A84941B00B8423F /* FacebookSearchViewController.m */; };
 /* End PBXBuildFile section */
@@ -469,6 +478,7 @@
 		AC6D99B81A3E43B200CB5CCF /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
 		AC6E2C4E1A92856100670FEB /* FacebookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookCell.h; sourceTree = "<group>"; };
 		AC6E2C4F1A92856100670FEB /* FacebookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookCell.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		AC6FB98E1ADCBBFD00B9FFCD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		AC6FB98F1ADCBBFD00B9FFCD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		AC6FB9931ADCC3A600B9FFCD /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -499,6 +509,8 @@
 		AC6FB9B71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTypingIndicatorView.m; sourceTree = "<group>"; };
 		AC6FB9C91ADCC57F00B9FFCD /* LoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoremIpsum.h; sourceTree = "<group>"; };
 		AC6FB9CA1ADCC57F00B9FFCD /* LoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoremIpsum.m; sourceTree = "<group>"; };
+=======
+>>>>>>> origin/master
 		AC792F731831BF7E00946DBE /* TweetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailViewController.h; sourceTree = "<group>"; };
 		AC792F741831BF7E00946DBE /* TweetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetailViewController.m; sourceTree = "<group>"; };
 		AC80D9311A78787D000801A8 /* SearchContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchContainerViewController.h; sourceTree = "<group>"; };
@@ -598,8 +610,11 @@
 		ACB8DCF71845A76C00A3A498 /* wordpress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordpress.png; sourceTree = "<group>"; };
 		ACB8DCF81845A76C00A3A498 /* yelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yelp.png; sourceTree = "<group>"; };
 		ACB8DCF91845A76C00A3A498 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		ACBAAEAE1ADDCFE5006986FC /* FacebookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookTableViewController.h; sourceTree = "<group>"; };
 		ACBAAEAF1ADDCFE5006986FC /* FacebookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookTableViewController.m; sourceTree = "<group>"; };
+=======
+>>>>>>> origin/master
 		ACBAAF651A706F28006BD83F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		ACBAAF661A706F28006BD83F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		ACC1E9841825E45100DCA712 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
@@ -696,8 +711,11 @@
 		ACEEF648181426FE002B61B9 /* RootMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootMenuController.m; sourceTree = "<group>"; };
 		ACEEF64A1814275E002B61B9 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		ACEEF64B1814275E002B61B9 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		ACF59A3E1AB1600A00A72F4C /* AMAttributedHighlightLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAttributedHighlightLabel.h; sourceTree = "<group>"; };
 		ACF59A3F1AB1600A00A72F4C /* AMAttributedHighlightLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAttributedHighlightLabel.m; sourceTree = "<group>"; };
+=======
+>>>>>>> origin/master
 		ACFF6FE31A84940300B8423F /* TwitterSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSearchViewController.h; sourceTree = "<group>"; };
 		ACFF6FE41A84940300B8423F /* TwitterSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterSearchViewController.m; sourceTree = "<group>"; };
 		ACFF6FE61A84941B00B8423F /* FacebookSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSearchViewController.h; sourceTree = "<group>"; };
@@ -761,6 +779,7 @@
 			path = MCSwipeTableViewCell;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		AC0410361AA3785000B08E76 /* Masonry */ = {
 			isa = PBXGroup;
 			children = (
@@ -801,6 +820,8 @@
 			path = StrechyParallaxScrollView;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> origin/master
 		AC0BF96118402EC900177106 /* Social */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,6 +846,11 @@
 			children = (
 				AC6E2C4E1A92856100670FEB /* FacebookCell.h */,
 				AC6E2C4F1A92856100670FEB /* FacebookCell.m */,
+<<<<<<< HEAD
+=======
+				AC4337F91A63605300C1DD42 /* ImageCell.h */,
+				AC4337FA1A63605300C1DD42 /* ImageCell.m */,
+>>>>>>> origin/master
 				AC429BA41A3E87F5001E21BC /* InstagramCell.h */,
 				AC429BA51A3E87F5001E21BC /* InstagramCell.m */,
 				AC4A7A171A0855040032E1D0 /* InstagramResultsCell.h */,
@@ -991,6 +1017,7 @@
 			path = MYBlurIntroductionView;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		AC6FB98D1ADCBBEB00B9FFCD /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1072,6 +1099,8 @@
 			name = "Foreign View Controllers";
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> origin/master
 		AC80D9371A7878A5000801A8 /* Search VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1367,6 +1396,7 @@
 		ACCF7656180F6FB800E0CA67 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
 				AC6FB9C81ADCC57F00B9FFCD /* LoremIpsum */,
 				AC6FB9A41ADCC4FC00B9FFCD /* SLMessenger */,
 				AC6FB98D1ADCBBEB00B9FFCD /* MBProgressHUD */,
@@ -1375,6 +1405,8 @@
 				AC4AC36F1AA5894300D2FA17 /* HTKDynamicResizingCell */,
 				AC0410361AA3785000B08E76 /* Masonry */,
 				AC04104F1AA3785000B08E76 /* StrechyParallaxScrollView */,
+=======
+>>>>>>> origin/master
 				6EDC0F5C1A97D92700239F69 /* MCSwipeTableViewCell */,
 				AC3C25741A9197380010A128 /* SCFacebook */,
 				ACBAAF641A706F1D006BD83F /* Reachibility */,
@@ -1811,9 +1843,12 @@
 				AC90E9611A3FD4B700D9FC65 /* JDStatusBarStyle.m in Sources */,
 				AC5A50721A65FAC10093E83F /* XLButtonBarView.m in Sources */,
 				AC3C25771A9197380010A128 /* SCFacebook.m in Sources */,
+<<<<<<< HEAD
 				AC04105A1AA3785000B08E76 /* MASLayoutConstraint.m in Sources */,
 				ACF59A401AB1600A00A72F4C /* AMAttributedHighlightLabel.m in Sources */,
 				AC6FB9B81ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.m in Sources */,
+=======
+>>>>>>> origin/master
 				ACA30F5619F99FB80018BDB7 /* SDImageCache.m in Sources */,
 				AC0410641AA3785000B08E76 /* View+MASAdditions.m in Sources */,
 				ACA30F5419F99FB80018BDB7 /* MKAnnotationView+WebCache.m in Sources */,
@@ -1841,11 +1876,15 @@
 				ACC1E9971825E4CD00DCA712 /* UIImage+JSFlatButton.m in Sources */,
 				ACA30F5819F99FB80018BDB7 /* SDWebImageDecoder.m in Sources */,
 				ACEEF649181426FE002B61B9 /* RootMenuController.m in Sources */,
+<<<<<<< HEAD
 				AC0410621AA3785000B08E76 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				AC6FB9CB1ADCC57F00B9FFCD /* LoremIpsum.m in Sources */,
 				ACFF6FE51A84940300B8423F /* TwitterSearchViewController.m in Sources */,
 				AC4AC3781AA5894300D2FA17 /* HTKDynamicResizingCollectionViewCell.m in Sources */,
 				AC6FB9BC1ADCC4FC00B9FFCD /* UIView+SLKAdditions.m in Sources */,
+=======
+				ACFF6FE51A84940300B8423F /* TwitterSearchViewController.m in Sources */,
+>>>>>>> origin/master
 				AC5A506E1A65FAC10093E83F /* XLSegmentedPagerTabStripViewController.m in Sources */,
 				ACA30F6219F99FB80018BDB7 /* UIImageView+WebCache.m in Sources */,
 				AC4337F51A6355D600C1DD42 /* RRSendMessageViewController.m in Sources */,
@@ -1893,8 +1932,11 @@
 				AC6FB9C71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m in Sources */,
 				AC5A507D1A65FBA60093E83F /* SettingsViewController.m in Sources */,
 				6EDC0F601A97D92700239F69 /* MCSwipeTableViewCell.m in Sources */,
+<<<<<<< HEAD
 				AC6FB9C51ADCC4FC00B9FFCD /* SLKTextViewController.m in Sources */,
 				AC6FB9A21ADCC3A600B9FFCD /* Message.m in Sources */,
+=======
+>>>>>>> origin/master
 				AC3D25671A548B3900132DA8 /* TwitterClient.m in Sources */,
 				AC4337F21A6355D600C1DD42 /* RRCustomScrollView.m in Sources */,
 				ACC1E98F1825E49F00DCA712 /* JSFlatButton.m in Sources */,

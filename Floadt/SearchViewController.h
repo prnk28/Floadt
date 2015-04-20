@@ -9,5 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "Data.h"
 
+<<<<<<< HEAD
 @interface SearchViewController : XLBarPagerTabStripViewController
 @end
+=======
+@interface SearchViewController : XLButtonBarPagerTabStripViewController
+
+@end
+>>>>>>> origin/master
