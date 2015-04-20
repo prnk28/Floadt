@@ -22,7 +22,7 @@
     self.b1.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];
     self.b1.titleLabel.font = [UIFont boldSystemFontOfSize:18.0f];
     [self.b1 setFlatTitle:nil];
-    [self.b1 setFlatImage:[UIImage imageNamed:@"53-house.png"]];
+    [self.b1 setFlatImage:[UIImage imageNamed:@"za-home.png"]];
     
     self.b2.buttonBackgroundColor = [UIColor colorWithRed:1.0f green:0.16f blue:0.2f alpha:1.00f];
     self.b2.buttonForegroundColor = [UIColor colorWithHue:0.0f saturation:0.0f brightness:1.0f alpha:1.0f];

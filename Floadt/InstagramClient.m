@@ -7,7 +7,7 @@
 //
 
 #define kAccessTokenInstagram    @""
-#define INSTAGRAM_AUTH_URL_FORMAT @"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token"
+#define INSTAGRAM_AUTH_URL_FORMAT @"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token&scope=likes+comments"
 
 #import "InstagramClient.h"
 

@@ -139,8 +139,8 @@
             [imageLayer setMasksToBounds:YES];
         });
     });
-    return cell;
     
+    return cell;
 }
 
 // Fetches the OG set of Tweets

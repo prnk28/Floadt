@@ -24,6 +24,7 @@
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
     
+    self.tableView.allowsSelection = NO;
     [self.tableView registerClass:[InstagramCell class] forCellReuseIdentifier:@"InstaCell"];
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"instagramActive"]){
@@ -110,14 +111,33 @@
         [imageLayer setMasksToBounds:YES];
     }];
     
-    // Get place based on LatLng
-    NSString *latitude = entry[@"location"][@"latitude"];
-    NSString *longitude = entry[@"location"][@"longitude"];
+    //NSString *latitude = entry[@"location"][@"latitude"];
+    //NSString *longitude = entry[@"location"][@"longitude"];
     
-    if ([[entry objectForKey:@"location"] objectForKey:@"latitude"] == NSNotFound) {
-        NSLog(@"Contains Location");
+    //if ([[entry objectForKey:@"location"] objectForKey:@"latitude"] == NSNotFound) {
+      // NSLog(@"Contains Location");
+    //}
+    
+    [cell.commentButton addTarget:self action:@selector(commentButtonTap:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.likeButton addTarget:self action:@selector(likeButtonTap:) forControlEvents:UIControlEventTouchUpInside];
+    
+    NSDictionary *instapic = [self.instaPics objectAtIndex:indexPath.row];
+    
+    if (entry[@"videos"] != nil) {
+        NSLog(@"there are videos");
+    }else{
+        NSLog(@"there are no videos");
     }
+    
     return cell;
+}
+
+- (void)commentButtonTap:(id)sender {
+        NSLog(@"Successfully commented Picture");
+}
+
+- (void)likeButtonTap:(id)sender {
+    NSLog(@"Successfully Liked Picture");
 }
 
 - (void)setupNavbarGestureRecognizer {
@@ -146,6 +166,7 @@
                                             instagramResponse = [responseObject mutableCopy];
                                             NSLog(@"%@",responseObject);
                                             [self.instaPics addObjectsFromArray:responseObject[@"data"]];
+                                            
                                             [self.tableView reloadData];
                                         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
                                             NSLog(@"Failure: %@", error);
@@ -207,18 +228,6 @@
 - (void)refresh:(UIRefreshControl *)refreshControl {
     [self fetchInstagramPics];
     [refreshControl endRefreshing];
-}
-
-- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSInteger row = [[self tableView].indexPathForSelectedRow row];
-    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-    NSDictionary *insta = [self.instaPics objectAtIndex:row];
-    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"
-                                                  bundle:nil];
-    InstaPicDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:@"InstagramDetail"];
-    vc.detailItem = insta;
-    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -154,7 +154,7 @@
 }
 
 - (void)handleSingleTap:(UITapGestureRecognizer *)recognizer {
-    CGPoint location = [recognizer locationInView:[recognizer.view superview]];
+   // CGPoint location = [recognizer locationInView:[recognizer.view superview]];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"#Za2Pect" message:@"I <3 Zaara Dean" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil];
     // optional - add more buttons:
     [alert addButtonWithTitle:@"Ok"];
@@ -172,7 +172,20 @@
     }
     else if (actionSheet.tag == 200){
         if(buttonIndex == 0){
-        
+            NSLog(@"Logged out of facebook");
+            NSHTTPCookie *cookie;
+            NSHTTPCookieStorage *storage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
+            for (cookie in [storage cookies])
+            {
+                NSString* domainName = [cookie domain];
+                NSRange domainRange = [domainName rangeOfString:@"facebook"];
+                if(domainRange.length > 0)
+                {
+                    [storage deleteCookie:cookie];
+                }
+            }
+            [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"facebookActive"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
     }
     else{

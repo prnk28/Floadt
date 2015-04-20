@@ -33,7 +33,7 @@
 			<string>com.floadt.Floadt</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb356107287871866</string>
+				<string>fb1431215727175255</string>
 				<string>floadt</string>
 			</array>
 		</dict>
@@ -41,7 +41,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>FacebookAppID</key>
-	<string>356107287871866</string>
+	<string>1431215727175255</string>
 	<key>FacebookDisplayName</key>
 	<string>Floadt</string>
 	<key>LSApplicationCategoryType</key>

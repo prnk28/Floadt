@@ -2,7 +2,7 @@
 //  FacebookTableViewController.m
 //  Floadt
 //
-//  Created by Pradyumn Nukala on 1/14/15.
+//  Created by Pradyumn Nukala on 4/14/15.
 //  Copyright (c) 2015 Floadt. All rights reserved.
 //
 
@@ -18,6 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:refreshControl];
     [self.tableView registerClass:[FacebookCell class] forCellReuseIdentifier:@"FacebookCell"];
     [self fetchFacebookPosts];
 }
@@ -41,9 +44,8 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
+    
     // Return the number of sections.
     return 1;
 }
@@ -55,7 +57,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return facebookPosts.count;
+    return 10;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -74,9 +76,12 @@
     NSString *user =  entry[@"message"];
     [cell.textLabel setText:user];
     
-    
-    
     return cell;
+}
+
+- (void)refresh:(UIRefreshControl *)refreshControl {
+    [self fetchFacebookPosts];
+    [refreshControl endRefreshing];
 }
 
 #pragma mark - XLPagerTabStripViewControllerDelegate

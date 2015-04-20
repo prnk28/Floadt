@@ -15,4 +15,5 @@
 @property (nonatomic, strong) NSMutableDictionary *instagramResponse;
 @property (strong, nonatomic) NSMutableArray *instaPics;
 
+- (void)likeInstagramPictureWithID:(NSString *)idcode;
 @end

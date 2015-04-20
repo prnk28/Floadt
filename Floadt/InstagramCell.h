@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Data.h"
 
 @interface InstagramCell : UITableViewCell
+
+@property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) UIImageView *profilePic;
 @property (strong, nonatomic) UILabel *nameLabel;
 @property (strong, nonatomic) UILabel *dateLabel;
@@ -21,5 +24,6 @@
 @property (strong, nonatomic) UIButton *commentIcon;
 @property (strong, nonatomic) UIButton *locationIcon;
 @property (strong, nonatomic) UILabel *locationLabel;
+@property (strong, nonatomic) UIButton *heartButton;
 
 @end

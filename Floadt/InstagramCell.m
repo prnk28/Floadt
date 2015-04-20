@@ -72,8 +72,7 @@
         // Comment Icon
         self.commentIcon = [[UIButton alloc] initWithFrame:CGRectMake(20, 395, 14, 14)];
         [self.commentIcon setBackgroundImage:[UIImage imageNamed:@"comment.png"] forState:UIControlStateNormal];
-        [self.commentIcon setTitleColor:[UIColor grayColor]
-                             forState:UIControlStateHighlighted];
+        [self.commentIcon setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         [self.commentIcon addTarget:self action:@selector(didTapCommentIcon:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.commentIcon];
         
@@ -89,17 +88,32 @@
         // Location Icon
         self.locationIcon = [[UIButton alloc] initWithFrame:CGRectMake(73, 33, 12, 12)];
         [self.locationIcon setBackgroundImage:[UIImage imageNamed:@"location.png"] forState:UIControlStateNormal];
-        [self.locationIcon setTitleColor:[UIColor grayColor]
-                               forState:UIControlStateHighlighted];
+        [self.locationIcon setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         [self.locationIcon addTarget:self action:@selector(didTapLocationIcon:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:self.locationIcon];
+        
+        // Heart Button
+        self.heartButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 465, 25, 25)];
+        [self.heartButton setBackgroundImage:[UIImage imageNamed:@"heart.png"] forState:UIControlStateNormal];
+        [self.heartButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [self addSubview:self.heartButton];
+        
+        // Comment Button
+        self.commentButton = [[UIButton alloc] initWithFrame:CGRectMake(220, 465, 25, 25 )];
+        [self.commentButton setBackgroundImage:[UIImage imageNamed:@"comment.png"] forState:UIControlStateNormal];
+        [self.commentButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [self addSubview:self.commentButton];
     }
     return self;
 }
 
-- (void)didTapLikeButton:(id)sender{
-
-
+- (void)likeInstagramPictureWithID:(NSString *)idcode {
+    NSString *path = [NSString stringWithFormat:@"media/%@/likes", idcode];
+    [[InstagramClient sharedClient] postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Successfully Liked Picture");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
 }
 
 - (void)didTapLikeIcon:(id)sender{
@@ -108,10 +122,6 @@
 
 - (void)didTapLocationIcon:(id)sender{
     NSLog(@"Like Location Tapped");
-}
-
-- (void)didTapCommentIcon:(id)sender{
-    NSLog(@"Comment Icon Tapped");
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

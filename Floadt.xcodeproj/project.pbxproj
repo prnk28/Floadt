@@ -101,7 +101,6 @@
 		AC4AC37B1AA5894300D2FA17 /* HTKDynamicResizingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4AC3771AA5894300D2FA17 /* HTKDynamicResizingTableViewCell.m */; };
 		AC51018E184653FF00CD09E7 /* Darkening.png in Resources */ = {isa = PBXBuildFile; fileRef = AC51018C184653FF00CD09E7 /* Darkening.png */; };
 		AC51018F184653FF00CD09E7 /* HeaderPicture.png in Resources */ = {isa = PBXBuildFile; fileRef = AC51018D184653FF00CD09E7 /* HeaderPicture.png */; };
-		AC57CD68183C4B3100916B12 /* InstaPicDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC57CD67183C4B3100916B12 /* InstaPicDetailViewController.m */; };
 		AC5A50681A65FAC10093E83F /* XLBarPagerTabStripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A505A1A65FAC10093E83F /* XLBarPagerTabStripViewController.m */; };
 		AC5A50691A65FAC10093E83F /* XLBarPagerTabStripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A505A1A65FAC10093E83F /* XLBarPagerTabStripViewController.m */; };
 		AC5A506A1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A505C1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.m */; };
@@ -118,9 +117,43 @@
 		AC5A50751A65FAC10093E83F /* XLButtonBarViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A50671A65FAC10093E83F /* XLButtonBarViewCell.m */; };
 		AC5A507C1A65FBA60093E83F /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A507B1A65FBA60093E83F /* SettingsViewController.m */; };
 		AC5A507D1A65FBA60093E83F /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A507B1A65FBA60093E83F /* SettingsViewController.m */; };
+		AC643D461ABA904500A0D04B /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC643D3E1ABA904500A0D04B /* ALView+PureLayout.m */; };
+		AC643D471ABA904500A0D04B /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC643D3E1ABA904500A0D04B /* ALView+PureLayout.m */; };
+		AC643D481ABA904500A0D04B /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC643D401ABA904500A0D04B /* NSArray+PureLayout.m */; };
+		AC643D491ABA904500A0D04B /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC643D401ABA904500A0D04B /* NSArray+PureLayout.m */; };
+		AC643D4A1ABA904500A0D04B /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC643D421ABA904500A0D04B /* NSLayoutConstraint+PureLayout.m */; };
+		AC643D4B1ABA904500A0D04B /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC643D421ABA904500A0D04B /* NSLayoutConstraint+PureLayout.m */; };
 		AC6D99B91A3E43B200CB5CCF /* MYBlurIntroductionView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99B61A3E43B200CB5CCF /* MYBlurIntroductionView.m */; };
 		AC6D99BA1A3E43B200CB5CCF /* MYIntroductionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6D99B81A3E43B200CB5CCF /* MYIntroductionPanel.m */; };
 		AC6E2C501A92856100670FEB /* FacebookCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6E2C4F1A92856100670FEB /* FacebookCell.m */; };
+		AC6FB9901ADCBBFD00B9FFCD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB98F1ADCBBFD00B9FFCD /* MBProgressHUD.m */; };
+		AC6FB9911ADCBBFD00B9FFCD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB98F1ADCBBFD00B9FFCD /* MBProgressHUD.m */; };
+		AC6FB99B1ADCC3A600B9FFCD /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9941ADCC3A600B9FFCD /* MessageViewController.m */; };
+		AC6FB99C1ADCC3A600B9FFCD /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9941ADCC3A600B9FFCD /* MessageViewController.m */; };
+		AC6FB99D1ADCC3A600B9FFCD /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9961ADCC3A600B9FFCD /* MessageTableViewCell.m */; };
+		AC6FB99E1ADCC3A600B9FFCD /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9961ADCC3A600B9FFCD /* MessageTableViewCell.m */; };
+		AC6FB99F1ADCC3A600B9FFCD /* MessageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9981ADCC3A600B9FFCD /* MessageTextView.m */; };
+		AC6FB9A01ADCC3A600B9FFCD /* MessageTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9981ADCC3A600B9FFCD /* MessageTextView.m */; };
+		AC6FB9A11ADCC3A600B9FFCD /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB99A1ADCC3A600B9FFCD /* Message.m */; };
+		AC6FB9A21ADCC3A600B9FFCD /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB99A1ADCC3A600B9FFCD /* Message.m */; };
+		AC6FB9B81ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9A71ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.m */; };
+		AC6FB9B91ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9A71ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.m */; };
+		AC6FB9BA1ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9AA1ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.m */; };
+		AC6FB9BB1ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9AA1ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.m */; };
+		AC6FB9BC1ADCC4FC00B9FFCD /* UIView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9AC1ADCC4FC00B9FFCD /* UIView+SLKAdditions.m */; };
+		AC6FB9BD1ADCC4FC00B9FFCD /* UIView+SLKAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9AC1ADCC4FC00B9FFCD /* UIView+SLKAdditions.m */; };
+		AC6FB9BE1ADCC4FC00B9FFCD /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9AF1ADCC4FC00B9FFCD /* SLKInputAccessoryView.m */; };
+		AC6FB9BF1ADCC4FC00B9FFCD /* SLKInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9AF1ADCC4FC00B9FFCD /* SLKInputAccessoryView.m */; };
+		AC6FB9C01ADCC4FC00B9FFCD /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B11ADCC4FC00B9FFCD /* SLKTextInputbar.m */; };
+		AC6FB9C11ADCC4FC00B9FFCD /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B11ADCC4FC00B9FFCD /* SLKTextInputbar.m */; };
+		AC6FB9C21ADCC4FC00B9FFCD /* SLKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B31ADCC4FC00B9FFCD /* SLKTextView.m */; };
+		AC6FB9C31ADCC4FC00B9FFCD /* SLKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B31ADCC4FC00B9FFCD /* SLKTextView.m */; };
+		AC6FB9C41ADCC4FC00B9FFCD /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B51ADCC4FC00B9FFCD /* SLKTextViewController.m */; };
+		AC6FB9C51ADCC4FC00B9FFCD /* SLKTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B51ADCC4FC00B9FFCD /* SLKTextViewController.m */; };
+		AC6FB9C61ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m */; };
+		AC6FB9C71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m */; };
+		AC6FB9CB1ADCC57F00B9FFCD /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9CA1ADCC57F00B9FFCD /* LoremIpsum.m */; };
+		AC6FB9CC1ADCC57F00B9FFCD /* LoremIpsum.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9CA1ADCC57F00B9FFCD /* LoremIpsum.m */; };
 		AC792F751831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
 		AC792F761831BF7E00946DBE /* TweetDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC792F741831BF7E00946DBE /* TweetDetailViewController.m */; };
 		AC80D9331A78787D000801A8 /* SearchContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC80D9321A78787D000801A8 /* SearchContainerViewController.m */; };
@@ -148,7 +181,6 @@
 		ACA30F6319F99FB80018BDB7 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA30F5319F99FB80018BDB7 /* UIView+WebCacheOperation.m */; };
 		ACA9FF931A4A8735000815A8 /* WebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA9FF921A4A8735000815A8 /* WebViewVC.m */; };
 		ACA9FF941A4A8735000815A8 /* WebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA9FF921A4A8735000815A8 /* WebViewVC.m */; };
-		ACAAD8DC1A0EE930008A5E5E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACAAD8DB1A0EE930008A5E5E /* Images.xcassets */; };
 		ACB5F6511A6347F500976784 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB5F6501A6347F500976784 /* AVFoundation.framework */; };
 		ACB6AB791A5B808400398ADA /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB6AB781A5B808400398ADA /* FacebookSDK.framework */; };
 		ACB6AB951A5B8B1600398ADA /* UIPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB6AB941A5B8B1600398ADA /* UIPlaceholderTextView.m */; };
@@ -240,6 +272,7 @@
 		ACB8DD4F1845A76C00A3A498 /* yelp.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCF81845A76C00A3A498 /* yelp.png */; };
 		ACB8DD501845A76C00A3A498 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCF91845A76C00A3A498 /* youtube.png */; };
 		ACB8DD511845A76C00A3A498 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCF91845A76C00A3A498 /* youtube.png */; };
+		ACBAAEB01ADDCFE5006986FC /* FacebookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBAAEAF1ADDCFE5006986FC /* FacebookTableViewController.m */; };
 		ACBAAF671A706F28006BD83F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = ACBAAF661A706F28006BD83F /* Reachability.m */; };
 		ACC1E9881825E45100DCA712 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E9851825E45100DCA712 /* JASidePanelController.m */; };
 		ACC1E9891825E45100DCA712 /* JASidePanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E9851825E45100DCA712 /* JASidePanelController.m */; };
@@ -271,7 +304,6 @@
 		ACD7D0461A0574120090093B /* SearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD7D0451A0574120090093B /* SearchTableViewController.m */; };
 		ACD930A91A49EA0200C13C45 /* GHContextMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD930A81A49EA0200C13C45 /* GHContextMenuView.m */; };
 		ACDF50FC1A62C73700C20298 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACDF50FB1A62C73700C20298 /* AssetsLibrary.framework */; };
-		ACE2A1ED1A676694001312BD /* FacebookTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A1E41A676694001312BD /* FacebookTableViewController.m */; };
 		ACE2A1EE1A676694001312BD /* InstagramTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A1E61A676694001312BD /* InstagramTableViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		ACE2A1EF1A676694001312BD /* TimelineContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A1E81A676694001312BD /* TimelineContainerViewController.m */; };
 		ACE2A1F01A676694001312BD /* TimelineControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A1EA1A676694001312BD /* TimelineControllerViewController.m */; };
@@ -286,6 +318,8 @@
 		ACE574E31A3E7CB200274BD5 /* UITextField+PlaceholderColor.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE574D71A3E7CB200274BD5 /* UITextField+PlaceholderColor.m */; };
 		ACE574E41A3E7CB200274BD5 /* UITextField+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE574D91A3E7CB200274BD5 /* UITextField+TCCustomFont.m */; };
 		ACE574E51A3E7CB200274BD5 /* UITextView+TCCustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE574DB1A3E7CB200274BD5 /* UITextView+TCCustomFont.m */; };
+		ACEAEA061AC85721006ABE1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEAEA051AC85721006ABE1A /* Images.xcassets */; };
+		ACEAEA071AC85721006ABE1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEAEA051AC85721006ABE1A /* Images.xcassets */; };
 		ACEBB1BF182C852500A4CE2F /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEBB1AD182C852500A4CE2F /* AFHTTPClient.m */; };
 		ACEBB1C0182C852500A4CE2F /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEBB1AF182C852500A4CE2F /* AFHTTPRequestOperation.m */; };
 		ACEBB1C1182C852500A4CE2F /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEBB1B1182C852500A4CE2F /* AFImageRequestOperation.m */; };
@@ -404,8 +438,6 @@
 		AC4AC3771AA5894300D2FA17 /* HTKDynamicResizingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTKDynamicResizingTableViewCell.m; sourceTree = "<group>"; };
 		AC51018C184653FF00CD09E7 /* Darkening.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Darkening.png; sourceTree = "<group>"; };
 		AC51018D184653FF00CD09E7 /* HeaderPicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HeaderPicture.png; sourceTree = "<group>"; };
-		AC57CD66183C4B3100916B12 /* InstaPicDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstaPicDetailViewController.h; sourceTree = "<group>"; };
-		AC57CD67183C4B3100916B12 /* InstaPicDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstaPicDetailViewController.m; sourceTree = "<group>"; };
 		AC5A50591A65FAC10093E83F /* XLBarPagerTabStripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBarPagerTabStripViewController.h; sourceTree = "<group>"; };
 		AC5A505A1A65FAC10093E83F /* XLBarPagerTabStripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBarPagerTabStripViewController.m; sourceTree = "<group>"; };
 		AC5A505B1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLButtonBarPagerTabStripViewController.h; sourceTree = "<group>"; };
@@ -422,12 +454,51 @@
 		AC5A50671A65FAC10093E83F /* XLButtonBarViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLButtonBarViewCell.m; sourceTree = "<group>"; };
 		AC5A507A1A65FBA60093E83F /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		AC5A507B1A65FBA60093E83F /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
+		AC643D3D1ABA904500A0D04B /* ALView+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ALView+PureLayout.h"; sourceTree = "<group>"; };
+		AC643D3E1ABA904500A0D04B /* ALView+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ALView+PureLayout.m"; sourceTree = "<group>"; };
+		AC643D3F1ABA904500A0D04B /* NSArray+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+PureLayout.h"; sourceTree = "<group>"; };
+		AC643D401ABA904500A0D04B /* NSArray+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+PureLayout.m"; sourceTree = "<group>"; };
+		AC643D411ABA904500A0D04B /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
+		AC643D421ABA904500A0D04B /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
+		AC643D431ABA904500A0D04B /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
+		AC643D441ABA904500A0D04B /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
+		AC643D451ABA904500A0D04B /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
 		AC6D99B51A3E43B200CB5CCF /* MYBlurIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBlurIntroductionView.h; sourceTree = "<group>"; };
 		AC6D99B61A3E43B200CB5CCF /* MYBlurIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBlurIntroductionView.m; sourceTree = "<group>"; };
 		AC6D99B71A3E43B200CB5CCF /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
 		AC6D99B81A3E43B200CB5CCF /* MYIntroductionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYIntroductionPanel.m; sourceTree = "<group>"; };
 		AC6E2C4E1A92856100670FEB /* FacebookCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookCell.h; sourceTree = "<group>"; };
 		AC6E2C4F1A92856100670FEB /* FacebookCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookCell.m; sourceTree = "<group>"; };
+		AC6FB98E1ADCBBFD00B9FFCD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		AC6FB98F1ADCBBFD00B9FFCD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		AC6FB9931ADCC3A600B9FFCD /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
+		AC6FB9941ADCC3A600B9FFCD /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
+		AC6FB9951ADCC3A600B9FFCD /* MessageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTableViewCell.h; sourceTree = "<group>"; };
+		AC6FB9961ADCC3A600B9FFCD /* MessageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTableViewCell.m; sourceTree = "<group>"; };
+		AC6FB9971ADCC3A600B9FFCD /* MessageTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageTextView.h; sourceTree = "<group>"; };
+		AC6FB9981ADCC3A600B9FFCD /* MessageTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageTextView.m; sourceTree = "<group>"; };
+		AC6FB9991ADCC3A600B9FFCD /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		AC6FB99A1ADCC3A600B9FFCD /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		AC6FB9A31ADCC4A000B9FFCD /* SlackTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlackTextViewController.h; sourceTree = "<group>"; };
+		AC6FB9A61ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SLKTextView+SLKAdditions.h"; sourceTree = "<group>"; };
+		AC6FB9A71ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SLKTextView+SLKAdditions.m"; sourceTree = "<group>"; };
+		AC6FB9A81ADCC4FC00B9FFCD /* SLKUIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKUIConstants.h; sourceTree = "<group>"; };
+		AC6FB9A91ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SLKAdditions.h"; sourceTree = "<group>"; };
+		AC6FB9AA1ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SLKAdditions.m"; sourceTree = "<group>"; };
+		AC6FB9AB1ADCC4FC00B9FFCD /* UIView+SLKAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SLKAdditions.h"; sourceTree = "<group>"; };
+		AC6FB9AC1ADCC4FC00B9FFCD /* UIView+SLKAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+SLKAdditions.m"; sourceTree = "<group>"; };
+		AC6FB9AE1ADCC4FC00B9FFCD /* SLKInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKInputAccessoryView.h; sourceTree = "<group>"; };
+		AC6FB9AF1ADCC4FC00B9FFCD /* SLKInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKInputAccessoryView.m; sourceTree = "<group>"; };
+		AC6FB9B01ADCC4FC00B9FFCD /* SLKTextInputbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextInputbar.h; sourceTree = "<group>"; };
+		AC6FB9B11ADCC4FC00B9FFCD /* SLKTextInputbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextInputbar.m; sourceTree = "<group>"; };
+		AC6FB9B21ADCC4FC00B9FFCD /* SLKTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextView.h; sourceTree = "<group>"; };
+		AC6FB9B31ADCC4FC00B9FFCD /* SLKTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextView.m; sourceTree = "<group>"; };
+		AC6FB9B41ADCC4FC00B9FFCD /* SLKTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTextViewController.h; sourceTree = "<group>"; };
+		AC6FB9B51ADCC4FC00B9FFCD /* SLKTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTextViewController.m; sourceTree = "<group>"; };
+		AC6FB9B61ADCC4FC00B9FFCD /* SLKTypingIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLKTypingIndicatorView.h; sourceTree = "<group>"; };
+		AC6FB9B71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLKTypingIndicatorView.m; sourceTree = "<group>"; };
+		AC6FB9C91ADCC57F00B9FFCD /* LoremIpsum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoremIpsum.h; sourceTree = "<group>"; };
+		AC6FB9CA1ADCC57F00B9FFCD /* LoremIpsum.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoremIpsum.m; sourceTree = "<group>"; };
 		AC792F731831BF7E00946DBE /* TweetDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailViewController.h; sourceTree = "<group>"; };
 		AC792F741831BF7E00946DBE /* TweetDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetailViewController.m; sourceTree = "<group>"; };
 		AC80D9311A78787D000801A8 /* SearchContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchContainerViewController.h; sourceTree = "<group>"; };
@@ -479,7 +550,6 @@
 		ACA30F5319F99FB80018BDB7 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		ACA9FF911A4A8735000815A8 /* WebViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewVC.h; sourceTree = "<group>"; };
 		ACA9FF921A4A8735000815A8 /* WebViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewVC.m; sourceTree = "<group>"; };
-		ACAAD8DB1A0EE930008A5E5E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACB5F6501A6347F500976784 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		ACB6AB781A5B808400398ADA /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		ACB6AB931A5B8B1600398ADA /* UIPlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIPlaceholderTextView.h; sourceTree = "<group>"; };
@@ -528,6 +598,8 @@
 		ACB8DCF71845A76C00A3A498 /* wordpress.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordpress.png; sourceTree = "<group>"; };
 		ACB8DCF81845A76C00A3A498 /* yelp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yelp.png; sourceTree = "<group>"; };
 		ACB8DCF91845A76C00A3A498 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
+		ACBAAEAE1ADDCFE5006986FC /* FacebookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookTableViewController.h; sourceTree = "<group>"; };
+		ACBAAEAF1ADDCFE5006986FC /* FacebookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookTableViewController.m; sourceTree = "<group>"; };
 		ACBAAF651A706F28006BD83F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		ACBAAF661A706F28006BD83F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		ACC1E9841825E45100DCA712 /* JASidePanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JASidePanelController.h; sourceTree = "<group>"; };
@@ -567,8 +639,6 @@
 		ACD930A71A49EA0200C13C45 /* GHContextMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHContextMenuView.h; sourceTree = "<group>"; };
 		ACD930A81A49EA0200C13C45 /* GHContextMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHContextMenuView.m; sourceTree = "<group>"; };
 		ACDF50FB1A62C73700C20298 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
-		ACE2A1E31A676694001312BD /* FacebookTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookTableViewController.h; sourceTree = "<group>"; };
-		ACE2A1E41A676694001312BD /* FacebookTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookTableViewController.m; sourceTree = "<group>"; };
 		ACE2A1E51A676694001312BD /* InstagramTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramTableViewController.h; sourceTree = "<group>"; };
 		ACE2A1E61A676694001312BD /* InstagramTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramTableViewController.m; sourceTree = "<group>"; };
 		ACE2A1E71A676694001312BD /* TimelineContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimelineContainerViewController.h; sourceTree = "<group>"; };
@@ -598,6 +668,7 @@
 		ACE574D91A3E7CB200274BD5 /* UITextField+TCCustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextField+TCCustomFont.m"; sourceTree = "<group>"; };
 		ACE574DA1A3E7CB200274BD5 /* UITextView+TCCustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+TCCustomFont.h"; sourceTree = "<group>"; };
 		ACE574DB1A3E7CB200274BD5 /* UITextView+TCCustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+TCCustomFont.m"; sourceTree = "<group>"; };
+		ACEAEA051AC85721006ABE1A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACEBB1AC182C852500A4CE2F /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		ACEBB1AD182C852500A4CE2F /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		ACEBB1AE182C852500A4CE2F /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -893,6 +964,22 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		AC643D3C1ABA904500A0D04B /* PureLayout */ = {
+			isa = PBXGroup;
+			children = (
+				AC643D3D1ABA904500A0D04B /* ALView+PureLayout.h */,
+				AC643D3E1ABA904500A0D04B /* ALView+PureLayout.m */,
+				AC643D3F1ABA904500A0D04B /* NSArray+PureLayout.h */,
+				AC643D401ABA904500A0D04B /* NSArray+PureLayout.m */,
+				AC643D411ABA904500A0D04B /* NSLayoutConstraint+PureLayout.h */,
+				AC643D421ABA904500A0D04B /* NSLayoutConstraint+PureLayout.m */,
+				AC643D431ABA904500A0D04B /* PureLayout+Internal.h */,
+				AC643D441ABA904500A0D04B /* PureLayout.h */,
+				AC643D451ABA904500A0D04B /* PureLayoutDefines.h */,
+			);
+			path = PureLayout;
+			sourceTree = "<group>";
+		};
 		AC6D99B41A3E43B200CB5CCF /* MYBlurIntroductionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -902,6 +989,87 @@
 				AC6D99B81A3E43B200CB5CCF /* MYIntroductionPanel.m */,
 			);
 			path = MYBlurIntroductionView;
+			sourceTree = "<group>";
+		};
+		AC6FB98D1ADCBBEB00B9FFCD /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				AC6FB98E1ADCBBFD00B9FFCD /* MBProgressHUD.h */,
+				AC6FB98F1ADCBBFD00B9FFCD /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
+		AC6FB9921ADCC37100B9FFCD /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				AC6FB9A31ADCC4A000B9FFCD /* SlackTextViewController.h */,
+				AC6FB9931ADCC3A600B9FFCD /* MessageViewController.h */,
+				AC6FB9941ADCC3A600B9FFCD /* MessageViewController.m */,
+				AC6FB9951ADCC3A600B9FFCD /* MessageTableViewCell.h */,
+				AC6FB9961ADCC3A600B9FFCD /* MessageTableViewCell.m */,
+				AC6FB9971ADCC3A600B9FFCD /* MessageTextView.h */,
+				AC6FB9981ADCC3A600B9FFCD /* MessageTextView.m */,
+				AC6FB9991ADCC3A600B9FFCD /* Message.h */,
+				AC6FB99A1ADCC3A600B9FFCD /* Message.m */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
+		AC6FB9A41ADCC4FC00B9FFCD /* SLMessenger */ = {
+			isa = PBXGroup;
+			children = (
+				AC6FB9A51ADCC4FC00B9FFCD /* Additions */,
+				AC6FB9AD1ADCC4FC00B9FFCD /* Classes */,
+			);
+			path = SLMessenger;
+			sourceTree = "<group>";
+		};
+		AC6FB9A51ADCC4FC00B9FFCD /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				AC6FB9A61ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.h */,
+				AC6FB9A71ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.m */,
+				AC6FB9A81ADCC4FC00B9FFCD /* SLKUIConstants.h */,
+				AC6FB9A91ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.h */,
+				AC6FB9AA1ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.m */,
+				AC6FB9AB1ADCC4FC00B9FFCD /* UIView+SLKAdditions.h */,
+				AC6FB9AC1ADCC4FC00B9FFCD /* UIView+SLKAdditions.m */,
+			);
+			path = Additions;
+			sourceTree = "<group>";
+		};
+		AC6FB9AD1ADCC4FC00B9FFCD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AC6FB9AE1ADCC4FC00B9FFCD /* SLKInputAccessoryView.h */,
+				AC6FB9AF1ADCC4FC00B9FFCD /* SLKInputAccessoryView.m */,
+				AC6FB9B01ADCC4FC00B9FFCD /* SLKTextInputbar.h */,
+				AC6FB9B11ADCC4FC00B9FFCD /* SLKTextInputbar.m */,
+				AC6FB9B21ADCC4FC00B9FFCD /* SLKTextView.h */,
+				AC6FB9B31ADCC4FC00B9FFCD /* SLKTextView.m */,
+				AC6FB9B41ADCC4FC00B9FFCD /* SLKTextViewController.h */,
+				AC6FB9B51ADCC4FC00B9FFCD /* SLKTextViewController.m */,
+				AC6FB9B61ADCC4FC00B9FFCD /* SLKTypingIndicatorView.h */,
+				AC6FB9B71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		AC6FB9C81ADCC57F00B9FFCD /* LoremIpsum */ = {
+			isa = PBXGroup;
+			children = (
+				AC6FB9C91ADCC57F00B9FFCD /* LoremIpsum.h */,
+				AC6FB9CA1ADCC57F00B9FFCD /* LoremIpsum.m */,
+			);
+			path = LoremIpsum;
+			sourceTree = "<group>";
+		};
+		AC6FB9CD1ADCCB8F00B9FFCD /* Foreign View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Foreign View Controllers";
 			sourceTree = "<group>";
 		};
 		AC80D9371A7878A5000801A8 /* Search VC */ = {
@@ -1084,7 +1252,7 @@
 				ACC4C72418062C83000A3BA8 /* FloadtTests */,
 				ACC4C6FE18062C82000A3BA8 /* Frameworks */,
 				ACC4C6FD18062C82000A3BA8 /* Products */,
-				ACAAD8DB1A0EE930008A5E5E /* Images.xcassets */,
+				ACEAEA051AC85721006ABE1A /* Images.xcassets */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1188,6 +1356,7 @@
 		ACC4C73F18064283000A3BA8 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AC6FB9CD1ADCCB8F00B9FFCD /* Foreign View Controllers */,
 				ACD7D03F1A05727E0090093B /* Detail Pages */,
 				ACD7D0401A05728A0090093B /* External Pages */,
 				ACD7D03E1A0572650090093B /* Main Pages */,
@@ -1198,6 +1367,10 @@
 		ACCF7656180F6FB800E0CA67 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				AC6FB9C81ADCC57F00B9FFCD /* LoremIpsum */,
+				AC6FB9A41ADCC4FC00B9FFCD /* SLMessenger */,
+				AC6FB98D1ADCBBEB00B9FFCD /* MBProgressHUD */,
+				AC643D3C1ABA904500A0D04B /* PureLayout */,
 				ACF59A3D1AB1600A00A72F4C /* AMAttributedHighlightLabel */,
 				AC4AC36F1AA5894300D2FA17 /* HTKDynamicResizingCell */,
 				AC0410361AA3785000B08E76 /* Masonry */,
@@ -1238,8 +1411,7 @@
 		ACD7D03F1A05727E0090093B /* Detail Pages */ = {
 			isa = PBXGroup;
 			children = (
-				AC57CD66183C4B3100916B12 /* InstaPicDetailViewController.h */,
-				AC57CD67183C4B3100916B12 /* InstaPicDetailViewController.m */,
+				AC6FB9921ADCC37100B9FFCD /* Comments */,
 				AC792F731831BF7E00946DBE /* TweetDetailViewController.h */,
 				AC792F741831BF7E00946DBE /* TweetDetailViewController.m */,
 			);
@@ -1273,8 +1445,8 @@
 		ACE2A1F21A67669C001312BD /* Stream VC */ = {
 			isa = PBXGroup;
 			children = (
-				ACE2A1E31A676694001312BD /* FacebookTableViewController.h */,
-				ACE2A1E41A676694001312BD /* FacebookTableViewController.m */,
+				ACBAAEAE1ADDCFE5006986FC /* FacebookTableViewController.h */,
+				ACBAAEAF1ADDCFE5006986FC /* FacebookTableViewController.m */,
 				ACE2A1E51A676694001312BD /* InstagramTableViewController.h */,
 				ACE2A1E61A676694001312BD /* InstagramTableViewController.m */,
 				ACE2A1E71A676694001312BD /* TimelineContainerViewController.h */,
@@ -1455,6 +1627,7 @@
 				ACC4C70A18062C82000A3BA8 /* InfoPlist.strings in Resources */,
 				ACB8DCFA1845A76C00A3A498 /* addthis.png in Resources */,
 				AC0BF98018402EC900177106 /* pinterest@2x.png in Resources */,
+				ACEAEA061AC85721006ABE1A /* Images.xcassets in Resources */,
 				ACCB20C91A645B980066EB1D /* Entitlements.plist in Resources */,
 				ACB8DD481845A76C00A3A498 /* twitter-old.png in Resources */,
 				AC0BF97E18402EC900177106 /* pinterest.off@2x.png in Resources */,
@@ -1473,7 +1646,6 @@
 				ACB8DD001845A76C00A3A498 /* blogger.png in Resources */,
 				ACB8DD1A1845A76C00A3A498 /* kickstarter.png in Resources */,
 				AC0BF97018402EC900177106 /* facebook@2x.png in Resources */,
-				ACAAD8DC1A0EE930008A5E5E /* Images.xcassets in Resources */,
 				ACB8DD4A1845A76C00A3A498 /* vimeo.png in Resources */,
 				AC0BF97C18402EC900177106 /* linkedIn@2x.png in Resources */,
 				AC4A6E161844408A00FDA6ED /* Background.png in Resources */,
@@ -1523,6 +1695,7 @@
 				ACB8DD171845A76C00A3A498 /* indiegogo.png in Resources */,
 				ACB8DD331845A76C00A3A498 /* reddit.png in Resources */,
 				ACB8DD111845A76C00A3A498 /* github.png in Resources */,
+				ACEAEA071AC85721006ABE1A /* Images.xcassets in Resources */,
 				ACB8DD031845A76C00A3A498 /* deviantart.png in Resources */,
 				AC4A6E191844408A00FDA6ED /* comment.png in Resources */,
 				ACB8DD091845A76C00A3A498 /* email.png in Resources */,
@@ -1588,8 +1761,8 @@
 				AC90E9601A3FD4B700D9FC65 /* JDStatusBarNotification.m in Sources */,
 				AC0410581AA3785000B08E76 /* MASConstraintMaker.m in Sources */,
 				ACC1E98E1825E49F00DCA712 /* JSFlatButton.m in Sources */,
-				AC57CD68183C4B3100916B12 /* InstaPicDetailViewController.m in Sources */,
 				ACEBB1CA182C86A300A4CE2F /* AFOAuth1Client.m in Sources */,
+				AC6FB9C21ADCC4FC00B9FFCD /* SLKTextView.m in Sources */,
 				AC5A50681A65FAC10093E83F /* XLBarPagerTabStripViewController.m in Sources */,
 				ACEBB1BF182C852500A4CE2F /* AFHTTPClient.m in Sources */,
 				ACE2A1EF1A676694001312BD /* TimelineContainerViewController.m in Sources */,
@@ -1599,12 +1772,14 @@
 				AC5A50701A65FAC10093E83F /* XLBarView.m in Sources */,
 				AC6D99B91A3E43B200CB5CCF /* MYBlurIntroductionView.m in Sources */,
 				ACE574E21A3E7CB200274BD5 /* UINavigationBar+TCCustomFont.m in Sources */,
+				AC6FB99F1ADCC3A600B9FFCD /* MessageTextView.m in Sources */,
 				ACEBB1C2182C852500A4CE2F /* AFJSONRequestOperation.m in Sources */,
 				ACEBB1C5182C852500A4CE2F /* AFURLConnectionOperation.m in Sources */,
-				ACE2A1ED1A676694001312BD /* FacebookTableViewController.m in Sources */,
 				AC0410561AA3785000B08E76 /* MASConstraint.m in Sources */,
 				AC8D89341A0AC32800978356 /* InteractionsTableViewController.m in Sources */,
+				AC643D4A1ABA904500A0D04B /* NSLayoutConstraint+PureLayout.m in Sources */,
 				ACEEF64C1814275E002B61B9 /* MenuViewController.m in Sources */,
+				AC6FB9C01ADCC4FC00B9FFCD /* SLKTextInputbar.m in Sources */,
 				ACE574E41A3E7CB200274BD5 /* UITextField+TCCustomFont.m in Sources */,
 				ACA30F5919F99FB80018BDB7 /* SDWebImageDownloader.m in Sources */,
 				ACFF6FE81A84941B00B8423F /* FacebookSearchViewController.m in Sources */,
@@ -1617,10 +1792,12 @@
 				AC5A507C1A65FBA60093E83F /* SettingsViewController.m in Sources */,
 				ACA9FF931A4A8735000815A8 /* WebViewVC.m in Sources */,
 				ACE2A1F11A676694001312BD /* TwitterTableViewController.m in Sources */,
+				AC6FB9901ADCBBFD00B9FFCD /* MBProgressHUD.m in Sources */,
 				ACA30F5E19F99FB80018BDB7 /* UIImage+GIF.m in Sources */,
 				ACEBB1C3182C852500A4CE2F /* AFNetworkActivityIndicatorManager.m in Sources */,
 				AC80D9361A787890000801A8 /* SearchViewController.m in Sources */,
 				AC6D99BA1A3E43B200CB5CCF /* MYIntroductionPanel.m in Sources */,
+				AC6FB9C41ADCC4FC00B9FFCD /* SLKTextViewController.m in Sources */,
 				AC5A506A1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.m in Sources */,
 				ACE574DC1A3E7CB200274BD5 /* CSAnimation.m in Sources */,
 				ACA30F5D19F99FB80018BDB7 /* UIButton+WebCache.m in Sources */,
@@ -1636,6 +1813,7 @@
 				AC3C25771A9197380010A128 /* SCFacebook.m in Sources */,
 				AC04105A1AA3785000B08E76 /* MASLayoutConstraint.m in Sources */,
 				ACF59A401AB1600A00A72F4C /* AMAttributedHighlightLabel.m in Sources */,
+				AC6FB9B81ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.m in Sources */,
 				ACA30F5619F99FB80018BDB7 /* SDImageCache.m in Sources */,
 				AC0410641AA3785000B08E76 /* View+MASAdditions.m in Sources */,
 				ACA30F5419F99FB80018BDB7 /* MKAnnotationView+WebCache.m in Sources */,
@@ -1644,12 +1822,17 @@
 				AC3D25641A548B3900132DA8 /* InstagramClient.m in Sources */,
 				AC04105C1AA3785000B08E76 /* MASViewAttribute.m in Sources */,
 				AC0410541AA3785000B08E76 /* MASCompositeConstraint.m in Sources */,
+				AC6FB9BA1ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.m in Sources */,
 				ACEBB1C1182C852500A4CE2F /* AFImageRequestOperation.m in Sources */,
 				AC6E2C501A92856100670FEB /* FacebookCell.m in Sources */,
 				ACE574E11A3E7CB200274BD5 /* UILabel+TCCustomFont.m in Sources */,
+				AC6FB99D1ADCC3A600B9FFCD /* MessageTableViewCell.m in Sources */,
 				AC4337F71A6355D600C1DD42 /* UICollectionViewCellPhoto.m in Sources */,
 				ACC4C73718062CCD000A3BA8 /* User.m in Sources */,
+				AC643D481ABA904500A0D04B /* NSArray+PureLayout.m in Sources */,
 				ACEBB1C6182C852500A4CE2F /* AFXMLRequestOperation.m in Sources */,
+				AC6FB9BE1ADCC4FC00B9FFCD /* SLKInputAccessoryView.m in Sources */,
+				AC6FB9A11ADCC3A600B9FFCD /* Message.m in Sources */,
 				ACEBB1C0182C852500A4CE2F /* AFHTTPRequestOperation.m in Sources */,
 				AC80D9331A78787D000801A8 /* SearchContainerViewController.m in Sources */,
 				ACE2A1EE1A676694001312BD /* InstagramTableViewController.m in Sources */,
@@ -1659,25 +1842,31 @@
 				ACA30F5819F99FB80018BDB7 /* SDWebImageDecoder.m in Sources */,
 				ACEEF649181426FE002B61B9 /* RootMenuController.m in Sources */,
 				AC0410621AA3785000B08E76 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				AC6FB9CB1ADCC57F00B9FFCD /* LoremIpsum.m in Sources */,
 				ACFF6FE51A84940300B8423F /* TwitterSearchViewController.m in Sources */,
 				AC4AC3781AA5894300D2FA17 /* HTKDynamicResizingCollectionViewCell.m in Sources */,
+				AC6FB9BC1ADCC4FC00B9FFCD /* UIView+SLKAdditions.m in Sources */,
 				AC5A506E1A65FAC10093E83F /* XLSegmentedPagerTabStripViewController.m in Sources */,
 				ACA30F6219F99FB80018BDB7 /* UIImageView+WebCache.m in Sources */,
 				AC4337F51A6355D600C1DD42 /* RRSendMessageViewController.m in Sources */,
 				ACA30F6019F99FB80018BDB7 /* UIImage+WebP.m in Sources */,
 				AC792F751831BF7E00946DBE /* TweetDetailViewController.m in Sources */,
 				ACD7D0461A0574120090093B /* SearchTableViewController.m in Sources */,
+				AC6FB99B1ADCC3A600B9FFCD /* MessageViewController.m in Sources */,
 				AC5A50741A65FAC10093E83F /* XLButtonBarViewCell.m in Sources */,
 				ACC4C71018062C82000A3BA8 /* AppDelegate.m in Sources */,
 				AC9B8BDB1A3FD926006D36B2 /* JNKeychain.m in Sources */,
 				ACC4C70C18062C82000A3BA8 /* main.m in Sources */,
 				ACEBB1CD182C86AD00A4CE2F /* AFOAuth2Client.m in Sources */,
+				AC6FB9C61ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m in Sources */,
 				ACA30F5519F99FB80018BDB7 /* NSData+ImageContentType.m in Sources */,
 				AC3246E019F9CDA000397C1A /* TwitterCell.m in Sources */,
 				6EDC0F5F1A97D92700239F69 /* MCSwipeTableViewCell.m in Sources */,
 				ACE574DE1A3E7CB200274BD5 /* CSBlurView.m in Sources */,
 				ACA30F5F19F99FB80018BDB7 /* UIImage+MultiFormat.m in Sources */,
 				AC4AC37A1AA5894300D2FA17 /* HTKDynamicResizingTableViewCell.m in Sources */,
+				AC643D461ABA904500A0D04B /* ALView+PureLayout.m in Sources */,
+				ACBAAEB01ADDCFE5006986FC /* FacebookTableViewController.m in Sources */,
 				ACE574E51A3E7CB200274BD5 /* UITextView+TCCustomFont.m in Sources */,
 				ACA30F6119F99FB80018BDB7 /* UIImageView+HighlightedWebCache.m in Sources */,
 				ACEBB1C4182C852500A4CE2F /* AFPropertyListRequestOperation.m in Sources */,
@@ -1695,40 +1884,57 @@
 			files = (
 				ACC1E98B1825E45100DCA712 /* UIViewController+JASidePanel.m in Sources */,
 				AC5A506D1A65FAC10093E83F /* XLPagerTabStripViewController.m in Sources */,
+				AC643D4B1ABA904500A0D04B /* NSLayoutConstraint+PureLayout.m in Sources */,
+				AC6FB9C11ADCC4FC00B9FFCD /* SLKTextInputbar.m in Sources */,
 				AC04105D1AA3785000B08E76 /* MASViewAttribute.m in Sources */,
 				AC0410611AA3785000B08E76 /* NSArray+MASAdditions.m in Sources */,
 				ACC1E9981825E4CD00DCA712 /* UIImage+JSFlatButton.m in Sources */,
 				AC4AC3791AA5894300D2FA17 /* HTKDynamicResizingCollectionViewCell.m in Sources */,
+				AC6FB9C71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m in Sources */,
 				AC5A507D1A65FBA60093E83F /* SettingsViewController.m in Sources */,
 				6EDC0F601A97D92700239F69 /* MCSwipeTableViewCell.m in Sources */,
+				AC6FB9C51ADCC4FC00B9FFCD /* SLKTextViewController.m in Sources */,
+				AC6FB9A21ADCC3A600B9FFCD /* Message.m in Sources */,
 				AC3D25671A548B3900132DA8 /* TwitterClient.m in Sources */,
 				AC4337F21A6355D600C1DD42 /* RRCustomScrollView.m in Sources */,
 				ACC1E98F1825E49F00DCA712 /* JSFlatButton.m in Sources */,
 				AC5A50751A65FAC10093E83F /* XLButtonBarViewCell.m in Sources */,
 				AC5A506F1A65FAC10093E83F /* XLSegmentedPagerTabStripViewController.m in Sources */,
 				ACA9FF941A4A8735000815A8 /* WebViewVC.m in Sources */,
+				AC643D471ABA904500A0D04B /* ALView+PureLayout.m in Sources */,
 				ACC4C72B18062C83000A3BA8 /* FloadtTests.m in Sources */,
+				AC6FB9CC1ADCC57F00B9FFCD /* LoremIpsum.m in Sources */,
 				AC0410571AA3785000B08E76 /* MASConstraint.m in Sources */,
+				AC6FB9A01ADCC3A600B9FFCD /* MessageTextView.m in Sources */,
 				AC4337F61A6355D600C1DD42 /* RRSendMessageViewController.m in Sources */,
 				AC04105F1AA3785000B08E76 /* MASViewConstraint.m in Sources */,
 				AC0410651AA3785000B08E76 /* View+MASAdditions.m in Sources */,
 				AC0410591AA3785000B08E76 /* MASConstraintMaker.m in Sources */,
 				AC0410551AA3785000B08E76 /* MASCompositeConstraint.m in Sources */,
+				AC6FB99E1ADCC3A600B9FFCD /* MessageTableViewCell.m in Sources */,
+				AC6FB9B91ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.m in Sources */,
+				AC6FB9C31ADCC4FC00B9FFCD /* SLKTextView.m in Sources */,
 				AC5A50691A65FAC10093E83F /* XLBarPagerTabStripViewController.m in Sources */,
 				ACC1E9961825E4CD00DCA712 /* UIColor+JSFlatButton.m in Sources */,
+				AC643D491ABA904500A0D04B /* NSArray+PureLayout.m in Sources */,
 				AC3D25651A548B3900132DA8 /* InstagramClient.m in Sources */,
 				AC0410631AA3785000B08E76 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				ACC1E9891825E45100DCA712 /* JASidePanelController.m in Sources */,
 				AC5A50731A65FAC10093E83F /* XLButtonBarView.m in Sources */,
 				AC792F761831BF7E00946DBE /* TweetDetailViewController.m in Sources */,
+				AC6FB9BF1ADCC4FC00B9FFCD /* SLKInputAccessoryView.m in Sources */,
 				AC4337F41A6355D600C1DD42 /* RRMessageModel.m in Sources */,
 				AC4AC37B1AA5894300D2FA17 /* HTKDynamicResizingTableViewCell.m in Sources */,
 				AC04105B1AA3785000B08E76 /* MASLayoutConstraint.m in Sources */,
 				AC4337F81A6355D600C1DD42 /* UICollectionViewCellPhoto.m in Sources */,
+				AC6FB9911ADCBBFD00B9FFCD /* MBProgressHUD.m in Sources */,
 				AC5A506B1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.m in Sources */,
 				ACF59A411AB1600A00A72F4C /* AMAttributedHighlightLabel.m in Sources */,
+				AC6FB9BB1ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.m in Sources */,
 				AC5A50711A65FAC10093E83F /* XLBarView.m in Sources */,
+				AC6FB99C1ADCC3A600B9FFCD /* MessageViewController.m in Sources */,
 				AC0410671AA3785000B08E76 /* StrechyParallaxScrollView.m in Sources */,
+				AC6FB9BD1ADCC4FC00B9FFCD /* UIView+SLKAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1856,7 +2062,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Floadt/Floadt-Prefix.pch";
 				INFOPLIST_FILE = "Floadt/Floadt-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
@@ -1881,7 +2087,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Floadt/Floadt-Prefix.pch";
 				INFOPLIST_FILE = "Floadt/Floadt-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",

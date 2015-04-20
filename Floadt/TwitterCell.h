@@ -33,6 +33,12 @@
  */
 @property (nonatomic, strong) AMAttributedHighlightLabel *tweetLabel;
 
+/**
+ * Picture that displays clock icon.
+ */
+@property (nonatomic, strong) UIImageView *clockIcon;
+
+
 
 - (void)setupCellWithData:(NSDictionary *)data;
 
