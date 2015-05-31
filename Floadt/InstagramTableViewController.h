@@ -8,9 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Data.h"
+#import "GUIPlayerView.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 #import "XLPagerTabStripViewController.h"
 
-@interface InstagramTableViewController : UITableViewController <XLPagerTabStripChildItem>
+@interface InstagramTableViewController : UITableViewController <XLPagerTabStripChildItem, GUIPlayerViewDelegate>
 
 @property (nonatomic, strong) NSMutableDictionary *instagramResponse;
 @property (strong, nonatomic) NSMutableArray *instaPics;

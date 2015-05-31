@@ -14,10 +14,14 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Create ClockImageView
-        self.clockIcon = [[UIImageView alloc] initWithFrame:CGRectMake(250, 8, 15, 15)];
+        self.clockIcon = [[UIImageView alloc] initWithFrame:CGRectMake(250, 12, 15, 15)];
         self.clockIcon.image = [UIImage imageNamed:@"clock.png"];
         [self addSubview:self.clockIcon];
-        
+        self.timeAgo = [[UILabel alloc] initWithFrame:CGRectMake(275, 12, 40, 15)];
+        self.timeAgo.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
+        self.timeAgo.textColor = [UIColor darkGrayColor];
+        self.timeAgo.numberOfLines = 1;
+        [self.contentView addSubview:self.timeAgo];
         [self setupView];
     }
     return self;
@@ -40,7 +44,7 @@
     // Name label
     self.nameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     self.nameLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    self.nameLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:17];
+    self.nameLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:16];
     self.nameLabel.textColor = [UIColor blackColor];
     self.nameLabel.numberOfLines = 1;
     [self.contentView addSubview:self.nameLabel];
@@ -48,8 +52,8 @@
     // Company label
     self.companyLabel = [[UILabel alloc] initWithFrame:CGRectZero];
     self.companyLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    self.companyLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:16];
-    self.companyLabel.textColor = [UIColor blackColor];
+    self.companyLabel.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
+    self.companyLabel.textColor = [UIColor darkGrayColor];
     self.companyLabel.numberOfLines = 1;
     [self.contentView addSubview:self.companyLabel];
     
@@ -60,14 +64,15 @@
     self.tweetLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.tweetLabel.numberOfLines = 0; // Must be set for multi-line label to work
     self.tweetLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    self.tweetLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:15];
+    self.tweetLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     self.tweetLabel.textColor = [UIColor darkGrayColor];
     [self.contentView addSubview:self.tweetLabel];
     
     // Constrain
     NSDictionary *viewDict = NSDictionaryOfVariableBindings(_profilePicture, _nameLabel, _companyLabel, _tweetLabel);
     // Create a dictionary with buffer values
-    NSDictionary *metricDict = @{@"sideBuffer" : @10, @"verticalBuffer" : @10, @"imageSize" : @50, @"verticalBufferImage" : @5};
+    NSDictionary *metricDict = @{@"sideBuffer" : @10, @"verticalBuffer" : @10, @"imageSize" : @35, @"verticalBufferImage" : @5, @"smallerVertBuffer" : @15};
+    
     
     // Constrain elements horizontally
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-sideBuffer-[_profilePicture(imageSize)]-sideBuffer-[_nameLabel]-sideBuffer-|" options:0 metrics:metricDict views:viewDict]];
@@ -76,9 +81,13 @@
     
     // Constrain elements vertically
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-verticalBuffer-[_profilePicture(imageSize)]" options:0 metrics:metricDict views:viewDict]];
+    
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-verticalBuffer-[_nameLabel]-verticalBuffer-[_companyLabel]" options:0 metrics:metricDict views:viewDict]];
-    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_tweetLabel]-verticalBuffer-|" options:0 metrics:metricDict views:viewDict]];
+    
+    [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_tweetLabel]" options:0 metrics:metricDict views:viewDict]];
+    
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.companyLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.profilePicture attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
+    
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.tweetLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.profilePicture attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
     
     // Set hugging/compression priorites for all labels.
@@ -107,30 +116,6 @@
     CGSize defaultSize = [[self class] defaultCellSize];
     self.tweetLabel.preferredMaxLayoutWidth = defaultSize.width - ([metricDict[@"sideBuffer"] floatValue] * 2);
 }
-
-- (void)setupCellWithData:(NSDictionary *)data {
-    // Pull out sample data
-    NSString *nameString = data[@"user"][@"name"];
-    //NSString *companyString = data[@"sampleCompany"];
-    NSString *bioString = data[@"text"];
-    
-    // Set values
-    self.nameLabel.text = nameString;
-    self.tweetLabel.text = bioString;
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSString *imageUrl = [[data objectForKey:@"user"] objectForKey:@"profile_image_url"];
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.profilePicture.image = [UIImage imageWithData:data];
-            CALayer *imageLayer = self.profilePicture.layer;
-            [imageLayer setCornerRadius:25];
-            [imageLayer setMasksToBounds:YES];
-        });
-    });
-}
-
-// AMAttributedHighlightLabelDelegate methods
 - (void)selectedMention:(NSString *)string {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Selected" message:string delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     [alert show];

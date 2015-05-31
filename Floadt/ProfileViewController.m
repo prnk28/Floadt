@@ -15,7 +15,10 @@
 @implementation ProfileViewController
 
 -(void)viewWillAppear:(BOOL)animated{
-    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.32f green:0.14f blue:0.32f alpha:1.00f]];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    //[self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:0.32f green:0.14f blue:0.32f alpha:1.00f]];
 }
 
 - (void)viewDidLoad
@@ -35,18 +38,11 @@
     UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:barButton];
     
     self.navBar.leftBarButtonItem = barButtonItem;
-    UIButton *postButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
-    [postButton setTitle:@"" forState:UIControlStateNormal];
-    [postButton setBackgroundImage:[UIImage imageNamed:@"plusButton.png"] forState:UIControlStateNormal];
-    [postButton addTarget:self action:@selector(didTapPostButton:) forControlEvents:UIControlEventTouchUpInside];
-    postButton.frame = CGRectMake(0.0f, 0.0f, 15.0f, 15.0f);
-    UIBarButtonItem *postButtonItem = [[UIBarButtonItem alloc] initWithCustomView:postButton];
-    
-    self.navBar.rightBarButtonItem = postButtonItem;
+    UIColor *deepPurpleColor = [UIColor colorWithRed:0.32f green:0.14f blue:0.32f alpha:1.00f];
     
     [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                                      [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                                      deepPurpleColor, NSForegroundColorAttributeName,
                                                                       [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
 }
 

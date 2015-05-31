@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "SettingsViewController.h"
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
 
 @implementation AppDelegate
 
@@ -17,6 +19,8 @@
     //NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     #endif
     
+    [Fabric with:@[TwitterKit]];
+
     if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
         
         // If there's one, just open the session silently, without showing the user the login UI

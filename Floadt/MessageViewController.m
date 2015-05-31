@@ -61,6 +61,7 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"%@",self.instagramData);
     
     NSMutableArray *array = [[NSMutableArray alloc] init];
     
@@ -107,184 +108,30 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
     
     [self.autoCompletionView registerClass:[MessageTableViewCell class] forCellReuseIdentifier:AutoCompletionCellIdentifier];
     [self registerPrefixesForAutoCompletion:@[@"@", @"#", @":"]];
+    
+    UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    [barButton setTitle:@"" forState:UIControlStateNormal];
+    [barButton setBackgroundImage:[UIImage imageNamed:@"backButton.png"] forState:UIControlStateNormal];
+    [barButton addTarget:self action:@selector(popBack) forControlEvents:UIControlEventTouchUpInside];
+    barButton.frame = CGRectMake(0.0f, 0.0f, 15.0f, 15.0f);
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:barButton];
+    
+    self.navigationItem.leftBarButtonItem = barButtonItem;
+    
+    self.navigationItem.title = @"Comments";
+    
+    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                      [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                                      [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
 }
-
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    
-    UIBarButtonItem *editItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icn_editing"] style:UIBarButtonItemStylePlain target:self action:@selector(editRandomMessage:)];
-    
-    UIBarButtonItem *typeItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icn_typing"] style:UIBarButtonItemStylePlain target:self action:@selector(simulateUserTyping:)];
-    UIBarButtonItem *appendItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icn_append"] style:UIBarButtonItemStylePlain target:self action:@selector(fillWithText:)];
-    
-    self.navigationItem.rightBarButtonItems = @[editItem, appendItem, typeItem];
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-
-#pragma mark - Action Methods
-
-- (void)fillWithText:(id)sender
-{
-    if (self.textView.text.length == 0)
-    {
-        int sentences = (arc4random() % 4);
-        if (sentences <= 1) sentences = 1;
-        self.textView.text = [LoremIpsum sentencesWithNumber:sentences];
-    }
-    else {
-        [self.textView slk_insertTextAtCaretRange:[NSString stringWithFormat:@" %@", [LoremIpsum word]]];
-    }
-}
-
-- (void)simulateUserTyping:(id)sender
-{
-    if (!self.isEditing && !self.isAutoCompleting) {
-        [self.typingIndicatorView insertUsername:[LoremIpsum name]];
-    }
-}
-
-- (void)editCellMessage:(UIGestureRecognizer *)gesture
-{
-    MessageTableViewCell *cell = (MessageTableViewCell *)gesture.view;
-    Message *message = self.messages[cell.indexPath.row];
-    
-    [self editText:message.text];
-    
-    [self.tableView scrollToRowAtIndexPath:cell.indexPath atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-}
-
-- (void)editRandomMessage:(id)sender
-{
-    int sentences = (arc4random() % 10);
-    if (sentences <= 1) sentences = 1;
-    
-    [self editText:[LoremIpsum sentencesWithNumber:sentences]];
-}
-
-- (void)editLastMessage:(id)sender
-{
-    if (self.textView.text.length > 0) {
-        return;
-    }
-    
-    NSInteger lastSectionIndex = [self.tableView numberOfSections]-1;
-    NSInteger lastRowIndex = [self.tableView numberOfRowsInSection:lastSectionIndex]-1;
-    
-    Message *lastMessage = [self.messages objectAtIndex:lastRowIndex];
-
-    [self editText:lastMessage.text];
-    
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:lastRowIndex inSection:lastSectionIndex] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-}
-
 
 #pragma mark - Overriden Methods
 
-- (void)didChangeKeyboardStatus:(SLKKeyboardStatus)status
-{
-    // Notifies the view controller that the keyboard changed status.
-}
-
-- (void)textWillUpdate
-{
-    // Notifies the view controller that the text will update.
-
-    [super textWillUpdate];
-}
-
-- (void)textDidUpdate:(BOOL)animated
-{
-    // Notifies the view controller that the text did update.
-
-    [super textDidUpdate:animated];
-}
-
-- (void)didPressLeftButton:(id)sender
-{
-    // Notifies the view controller when the left button's action has been triggered, manually.
-    
-    [super didPressLeftButton:sender];
-}
-
-- (void)didPressRightButton:(id)sender
-{
-    // Notifies the view controller when the right button's action has been triggered, manually or by using the keyboard return key.
-    
-    // This little trick validates any pending auto-correction or auto-spelling just after hitting the 'Send' button
-    [self.textView refreshFirstResponder];
-    
-    Message *message = [Message new];
-    message.username = [LoremIpsum name];
-    message.text = [self.textView.text copy];
-    
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    UITableViewRowAnimation rowAnimation = self.inverted ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
-    UITableViewScrollPosition scrollPosition = self.inverted ? UITableViewScrollPositionBottom : UITableViewScrollPositionTop;
-
-    [self.tableView beginUpdates];
-    [self.messages insertObject:message atIndex:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
-    [self.tableView endUpdates];
-    
-    [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:YES];
-    
-    // Fixes the cell from blinking (because of the transform, when using translucent cells)
-    // See https://github.com/slackhq/SlackTextViewController/issues/94#issuecomment-69929927
-    [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-    [super didPressRightButton:sender];
-}
-
-- (void)didPressArrowKey:(id)sender
-{
-    [super didPressArrowKey:sender];
-    
-    UIKeyCommand *keyCommand = (UIKeyCommand *)sender;
-    
-    if ([keyCommand.input isEqualToString:UIKeyInputUpArrow]) {
-        [self editLastMessage:nil];
-    }
-}
 
 - (NSString *)keyForTextCaching
 {
     return [[NSBundle mainBundle] bundleIdentifier];
-}
-
-- (void)didPasteMediaContent:(NSDictionary *)userInfo
-{
-    // Notifies the view controller when the user has pasted a media (image, video, etc) inside of the text view.
-    
-    SLKPastableMediaType mediaType = [userInfo[SLKTextViewPastedItemMediaType] integerValue];
-    NSString *contentType = userInfo[SLKTextViewPastedItemContentType];
-    NSData *contentData = userInfo[SLKTextViewPastedItemData];
-    
-    NSLog(@"%s : %@",__FUNCTION__, contentType);
-    
-    if ((mediaType & SLKPastableMediaTypePNG) || (mediaType & SLKPastableMediaTypeJPEG)) {
-        
-        Message *message = [Message new];
-        message.username = [LoremIpsum name];
-        message.text = @"Attachment";
-        message.attachment = [UIImage imageWithData:contentData scale:[UIScreen mainScreen].scale];
-        
-        NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        UITableViewRowAnimation rowAnimation = self.inverted ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
-        UITableViewScrollPosition scrollPosition = self.inverted ? UITableViewScrollPositionBottom : UITableViewScrollPositionTop;
-        
-        [self.tableView beginUpdates];
-        [self.messages insertObject:message atIndex:0];
-        [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:rowAnimation];
-        [self.tableView endUpdates];
-        
-        [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:scrollPosition animated:YES];
-    }
 }
 
 - (void)willRequestUndo
@@ -369,12 +216,10 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([tableView isEqual:self.tableView]) {
-        return self.messages.count;
-    }
-    else {
-        return self.searchResult.count;
-    }
+    NSDictionary *instaPics = self.instagramData;
+    NSString *count = instaPics[@"comments"][@"count"];
+    NSInteger myInt = [count intValue];
+    return myInt;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -391,15 +236,14 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 {
     MessageTableViewCell *cell = (MessageTableViewCell *)[self.tableView dequeueReusableCellWithIdentifier:MessengerCellIdentifier];
     
-    if (!cell.textLabel.text) {
-        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(editCellMessage:)];
-        [cell addGestureRecognizer:longPress];
-    }
+    NSDictionary *instaPics = self.instagramData;
+    NSArray *commentArray =  instaPics[@"comments"][@"data"];
+    NSString *commentText = [[commentArray objectAtIndex:0] valueForKey:@"text"];
     
     Message *message = self.messages[indexPath.row];
     
     cell.titleLabel.text = message.username;
-    cell.bodyLabel.text = message.text;
+    cell.bodyLabel.text = commentText;
     
     if (message.attachment) {
         cell.attachmentView.image = message.attachment;
@@ -537,6 +381,9 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
     }
 }
 
+-(void)popBack {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 #pragma mark - UIScrollViewDelegate Methods
 

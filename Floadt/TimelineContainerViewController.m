@@ -26,9 +26,9 @@
 }
 
 - (void)setUpUI{
-    BOOL *insta = [[NSUserDefaults standardUserDefaults] boolForKey:@"instagramActive"];
-    BOOL *twitter = [[NSUserDefaults standardUserDefaults] boolForKey:@"twitterActive"];
-    BOOL *facebook = [[NSUserDefaults standardUserDefaults] boolForKey:@"facebookActive"];
+    BOOL insta = [[NSUserDefaults standardUserDefaults] boolForKey:@"instagramActive"];
+    BOOL twitter = [[NSUserDefaults standardUserDefaults] boolForKey:@"twitterActive"];
+    BOOL facebook = [[NSUserDefaults standardUserDefaults] boolForKey:@"facebookActive"];
     Reachability* reach = [Reachability reachabilityWithHostname:@"www.google.com"];
     
     if (!insta&&!twitter&&!facebook) {

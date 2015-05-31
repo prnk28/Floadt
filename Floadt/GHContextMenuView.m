@@ -360,7 +360,7 @@ CGFloat const   GHAnimationDelay = GHAnimationDuration/5;
             
             CGFloat toleranceDistance = (self.radius - GHMainItemSize/(2*sqrt(2)) - GHMenuItemSize/(2*sqrt(2)) )/2;
             
-            CGFloat distanceFromItem = fabsf(distanceFromCenter - self.radius) - GHMenuItemSize/(2*sqrt(2)) ;
+            CGFloat distanceFromItem = fabs(distanceFromCenter - self.radius) - GHMenuItemSize/(2*sqrt(2)) ;
             
             if (fabs(distanceFromItem) < toleranceDistance ) {
                 CALayer *layer = [self.menuItems objectAtIndex:closeToIndex];

@@ -67,14 +67,25 @@
     NSString *text = [totalArray objectForKey:@"text"];
     
     if ([self Contains:@"RT" on:text]) {
-        return 204;
+        return 144;
     }
-    return 184;
+    return 124;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TwitterCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TwitterCell"];
+    
+    // Add Tap Listeners
+    UITapGestureRecognizer *nameLabelTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleCellNameTap:)];
+    [cell.nameLabel addGestureRecognizer:nameLabelTap];
+    
+    UITapGestureRecognizer *profileImageTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(handleCellProfileImageTap:)];
+    [cell.profilePicture addGestureRecognizer:profileImageTap];
     
     if (cell == nil) {
         cell = [[TwitterCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TwitterCell"];
@@ -121,13 +132,73 @@
     //
     // REGULAR CELL
     //
-    NSString *nameString = data[@"user"][@"name"];
-    //NSString *companyString = data[@"sampleCompany"];
-    NSString *bioString = data[@"text"];
     
-    // Set values
+    // NSDate
+    NSString *nameString = data[@"user"][@"name"];
+    NSString *companyString = data[@"user"][@"screen_name"];
+    NSString *bioString = data[@"text"];
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [dateFormatter setLocale:usLocale];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+    [dateFormatter setDateFormat: @"EEE MMM dd HH:mm:ss Z yyyy"];
+    
+    NSDate *date = [dateFormatter dateFromString:[data objectForKey:@"created_at"]];
+    NSDate *currentDateNTime        = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    NSDateComponents *twitcomponents = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:date];
+    NSInteger twithour = [twitcomponents hour];
+    NSInteger twitminute = [twitcomponents minute];
+    NSInteger twitsecond = [twitcomponents second];
+    NSDateComponents *realcomponents = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:currentDateNTime];
+    NSInteger realhour = [realcomponents hour];
+    NSInteger realminute = [realcomponents minute];
+    NSInteger realsecond = [realcomponents second];
+    
+    NSInteger hour = realhour - twithour;
+    NSInteger minute = realminute - twitminute;
+    NSInteger second = realsecond - twitsecond;
+
+    NSLog(@"Formatted hour: %ld, Formatted minute: %ld, Formatted second: %ld",(long)hour, (long)minute, (long)second);
+    
+    // Set time
+    //if ((long)second < 0) {
+        int adjustedSeconds = ((int)minute * 60) - abs((int)second);
+        int adjustedMinutes = adjustedSeconds / 60;
+
+    if (hour==1 > minute > 0) {
+        int negmin = ((int)hour * 60) - abs((int)minute);
+        int posmin = abs(negmin);
+        NSString *strInt = [NSString stringWithFormat:@"%dm",posmin];
+        cell.timeAgo.text = strInt;
+    }else if (hour>0){
+        NSString *strInt = [NSString stringWithFormat:@"%ldh",(long)hour];
+        cell.timeAgo.text = strInt;
+    }else if (hour==1){
+            NSString *strInt = [NSString stringWithFormat:@"%ldh",(long)hour];
+            cell.timeAgo.text = strInt;
+    }else if(minute == 1 > second){
+        NSString *strInt = [NSString stringWithFormat:@"%lds",(long)second];
+        cell.timeAgo.text = strInt;
+    }else{
+        NSString *strFromInt = [NSString stringWithFormat:@"%dm",adjustedMinutes];
+        cell.timeAgo.text = strFromInt;
+    }
+    /*  } else if((long)minute<0) {
+        cell.timeAgo.text = [NSString stringWithFormat:@"%lds",(long)second];;
+    } else if ((long)hour>0){
+        cell.timeAgo.text = [NSString stringWithFormat:@"%ldh",(long)hour];
+    } else {
+    }*/
+    
+    // Set Values
     cell.nameLabel.text = nameString;
+    cell.nameLabel.userInteractionEnabled = YES;
+    cell.profilePicture.userInteractionEnabled = YES;
     cell.tweetLabel.text = bioString;
+    cell.companyLabel.text = [NSString stringWithFormat:@"@%@",companyString];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *imageUrl = [[data objectForKey:@"user"] objectForKey:@"profile_image_url"];
@@ -135,7 +206,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             cell.profilePicture.image = [UIImage imageWithData:data];
             CALayer *imageLayer = cell.profilePicture.layer;
-            [imageLayer setCornerRadius:25];
+            [imageLayer setCornerRadius:15];
             [imageLayer setMasksToBounds:YES];
         });
     });
@@ -157,6 +228,7 @@
     [self.twitterClient setAccessToken:twitterToken];
     [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"%@",responseObject);
         NSMutableArray *responseArray = (NSMutableArray *)responseObject;
         [responseArray enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
             tweets = [tweets copy];
@@ -227,6 +299,7 @@
                           options:NSCaseInsensitiveSearch].location != NSNotFound;
 }
 
+// Gesture recognizers
 - (void) setupNavbarGestureRecognizer {
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navBarTap)];
     gestureRecognizer.numberOfTapsRequired = 1;
@@ -238,20 +311,30 @@
     [navBarTapView addGestureRecognizer:gestureRecognizer];
 }
 
+- (void)handleCellNameTap:(UITapGestureRecognizer *)recognizer {
+    NSLog(@"Cell Name Tapped");
+    ForeignTwitterController *ftc = [[ForeignTwitterController alloc] init];
+
+    [self.navigationController pushViewController:ftc animated:YES];
+}
+
+- (void)handleCellProfileImageTap:(UITapGestureRecognizer *)recognizer {
+    NSLog(@"Cell ProPic Tapped");
+    ForeignTwitterController *ftc = [[ForeignTwitterController alloc] init];
+    [self.navigationController pushViewController:ftc animated:YES];
+}
+
 - (void)navBarTap {
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
 
 - (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSInteger row = [[self tableView].indexPathForSelectedRow row];
+    //NSInteger row = [[self tableView].indexPathForSelectedRow row];
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
-    NSDictionary *tweet = [self.tweets objectAtIndex:row];
-    UIStoryboard*  sb = [UIStoryboard storyboardWithName:@"Main"
-                                                  bundle:nil];
-    TweetDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:@"TweetDetail"];
-    vc.detailItem = tweet;
-    [self.navigationController pushViewController:vc animated:YES];
+    //TweetDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:@"TweetDetail"];
+    //vc.detailItem = tweet;
+   // [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -10,4 +10,7 @@
 
 @interface MessageViewController : SLKTextViewController
 
+@property (strong, nonatomic) id instagramData;
+
+
 @end

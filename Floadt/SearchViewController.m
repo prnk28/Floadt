@@ -41,11 +41,12 @@
     // BOOL *insta = [[NSUserDefaults standardUserDefaults] boolForKey:@"instagramActive"];
     // BOOL *twitter = [[NSUserDefaults standardUserDefaults] boolForKey:@"twitterActive"];
     // BOOL *facebook = [[NSUserDefaults standardUserDefaults] boolForKey:@"facebookActive"];
-    InstagramTableViewController *child_2 = [[InstagramTableViewController alloc] init];
-    TwitterTableViewController *child_3 = [[TwitterTableViewController alloc] init];
+    //FacebookSearchViewController *child_2 = [[FacebookSearchViewController alloc] init];
+    TwitterSearchNavigationViewController *twitterNav = [[TwitterSearchNavigationViewController alloc] init];
+    TwitterSearchViewController *child_3 = [[TwitterSearchViewController alloc] init];
       UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Search"];
     
-    NSArray * childViewControllers = [NSMutableArray arrayWithObjects:viewController, child_2, child_3, nil];
+    NSArray * childViewControllers = [NSMutableArray arrayWithObjects:viewController, twitterNav, child_3, nil];
     
     return childViewControllers;
 }

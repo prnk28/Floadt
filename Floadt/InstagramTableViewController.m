@@ -107,7 +107,7 @@
         cell.profilePic.image = image;
         //Make the Profile Pic ImageView Circular
         CALayer *imageLayer = cell.profilePic.layer;
-        [imageLayer setCornerRadius:25];
+        [imageLayer setCornerRadius:18];
         [imageLayer setMasksToBounds:YES];
     }];
     
@@ -118,22 +118,34 @@
       // NSLog(@"Contains Location");
     //}
     
+    [cell.heartButton addTarget:self action:@selector(likeButtonTap:) forControlEvents:UIControlEventTouchUpInside];
     [cell.commentButton addTarget:self action:@selector(commentButtonTap:) forControlEvents:UIControlEventTouchUpInside];
-    [cell.likeButton addTarget:self action:@selector(likeButtonTap:) forControlEvents:UIControlEventTouchUpInside];
     
     NSDictionary *instapic = [self.instaPics objectAtIndex:indexPath.row];
     
     if (entry[@"videos"] != nil) {
-        NSLog(@"there are videos");
-    }else{
-        NSLog(@"there are no videos");
+        NSLog(@"There is a Video: %@", entry[@"videos"]);
+        NSString *urlString = entry[@"videos"][@"standard_resolution"][@"url"];
+        NSLog(urlString);
+        NSURL *url = [NSURL URLWithString:urlString];
+        MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL: url];
+        [player prepareToPlay];
+        [player.view setFrame: CGRectMake(10, 65, 299, 299)];
+        [cell.contentView addSubview: player.view];
+        player.shouldAutoplay = YES;
+        [player play];
     }
     
     return cell;
 }
 
 - (void)commentButtonTap:(id)sender {
-        NSLog(@"Successfully commented Picture");
+    NSLog(@"Comment Button Tapped");
+    MessageViewController *message = [[MessageViewController alloc] init];
+    NSInteger row = [[self tableView].indexPathForSelectedRow row];
+    NSDictionary *pic = [instaPics objectAtIndex:row];
+    message.instagramData = pic;
+    [self.navigationController pushViewController:message animated:YES];
 }
 
 - (void)likeButtonTap:(id)sender {

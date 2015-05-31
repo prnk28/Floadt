@@ -112,7 +112,7 @@
 
 -(void)moveToViewControllerAtIndex:(NSInteger)index withDirection:(XLPagerTabStripDirection)direction animated:(BOOL)animated
 {
-    if (self.skipIntermediateViewControllers && fabs(self.currentIndex - index) > 1){
+    if (self.skipIntermediateViewControllers && self.currentIndex - index > 1){
         NSArray * originalPagerTabStripChildViewControllers = self.pagerTabStripChildViewControllers;
         NSMutableArray * tempChildViewControllers = [NSMutableArray arrayWithArray:originalPagerTabStripChildViewControllers];
         UIViewController * currentChildVC = [originalPagerTabStripChildViewControllers objectAtIndex:self.currentIndex];

@@ -15,10 +15,11 @@
 @property (nonatomic, retain) NSString *twitterProfilePic;
 @property (nonatomic, retain) NSString *twitterFollowerCount;
 @property (nonatomic, retain) NSString *twitterFollowingCount;
+@property (nonatomic, retain) NSString *userID;
 
 + (instancetype)sharedClient;
 
-- (void)setTwitterInfoWithUsername:(NSString *)username withFullName:(NSString *)fullName WithProfilePic:(NSString *)profilePic withFollowerCount:(NSString *)followerCount withFollowingCount:(NSString *)followingCount;
+- (void)setTwitterInfoWithUsername:(NSString *)username withFullName:(NSString *)fullName WithProfilePic:(NSString *)profilePic withFollowerCount:(NSString *)followerCount withFollowingCount:(NSString *)followingCount withUserID:(NSString *)userid;
 
 
 @end

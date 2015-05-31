@@ -16,6 +16,7 @@
 @synthesize twitterFullName;
 @synthesize twitterProfilePic;
 @synthesize twitterUsername;
+@synthesize userID;
 
 
 + (instancetype)sharedClient {
@@ -27,12 +28,13 @@
     return _sharedClient;
 }
 
-- (void)setTwitterInfoWithUsername:(NSString *)username withFullName:(NSString *)fullName WithProfilePic:(NSString *)profilePic withFollowerCount:(NSString *)followerCount withFollowingCount:(NSString *)followingCount{
+- (void)setTwitterInfoWithUsername:(NSString *)username withFullName:(NSString *)fullName WithProfilePic:(NSString *)profilePic withFollowerCount:(NSString *)followerCount withFollowingCount:(NSString *)followingCount withUserID:(NSString *)userid{
     twitterUsername = username;
     twitterProfilePic = profilePic;
     twitterFullName = fullName;
     twitterFollowingCount = followingCount;
     twitterFollowerCount = followerCount;
+    userID = userid;
 }
 
 @end

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Data.h"
 
-@interface TwitterSearchViewController : UIViewController
+@interface TwitterSearchViewController : TWTRTimelineViewController
 
 @end

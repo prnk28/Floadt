@@ -38,9 +38,10 @@
  */
 @property (nonatomic, strong) UIImageView *clockIcon;
 
-
-
-- (void)setupCellWithData:(NSDictionary *)data;
+/**
+ * Picture that displays clock icon.
+ */
+@property (nonatomic, strong) UILabel *timeAgo;
 
 + (CGSize)defaultCellSize;
 

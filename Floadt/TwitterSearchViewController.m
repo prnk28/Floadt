@@ -14,6 +14,12 @@
 
 @implementation TwitterSearchViewController
 
+- (instancetype)init {
+    TWTRAPIClient *APIClient = [[Twitter sharedInstance] APIClient];
+    TWTRSearchTimelineDataSource *searchTimelineDataSource = [[TWTRSearchTimelineDataSource alloc] initWithSearchQuery:@"zaara" APIClient:APIClient];
+    return [super initWithDataSource:searchTimelineDataSource];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

@@ -60,7 +60,7 @@
     [cell.usernameLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:11.0]];
     [cell.usernameLabel setText:subtitle];
     
-    [cell.imageView sd_setImageWithURL:totalArray[@"profile_picture"] placeholderImage:nil options:indexPath.row == 0 ? SDWebImageRefreshCached : 0];
+    [cell.proImageView sd_setImageWithURL:totalArray[@"profile_picture"] placeholderImage:nil options:indexPath.row == 0 ? SDWebImageRefreshCached : 0];
 }
 
 - (void)didTapPostButton:(id)sender
