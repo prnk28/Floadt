@@ -148,6 +148,7 @@
     NSDate *date = [dateFormatter dateFromString:[data objectForKey:@"created_at"]];
     NSDate *currentDateNTime        = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
     NSDateComponents *twitcomponents = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:date];
     NSInteger twithour = [twitcomponents hour];
     NSInteger twitminute = [twitcomponents minute];
@@ -163,10 +164,8 @@
 
     NSLog(@"Formatted hour: %ld, Formatted minute: %ld, Formatted second: %ld",(long)hour, (long)minute, (long)second);
     
-    // Set time
-    //if ((long)second < 0) {
-        int adjustedSeconds = ((int)minute * 60) - abs((int)second);
-        int adjustedMinutes = adjustedSeconds / 60;
+    int adjustedSeconds = ((int)minute * 60) - abs((int)second);
+    int adjustedMinutes = adjustedSeconds / 60;
 
     if (hour==1 > minute > 0) {
         int negmin = ((int)hour * 60) - abs((int)minute);
@@ -186,12 +185,6 @@
         NSString *strFromInt = [NSString stringWithFormat:@"%dm",adjustedMinutes];
         cell.timeAgo.text = strFromInt;
     }
-    /*  } else if((long)minute<0) {
-        cell.timeAgo.text = [NSString stringWithFormat:@"%lds",(long)second];;
-    } else if ((long)hour>0){
-        cell.timeAgo.text = [NSString stringWithFormat:@"%ldh",(long)hour];
-    } else {
-    }*/
     
     // Set Values
     cell.nameLabel.text = nameString;
@@ -219,7 +212,7 @@
     self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"] key:@"tA5TT8uEtg88FwAHnVpBcbUoq" secret:@"L5whWoi91HmzjrE5bNPNUgoMXWnImvpnkIPHZWQ4VmymaoXyYV"];
     
     NSDictionary *parameters = @{
-                                 @"count" :@"50",
+                                 @"count" :@"40",
                                  @"contributor_details" :@"true",
                                  @"exclude_replies" :@"true"
                                  };
@@ -244,18 +237,19 @@
     self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"] key:@"tA5TT8uEtg88FwAHnVpBcbUoq" secret:@"L5whWoi91HmzjrE5bNPNUgoMXWnImvpnkIPHZWQ4VmymaoXyYV"];
     
     NSDictionary *parameters = @{
-                                 @"max_id" :objectID
+                                 @"max_id" :objectID,
+                                 @"count" :@"20"
                                  };
     
     AFOAuth1Token *twitterToken = [AFOAuth1Token retrieveCredentialWithIdentifier:@"TwitterToken"];
     [self.twitterClient setAccessToken:twitterToken];
     [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
     [self.twitterClient getPath:@"statuses/home_timeline.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        // NSMutableArray *responseArray = (NSMutableArray *)responseObject;
-        // NSLog(@"Response: %@", responseObject);
-        // tweets = [tweets copy];
-        // [tweets addObjectsFromArray:responseArray];
-        // [self.tableView reloadData];
+         NSMutableArray *responseArray = [responseObject mutableCopy];
+         NSLog(@"Response: %@", responseObject);
+         tweets = [tweets mutableCopy];
+         [tweets addObjectsFromArray:responseArray];
+         [self.tableView reloadData];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

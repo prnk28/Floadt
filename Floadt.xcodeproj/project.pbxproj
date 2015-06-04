@@ -68,6 +68,8 @@
 		AC0BF98418402EC900177106 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BF96D18402EC900177106 /* twitter@2x.png */; };
 		AC0BF98518402EC900177106 /* twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BF96D18402EC900177106 /* twitter@2x.png */; };
 		AC3246E019F9CDA000397C1A /* TwitterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3246DF19F9CDA000397C1A /* TwitterCell.m */; };
+		AC36186E1B1F4BA000206AB5 /* STTweetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC36186D1B1F4BA000206AB5 /* STTweetLabel.m */; };
+		AC36186F1B1F4BA000206AB5 /* STTweetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC36186D1B1F4BA000206AB5 /* STTweetLabel.m */; };
 		AC3C25771A9197380010A128 /* SCFacebook.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3C25761A9197380010A128 /* SCFacebook.m */; };
 		AC3D25641A548B3900132DA8 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D25611A548B3900132DA8 /* InstagramClient.m */; };
 		AC3D25651A548B3900132DA8 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D25611A548B3900132DA8 /* InstagramClient.m */; };
@@ -387,8 +389,6 @@
 		ACF0A56D1B0038C60087F47E /* POPVector.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACF0A5421B0038C60087F47E /* POPVector.mm */; };
 		ACF0A56E1B0038C60087F47E /* TransformationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACF0A5451B0038C60087F47E /* TransformationMatrix.cpp */; };
 		ACF0A56F1B0038C60087F47E /* TransformationMatrix.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACF0A5451B0038C60087F47E /* TransformationMatrix.cpp */; };
-		ACF59A401AB1600A00A72F4C /* AMAttributedHighlightLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF59A3F1AB1600A00A72F4C /* AMAttributedHighlightLabel.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		ACF59A411AB1600A00A72F4C /* AMAttributedHighlightLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = ACF59A3F1AB1600A00A72F4C /* AMAttributedHighlightLabel.m */; };
 		ACFF6FE51A84940300B8423F /* TwitterSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF6FE41A84940300B8423F /* TwitterSearchViewController.m */; };
 		ACFF6FE81A84941B00B8423F /* FacebookSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF6FE71A84941B00B8423F /* FacebookSearchViewController.m */; };
 /* End PBXBuildFile section */
@@ -460,6 +460,8 @@
 		AC0C4C151A50F72D0051547A /* DIMIS___.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIMIS___.TTF"; sourceTree = "<group>"; };
 		AC3246DE19F9CDA000397C1A /* TwitterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCell.h; sourceTree = "<group>"; };
 		AC3246DF19F9CDA000397C1A /* TwitterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterCell.m; sourceTree = "<group>"; };
+		AC36186C1B1F4BA000206AB5 /* STTweetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTweetLabel.h; sourceTree = "<group>"; };
+		AC36186D1B1F4BA000206AB5 /* STTweetLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTweetLabel.m; sourceTree = "<group>"; };
 		AC3C25751A9197380010A128 /* SCFacebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCFacebook.h; sourceTree = "<group>"; };
 		AC3C25761A9197380010A128 /* SCFacebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCFacebook.m; sourceTree = "<group>"; };
 		AC3D25601A548B3900132DA8 /* InstagramClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramClient.h; sourceTree = "<group>"; };
@@ -810,8 +812,6 @@
 		ACF0A5451B0038C60087F47E /* TransformationMatrix.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TransformationMatrix.cpp; sourceTree = "<group>"; };
 		ACF0A5461B0038C60087F47E /* TransformationMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransformationMatrix.h; sourceTree = "<group>"; };
 		ACF0A5471B0038C60087F47E /* UnitBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitBezier.h; sourceTree = "<group>"; };
-		ACF59A3E1AB1600A00A72F4C /* AMAttributedHighlightLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMAttributedHighlightLabel.h; sourceTree = "<group>"; };
-		ACF59A3F1AB1600A00A72F4C /* AMAttributedHighlightLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMAttributedHighlightLabel.m; sourceTree = "<group>"; };
 		ACFF6FE31A84940300B8423F /* TwitterSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSearchViewController.h; sourceTree = "<group>"; };
 		ACFF6FE41A84940300B8423F /* TwitterSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterSearchViewController.m; sourceTree = "<group>"; };
 		ACFF6FE61A84941B00B8423F /* FacebookSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSearchViewController.h; sourceTree = "<group>"; };
@@ -941,6 +941,16 @@
 				AC3246DF19F9CDA000397C1A /* TwitterCell.m */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		AC36186B1B1F4BA000206AB5 /* STTweetLabel */ = {
+			isa = PBXGroup;
+			children = (
+				AC36186C1B1F4BA000206AB5 /* STTweetLabel.h */,
+				AC36186D1B1F4BA000206AB5 /* STTweetLabel.m */,
+			);
+			name = STTweetLabel;
+			path = SLMessenger/STTweetLabel;
 			sourceTree = "<group>";
 		};
 		AC3C25741A9197380010A128 /* SCFacebook */ = {
@@ -1521,7 +1531,6 @@
 			isa = PBXGroup;
 			children = (
 				ACEBB1AB182C852500A4CE2F /* AFNetworking */,
-				ACF59A3D1AB1600A00A72F4C /* AMAttributedHighlightLabel */,
 				ACD930A61A49E9EA00C13C45 /* GHContextView */,
 				AC619F551AEDE2A900995B2D /* GUIPlayerView */,
 				AC4AC36F1AA5894300D2FA17 /* HTKDynamicResizingCell */,
@@ -1543,6 +1552,7 @@
 				AC3C25741A9197380010A128 /* SCFacebook */,
 				ACA30F3219F99FB80018BDB7 /* SDWebImage */,
 				AC6FB9A41ADCC4FC00B9FFCD /* SLMessenger */,
+				AC36186B1B1F4BA000206AB5 /* STTweetLabel */,
 				AC5A50571A65FAC10093E83F /* XL */,
 			);
 			name = Components;
@@ -1724,15 +1734,6 @@
 				ACF0A5471B0038C60087F47E /* UnitBezier.h */,
 			);
 			path = WebCore;
-			sourceTree = "<group>";
-		};
-		ACF59A3D1AB1600A00A72F4C /* AMAttributedHighlightLabel */ = {
-			isa = PBXGroup;
-			children = (
-				ACF59A3E1AB1600A00A72F4C /* AMAttributedHighlightLabel.h */,
-				ACF59A3F1AB1600A00A72F4C /* AMAttributedHighlightLabel.m */,
-			);
-			path = AMAttributedHighlightLabel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2035,6 +2036,7 @@
 				ACF0A5521B0038C60087F47E /* POPAnimationExtras.mm in Sources */,
 				AC6FB9C41ADCC4FC00B9FFCD /* SLKTextViewController.m in Sources */,
 				AC5A506A1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.m in Sources */,
+				AC36186E1B1F4BA000206AB5 /* STTweetLabel.m in Sources */,
 				ACA30F5D19F99FB80018BDB7 /* UIButton+WebCache.m in Sources */,
 				AC4337F31A6355D600C1DD42 /* RRMessageModel.m in Sources */,
 				ACF0A55E1B0038C60087F47E /* POPCustomAnimation.mm in Sources */,
@@ -2049,7 +2051,6 @@
 				AC5A50721A65FAC10093E83F /* XLButtonBarView.m in Sources */,
 				AC3C25771A9197380010A128 /* SCFacebook.m in Sources */,
 				AC04105A1AA3785000B08E76 /* MASLayoutConstraint.m in Sources */,
-				ACF59A401AB1600A00A72F4C /* AMAttributedHighlightLabel.m in Sources */,
 				ACF0A5601B0038C60087F47E /* POPDecayAnimation.mm in Sources */,
 				AC6FB9B81ADCC4FC00B9FFCD /* SLKTextView+SLKAdditions.m in Sources */,
 				ACA30F5619F99FB80018BDB7 /* SDImageCache.m in Sources */,
@@ -2204,7 +2205,7 @@
 				AC4337F81A6355D600C1DD42 /* UICollectionViewCellPhoto.m in Sources */,
 				AC6FB9911ADCBBFD00B9FFCD /* MBProgressHUD.m in Sources */,
 				AC5A506B1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.m in Sources */,
-				ACF59A411AB1600A00A72F4C /* AMAttributedHighlightLabel.m in Sources */,
+				AC36186F1B1F4BA000206AB5 /* STTweetLabel.m in Sources */,
 				AC6FB9BB1ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.m in Sources */,
 				AC5A50711A65FAC10093E83F /* XLBarView.m in Sources */,
 				AC6FB99C1ADCC3A600B9FFCD /* MessageViewController.m in Sources */,

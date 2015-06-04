@@ -96,6 +96,46 @@
         [cell.commentText setText:caption];
     }
     
+    // Set Timestamp
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:[entry[@"created_time"] doubleValue]];
+    NSDate *currentDateNTime = [NSDate date];
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+    NSDateComponents *instacomponents = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:date];
+    NSInteger instahour = [instacomponents hour];
+    NSInteger instaminute = [instacomponents minute];
+    NSInteger instasecond = [instacomponents second];
+    NSDateComponents *realcomponents = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:currentDateNTime];
+    NSInteger realhour = [realcomponents hour];
+    NSInteger realminute = [realcomponents minute];
+    NSInteger realsecond = [realcomponents second];
+    
+    NSInteger hour = realhour - instahour;
+    NSInteger minute = realminute - instaminute;
+    NSInteger second = realsecond - instasecond;
+    
+    int adjustedSeconds = ((int)minute * 60) - abs((int)second);
+    int adjustedMinutes = adjustedSeconds / 60;
+    
+    if (hour==1 > minute > 0) {
+        int negmin = ((int)hour * 60) - abs((int)minute);
+        int posmin = abs(negmin);
+        NSString *strInt = [NSString stringWithFormat:@"%dm",posmin];
+        cell.timeAgo.text = strInt;
+    }else if (hour>0){
+        NSString *strInt = [NSString stringWithFormat:@"%ldh",(long)hour];
+        cell.timeAgo.text = strInt;
+    }else if (hour==1){
+        NSString *strInt = [NSString stringWithFormat:@"%ldh",(long)hour];
+        cell.timeAgo.text = strInt;
+    }else if(minute == 1 > second){
+        NSString *strInt = [NSString stringWithFormat:@"%lds",(long)second];
+        cell.timeAgo.text = strInt;
+    }else{
+        NSString *strFromInt = [NSString stringWithFormat:@"%dm",adjustedMinutes];
+        cell.timeAgo.text = strFromInt;
+    }
+
     // Set the number of likes
     NSString *likesCount = entry[@"likes"][@"count"];
     NSString *likes = [NSString stringWithFormat: @"%@", likesCount];

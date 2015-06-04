@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Data.h"
 #import "HTKDynamicResizingTableViewCell.h"
 #import "HTKDynamicResizingCellProtocol.h"
-#import "AMAttributedHighlightLabel.h"
 
-@interface TwitterCell : HTKDynamicResizingTableViewCell <AMAttributedHighlightLabelDelegate>
+@interface TwitterCell : HTKDynamicResizingTableViewCell
 
 /**
  * ImageView that shows sample picture
@@ -31,7 +31,7 @@
 /**
  * Label that displays sample "bio".
  */
-@property (nonatomic, strong) AMAttributedHighlightLabel *tweetLabel;
+@property (nonatomic, strong) STTweetLabel *tweetLabel;
 
 /**
  * Picture that displays clock icon.

@@ -58,14 +58,20 @@
     [self.contentView addSubview:self.companyLabel];
     
     // Tweet label
-    self.tweetLabel = [[AMAttributedHighlightLabel alloc] initWithFrame:CGRectZero];
-    self.tweetLabel.delegate = self;
+    self.tweetLabel = [[STTweetLabel alloc] initWithFrame:CGRectZero];
     self.tweetLabel.userInteractionEnabled = YES;
     self.tweetLabel.translatesAutoresizingMaskIntoConstraints = NO;
     self.tweetLabel.numberOfLines = 0; // Must be set for multi-line label to work
     self.tweetLabel.lineBreakMode = NSLineBreakByWordWrapping;
     self.tweetLabel.font = [UIFont fontWithName:@"HelveticaNeue" size:14];
     self.tweetLabel.textColor = [UIColor darkGrayColor];
+    
+    self.tweetLabel.detectionBlock = ^(STTweetHotWord hotWord, NSString *string, NSString *protocol, NSRange range) {
+        
+        NSArray *hotWords = @[@"Handle", @"Hashtag", @"Link"];
+        _tweetLabel.text = [NSString stringWithFormat:@"%@ [%d,%d]: %@%@", hotWords[hotWord], (int)range.location, (int)range.length, string, (protocol != nil) ? [NSString stringWithFormat:@" *%@*", protocol] : @""];
+    };
+
     [self.contentView addSubview:self.tweetLabel];
     
     // Constrain
@@ -86,9 +92,9 @@
     
     [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_tweetLabel]" options:0 metrics:metricDict views:viewDict]];
     
-    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.companyLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.profilePicture attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.companyLabel attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.profilePicture attribute:NSLayoutAttributeBottom multiplier:1 constant:5]];
     
-    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.tweetLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.profilePicture attribute:NSLayoutAttributeBottom multiplier:1 constant:0]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:self.tweetLabel attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.profilePicture attribute:NSLayoutAttributeBottom multiplier:1 constant:5]];
     
     // Set hugging/compression priorites for all labels.
     // This is one of the most important aspects of having the cell size
