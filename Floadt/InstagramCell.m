@@ -30,6 +30,8 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         // Create ClockImageView
+        self.player.view.hidden = YES;
+        [self.player stop];
         self.clockIcon = [[UIImageView alloc] initWithFrame:CGRectMake(250, 12, 15, 15)];
         self.clockIcon.image = [UIImage imageNamed:@"clock.png"];
         [self addSubview:self.clockIcon];
@@ -92,8 +94,9 @@
                 [self.contentView addSubview:self.locationIcon];
         
         // Heart Button
-        self.heartButton = [[UIButton alloc] initWithFrame:CGRectMake(40, 465, 25, 25)];
+        self.heartButton = [[InstagramLikeButton alloc] initWithFrame:CGRectMake(40, 465, 25, 25)];
         [self.heartButton setBackgroundImage:[UIImage imageNamed:@"heart.png"] forState:UIControlStateNormal];
+        [self.heartButton setBackgroundImage:[UIImage imageNamed:@"heartPressed.png"] forState:UIControlStateSelected];
         [self.heartButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
         [self.contentView addSubview:self.heartButton];
         
@@ -104,6 +107,22 @@
         [self.contentView addSubview:self.commentButton];
     }
     return self;
+}
+
+- (void)initiateVideoWithURL:(NSURL *)url {
+    self.player.view.hidden = NO;
+    self.player = [[MPMoviePlayerController alloc] initWithContentURL: url];
+    [self.player prepareToPlay];
+    self.player.controlStyle = MPMovieControlStyleEmbedded;
+    self.player.scalingMode = MPMovieScalingModeAspectFit;
+    [self.player.view setFrame: CGRectMake(10, 45, 299, 299)];
+    self.player.shouldAutoplay = YES;
+    [self.contentView addSubview: self.player.view];
+    [self.player play];
+}
+
+- (void)increaseLikeCount:(InstagramLikeButton *)sender {
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

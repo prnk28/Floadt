@@ -17,6 +17,7 @@
 @synthesize instaPics;
 @synthesize instagramResponse;
 
+// On Page Load initialize Methods
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavbarGestureRecognizer];
@@ -36,21 +37,21 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
+// Number of Sections
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    // Return the number of sections.
     return 1;
 }
 
+// Number of Rows
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    // Return the number of rows in the section.
     return instaPics.count;
 }
 
+// Default Cell Size
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
         return 496;
@@ -58,16 +59,19 @@
 
 #pragma mark - XLPagerTabStripViewControllerDelegate
 
+// Title for View
 -(NSString *)titleForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController
 {
     return @"Instagram";
 }
 
+// Default color for Page Strip
 -(UIColor *)colorForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController
 {
     return [UIColor whiteColor];
 }
 
+// Setup Table View Cell
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     InstagramCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"InstaCell"];
     cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
@@ -151,14 +155,11 @@
         [imageLayer setMasksToBounds:YES];
     }];
     
-    //NSString *latitude = entry[@"location"][@"latitude"];
-    //NSString *longitude = entry[@"location"][@"longitude"];
-    
-    //if ([[entry objectForKey:@"location"] objectForKey:@"latitude"] == NSNotFound) {
-      // NSLog(@"Contains Location");
-    //}
-    
+    // Button's
     [cell.heartButton addTarget:self action:@selector(likeButtonTap:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.heartButton setObjectID:entry[@"id"]];
+    [cell.heartButton setLikesCount:entry[@"likes"][@"count"]];
+    
     [cell.commentButton addTarget:self action:@selector(commentButtonTap:) forControlEvents:UIControlEventTouchUpInside];
     
     NSDictionary *instapic = [self.instaPics objectAtIndex:indexPath.row];
@@ -168,30 +169,50 @@
         NSString *urlString = entry[@"videos"][@"standard_resolution"][@"url"];
         NSLog(urlString);
         NSURL *url = [NSURL URLWithString:urlString];
-        MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL: url];
-        [player prepareToPlay];
-        [player.view setFrame: CGRectMake(10, 65, 299, 299)];
-        [cell.contentView addSubview: player.view];
-        player.shouldAutoplay = YES;
-        [player play];
+        [cell initiateVideoWithURL:url];
+    }else{
+        [cell.player stop];
+        cell.player.view.hidden = YES;
     }
     
     return cell;
 }
 
-- (void)commentButtonTap:(id)sender {
+// On comment Button Tap
+- (void)commentButtonTap:(UIButton *)sender {
     NSLog(@"Comment Button Tapped");
     MessageViewController *message = [[MessageViewController alloc] init];
-    NSInteger row = [[self tableView].indexPathForSelectedRow row];
+       NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
+    NSInteger row = i.row;
     NSDictionary *pic = [instaPics objectAtIndex:row];
     message.instagramData = pic;
     [self.navigationController pushViewController:message animated:YES];
 }
 
-- (void)likeButtonTap:(id)sender {
+// On like button tap
+- (void)likeButtonTap:(InstagramLikeButton *)sender {
+    [sender setSelected:!sender.selected];
+    // Set objectID
+    NSString *objectID = sender.objectID;
+    int *likesCount = sender.likesCount;
+    likesCount = likesCount + 1;
+    NSString *likesString = [NSString stringWithFormat:@"%d",likesCount];
+    // Get Cell
+    NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
+    InstagramCell *cell = (InstagramCell*)[self.tableView cellForRowAtIndexPath:i];
+    cell.likeLabel = likesString;
+
+    NSString *path = [NSString stringWithFormat:@"media/%@/likes", objectID];
+    [[InstagramClient sharedClient] postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Successfully Liked Picture");
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
+    [sender increaseLikeCount:sender];
     NSLog(@"Successfully Liked Picture");
 }
 
+// Gesture Recognizer for Floadt Tap
 - (void)setupNavbarGestureRecognizer {
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navBarTap)];
     gestureRecognizer.numberOfTapsRequired = 1;
@@ -203,10 +224,12 @@
     [navBarTapView addGestureRecognizer:gestureRecognizer];
 }
 
+// When user touches Floadt Text
 - (void)navBarTap {
     [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
 }
 
+// Fetch initial Posts
 - (void)fetchInstagramPics {
     instaPics = [[NSMutableArray alloc] init];
     NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
@@ -229,15 +252,7 @@
     });
 }
 
-- (void)likeInstagramPictureWithID:(NSString *)idcode {
-    NSString *path = [NSString stringWithFormat:@"media/%@/likes", idcode];
-    [[InstagramClient sharedClient] postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        NSLog(@"Successfully Liked Picture");
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Failure: %@", error);
-    }];
-}
-
+// Get Location of Post
 - (void)getLocationWithLatitude:(NSString *)lat andLongitude:(NSString *)lon {
     NSURL *url = [NSURL URLWithString:@"https://maps.googleapis.com/maps/api/geocode/json"];
     AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:url];
@@ -254,6 +269,7 @@
     }];
 }
 
+// Fetch Next Page
 - (void)fetchNextInstagramPage {
     NSDictionary *page = instagramResponse[@"pagination"];
     NSString *nextPage = page[@"next_url"];
@@ -270,6 +286,7 @@
     }];
 }
 
+// Bottome of UITableView
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     if (scrollView.contentOffset.y == roundf(scrollView.contentSize.height-scrollView.frame.size.height)) {
@@ -277,9 +294,21 @@
     }
 }
 
+// Refresh Feed
 - (void)refresh:(UIRefreshControl *)refreshControl {
     [self fetchInstagramPics];
     [refreshControl endRefreshing];
 }
 
+// Get Active Cell
+- (NSIndexPath *)indexPathForCellContainingView:(UIView *)view {
+    while (view != nil) {
+        if ([view isKindOfClass:[InstagramCell class]]) {
+            return [self.tableView indexPathForCell:(InstagramCell *)view];
+        } else {
+            view = [view superview];
+        }
+    }
+    return nil;
+}
 @end

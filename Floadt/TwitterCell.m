@@ -112,6 +112,22 @@
     [self.tweetLabel
      setContentCompressionResistancePriority:UILayoutPriorityDefaultLow forAxis:UILayoutConstraintAxisHorizontal];
     
+    self.tweetLabel.detectionBlock = ^(STTweetHotWord hotWord, NSString *string, NSString *protocol, NSRange range) {
+        
+        NSArray *hotWords = @[@"Handle", @"Hashtag", @"Link"];
+        if ([hotWords[hotWord]  isEqual: @"Handle"]) {
+            NSLog(@"Handle: %@",string);
+        }
+        
+        if ([hotWords[hotWord]  isEqual: @"Hashtag"]) {
+            NSLog(@"Hashtag: %@",string);
+        }
+        
+        if ([hotWords[hotWord]  isEqual: @"Link"]) {
+            NSLog(@"Link: %@",string);
+        }
+    };
+    
     // Set max layout width for all multi-line labels
     // This is required for any multi-line label. If you
     // do not set this, you'll find the auto-height will not work
@@ -121,18 +137,6 @@
     // of the label when calculating height.
     CGSize defaultSize = [[self class] defaultCellSize];
     self.tweetLabel.preferredMaxLayoutWidth = defaultSize.width - ([metricDict[@"sideBuffer"] floatValue] * 2);
-}
-- (void)selectedMention:(NSString *)string {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Selected" message:string delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
-}
-- (void)selectedHashtag:(NSString *)string {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Selected" message:string delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
-}
-- (void)selectedLink:(NSString *)string {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Selected" message:string delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-    [alert show];
 }
 
 + (CGSize)defaultCellSize {

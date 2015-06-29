@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "ACC4C6FB18062C82000A3BA8"
-               BuildableName = "Floadt.app"
+               BlueprintIdentifier = "AC2025F01B410524002A4F2C"
+               BuildableName = "Floadt copy.app"
                BlueprintName = "Floadt"
                ReferencedContainer = "container:Floadt.xcodeproj">
             </BuildableReference>
@@ -42,8 +42,8 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACC4C6FB18062C82000A3BA8"
-            BuildableName = "Floadt.app"
+            BlueprintIdentifier = "AC2025F01B410524002A4F2C"
+            BuildableName = "Floadt copy.app"
             BlueprintName = "Floadt"
             ReferencedContainer = "container:Floadt.xcodeproj">
          </BuildableReference>
@@ -58,11 +58,12 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACC4C6FB18062C82000A3BA8"
-            BuildableName = "Floadt.app"
+            BlueprintIdentifier = "AC2025F01B410524002A4F2C"
+            BuildableName = "Floadt copy.app"
             BlueprintName = "Floadt"
             ReferencedContainer = "container:Floadt.xcodeproj">
          </BuildableReference>
@@ -76,11 +77,12 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "ACC4C6FB18062C82000A3BA8"
-            BuildableName = "Floadt.app"
+            BlueprintIdentifier = "AC2025F01B410524002A4F2C"
+            BuildableName = "Floadt copy.app"
             BlueprintName = "Floadt"
             ReferencedContainer = "container:Floadt.xcodeproj">
          </BuildableReference>

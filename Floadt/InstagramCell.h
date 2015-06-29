@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Data.h"
+#import "InstagramLikeButton.h"
+#import "GUIPlayerView.h"
+#import <MediaPlayer/MediaPlayer.h>
+#import <AssetsLibrary/AssetsLibrary.h>
 
 @interface InstagramCell : UITableViewCell 
 
@@ -22,10 +26,14 @@
 @property (strong, nonatomic) UIButton *commentButton;
 @property (strong, nonatomic) UILabel *commentText;
 @property (strong, nonatomic) UILabel *likeLabel;
+@property (strong, nonatomic) UIButton *playButton;
 @property (strong, nonatomic) UIButton *heartIcon;
 @property (strong, nonatomic) UIButton *commentIcon;
 @property (strong, nonatomic) UIButton *locationIcon;
 @property (strong, nonatomic) UILabel *locationLabel;
-@property (strong, nonatomic) UIButton *heartButton;
+@property (strong, nonatomic) MPMoviePlayerController *player;
+@property InstagramLikeButton *heartButton;
+
+- (void)initiateVideoWithURL:(NSURL *)url;
 
 @end

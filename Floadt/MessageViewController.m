@@ -238,11 +238,12 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
     
     NSDictionary *instaPics = self.instagramData;
     NSArray *commentArray =  instaPics[@"comments"][@"data"];
-    NSString *commentText = [[commentArray objectAtIndex:0] valueForKey:@"text"];
+    NSString *commentText = [[commentArray objectAtIndex:indexPath.row] valueForKey:@"text"];
+    NSString *fullName = [[[commentArray objectAtIndex:indexPath.row] valueForKey:@"from"] valueForKey:@"full_name"];
     
     Message *message = self.messages[indexPath.row];
     
-    cell.titleLabel.text = message.username;
+    cell.titleLabel.text = fullName;
     cell.bodyLabel.text = commentText;
     
     if (message.attachment) {
