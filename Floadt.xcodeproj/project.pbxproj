@@ -43,7 +43,6 @@
 		AC2025FC1B410524002A4F2C /* SLKTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B31ADCC4FC00B9FFCD /* SLKTextView.m */; };
 		AC2025FD1B410524002A4F2C /* XLBarPagerTabStripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A505A1A65FAC10093E83F /* XLBarPagerTabStripViewController.m */; };
 		AC2025FE1B410524002A4F2C /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEBB1AD182C852500A4CE2F /* AFHTTPClient.m */; };
-		AC2025FF1B410524002A4F2C /* ForeignFacebookController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC563B8E1B157B2900FF74B0 /* ForeignFacebookController.m */; };
 		AC2026001B410524002A4F2C /* TimelineContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A1E81A676694001312BD /* TimelineContainerViewController.m */; };
 		AC2026011B410524002A4F2C /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0410481AA3785000B08E76 /* NSArray+MASAdditions.m */; };
 		AC2026021B410524002A4F2C /* TimelineControllerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A1EA1A676694001312BD /* TimelineControllerViewController.m */; };
@@ -63,11 +62,9 @@
 		AC2026101B410524002A4F2C /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACEEF64B1814275E002B61B9 /* MenuViewController.m */; };
 		AC2026111B410524002A4F2C /* SLKTextInputbar.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9B11ADCC4FC00B9FFCD /* SLKTextInputbar.m */; };
 		AC2026121B410524002A4F2C /* SDWebImageDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA30F3E19F99FB80018BDB7 /* SDWebImageDownloader.m */; };
-		AC2026131B410524002A4F2C /* FacebookSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACFF6FE71A84941B00B8423F /* FacebookSearchViewController.m */; };
 		AC2026141B410524002A4F2C /* UIPlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACB6AB941A5B8B1600398ADA /* UIPlaceholderTextView.m */; };
 		AC2026151B410524002A4F2C /* MXSegmentedPagerController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC86BFCD1B406C99002F1C2F /* MXSegmentedPagerController.m */; };
 		AC2026161B410524002A4F2C /* XLPagerTabStripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A505E1A65FAC10093E83F /* XLPagerTabStripViewController.m */; };
-		AC2026171B410524002A4F2C /* InstagramLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE8293F1B3759F1000641A1 /* InstagramLikeButton.m */; };
 		AC2026181B410524002A4F2C /* SDWebImageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA30F4219F99FB80018BDB7 /* SDWebImageManager.m */; };
 		AC2026191B410524002A4F2C /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E55593318217BCA00546428 /* ProfileViewController.m */; };
 		AC20261A1B410524002A4F2C /* RRCustomScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4337EA1A6355D600C1DD42 /* RRCustomScrollView.m */; };
@@ -198,7 +195,6 @@
 		AC2026981B410524002A4F2C /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE0348218544BEE0055AA0F /* OpenGLES.framework */; };
 		AC2026991B410524002A4F2C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE0348318544BEE0055AA0F /* QuartzCore.framework */; };
 		AC20269A1B410524002A4F2C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EE0348418544BEE0055AA0F /* StoreKit.framework */; };
-		AC20269B1B410524002A4F2C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB07B0C1B0C36F100FCF0C0 /* FacebookSDK.framework */; };
 		AC20269C1B410524002A4F2C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4C70318062C82000A3BA8 /* UIKit.framework */; };
 		AC20269E1B410524002A4F2C /* HorizBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4A6E141844408A00FDA6ED /* HorizBorder.png */; };
 		AC20269F1B410524002A4F2C /* indiegogo.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCDC1845A76C00A3A498 /* indiegogo.png */; };
@@ -248,7 +244,6 @@
 		AC2026CB1B410524002A4F2C /* vimeo.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCF61845A76C00A3A498 /* vimeo.png */; };
 		AC2026CC1B410524002A4F2C /* linkedIn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BF96918402EC900177106 /* linkedIn@2x.png */; };
 		AC2026CD1B410524002A4F2C /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = AC4A6E111844408A00FDA6ED /* Background.png */; };
-		AC2026CE1B410524002A4F2C /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACEDCFD81B40FEAB0068FD3B /* Entitlements.plist */; };
 		AC2026CF1B410524002A4F2C /* rss.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCEB1845A76C00A3A498 /* rss.png */; };
 		AC2026D01B410524002A4F2C /* flickr.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCD71845A76C00A3A498 /* flickr.png */; };
 		AC2026D11B410524002A4F2C /* github.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCD91845A76C00A3A498 /* github.png */; };
@@ -273,10 +268,7 @@
 		AC2026E51B410524002A4F2C /* picasa.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCE81845A76C00A3A498 /* picasa.png */; };
 		AC2026E61B410524002A4F2C /* pop-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACF0A5121B0038C60087F47E /* pop-Info.plist */; };
 		AC2026E71B410524002A4F2C /* deviantart.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCD21845A76C00A3A498 /* deviantart.png */; };
-		AC2027EE1B410E72002A4F2C /* Floadt copy copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC2027EC1B410E72002A4F2C /* Floadt copy copy-Info.plist */; };
-		AC2027EF1B410E72002A4F2C /* Floadt copy copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC2027EC1B410E72002A4F2C /* Floadt copy copy-Info.plist */; };
-		AC2027F01B410E72002A4F2C /* Floadt copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC2027ED1B410E72002A4F2C /* Floadt copy-Info.plist */; };
-		AC2027F11B410E72002A4F2C /* Floadt copy-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC2027ED1B410E72002A4F2C /* Floadt copy-Info.plist */; };
+		AC2027F01B410E72002A4F2C /* Floadt-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC2027ED1B410E72002A4F2C /* Floadt-Info.plist */; };
 		AC36186F1B1F4BA000206AB5 /* STTweetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC36186D1B1F4BA000206AB5 /* STTweetLabel.m */; };
 		AC3D25651A548B3900132DA8 /* InstagramClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D25611A548B3900132DA8 /* InstagramClient.m */; };
 		AC3D25671A548B3900132DA8 /* TwitterClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AC3D25631A548B3900132DA8 /* TwitterClient.m */; };
@@ -293,7 +285,6 @@
 		AC4AC37B1AA5894300D2FA17 /* HTKDynamicResizingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4AC3771AA5894300D2FA17 /* HTKDynamicResizingTableViewCell.m */; };
 		AC563B881B157B0600FF74B0 /* ForiegnInstagramController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC563B861B157B0600FF74B0 /* ForiegnInstagramController.m */; };
 		AC563B8C1B157B1700FF74B0 /* ForeignTwitterController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC563B8A1B157B1700FF74B0 /* ForeignTwitterController.m */; };
-		AC563B901B157B2900FF74B0 /* ForeignFacebookController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC563B8E1B157B2900FF74B0 /* ForeignFacebookController.m */; };
 		AC5A50691A65FAC10093E83F /* XLBarPagerTabStripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A505A1A65FAC10093E83F /* XLBarPagerTabStripViewController.m */; };
 		AC5A506B1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A505C1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.m */; };
 		AC5A506D1A65FAC10093E83F /* XLPagerTabStripViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A505E1A65FAC10093E83F /* XLPagerTabStripViewController.m */; };
@@ -308,6 +299,13 @@
 		AC643D471ABA904500A0D04B /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC643D3E1ABA904500A0D04B /* ALView+PureLayout.m */; };
 		AC643D491ABA904500A0D04B /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC643D401ABA904500A0D04B /* NSArray+PureLayout.m */; };
 		AC643D4B1ABA904500A0D04B /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = AC643D421ABA904500A0D04B /* NSLayoutConstraint+PureLayout.m */; };
+		AC66C96C1B5CE2D4009945A1 /* ForeignInstagramViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = AC66C96B1B5CE2D4009945A1 /* ForeignInstagramViewHeader.m */; };
+		AC66C96F1B5CE2E6009945A1 /* InstagramUser.m in Sources */ = {isa = PBXBuildFile; fileRef = AC66C96E1B5CE2E6009945A1 /* InstagramUser.m */; };
+		AC66C9771B5D6526009945A1 /* DOFavoriteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC66C9721B5D6525009945A1 /* DOFavoriteButton.swift */; };
+		AC66C9791B5D6526009945A1 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = AC66C9741B5D6525009945A1 /* like.png */; };
+		AC66C97A1B5D6526009945A1 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = AC66C9751B5D6525009945A1 /* smile.png */; };
+		AC66C97B1B5D6526009945A1 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = AC66C9761B5D6526009945A1 /* star.png */; };
+		AC66C97D1B5D815D009945A1 /* asu_pid.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = AC66C97C1B5D815D009945A1 /* asu_pid.entitlements */; };
 		AC6FB9911ADCBBFD00B9FFCD /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB98F1ADCBBFD00B9FFCD /* MBProgressHUD.m */; };
 		AC6FB99C1ADCC3A600B9FFCD /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9941ADCC3A600B9FFCD /* MessageViewController.m */; };
 		AC6FB99E1ADCC3A600B9FFCD /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB9961ADCC3A600B9FFCD /* MessageTableViewCell.m */; };
@@ -390,7 +388,6 @@
 		ACE7CC241B003487005740E7 /* PopMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE7CC1C1B003487005740E7 /* PopMenu.m */; };
 		ACE7CC281B00350B005740E7 /* TwitterSearchNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE7CC261B00350B005740E7 /* TwitterSearchNavigationViewController.m */; };
 		ACE8293D1B373AE9000641A1 /* heartPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = ACE8293B1B373AE9000641A1 /* heartPressed.png */; };
-		ACE829411B3759F1000641A1 /* InstagramLikeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE8293F1B3759F1000641A1 /* InstagramLikeButton.m */; };
 		ACEAEA071AC85721006ABE1A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACEAEA051AC85721006ABE1A /* Images.xcassets */; };
 		ACF0A5491B0038C60087F47E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACF0A5101B0038C60087F47E /* InfoPlist.strings */; };
 		ACF0A54B1B0038C60087F47E /* pop-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ACF0A5121B0038C60087F47E /* pop-Info.plist */; };
@@ -469,9 +466,8 @@
 		AC0BF96C18402EC900177106 /* twitter.off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter.off@2x.png"; sourceTree = "<group>"; };
 		AC0BF96D18402EC900177106 /* twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "twitter@2x.png"; sourceTree = "<group>"; };
 		AC0C4C151A50F72D0051547A /* DIMIS___.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DIMIS___.TTF"; sourceTree = "<group>"; };
-		AC2026EC1B410524002A4F2C /* Floadt copy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Floadt copy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC2027EC1B410E72002A4F2C /* Floadt copy copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Floadt copy copy-Info.plist"; sourceTree = "<group>"; };
-		AC2027ED1B410E72002A4F2C /* Floadt copy-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Floadt copy-Info.plist"; sourceTree = "<group>"; };
+		AC2026EC1B410524002A4F2C /* Floadt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Floadt.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC2027ED1B410E72002A4F2C /* Floadt-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Floadt-Info.plist"; sourceTree = "<group>"; };
 		AC3246DE19F9CDA000397C1A /* TwitterCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterCell.h; sourceTree = "<group>"; };
 		AC3246DF19F9CDA000397C1A /* TwitterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterCell.m; sourceTree = "<group>"; };
 		AC36186C1B1F4BA000206AB5 /* STTweetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTweetLabel.h; sourceTree = "<group>"; };
@@ -510,8 +506,6 @@
 		AC563B861B157B0600FF74B0 /* ForiegnInstagramController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForiegnInstagramController.m; sourceTree = "<group>"; };
 		AC563B891B157B1700FF74B0 /* ForeignTwitterController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForeignTwitterController.h; sourceTree = "<group>"; };
 		AC563B8A1B157B1700FF74B0 /* ForeignTwitterController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForeignTwitterController.m; sourceTree = "<group>"; };
-		AC563B8D1B157B2900FF74B0 /* ForeignFacebookController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForeignFacebookController.h; sourceTree = "<group>"; };
-		AC563B8E1B157B2900FF74B0 /* ForeignFacebookController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForeignFacebookController.m; sourceTree = "<group>"; };
 		AC5A50591A65FAC10093E83F /* XLBarPagerTabStripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBarPagerTabStripViewController.h; sourceTree = "<group>"; };
 		AC5A505A1A65FAC10093E83F /* XLBarPagerTabStripViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBarPagerTabStripViewController.m; sourceTree = "<group>"; };
 		AC5A505B1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLButtonBarPagerTabStripViewController.h; sourceTree = "<group>"; };
@@ -543,6 +537,16 @@
 		AC643D431ABA904500A0D04B /* PureLayout+Internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PureLayout+Internal.h"; sourceTree = "<group>"; };
 		AC643D441ABA904500A0D04B /* PureLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayout.h; sourceTree = "<group>"; };
 		AC643D451ABA904500A0D04B /* PureLayoutDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PureLayoutDefines.h; sourceTree = "<group>"; };
+		AC66C96A1B5CE2D4009945A1 /* ForeignInstagramViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForeignInstagramViewHeader.h; sourceTree = "<group>"; };
+		AC66C96B1B5CE2D4009945A1 /* ForeignInstagramViewHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForeignInstagramViewHeader.m; sourceTree = "<group>"; };
+		AC66C96D1B5CE2E6009945A1 /* InstagramUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramUser.h; sourceTree = "<group>"; };
+		AC66C96E1B5CE2E6009945A1 /* InstagramUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramUser.m; sourceTree = "<group>"; };
+		AC66C9711B5D6524009945A1 /* Floadt-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Floadt-Bridging-Header.h"; sourceTree = "<group>"; };
+		AC66C9721B5D6525009945A1 /* DOFavoriteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DOFavoriteButton.swift; sourceTree = "<group>"; };
+		AC66C9741B5D6525009945A1 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
+		AC66C9751B5D6525009945A1 /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
+		AC66C9761B5D6526009945A1 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		AC66C97C1B5D815D009945A1 /* asu_pid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = asu_pid.entitlements; sourceTree = "<group>"; };
 		AC6D99B51A3E43B200CB5CCF /* MYBlurIntroductionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYBlurIntroductionView.h; sourceTree = "<group>"; };
 		AC6D99B61A3E43B200CB5CCF /* MYBlurIntroductionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MYBlurIntroductionView.m; sourceTree = "<group>"; };
 		AC6D99B71A3E43B200CB5CCF /* MYIntroductionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MYIntroductionPanel.h; sourceTree = "<group>"; };
@@ -756,8 +760,6 @@
 		ACE7CC251B00350B005740E7 /* TwitterSearchNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSearchNavigationViewController.h; sourceTree = "<group>"; };
 		ACE7CC261B00350B005740E7 /* TwitterSearchNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterSearchNavigationViewController.m; sourceTree = "<group>"; };
 		ACE8293B1B373AE9000641A1 /* heartPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heartPressed.png; sourceTree = "<group>"; };
-		ACE8293E1B3759F1000641A1 /* InstagramLikeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramLikeButton.h; sourceTree = "<group>"; };
-		ACE8293F1B3759F1000641A1 /* InstagramLikeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramLikeButton.m; sourceTree = "<group>"; };
 		ACEAEA051AC85721006ABE1A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		ACEBB1AC182C852500A4CE2F /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		ACEBB1AD182C852500A4CE2F /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
@@ -782,7 +784,6 @@
 		ACEBB1C9182C86A300A4CE2F /* AFOAuth1Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFOAuth1Client.m; sourceTree = "<group>"; };
 		ACEBB1CB182C86AD00A4CE2F /* AFOAuth2Client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOAuth2Client.h; sourceTree = "<group>"; };
 		ACEBB1CC182C86AD00A4CE2F /* AFOAuth2Client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFOAuth2Client.m; sourceTree = "<group>"; };
-		ACEDCFD81B40FEAB0068FD3B /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		ACEEF647181426FE002B61B9 /* RootMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootMenuController.h; sourceTree = "<group>"; };
 		ACEEF648181426FE002B61B9 /* RootMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootMenuController.m; sourceTree = "<group>"; };
 		ACEEF64A1814275E002B61B9 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
@@ -843,8 +844,6 @@
 		ACF0A5471B0038C60087F47E /* UnitBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UnitBezier.h; sourceTree = "<group>"; };
 		ACFF6FE31A84940300B8423F /* TwitterSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterSearchViewController.h; sourceTree = "<group>"; };
 		ACFF6FE41A84940300B8423F /* TwitterSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterSearchViewController.m; sourceTree = "<group>"; };
-		ACFF6FE61A84941B00B8423F /* FacebookSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSearchViewController.h; sourceTree = "<group>"; };
-		ACFF6FE71A84941B00B8423F /* FacebookSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookSearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -872,7 +871,6 @@
 				AC2026981B410524002A4F2C /* OpenGLES.framework in Frameworks */,
 				AC2026991B410524002A4F2C /* QuartzCore.framework in Frameworks */,
 				AC20269A1B410524002A4F2C /* StoreKit.framework in Frameworks */,
-				AC20269B1B410524002A4F2C /* FacebookSDK.framework in Frameworks */,
 				AC20269C1B410524002A4F2C /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -894,8 +892,6 @@
 			isa = PBXGroup;
 			children = (
 				ACC4C71118062C82000A3BA8 /* Main.storyboard */,
-				ACE8293E1B3759F1000641A1 /* InstagramLikeButton.h */,
-				ACE8293F1B3759F1000641A1 /* InstagramLikeButton.m */,
 			);
 			name = "User Interface";
 			sourceTree = "<group>";
@@ -1143,6 +1139,18 @@
 			path = PureLayout;
 			sourceTree = "<group>";
 		};
+		AC66C9701B5D650D009945A1 /* DOFavoriteButton */ = {
+			isa = PBXGroup;
+			children = (
+				AC66C9721B5D6525009945A1 /* DOFavoriteButton.swift */,
+				AC66C9741B5D6525009945A1 /* like.png */,
+				AC66C9751B5D6525009945A1 /* smile.png */,
+				AC66C9761B5D6526009945A1 /* star.png */,
+				AC66C9711B5D6524009945A1 /* Floadt-Bridging-Header.h */,
+			);
+			name = DOFavoriteButton;
+			sourceTree = "<group>";
+		};
 		AC6D99B41A3E43B200CB5CCF /* MYBlurIntroductionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1233,12 +1241,12 @@
 		AC6FB9CD1ADCCB8F00B9FFCD /* Foreign View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				AC563B8D1B157B2900FF74B0 /* ForeignFacebookController.h */,
-				AC563B8E1B157B2900FF74B0 /* ForeignFacebookController.m */,
 				AC563B891B157B1700FF74B0 /* ForeignTwitterController.h */,
 				AC563B8A1B157B1700FF74B0 /* ForeignTwitterController.m */,
 				AC563B851B157B0600FF74B0 /* ForiegnInstagramController.h */,
 				AC563B861B157B0600FF74B0 /* ForiegnInstagramController.m */,
+				AC66C96A1B5CE2D4009945A1 /* ForeignInstagramViewHeader.h */,
+				AC66C96B1B5CE2D4009945A1 /* ForeignInstagramViewHeader.m */,
 			);
 			name = "Foreign View Controllers";
 			sourceTree = "<group>";
@@ -1246,8 +1254,6 @@
 		AC80D9371A7878A5000801A8 /* Search VC */ = {
 			isa = PBXGroup;
 			children = (
-				ACFF6FE61A84941B00B8423F /* FacebookSearchViewController.h */,
-				ACFF6FE71A84941B00B8423F /* FacebookSearchViewController.m */,
 				AC80D9341A787890000801A8 /* SearchViewController.h */,
 				AC80D9351A787890000801A8 /* SearchViewController.m */,
 				AC80D9311A78787D000801A8 /* SearchContainerViewController.h */,
@@ -1474,14 +1480,12 @@
 		ACC4C6F318062C82000A3BA8 = {
 			isa = PBXGroup;
 			children = (
-				ACEDCFD81B40FEAB0068FD3B /* Entitlements.plist */,
 				ACC4C70518062C82000A3BA8 /* Floadt */,
 				ACC4C72418062C83000A3BA8 /* FloadtTests */,
 				ACC4C6FE18062C82000A3BA8 /* Frameworks */,
 				ACC4C6FD18062C82000A3BA8 /* Products */,
 				ACEAEA051AC85721006ABE1A /* Images.xcassets */,
-				AC2027EC1B410E72002A4F2C /* Floadt copy copy-Info.plist */,
-				AC2027ED1B410E72002A4F2C /* Floadt copy-Info.plist */,
+				AC2027ED1B410E72002A4F2C /* Floadt-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1489,7 +1493,7 @@
 			isa = PBXGroup;
 			children = (
 				ACC4C71D18062C83000A3BA8 /* FloadtTests.xctest */,
-				AC2026EC1B410524002A4F2C /* Floadt copy.app */,
+				AC2026EC1B410524002A4F2C /* Floadt.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1528,6 +1532,7 @@
 		ACC4C70518062C82000A3BA8 /* Floadt */ = {
 			isa = PBXGroup;
 			children = (
+				AC66C97C1B5D815D009945A1 /* asu_pid.entitlements */,
 				AC3246DC19F9CD3E00397C1A /* Cells */,
 				AC4B4B7E18307E2F00F6BDD3 /* Clients */,
 				ACCF7656180F6FB800E0CA67 /* Components */,
@@ -1579,6 +1584,8 @@
 				ACC4C70F18062C82000A3BA8 /* AppDelegate.m */,
 				ACC4C73818062D95000A3BA8 /* Data.h */,
 				ACC4C73918062D95000A3BA8 /* Data.m */,
+				AC66C96D1B5CE2E6009945A1 /* InstagramUser.h */,
+				AC66C96E1B5CE2E6009945A1 /* InstagramUser.m */,
 				ACC4C73518062CCD000A3BA8 /* User.h */,
 				ACC4C73618062CCD000A3BA8 /* User.m */,
 				6E90EE431854F60900487E07 /* User Interface */,
@@ -1601,6 +1608,7 @@
 			isa = PBXGroup;
 			children = (
 				ACEBB1AB182C852500A4CE2F /* AFNetworking */,
+				AC66C9701B5D650D009945A1 /* DOFavoriteButton */,
 				ACD930A61A49E9EA00C13C45 /* GHContextView */,
 				AC619F551AEDE2A900995B2D /* GUIPlayerView */,
 				AC86BFD61B406CD8002F1C2F /* HMSegmentedControl */,
@@ -1827,7 +1835,7 @@
 			);
 			name = Floadt;
 			productName = Floadt;
-			productReference = AC2026EC1B410524002A4F2C /* Floadt copy.app */;
+			productReference = AC2026EC1B410524002A4F2C /* Floadt.app */;
 			productType = "com.apple.product-type.application";
 		};
 		ACC4C71C18062C83000A3BA8 /* FloadtTests */ = {
@@ -1853,7 +1861,7 @@
 		ACC4C6F418062C82000A3BA8 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = Floadt;
 				TargetAttributes = {
 					ACC4C71C18062C83000A3BA8 = {
@@ -1885,13 +1893,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC2027EF1B410E72002A4F2C /* Floadt copy copy-Info.plist in Resources */,
 				AC20269E1B410524002A4F2C /* HorizBorder.png in Resources */,
 				AC20269F1B410524002A4F2C /* indiegogo.png in Resources */,
 				AC2026A01B410524002A4F2C /* twitter circ.png in Resources */,
 				AC2026A11B410524002A4F2C /* digg.png in Resources */,
 				AC2026A21B410524002A4F2C /* spotify.png in Resources */,
 				AC2026A31B410524002A4F2C /* VertBorder.png in Resources */,
+				AC66C97A1B5D6526009945A1 /* smile.png in Resources */,
 				AC2026A41B410524002A4F2C /* stackoverflow.png in Resources */,
 				AC2026A51B410524002A4F2C /* linkedin circ.png in Resources */,
 				AC2026A61B410524002A4F2C /* facebook.off@2x.png in Resources */,
@@ -1933,15 +1941,17 @@
 				AC2026CA1B410524002A4F2C /* facebook@2x.png in Resources */,
 				AC2026CB1B410524002A4F2C /* vimeo.png in Resources */,
 				AC2026CC1B410524002A4F2C /* linkedIn@2x.png in Resources */,
+				AC66C97D1B5D815D009945A1 /* asu_pid.entitlements in Resources */,
 				AC2026CD1B410524002A4F2C /* Background.png in Resources */,
-				AC2026CE1B410524002A4F2C /* Entitlements.plist in Resources */,
 				AC2026CF1B410524002A4F2C /* rss.png in Resources */,
 				AC2026D01B410524002A4F2C /* flickr.png in Resources */,
 				AC2026D11B410524002A4F2C /* github.png in Resources */,
+				AC66C97B1B5D6526009945A1 /* star.png in Resources */,
 				AC2026D21B410524002A4F2C /* reddit.png in Resources */,
 				AC2026D31B410524002A4F2C /* instagram.off@2x.png in Resources */,
 				AC2026D41B410524002A4F2C /* tumblr.png in Resources */,
 				AC2026D51B410524002A4F2C /* instagram@2x.png in Resources */,
+				AC66C9791B5D6526009945A1 /* like.png in Resources */,
 				AC2026D61B410524002A4F2C /* Aerovias_Brasil_NF.ttf in Resources */,
 				AC2026D71B410524002A4F2C /* comment.png in Resources */,
 				AC2026D81B410524002A4F2C /* linkedin.off@2x.png in Resources */,
@@ -1958,7 +1968,6 @@
 				AC2026E41B410524002A4F2C /* soundcloud.png in Resources */,
 				AC2026E51B410524002A4F2C /* picasa.png in Resources */,
 				AC2026E61B410524002A4F2C /* pop-Info.plist in Resources */,
-				AC2027F11B410E72002A4F2C /* Floadt copy-Info.plist in Resources */,
 				AC2026E71B410524002A4F2C /* deviantart.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1997,7 +2006,6 @@
 				AC0BF97518402EC900177106 /* google@2x.png in Resources */,
 				ACB8DD4F1845A76C00A3A498 /* yelp.png in Resources */,
 				ACE8293D1B373AE9000641A1 /* heartPressed.png in Resources */,
-				AC2027EE1B410E72002A4F2C /* Floadt copy copy-Info.plist in Resources */,
 				ACB8DD131845A76C00A3A498 /* gplus circ.png in Resources */,
 				ACB8DD2B1845A76C00A3A498 /* orkut.png in Resources */,
 				ACF0A5491B0038C60087F47E /* InfoPlist.strings in Resources */,
@@ -2005,7 +2013,7 @@
 				ACB8DD4B1845A76C00A3A498 /* vimeo.png in Resources */,
 				AC0BF97D18402EC900177106 /* linkedIn@2x.png in Resources */,
 				AC0BF97318402EC900177106 /* google.off@2x.png in Resources */,
-				AC2027F01B410E72002A4F2C /* Floadt copy-Info.plist in Resources */,
+				AC2027F01B410E72002A4F2C /* Floadt-Info.plist in Resources */,
 				ACB8DD311845A76C00A3A498 /* pinterest circ.png in Resources */,
 				ACB8DD251845A76C00A3A498 /* messenger-generic.png in Resources */,
 				ACB8DD231845A76C00A3A498 /* livejournal.png in Resources */,
@@ -2076,7 +2084,6 @@
 				AC2025FC1B410524002A4F2C /* SLKTextView.m in Sources */,
 				AC2025FD1B410524002A4F2C /* XLBarPagerTabStripViewController.m in Sources */,
 				AC2025FE1B410524002A4F2C /* AFHTTPClient.m in Sources */,
-				AC2025FF1B410524002A4F2C /* ForeignFacebookController.m in Sources */,
 				AC2026001B410524002A4F2C /* TimelineContainerViewController.m in Sources */,
 				AC2026011B410524002A4F2C /* NSArray+MASAdditions.m in Sources */,
 				AC2026021B410524002A4F2C /* TimelineControllerViewController.m in Sources */,
@@ -2092,15 +2099,15 @@
 				AC20260C1B410524002A4F2C /* TwitterSearchNavigationViewController.m in Sources */,
 				AC20260D1B410524002A4F2C /* NSLayoutConstraint+PureLayout.m in Sources */,
 				AC20260E1B410524002A4F2C /* XHRealTimeBlur.m in Sources */,
+				AC66C9771B5D6526009945A1 /* DOFavoriteButton.swift in Sources */,
 				AC20260F1B410524002A4F2C /* ForiegnInstagramController.m in Sources */,
 				AC2026101B410524002A4F2C /* MenuViewController.m in Sources */,
 				AC2026111B410524002A4F2C /* SLKTextInputbar.m in Sources */,
 				AC2026121B410524002A4F2C /* SDWebImageDownloader.m in Sources */,
-				AC2026131B410524002A4F2C /* FacebookSearchViewController.m in Sources */,
+				AC66C96F1B5CE2E6009945A1 /* InstagramUser.m in Sources */,
 				AC2026141B410524002A4F2C /* UIPlaceholderTextView.m in Sources */,
 				AC2026151B410524002A4F2C /* MXSegmentedPagerController.m in Sources */,
 				AC2026161B410524002A4F2C /* XLPagerTabStripViewController.m in Sources */,
-				AC2026171B410524002A4F2C /* InstagramLikeButton.m in Sources */,
 				AC2026181B410524002A4F2C /* SDWebImageManager.m in Sources */,
 				AC2026191B410524002A4F2C /* ProfileViewController.m in Sources */,
 				AC20261A1B410524002A4F2C /* RRCustomScrollView.m in Sources */,
@@ -2147,6 +2154,7 @@
 				AC2026431B410524002A4F2C /* MASCompositeConstraint.m in Sources */,
 				AC2026441B410524002A4F2C /* UIScrollView+SLKAdditions.m in Sources */,
 				AC2026451B410524002A4F2C /* AFImageRequestOperation.m in Sources */,
+				AC66C96C1B5CE2D4009945A1 /* ForeignInstagramViewHeader.m in Sources */,
 				AC2026461B410524002A4F2C /* FacebookCell.m in Sources */,
 				AC2026471B410524002A4F2C /* MessageTableViewCell.m in Sources */,
 				AC2026481B410524002A4F2C /* MenuButton.m in Sources */,
@@ -2229,7 +2237,6 @@
 				AC619F611AEDE2A900995B2D /* UIView+UpdateAutoLayoutConstraints.m in Sources */,
 				AC0410611AA3785000B08E76 /* NSArray+MASAdditions.m in Sources */,
 				ACC1E9981825E4CD00DCA712 /* UIImage+JSFlatButton.m in Sources */,
-				ACE829411B3759F1000641A1 /* InstagramLikeButton.m in Sources */,
 				ACE7CC201B003487005740E7 /* MenuButton.m in Sources */,
 				AC4AC3791AA5894300D2FA17 /* HTKDynamicResizingCollectionViewCell.m in Sources */,
 				AC6FB9C71ADCC4FC00B9FFCD /* SLKTypingIndicatorView.m in Sources */,
@@ -2276,7 +2283,6 @@
 				ACF0A5531B0038C60087F47E /* POPAnimationExtras.mm in Sources */,
 				AC643D491ABA904500A0D04B /* NSArray+PureLayout.m in Sources */,
 				ACF0A55B1B0038C60087F47E /* POPBasicAnimation.mm in Sources */,
-				AC563B901B157B2900FF74B0 /* ForeignFacebookController.m in Sources */,
 				AC3D25651A548B3900132DA8 /* InstagramClient.m in Sources */,
 				AC563B8C1B157B1700FF74B0 /* ForeignTwitterController.m in Sources */,
 				AC0410631AA3785000B08E76 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
@@ -2351,7 +2357,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Floadt/asu_pid.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos8.3]" = "-";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2362,8 +2369,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Floadt/Floadt-Prefix.pch";
 				IBSC_WARNINGS = NO;
-				INFOPLIST_FILE = "Floadt copy-Info.plist";
+				INFOPLIST_FILE = "Floadt-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Floadt/AMAttributedHighlightLabel/BlocksKit",
@@ -2372,7 +2380,9 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "Floadt copy";
+				PRODUCT_NAME = Floadt;
+				SWIFT_OBJC_BRIDGING_HEADER = "Floadt/Floadt-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2383,7 +2393,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Floadt/asu_pid.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "-";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2394,8 +2405,9 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Floadt/Floadt-Prefix.pch";
 				IBSC_WARNINGS = NO;
-				INFOPLIST_FILE = "Floadt copy-Info.plist";
+				INFOPLIST_FILE = "Floadt-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Floadt/AMAttributedHighlightLabel/BlocksKit",
@@ -2404,7 +2416,8 @@
 					"-ObjC",
 					"-all_load",
 				);
-				PRODUCT_NAME = "Floadt copy";
+				PRODUCT_NAME = Floadt;
+				SWIFT_OBJC_BRIDGING_HEADER = "Floadt/Floadt-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -2414,7 +2427,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -2427,10 +2439,11 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = Floadt/asu_pid.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos8.3]" = "-";
 				COPY_PHASE_STRIP = NO;
+				DEFINES_MODULE = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -2455,7 +2468,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -2468,10 +2480,11 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				CODE_SIGN_ENTITLEMENTS = Floadt/asu_pid.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos8.3]" = "-";
 				COPY_PHASE_STRIP = YES;
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -2489,8 +2502,8 @@
 		ACC4C73218062C83000A3BA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Floadt.app/Floadt";
+				CODE_SIGN_ENTITLEMENTS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -2517,8 +2530,8 @@
 		ACC4C73318062C83000A3BA8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Floadt.app/Floadt";
+				CODE_SIGN_ENTITLEMENTS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

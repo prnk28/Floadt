@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Data.h"
 #import "MBTwitterScroll.h"
-@interface ForeignTwitterController : UIViewController <MBTwitterScrollDelegate>
+@interface ForeignTwitterController : UIViewController <UITableViewDelegate, UITableViewDataSource, MBTwitterScrollDelegate>
+
 
 @property id data;
 

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Data.h"
 
 @interface ForiegnInstagramController : UIViewController
+
+@property (strong, nonatomic) id instagramData;
+@property (strong, nonatomic) InstagramUser *instaUser;
 
 @end

@@ -68,9 +68,10 @@
         // Heart Icon
         self.heartIcon = [[UIButton alloc] initWithFrame:CGRectMake(20, 375, 14, 14)];
         [self.heartIcon setBackgroundImage:[UIImage imageNamed:@"heart.png"] forState:UIControlStateNormal];
+        [self.heartIcon setTintColor:[UIColor lightGrayColor]];
         [self.heartIcon setTitleColor:[UIColor grayColor]
                              forState:UIControlStateHighlighted];
-              [self.contentView addSubview:self.heartIcon];
+        [self.contentView addSubview:self.heartIcon];
         
         // Comment Icon
         self.commentIcon = [[UIButton alloc] initWithFrame:CGRectMake(20, 395, 14, 14)];
@@ -93,12 +94,12 @@
         [self.locationIcon setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
                 [self.contentView addSubview:self.locationIcon];
         
-        // Heart Button
-        self.heartButton = [[InstagramLikeButton alloc] initWithFrame:CGRectMake(40, 465, 25, 25)];
-        [self.heartButton setBackgroundImage:[UIImage imageNamed:@"heart.png"] forState:UIControlStateNormal];
-        [self.heartButton setBackgroundImage:[UIImage imageNamed:@"heartPressed.png"] forState:UIControlStateSelected];
-        [self.heartButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
-        [self.contentView addSubview:self.heartButton];
+        // Animated Heart Button
+        self.animeButton = [[DOFavoriteButton alloc] initWithFrame:CGRectMake(40, 452, 50, 50) image:[UIImage imageNamed:@"heart-1"] imageFrame:CGRectMake(12, 12, 25, 25)];
+        self.animeButton.imageColorOn = [UIColor colorWithRed:1.0f green:0.43f blue:0.44f alpha:1.0];
+        self.animeButton.circleColor = [UIColor colorWithRed:1.0f green:0.43f blue:0.44f alpha:1.0];
+        self.animeButton.lineColor = [UIColor colorWithRed:1.0f green:0.43f blue:0.44f alpha:1.0];
+        [self.contentView addSubview:self.animeButton];
         
         // Comment Button
         self.commentButton = [[UIButton alloc] initWithFrame:CGRectMake(220, 465, 25, 25 )];
@@ -119,10 +120,6 @@
     self.player.shouldAutoplay = YES;
     [self.contentView addSubview: self.player.view];
     [self.player play];
-}
-
-- (void)increaseLikeCount:(InstagramLikeButton *)sender {
-
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -73,13 +73,6 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
         message.text = [LoremIpsum wordsWithNumber:words];
         [array addObject:message];
     }
-    
-    NSArray *reversed = [[array reverseObjectEnumerator] allObjects];
-    
-    self.messages = [[NSMutableArray alloc] initWithArray:reversed];
-    self.users = @[@"Allen", @"Anna", @"Alicia", @"Arnold", @"Armando", @"Antonio", @"Brad", @"Catalaya", @"Christoph", @"Emerson", @"Eric", @"Everyone", @"Steve"];
-    self.channels = @[@"General", @"Random", @"iOS", @"Bugs", @"Sports", @"Android", @"UI", @"SSB"];
-    self.emojis = @[@"m", @"man", @"machine", @"block-a", @"block-b", @"bowtie", @"boar", @"boat", @"book", @"bookmark", @"neckbeard", @"metal", @"fu", @"feelsgood"];
 
     self.bounces = YES;
     self.shakeToClearEnabled = YES;
@@ -224,12 +217,8 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([tableView isEqual:self.tableView]) {
         return [self messageCellForRowAtIndexPath:indexPath];
-    }
-    else {
-        return [self autoCompletionCellForRowAtIndexPath:indexPath];
-    }
+    
 }
 
 - (MessageTableViewCell *)messageCellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -239,41 +228,21 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
     NSDictionary *instaPics = self.instagramData;
     NSArray *commentArray =  instaPics[@"comments"][@"data"];
     NSString *commentText = [[commentArray objectAtIndex:indexPath.row] valueForKey:@"text"];
-    NSString *fullName = [[[commentArray objectAtIndex:indexPath.row] valueForKey:@"from"] valueForKey:@"full_name"];
-    
-    Message *message = self.messages[indexPath.row];
+    NSString *fullName = [[[commentArray objectAtIndex:indexPath.row] valueForKey:@"from"] valueForKey:@"username"];
     
     cell.titleLabel.text = fullName;
     cell.bodyLabel.text = commentText;
     
-    if (message.attachment) {
-        cell.attachmentView.image = message.attachment;
-        cell.attachmentView.layer.shouldRasterize = YES;
-        cell.attachmentView.layer.rasterizationScale = [UIScreen mainScreen].scale;
-    }
-    
     cell.indexPath = indexPath;
     cell.usedForMessage = YES;
     
-    if (cell.needsPlaceholder)
-    {
-        CGFloat scale = [UIScreen mainScreen].scale;
-        
-        if ([[UIScreen mainScreen] respondsToSelector:@selector(nativeScale)]) {
-            scale = [UIScreen mainScreen].nativeScale;
-        }
-        
-        CGSize imgSize = CGSizeMake(kAvatarSize*scale, kAvatarSize*scale);
-        
-        [LoremIpsum asyncPlaceholderImageWithSize:imgSize
-                                       completion:^(UIImage *image) {
-                                           UIImage *thumbnail = [UIImage imageWithCGImage:image.CGImage scale:scale orientation:UIImageOrientationUp];
-                                           cell.thumbnailView.image = thumbnail;
-                                           cell.thumbnailView.layer.shouldRasterize = YES;
-                                           cell.thumbnailView.layer.rasterizationScale = [UIScreen mainScreen].scale;
-                                       }];
-    }
-    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *imageUrl = [[[commentArray objectAtIndex:indexPath.row] valueForKey: @"from"] valueForKey:@"profile_picture"];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.thumbnailView.image = [UIImage imageWithData:data];
+        });
+    });
     // Cells must inherit the table view's transform
     // This is very important, since the main table view may be inverted
     cell.transform = self.tableView.transform;
@@ -281,31 +250,16 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
     return cell;
 }
 
-- (MessageTableViewCell *)autoCompletionCellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    MessageTableViewCell *cell = (MessageTableViewCell *)[self.autoCompletionView dequeueReusableCellWithIdentifier:AutoCompletionCellIdentifier];
-    cell.indexPath = indexPath;
 
-    NSString *item = self.searchResult[indexPath.row];
-    
-    if ([self.foundPrefix isEqualToString:@"#"]) {
-        item = [NSString stringWithFormat:@"# %@", item];
-    }
-    else if ([self.foundPrefix isEqualToString:@":"]) {
-        item = [NSString stringWithFormat:@":%@:", item];
-    }
-    
-    cell.titleLabel.text = item;
-    cell.titleLabel.font = [UIFont systemFontOfSize:14.0];
-    cell.selectionStyle = UITableViewCellSelectionStyleDefault;
-    
-    return cell;
-}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([tableView isEqual:self.tableView]) {
-        Message *message = self.messages[indexPath.row];
+        
+        NSDictionary *instaPics = self.instagramData;
+        NSArray *commentArray =  instaPics[@"comments"][@"data"];
+        NSString *commentText = [[commentArray objectAtIndex:indexPath.row] valueForKey:@"text"];
+        NSString *fullName = [[[commentArray objectAtIndex:indexPath.row] valueForKey:@"from"] valueForKey:@"username"];
         
         NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
         paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
@@ -317,20 +271,17 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
         CGFloat width = CGRectGetWidth(tableView.frame)-kAvatarSize;
         width -= 25.0;
         
-        CGRect titleBounds = [message.username boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:NULL];
-        CGRect bodyBounds = [message.text boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:NULL];
+        CGRect titleBounds = [fullName boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:NULL];
+        CGRect bodyBounds = [commentText boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:NULL];
         
-        if (message.text.length == 0) {
+        if (commentText.length == 0) {
             return 0.0;
         }
         
         CGFloat height = CGRectGetHeight(titleBounds);
         height += CGRectGetHeight(bodyBounds);
         height += 40.0;
-        if (message.attachment) {
-            height += 80.0 + 10.0;
-        }
-        
+
         if (height < kMinimumHeight) {
             height = kMinimumHeight;
         }

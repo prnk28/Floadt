@@ -146,6 +146,7 @@
     [cell.likeLabel setText:likes];
     
     // Add Profile Image
+    cell.profilePic.userInteractionEnabled = YES;
     NSURL *imageUrl = entry[@"user"][@"profile_picture"];
     [cell.profilePic sd_setImageWithURL:imageUrl completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         cell.profilePic.image = image;
@@ -154,13 +155,17 @@
         [imageLayer setCornerRadius:18];
         [imageLayer setMasksToBounds:YES];
     }];
+    UITapGestureRecognizer *profilePicTap =
+    [[UITapGestureRecognizer alloc] initWithTarget:self
+                                            action:@selector(profilePicTapped:)];
+    [cell.profilePic addGestureRecognizer:profilePicTap];
     
     // Button's
-    [cell.heartButton addTarget:self action:@selector(likeButtonTap:) forControlEvents:UIControlEventTouchUpInside];
-    [cell.heartButton setObjectID:entry[@"id"]];
-    [cell.heartButton setLikesCount:entry[@"likes"][@"count"]];
+    [cell.animeButton addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.animeButton setObjectID:entry[@"id"]];
+    [cell.animeButton setLikesCount:entry[@"likes"][@"count"]];
     
-    [cell.commentButton addTarget:self action:@selector(commentButtonTap:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.commentButton addTarget:self action:@selector(profilePicTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     NSDictionary *instapic = [self.instaPics objectAtIndex:indexPath.row];
     
@@ -178,6 +183,17 @@
     return cell;
 }
 
+// On profile Picture Tap
+- (void)profilePicTapped:(UIImageView *)sender {
+    NSLog(@"Profile pic image tapped");
+    ForiegnInstagramController *forInsta = [[ForiegnInstagramController alloc] init];
+    NSIndexPath *i = [self indexPathForCellContainingView:sender.superview];
+    NSInteger row = i.row;
+    NSDictionary *pic = [instaPics objectAtIndex:row];
+    forInsta.instagramData = pic;
+    [self.navigationController pushViewController:forInsta animated:YES];
+}
+
 // On comment Button Tap
 - (void)commentButtonTap:(UIButton *)sender {
     NSLog(@"Comment Button Tapped");
@@ -189,28 +205,34 @@
     [self.navigationController pushViewController:message animated:YES];
 }
 
-// On like button tap
-- (void)likeButtonTap:(InstagramLikeButton *)sender {
-    [sender setSelected:!sender.selected];
-    // Set objectID
-    NSString *objectID = sender.objectID;
-    int *likesCount = sender.likesCount;
-    likesCount = likesCount + 1;
-    NSString *likesString = [NSString stringWithFormat:@"%d",likesCount];
-    // Get Cell
-    NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
-    InstagramCell *cell = (InstagramCell*)[self.tableView cellForRowAtIndexPath:i];
-    cell.likeLabel = likesString;
-
-    NSString *path = [NSString stringWithFormat:@"media/%@/likes", objectID];
-    [[InstagramClient sharedClient] postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+// On Anime Button Tap
+-(void) tapped:(DOFavoriteButton*) sender {
+    if (sender.selected) {
+        // deselect
+        [sender deselect];
+    } else {
+        // select with animation
+        [sender select];
+        // Set objectID
+        NSString *objectID = sender.objectID;
+        int *likesCount = sender.LikesCount;
+        likesCount = likesCount + 1;
+        NSString *likesString = [NSString stringWithFormat:@"%d",likesCount];
+        // Get Cell
+        NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
+        InstagramCell *cell = (InstagramCell*)[self.tableView cellForRowAtIndexPath:i];
+        cell.likeLabel = likesString;
+        
+        NSString *path = [NSString stringWithFormat:@"media/%@/likes", objectID];
+        [[InstagramClient sharedClient] postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"Successfully Liked Picture");
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"Failure: %@", error);
+        }];
         NSLog(@"Successfully Liked Picture");
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Failure: %@", error);
-    }];
-    [sender increaseLikeCount:sender];
-    NSLog(@"Successfully Liked Picture");
+    }
 }
+
 
 // Gesture Recognizer for Floadt Tap
 - (void)setupNavbarGestureRecognizer {

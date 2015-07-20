@@ -38,15 +38,10 @@
 }
 
 -(NSArray *)childViewControllersForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController{
-    // BOOL *insta = [[NSUserDefaults standardUserDefaults] boolForKey:@"instagramActive"];
-    // BOOL *twitter = [[NSUserDefaults standardUserDefaults] boolForKey:@"twitterActive"];
-    // BOOL *facebook = [[NSUserDefaults standardUserDefaults] boolForKey:@"facebookActive"];
-    //FacebookSearchViewController *child_2 = [[FacebookSearchViewController alloc] init];
     TwitterSearchNavigationViewController *twitterNav = [[TwitterSearchNavigationViewController alloc] init];
-    TwitterSearchViewController *child_3 = [[TwitterSearchViewController alloc] init];
       UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Search"];
     
-    NSArray * childViewControllers = [NSMutableArray arrayWithObjects:viewController, twitterNav, child_3, nil];
+    NSArray * childViewControllers = [NSMutableArray arrayWithObjects:viewController, twitterNav, nil];
     
     return childViewControllers;
 }
