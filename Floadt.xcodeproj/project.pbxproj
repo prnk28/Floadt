@@ -18,6 +18,14 @@
 		AC0410611AA3785000B08E76 /* NSArray+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0410481AA3785000B08E76 /* NSArray+MASAdditions.m */; };
 		AC0410631AA3785000B08E76 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC04104B1AA3785000B08E76 /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		AC0410651AA3785000B08E76 /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = AC04104D1AA3785000B08E76 /* View+MASAdditions.m */; };
+		AC063A371B6204E00040F7F7 /* LGPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AC063A341B6204E00040F7F7 /* LGPlusButton.m */; };
+		AC063A381B6204E00040F7F7 /* LGPlusButton.m in Sources */ = {isa = PBXBuildFile; fileRef = AC063A341B6204E00040F7F7 /* LGPlusButton.m */; };
+		AC063A391B6204E00040F7F7 /* LGPlusButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC063A361B6204E00040F7F7 /* LGPlusButtonsView.m */; };
+		AC063A3A1B6204E00040F7F7 /* LGPlusButtonsView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC063A361B6204E00040F7F7 /* LGPlusButtonsView.m */; };
+		AC063A3D1B6207B90040F7F7 /* LGDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC063A3C1B6207B90040F7F7 /* LGDrawer.m */; };
+		AC063A3E1B6207B90040F7F7 /* LGDrawer.m in Sources */ = {isa = PBXBuildFile; fileRef = AC063A3C1B6207B90040F7F7 /* LGDrawer.m */; };
+		AC063A421B6217770040F7F7 /* JGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = AC063A411B6217770040F7F7 /* JGActionSheet.m */; };
+		AC063A431B6217770040F7F7 /* JGActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = AC063A411B6217770040F7F7 /* JGActionSheet.m */; };
 		AC0BF96F18402EC900177106 /* facebook.off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BF96218402EC900177106 /* facebook.off@2x.png */; };
 		AC0BF97118402EC900177106 /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BF96318402EC900177106 /* facebook@2x.png */; };
 		AC0BF97318402EC900177106 /* google.off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AC0BF96418402EC900177106 /* google.off@2x.png */; };
@@ -129,7 +137,6 @@
 		AC2026551B410524002A4F2C /* POPAnimator.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACF0A5271B0038C60087F47E /* POPAnimator.mm */; };
 		AC2026561B410524002A4F2C /* POPCGUtils.mm in Sources */ = {isa = PBXBuildFile; fileRef = ACF0A52D1B0038C60087F47E /* POPCGUtils.mm */; };
 		AC2026571B410524002A4F2C /* InstagramTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A1E61A676694001312BD /* InstagramTableViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
-		AC2026581B410524002A4F2C /* GHContextMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD930A81A49EA0200C13C45 /* GHContextMenuView.m */; };
 		AC2026591B410524002A4F2C /* MBTwitterScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = AC84707C1B1A9F1C002200EA /* MBTwitterScroll.m */; };
 		AC20265A1B410524002A4F2C /* InstagramResultsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AC4A7A181A0855040032E1D0 /* InstagramResultsCell.m */; };
 		AC20265B1B410524002A4F2C /* UIImage+JSFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC1E9941825E4CD00DCA712 /* UIImage+JSFlatButton.m */; };
@@ -382,6 +389,12 @@
 		ACC4C72118062C83000A3BA8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACC4C70318062C82000A3BA8 /* UIKit.framework */; };
 		ACC4C72918062C83000A3BA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = ACC4C72718062C83000A3BA8 /* InfoPlist.strings */; };
 		ACC4C72B18062C83000A3BA8 /* FloadtTests.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC4C72A18062C83000A3BA8 /* FloadtTests.m */; };
+		ACC510FC1B61FB690048E603 /* SIAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ACC510F71B61FB690048E603 /* SIAlertView.bundle */; };
+		ACC510FD1B61FB690048E603 /* SIAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ACC510F71B61FB690048E603 /* SIAlertView.bundle */; };
+		ACC510FE1B61FB690048E603 /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC510F91B61FB690048E603 /* SIAlertView.m */; };
+		ACC510FF1B61FB690048E603 /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC510F91B61FB690048E603 /* SIAlertView.m */; };
+		ACC511001B61FB690048E603 /* UIWindow+SIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC510FB1B61FB690048E603 /* UIWindow+SIUtils.m */; };
+		ACC511011B61FB690048E603 /* UIWindow+SIUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC510FB1B61FB690048E603 /* UIWindow+SIUtils.m */; };
 		ACE7CC1E1B003487005740E7 /* GlowImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE7CC161B003487005740E7 /* GlowImageView.m */; };
 		ACE7CC201B003487005740E7 /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE7CC181B003487005740E7 /* MenuButton.m */; };
 		ACE7CC221B003487005740E7 /* MenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE7CC1A1B003487005740E7 /* MenuItem.m */; };
@@ -453,6 +466,14 @@
 		AC04104C1AA3785000B08E76 /* View+MASAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASAdditions.h"; sourceTree = "<group>"; };
 		AC04104D1AA3785000B08E76 /* View+MASAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "View+MASAdditions.m"; sourceTree = "<group>"; };
 		AC04104E1AA3785000B08E76 /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
+		AC063A331B6204E00040F7F7 /* LGPlusButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPlusButton.h; sourceTree = "<group>"; };
+		AC063A341B6204E00040F7F7 /* LGPlusButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPlusButton.m; sourceTree = "<group>"; };
+		AC063A351B6204E00040F7F7 /* LGPlusButtonsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGPlusButtonsView.h; sourceTree = "<group>"; };
+		AC063A361B6204E00040F7F7 /* LGPlusButtonsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGPlusButtonsView.m; sourceTree = "<group>"; };
+		AC063A3B1B6207B90040F7F7 /* LGDrawer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGDrawer.h; sourceTree = "<group>"; };
+		AC063A3C1B6207B90040F7F7 /* LGDrawer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LGDrawer.m; sourceTree = "<group>"; };
+		AC063A401B6217770040F7F7 /* JGActionSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JGActionSheet.h; sourceTree = "<group>"; };
+		AC063A411B6217770040F7F7 /* JGActionSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JGActionSheet.m; sourceTree = "<group>"; };
 		AC0BF96218402EC900177106 /* facebook.off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook.off@2x.png"; sourceTree = "<group>"; };
 		AC0BF96318402EC900177106 /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
 		AC0BF96418402EC900177106 /* google.off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google.off@2x.png"; sourceTree = "<group>"; };
@@ -736,10 +757,13 @@
 		ACC4C73618062CCD000A3BA8 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		ACC4C73818062D95000A3BA8 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
 		ACC4C73918062D95000A3BA8 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
+		ACC510F71B61FB690048E603 /* SIAlertView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SIAlertView.bundle; sourceTree = "<group>"; };
+		ACC510F81B61FB690048E603 /* SIAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SIAlertView.h; sourceTree = "<group>"; };
+		ACC510F91B61FB690048E603 /* SIAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SIAlertView.m; sourceTree = "<group>"; };
+		ACC510FA1B61FB690048E603 /* UIWindow+SIUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+SIUtils.h"; sourceTree = "<group>"; };
+		ACC510FB1B61FB690048E603 /* UIWindow+SIUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+SIUtils.m"; sourceTree = "<group>"; };
 		ACD7D0441A0574120090093B /* SearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchTableViewController.h; sourceTree = "<group>"; };
 		ACD7D0451A0574120090093B /* SearchTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchTableViewController.m; sourceTree = "<group>"; };
-		ACD930A71A49EA0200C13C45 /* GHContextMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GHContextMenuView.h; sourceTree = "<group>"; };
-		ACD930A81A49EA0200C13C45 /* GHContextMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GHContextMenuView.m; sourceTree = "<group>"; };
 		ACDF50FB1A62C73700C20298 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		ACE2A1E51A676694001312BD /* InstagramTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramTableViewController.h; sourceTree = "<group>"; };
 		ACE2A1E61A676694001312BD /* InstagramTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramTableViewController.m; sourceTree = "<group>"; };
@@ -934,6 +958,29 @@
 				AC04104E1AA3785000B08E76 /* View+MASShorthandAdditions.h */,
 			);
 			path = Masonry;
+			sourceTree = "<group>";
+		};
+		AC063A321B6204E00040F7F7 /* LGPlusButtonsView */ = {
+			isa = PBXGroup;
+			children = (
+				AC063A3B1B6207B90040F7F7 /* LGDrawer.h */,
+				AC063A3C1B6207B90040F7F7 /* LGDrawer.m */,
+				AC063A331B6204E00040F7F7 /* LGPlusButton.h */,
+				AC063A341B6204E00040F7F7 /* LGPlusButton.m */,
+				AC063A351B6204E00040F7F7 /* LGPlusButtonsView.h */,
+				AC063A361B6204E00040F7F7 /* LGPlusButtonsView.m */,
+			);
+			path = LGPlusButtonsView;
+			sourceTree = "<group>";
+		};
+		AC063A3F1B6217770040F7F7 /* JGActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				AC063A401B6217770040F7F7 /* JGActionSheet.h */,
+				AC063A411B6217770040F7F7 /* JGActionSheet.m */,
+			);
+			name = JGActionSheet;
+			path = JDStatusBarNotification/JGActionSheet;
 			sourceTree = "<group>";
 		};
 		AC0BF96118402EC900177106 /* Social */ = {
@@ -1604,19 +1651,33 @@
 			name = "View Controllers";
 			sourceTree = "<group>";
 		};
+		ACC510F61B61FB690048E603 /* SIAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				ACC510F71B61FB690048E603 /* SIAlertView.bundle */,
+				ACC510F81B61FB690048E603 /* SIAlertView.h */,
+				ACC510F91B61FB690048E603 /* SIAlertView.m */,
+				ACC510FA1B61FB690048E603 /* UIWindow+SIUtils.h */,
+				ACC510FB1B61FB690048E603 /* UIWindow+SIUtils.m */,
+			);
+			path = SIAlertView;
+			sourceTree = "<group>";
+		};
 		ACCF7656180F6FB800E0CA67 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				ACC510F61B61FB690048E603 /* SIAlertView */,
 				ACEBB1AB182C852500A4CE2F /* AFNetworking */,
 				AC66C9701B5D650D009945A1 /* DOFavoriteButton */,
-				ACD930A61A49E9EA00C13C45 /* GHContextView */,
 				AC619F551AEDE2A900995B2D /* GUIPlayerView */,
 				AC86BFD61B406CD8002F1C2F /* HMSegmentedControl */,
 				AC4AC36F1AA5894300D2FA17 /* HTKDynamicResizingCell */,
 				ACC1E9831825E43F00DCA712 /* JASidePanels */,
 				AC90E9591A3FD4B700D9FC65 /* JDStatusBarNotification */,
+				AC063A3F1B6217770040F7F7 /* JGActionSheet */,
 				AC9B8BD81A3FD916006D36B2 /* JNKeychain */,
 				ACC1E9901825E4A400DCA712 /* JSFlatButton */,
+				AC063A321B6204E00040F7F7 /* LGPlusButtonsView */,
 				AC6FB9C81ADCC57F00B9FFCD /* LoremIpsum */,
 				AC0410361AA3785000B08E76 /* Masonry */,
 				AC6FB98D1ADCBBEB00B9FFCD /* MBProgressHUD */,
@@ -1675,15 +1736,6 @@
 				ACB6AB941A5B8B1600398ADA /* UIPlaceholderTextView.m */,
 			);
 			name = "External Pages";
-			sourceTree = "<group>";
-		};
-		ACD930A61A49E9EA00C13C45 /* GHContextView */ = {
-			isa = PBXGroup;
-			children = (
-				ACD930A71A49EA0200C13C45 /* GHContextMenuView.h */,
-				ACD930A81A49EA0200C13C45 /* GHContextMenuView.m */,
-			);
-			name = GHContextView;
 			sourceTree = "<group>";
 		};
 		ACE2A1F21A67669C001312BD /* Stream VC */ = {
@@ -1894,6 +1946,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC20269E1B410524002A4F2C /* HorizBorder.png in Resources */,
+				ACC510FD1B61FB690048E603 /* SIAlertView.bundle in Resources */,
 				AC20269F1B410524002A4F2C /* indiegogo.png in Resources */,
 				AC2026A01B410524002A4F2C /* twitter circ.png in Resources */,
 				AC2026A11B410524002A4F2C /* digg.png in Resources */,
@@ -1977,6 +2030,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACB8DD271845A76C00A3A498 /* myspace.png in Resources */,
+				ACC510FC1B61FB690048E603 /* SIAlertView.bundle in Resources */,
 				ACB8DD011845A76C00A3A498 /* blogger.png in Resources */,
 				ACB8DD451845A76C00A3A498 /* tumblr.png in Resources */,
 				AC0BF96F18402EC900177106 /* facebook.off@2x.png in Resources */,
@@ -2077,8 +2131,10 @@
 				AC2025F51B410524002A4F2C /* Data.m in Sources */,
 				AC2025F61B410524002A4F2C /* JDStatusBarNotification.m in Sources */,
 				AC2025F71B410524002A4F2C /* MASConstraintMaker.m in Sources */,
+				AC063A431B6217770040F7F7 /* JGActionSheet.m in Sources */,
 				AC2025F81B410524002A4F2C /* JSFlatButton.m in Sources */,
 				AC2025F91B410524002A4F2C /* MXSegmentedPager.m in Sources */,
+				AC063A381B6204E00040F7F7 /* LGPlusButton.m in Sources */,
 				AC2025FA1B410524002A4F2C /* POPVector.mm in Sources */,
 				AC2025FB1B410524002A4F2C /* AFOAuth1Client.m in Sources */,
 				AC2025FC1B410524002A4F2C /* SLKTextView.m in Sources */,
@@ -2087,6 +2143,7 @@
 				AC2026001B410524002A4F2C /* TimelineContainerViewController.m in Sources */,
 				AC2026011B410524002A4F2C /* NSArray+MASAdditions.m in Sources */,
 				AC2026021B410524002A4F2C /* TimelineControllerViewController.m in Sources */,
+				ACC510FF1B61FB690048E603 /* SIAlertView.m in Sources */,
 				AC2026031B410524002A4F2C /* TwitterClient.m in Sources */,
 				AC2026041B410524002A4F2C /* XLBarView.m in Sources */,
 				AC2026051B410524002A4F2C /* MYBlurIntroductionView.m in Sources */,
@@ -2148,17 +2205,20 @@
 				AC20263D1B410524002A4F2C /* SDImageCache.m in Sources */,
 				AC20263E1B410524002A4F2C /* View+MASAdditions.m in Sources */,
 				AC20263F1B410524002A4F2C /* MKAnnotationView+WebCache.m in Sources */,
+				AC063A3A1B6204E00040F7F7 /* LGPlusButtonsView.m in Sources */,
 				AC2026401B410524002A4F2C /* JDStatusBarView.m in Sources */,
 				AC2026411B410524002A4F2C /* InstagramClient.m in Sources */,
 				AC2026421B410524002A4F2C /* MASViewAttribute.m in Sources */,
 				AC2026431B410524002A4F2C /* MASCompositeConstraint.m in Sources */,
 				AC2026441B410524002A4F2C /* UIScrollView+SLKAdditions.m in Sources */,
+				AC063A3E1B6207B90040F7F7 /* LGDrawer.m in Sources */,
 				AC2026451B410524002A4F2C /* AFImageRequestOperation.m in Sources */,
 				AC66C96C1B5CE2D4009945A1 /* ForeignInstagramViewHeader.m in Sources */,
 				AC2026461B410524002A4F2C /* FacebookCell.m in Sources */,
 				AC2026471B410524002A4F2C /* MessageTableViewCell.m in Sources */,
 				AC2026481B410524002A4F2C /* MenuButton.m in Sources */,
 				AC2026491B410524002A4F2C /* POPPropertyAnimation.mm in Sources */,
+				ACC511011B61FB690048E603 /* UIWindow+SIUtils.m in Sources */,
 				AC20264A1B410524002A4F2C /* POPLayerExtras.mm in Sources */,
 				AC20264B1B410524002A4F2C /* UICollectionViewCellPhoto.m in Sources */,
 				AC20264C1B410524002A4F2C /* GlowImageView.m in Sources */,
@@ -2173,7 +2233,6 @@
 				AC2026551B410524002A4F2C /* POPAnimator.mm in Sources */,
 				AC2026561B410524002A4F2C /* POPCGUtils.mm in Sources */,
 				AC2026571B410524002A4F2C /* InstagramTableViewController.m in Sources */,
-				AC2026581B410524002A4F2C /* GHContextMenuView.m in Sources */,
 				AC2026591B410524002A4F2C /* MBTwitterScroll.m in Sources */,
 				AC20265A1B410524002A4F2C /* InstagramResultsCell.m in Sources */,
 				AC20265B1B410524002A4F2C /* UIImage+JSFlatButton.m in Sources */,
@@ -2254,6 +2313,7 @@
 				AC86BFD31B406C99002F1C2F /* MXSegmentedPager.m in Sources */,
 				ACC1E98F1825E49F00DCA712 /* JSFlatButton.m in Sources */,
 				ACE7CC281B00350B005740E7 /* TwitterSearchNavigationViewController.m in Sources */,
+				AC063A371B6204E00040F7F7 /* LGPlusButton.m in Sources */,
 				ACF0A5591B0038C60087F47E /* POPAnimator.mm in Sources */,
 				AC5A50751A65FAC10093E83F /* XLButtonBarViewCell.m in Sources */,
 				ACF0A56D1B0038C60087F47E /* POPVector.mm in Sources */,
@@ -2261,16 +2321,19 @@
 				AC86BFD51B406C99002F1C2F /* MXSegmentedPagerController.m in Sources */,
 				ACE7CC221B003487005740E7 /* MenuItem.m in Sources */,
 				ACF0A54D1B0038C60087F47E /* POPAnimatableProperty.mm in Sources */,
+				ACC510FE1B61FB690048E603 /* SIAlertView.m in Sources */,
 				AC5A506F1A65FAC10093E83F /* XLSegmentedPagerTabStripViewController.m in Sources */,
 				ACA9FF941A4A8735000815A8 /* WebViewVC.m in Sources */,
 				AC643D471ABA904500A0D04B /* ALView+PureLayout.m in Sources */,
 				ACE7CC241B003487005740E7 /* PopMenu.m in Sources */,
 				ACC4C72B18062C83000A3BA8 /* FloadtTests.m in Sources */,
 				AC6FB9CC1ADCC57F00B9FFCD /* LoremIpsum.m in Sources */,
+				AC063A421B6217770040F7F7 /* JGActionSheet.m in Sources */,
 				AC0410571AA3785000B08E76 /* MASConstraint.m in Sources */,
 				AC6FB9A01ADCC3A600B9FFCD /* MessageTextView.m in Sources */,
 				AC4337F61A6355D600C1DD42 /* RRSendMessageViewController.m in Sources */,
 				AC04105F1AA3785000B08E76 /* MASViewConstraint.m in Sources */,
+				AC063A391B6204E00040F7F7 /* LGPlusButtonsView.m in Sources */,
 				AC86BFDF1B406D0C002F1C2F /* UIScrollView+VGParallaxHeader.m in Sources */,
 				AC0410651AA3785000B08E76 /* View+MASAdditions.m in Sources */,
 				AC0410591AA3785000B08E76 /* MASConstraintMaker.m in Sources */,
@@ -2290,6 +2353,7 @@
 				ACC1E9891825E45100DCA712 /* JASidePanelController.m in Sources */,
 				ACF0A5511B0038C60087F47E /* POPAnimationEvent.mm in Sources */,
 				ACE7CC1E1B003487005740E7 /* GlowImageView.m in Sources */,
+				ACC511001B61FB690048E603 /* UIWindow+SIUtils.m in Sources */,
 				AC5A50731A65FAC10093E83F /* XLButtonBarView.m in Sources */,
 				ACF0A56B1B0038C60087F47E /* POPSpringAnimation.mm in Sources */,
 				AC6FB9BF1ADCC4FC00B9FFCD /* SLKInputAccessoryView.m in Sources */,
@@ -2305,6 +2369,7 @@
 				AC5A506B1A65FAC10093E83F /* XLButtonBarPagerTabStripViewController.m in Sources */,
 				AC36186F1B1F4BA000206AB5 /* STTweetLabel.m in Sources */,
 				AC6FB9BB1ADCC4FC00B9FFCD /* UIScrollView+SLKAdditions.m in Sources */,
+				AC063A3D1B6207B90040F7F7 /* LGDrawer.m in Sources */,
 				AC5A50711A65FAC10093E83F /* XLBarView.m in Sources */,
 				AC6FB99C1ADCC3A600B9FFCD /* MessageViewController.m in Sources */,
 				ACF0A54F1B0038C60087F47E /* POPAnimation.mm in Sources */,

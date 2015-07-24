@@ -28,7 +28,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //[self.barView.selectedBar setBackgroundColor:[UIColor colorWithRed:52/255.0f green:170.0f/255.0f blue:220/255.0f alpha:1.0]];
+    [self.barView.selectedBar setBackgroundColor:[UIColor colorWithRed:25/255.0f green:181/255.0f blue:220/255.0f alpha:1.0]];
     // Do any additional setup after loading the view.
 }
 

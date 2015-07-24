@@ -9,20 +9,30 @@
 #import "ForiegnInstagramController.h"
 #import "Data.h"
 #import "ForeignInstagramViewHeader.h"
+#import "SIAlertView.h"
 
 @interface ForiegnInstagramController () <MXSegmentedPagerDelegate, MXSegmentedPagerDataSource, UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) MXSegmentedPager  * segmentedPager;
 @property (nonatomic, strong) UITableView       * tableView;
 @property (nonatomic, strong) UIWebView         * webView;
 @property (nonatomic, strong) ForeignInstagramViewHeader *header;
+@property (nonatomic, strong) UICollectionView *collectionView;
 @end
-
 @implementation ForiegnInstagramController
+
+@synthesize instagramResponse;
+@synthesize instaPics;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString *userID = self.instagramData[@"user"][@"id"];
-    [self getInstaDataWithUserID:userID];
+    if (self.idValue == nil) {
+        NSString *userID = self.instagramData[@"user"][@"id"];
+        [self getInstaDataWithUserID:userID];
+        [self fetchInstagramPicsForUser:userID];
+    } else {
+        [self getInstaDataWithUserID:self.idValue];
+        [self fetchInstagramPicsForUser:self.idValue];
+    }
     [self initUI];
     self.view.backgroundColor = UIColor.whiteColor;
     
@@ -73,6 +83,19 @@
     return _tableView;
 }
 
+- (UICollectionView *)collectionView {
+    if (!_collectionView) {
+        UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
+        _collectionView=[[UICollectionView alloc] initWithFrame:self.view.frame collectionViewLayout:layout];
+        [_collectionView setDataSource:self];
+        [_collectionView setDelegate:self];
+        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+        [_collectionView setBackgroundColor:[UIColor whiteColor]];
+        [self.view addSubview:_collectionView];
+    }
+    return _collectionView;
+}
+
 - (UIWebView *)webView {
     if (!_webView) {
         // Add a web page
@@ -113,7 +136,7 @@
 }
 
 - (UIView *)segmentedPager:(MXSegmentedPager *)segmentedPager viewForPageAtIndex:(NSInteger)index {
-    return [@[self.tableView, self.webView, self.tableView] objectAtIndex:index];
+    return [@[self.collectionView, self.tableView, self.webView] objectAtIndex:index];
 }
 
 #pragma -mark <UITableViewDelegate>
@@ -141,6 +164,53 @@
     return cell;
 }
 
+#pragma -mark <UICollectionViewData>
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return instaPics.count;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    cell.backgroundColor=[UIColor orangeColor];
+    
+    NSDictionary *entry = instaPics[indexPath.row];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *imageUrlString = entry[@"images"][@"low_resolution"][@"url"];
+        NSURL *url = [NSURL URLWithString:imageUrlString];
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:cell.frame];
+            photoImageView.image = [UIImage imageWithData:data];
+            [cell addSubview:photoImageView];
+        });
+    });
+    
+    return cell;
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(104, 104);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 2.0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 2.0;
+}
+
+// Layout: Set Edges
+- (UIEdgeInsets)collectionView:
+(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    // return UIEdgeInsetsMake(0,8,0,8);  // top, left, bottom, right
+    return UIEdgeInsetsMake(0,0,0,0);  // top, left, bottom, right
+}
+
+// Other Methods
 - (void)initUI {
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
@@ -152,17 +222,152 @@
     
     self.navigationItem.leftBarButtonItem = barButtonItem;
     
-
+    UIButton *gearButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
+    [gearButton setTitle:@"" forState:UIControlStateNormal];
+    [gearButton setBackgroundImage:[UIImage imageNamed:@"19-gear"] forState:UIControlStateNormal];
+    [gearButton addTarget:self action:@selector(didTapGearButton:) forControlEvents:UIControlEventTouchUpInside];
+    gearButton.frame = CGRectMake(0.0f, 0.0f, 18.0f, 18.0f);
+    UIBarButtonItem *gearButtonItem = [[UIBarButtonItem alloc] initWithCustomView:gearButton];
+    
+    self.navigationItem.rightBarButtonItem = gearButtonItem;
+
+    if (self.entersFromSearch == NO) {
     [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                                       [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                                       [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
+    }else{
+        [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                                          [UIColor whiteColor], NSForegroundColorAttributeName,
+                                                                          [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
+    }
 }
 
 -(void)popBack {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (void)didTapGearButton:(id)sender
+{
+    if ([self.instaUser.incoming_status isEqual:@"none"]) {
+        JGActionSheetSection *section = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Block"] buttonStyle:JGActionSheetButtonStyleDefault];
+        [section setButtonStyle:JGActionSheetButtonStyleRed forButtonAtIndex:0];
+        NSArray *sections = (@[section, [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Cancel"] buttonStyle:JGActionSheetButtonStyleCancel]]);
+        JGActionSheet *sheetI = [[JGActionSheet alloc] initWithSections:sections];
+        sheetI.delegate = self;
+        [sheetI setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
+            if (indexPath.row == 0) {
+                NSLog(@"pressed index 0");
+                SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Block?" andMessage:@"Are you sure you want to block this user?"];
+                [alertView addButtonWithTitle:@"Cancel"
+                                         type:SIAlertViewButtonTypeCancel
+                                      handler:^(SIAlertView *alert) {
+                                          NSLog(@"Cancel Clicked");
+                                      }];
+                [alertView addButtonWithTitle:@"Block"
+                                         type:SIAlertViewButtonTypeDestructive
+                                      handler:^(SIAlertView *alert) {
+                                          NSLog(@"Block Clicked");
+                                      }];
+                alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+                [alertView show];
+                [sheet dismissAnimated:YES];
+            }
+            if(indexPath.row == 1) {
+                [sheet dismissAnimated:YES];
+            }
+            if(indexPath.row == 2) {
+                [sheet dismissAnimated:YES];
+            }
+        }];
+        [sheetI showInView:self.navigationController.view animated:YES];
+    } else {
+        NSString *incomStatus = [[NSString alloc] init];
+        if([self.instaUser.incoming_status  isEqual: @"followed_by"]) {
+            incomStatus = @"Follows You";
+        }
+        if([self.instaUser.incoming_status  isEqual: @"requested_by"]) {
+            incomStatus = @"Follows You";
+        }
+        if([self.instaUser.incoming_status  isEqual: @"blocked_by_you"]) {
+            incomStatus = @"Follows You";
+        }
+    
+        JGActionSheetSection *section = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Block",incomStatus] buttonStyle:JGActionSheetButtonStyleDefault];
+        [section setButtonStyle:JGActionSheetButtonStyleRed forButtonAtIndex:0];
+        NSArray *sections = (@[section, [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Cancel"] buttonStyle:JGActionSheetButtonStyleCancel]]);
+        JGActionSheet *sheetI = [[JGActionSheet alloc] initWithSections:sections];
+        sheetI.delegate = self;
+        [sheetI setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
+            if (indexPath.row == 0) {
+                SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Block?" andMessage:@"Are you sure you want to block this user?"];
+                [alertView addButtonWithTitle:@"Cancel"
+                                         type:SIAlertViewButtonTypeCancel
+                                      handler:^(SIAlertView *alert) {
+                                          NSLog(@"Cancel Clicked");
+                                      }];
+                [alertView addButtonWithTitle:@"Block"
+                                         type:SIAlertViewButtonTypeDestructive
+                                      handler:^(SIAlertView *alert) {
+                                          NSLog(@"Block Clicked");
+                                      }];
+                alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+                [alertView show];
+                [sheet dismissAnimated:YES];
+            }
+            if(indexPath.row == 1) {
+                [sheet dismissAnimated:YES];
+            }
+            if(indexPath.row == 2) {
+                [sheet dismissAnimated:YES];
+            }
+        }];
+        [sheetI showInView:self.navigationController.view animated:YES];
+    }
+}
+
+- (void)blockUser:(NSString *)user {
+
+}
+
+- (void)checkRelationshipStatus:(NSString *)user {
+    NSString *path = [NSString stringWithFormat:@"users/%@/relationship", user];
+    
+    [[InstagramClient sharedClient] getPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Response Object: %@",responseObject);
+        self.instaUser.incoming_status = responseObject[@"data"][@"incoming_status"];
+        self.instaUser.outgoing_status = responseObject[@"data"][@"outgoing_status"];
+        self.instaUser.target_user_is_private = responseObject[@"data"][@"target_user_is_private"];
+        //UPDATE
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[self header] updateWithUserDetails:self.instaUser];
+            self.navigationItem.title = self.instaUser.username;
+        });
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+//Global refresh Instagram Method
+// Fetch initial Posts
+- (void)fetchInstagramPicsForUser:(NSString *)user {
+    instaPics = [[NSMutableArray alloc] init];
+    
+    NSString *path = [NSString stringWithFormat:@"users/%@/media/recent",user];
+    [[InstagramClient sharedClient] getPath:path
+                                     parameters:nil
+                                        success:^(AFHTTPRequestOperation *operation, id responseObject) {
+                                            instagramResponse = [responseObject mutableCopy];
+                                            NSLog(@"%@",responseObject);
+                                            [self.instaPics addObjectsFromArray:responseObject[@"data"]];
+                                            [self.collectionView reloadData];
+                                        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+                                            NSLog(@"Failure: %@", error);
+                                        }];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.collectionView reloadData];
+    });
+}
 
 - (void)getInstaDataWithUserID:(NSString *)user {
     NSString *path = [NSString stringWithFormat:@"users/%@", user];
@@ -179,12 +384,7 @@
         self.instaUser.profile_picture = responseObject[@"data"][@"profile_picture"];
         self.instaUser.username = responseObject[@"data"][@"username"];
         self.instaUser.website = responseObject[@"data"][@"website"];
-        
-        //UPDATE
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[self header] updateWithUserDetails:self.instaUser];
-            self.navigationItem.title = self.instaUser.username;
-        });
+        [self checkRelationshipStatus:user];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];

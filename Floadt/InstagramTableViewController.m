@@ -88,8 +88,10 @@
     [cell.instagramPic sd_setImageWithURL:url];
     
     // Set User Name
-    NSString *user = entry[@"user"][@"full_name"];
-    [cell.nameLabel setText:user];
+    NSString *user = entry[@"user"][@"username"];
+    [cell.nameLabel setTitle:user forState:UIControlStateNormal];
+    [cell.nameLabel addTarget:self action:@selector(profilePicTapped:) forControlEvents:UIControlEventTouchUpInside];
+
     
     // If no Caption
     if (entry[@"caption"] != [NSNull null] && entry[@"caption"][@"text"] != [NSNull null])            {
@@ -146,26 +148,24 @@
     [cell.likeLabel setText:likes];
     
     // Add Profile Image
-    cell.profilePic.userInteractionEnabled = YES;
-    NSURL *imageUrl = entry[@"user"][@"profile_picture"];
-    [cell.profilePic sd_setImageWithURL:imageUrl completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
-        cell.profilePic.image = image;
-        //Make the Profile Pic ImageView Circular
-        CALayer *imageLayer = cell.profilePic.layer;
-        [imageLayer setCornerRadius:18];
-        [imageLayer setMasksToBounds:YES];
-    }];
-    UITapGestureRecognizer *profilePicTap =
-    [[UITapGestureRecognizer alloc] initWithTarget:self
-                                            action:@selector(profilePicTapped:)];
-    [cell.profilePic addGestureRecognizer:profilePicTap];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *imageUrl = entry[@"user"][@"profile_picture"];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [cell.profilePic setBackgroundImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+            CALayer *imageLayer = cell.profilePic.layer;
+            [imageLayer setCornerRadius:17.5];
+            [imageLayer setMasksToBounds:YES];
+        });
+    });
+    [cell.profilePic addTarget:self action:@selector(profilePicTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     // Button's
     [cell.animeButton addTarget:self action:@selector(tapped:) forControlEvents:UIControlEventTouchUpInside];
     [cell.animeButton setObjectID:entry[@"id"]];
     [cell.animeButton setLikesCount:entry[@"likes"][@"count"]];
     
-    [cell.commentButton addTarget:self action:@selector(profilePicTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.commentButton addTarget:self action:@selector(commentButtonTap:) forControlEvents:UIControlEventTouchUpInside];
     
     NSDictionary *instapic = [self.instaPics objectAtIndex:indexPath.row];
     
@@ -191,6 +191,7 @@
     NSInteger row = i.row;
     NSDictionary *pic = [instaPics objectAtIndex:row];
     forInsta.instagramData = pic;
+    forInsta.entersFromSearch = NO;
     [self.navigationController pushViewController:forInsta animated:YES];
 }
 

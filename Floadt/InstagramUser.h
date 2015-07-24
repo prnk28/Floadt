@@ -18,6 +18,9 @@
     NSString *profile_picture;
     NSString *username;
     NSString *website;
+    NSString *incoming_status;
+    NSString *outgoing_status;
+    id target_user_is_private;
 }
 
 @property (nonatomic, strong) NSString *bio;
@@ -29,5 +32,8 @@
 @property (nonatomic, strong) NSString *profile_picture;
 @property (nonatomic, strong) NSString *username;
 @property (nonatomic, strong) NSString *website;
+@property (nonatomic, strong) NSString *incoming_status;
+@property (nonatomic, strong) NSString *outgoing_status;
+@property id target_user_is_private;
 
 @end

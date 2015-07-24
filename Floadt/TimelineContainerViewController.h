@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Data.h"
-#import "GHContextMenuView.h"
+#import "LGPlusButton.h"
+#import "LGPlusButtonsView.h"
 #import "AFOAuth1Client.h"
 
-@interface TimelineContainerViewController : UIViewController< UIActionSheetDelegate>
+@interface TimelineContainerViewController : UIViewController< UIActionSheetDelegate, LGPlusButtonsViewDelegate>
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (nonatomic, strong) UITextView *message;
 @property (nonatomic, strong) AFOAuth1Client *twitterClient;

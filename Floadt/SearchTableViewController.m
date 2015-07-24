@@ -60,7 +60,16 @@
     [cell.usernameLabel setFont:[UIFont fontWithName:@"Helvetica-Light" size:11.0]];
     [cell.usernameLabel setText:subtitle];
     
-    [cell.proImageView sd_setImageWithURL:totalArray[@"profile_picture"] placeholderImage:nil options:indexPath.row == 0 ? SDWebImageRefreshCached : 0];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSString *imageUrl = totalArray[@"profile_picture"];
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:imageUrl]];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            cell.proImageView.image = [UIImage imageWithData:data];
+            CALayer *imageLayer = cell.proImageView.layer;
+            [imageLayer setCornerRadius:15];
+            [imageLayer setMasksToBounds:YES];
+        });
+    });
 }
 
 - (void)didTapPostButton:(id)sender
@@ -104,6 +113,17 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
+}
+
+- (void)tableView:(UITableView *)theTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    ForiegnInstagramController *forInsta = [[ForiegnInstagramController alloc] init];
+    NSDictionary *pic = [instagramResults objectAtIndex:indexPath.row];
+    id idval = pic[@"id"];
+    forInsta.idValue = idval;
+    forInsta.entersFromSearch = YES;
+    [self.navigationController pushViewController:forInsta animated:YES];
 }
 
 - (void)setUpUI{

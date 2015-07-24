@@ -40,14 +40,17 @@
         self.timeAgo.textColor = [UIColor darkGrayColor];
         self.timeAgo.numberOfLines = 1;
         [self.contentView addSubview:self.timeAgo];
+        
         // Name
-        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(58, 6, 192, 25)];
-        [self.nameLabel setFont:[UIFont fontWithName:@"Helvetica-Regular" size:12.0]];
-        self.nameLabel.textColor = [UIColor colorWithRed:(38.0/255.0) green:(120.0/255.0) blue:(172.0/255.0) alpha:1.0];
+        self.nameLabel = [[UIButton alloc] initWithFrame:CGRectMake(50, 3, 192, 25)];
+        self.nameLabel.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+        
+        [self.nameLabel.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Regular" size:12.0]];
+        [self.nameLabel setTitleColor:[UIColor colorWithRed:(38.0/255.0) green:(120.0/255.0) blue:(172.0/255.0) alpha:1.0] forState:UIControlStateNormal];
         [self.contentView addSubview:self.nameLabel];
         
         // Profile Pic
-        self.profilePic = [[UIImageView alloc] initWithFrame:CGRectMake(10, 6, 35, 35)];
+        self.profilePic = [[UIButton alloc] initWithFrame:CGRectMake(10, 6, 35, 35)];
         [self.contentView addSubview:self.profilePic];
         
         // Insta Pic

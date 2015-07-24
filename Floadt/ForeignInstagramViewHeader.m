@@ -60,27 +60,84 @@
     self.websiteString.text = self.instaUser.website;
     [self addSubview:self.websiteString];
     
+    // Follow Button
+    self.followButton = [[UIButton alloc] initWithFrame:CGRectMake(100, 53, 200, 25)];
+    [self.followButton setTitle:@"" forState:UIControlStateNormal];
+    if ([self.instaUser.outgoing_status isEqual:@"follows"]) {
+        [self.followButton setBackgroundImage:[UIImage imageNamed:@"following.png"] forState:UIControlStateNormal];
+    } else if ([self.instaUser.outgoing_status isEqual:@"requested"]) {
+        
+    } else {
+        [self.followButton setBackgroundImage:[UIImage imageNamed:@"follow.png"] forState:UIControlStateNormal];
+    }
+    
+    [self.followButton addTarget:self action:@selector(didTapFollowButton:) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:self.followButton];
+    
     //
     // Count Labels
     //
     
     self.postCount = [[UILabel alloc] initWithFrame:CGRectMake(100, 27.5, 320, 25)];
     self.postCount.font = [UIFont fontWithName:@"Helvetica-Regular" size:14.0];
-    NSString *post = [NSString stringWithFormat:@"%@",self.instaUser.media];
+    NSString *post = [self numberWithShortcut:self.instaUser.media];
     self.postCount.text = post;
     [self addSubview:self.postCount];
     
     self.followerCount = [[UILabel alloc] initWithFrame:CGRectMake(165, 27.5, 320, 25)];
     self.followerCount.font = [UIFont fontWithName:@"Helvetica-Regular" size:14.0];
-    NSString *follower = [NSString stringWithFormat:@"%@",self.instaUser.followed_by];
+    NSString *follower = [self numberWithShortcut:self.instaUser.followed_by];
     self.followerCount.text = follower;
     [self addSubview:self.followerCount];
     
     self.followingCount = [[UILabel alloc] initWithFrame:CGRectMake(250, 27.5, 320, 25)];
     self.followingCount.font = [UIFont fontWithName:@"Helvetica-Regular" size:14.0];
-    NSString *following = [NSString stringWithFormat:@"%@",self.instaUser.follows];
+    NSString *following = [self numberWithShortcut:self.instaUser.follows];
     self.followingCount.text = following;
     [self addSubview:self.followingCount];
+}
+
+- (void)didTapFollowButton:(UIButton *)sender {
+    if ([self.instaUser.outgoing_status isEqual:@"follows"]) {
+        SIAlertView *alertView = [[SIAlertView alloc] initWithTitle:@"Unfollow?" andMessage:nil];
+        [alertView addButtonWithTitle:@"Cancel"
+                             type:SIAlertViewButtonTypeCancel
+                          handler:^(SIAlertView *alert) {
+                              NSLog(@"Cancel Clicked");
+                          }];
+        [alertView addButtonWithTitle:@"Unfollow"
+                             type:SIAlertViewButtonTypeDestructive
+                          handler:^(SIAlertView *alert) {
+                              NSLog(@"Unfollow Clicked");
+                          }];
+        alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
+        [alertView show];
+    } else if ("requested") {
+        
+    } else {
+      [sender setBackgroundImage:[UIImage imageNamed:@"follow.png"] forState:UIControlStateNormal];
+    }
+}
+
+- (void)unfollowUser:(NSString *)user {
+    
+}
+
+- (NSString *)numberWithShortcut:(NSNumber*)number
+{
+    if (number.intValue > 9999) {
+        unsigned long long value = [number longLongValue];
+        NSUInteger index = 0;
+        float dvalue = (float)value;
+        NSArray *suffix = @[ @"", @"K", @"M", @"B", @"T", @"P", @"E" ];
+        while ((value /= 1000) && ++index) dvalue /= 1000;
+        NSString *svalue = [NSString stringWithFormat:@"%.2f%@",dvalue, [suffix objectAtIndex:index]];
+    
+        return svalue;
+    } else{
+        NSString *value = [NSString stringWithFormat:@"%@", number];
+        return value;
+    }
 }
 
 @end

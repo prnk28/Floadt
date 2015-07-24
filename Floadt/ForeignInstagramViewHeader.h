@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Data.h"
+#import "SIAlertView.h"
 
 @interface ForeignInstagramViewHeader : UIView
 - (void)updateWithUserDetails:(InstagramUser *)user;
@@ -24,5 +25,6 @@
 @property (nonatomic, strong) UILabel * followingString;
 @property (nonatomic, strong) UILabel * bioString;
 @property (nonatomic, strong) UITextView * websiteString;
+@property (nonatomic, strong) UIButton *followButton;
 
 @end

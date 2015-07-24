@@ -7,12 +7,18 @@
 //
 
 #import "Data.h"
+#import "LGPlusButtonsView.h"
+#import "LGPlusButton.h"
+#import "LGDrawer.h"
+#import "JGActionSheet.h"
 
-@interface SettingsViewController : UIViewController <GHContextOverlayViewDataSource, GHContextOverlayViewDelegate, UIActionSheetDelegate>
+@interface SettingsViewController : UIViewController <LGPlusButtonsViewDelegate, JGActionSheetDelegate>
 
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (strong, nonatomic) AFOAuth1Client *twitterClient;
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *userid;
+@property (strong, nonatomic) LGPlusButtonsView *plusButtonsView;
+@property (strong, nonatomic) UIScrollView      *scrollView;
 
 @end

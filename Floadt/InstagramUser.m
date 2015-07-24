@@ -19,5 +19,8 @@
 @synthesize profile_picture;
 @synthesize username;
 @synthesize website;
+@synthesize incoming_status;
+@synthesize outgoing_status;
+@synthesize target_user_is_private;
 
 @end

@@ -16,8 +16,8 @@
 @interface InstagramCell : UITableViewCell 
 
 @property (strong, nonatomic) id detailItem;
-@property (strong, nonatomic) UIImageView *profilePic;
-@property (strong, nonatomic) UILabel *nameLabel;
+@property (strong, nonatomic) UIButton *profilePic;
+@property (strong, nonatomic) UIButton *nameLabel;
 @property (strong, nonatomic) UILabel *dateLabel;
 @property (strong, nonatomic) UILabel *timeAgo;
 @property (strong, nonatomic) UIImageView *instagramPic;
