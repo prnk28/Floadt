@@ -137,53 +137,6 @@
     [alert show];
 }
 
-- (void)handleTwitterAuthenticationWithScreenName:(NSString *)screenname {
-    
-    NSString *statusesShowEndpoint = @"https://api.twitter.com/1.1/users/show.json";
-    NSDictionary *params = @{@"screen_name" : screenname
-                             };
-    NSError *clientError;
-    NSURLRequest *request = [[[Twitter sharedInstance] APIClient]
-                             URLRequestWithMethod:@"GET"
-                             URL:statusesShowEndpoint
-                             parameters:params
-                             error:&clientError];
-    
-    if (request) {
-        [[[Twitter sharedInstance] APIClient]
-         sendTwitterRequest:request
-         completion:^(NSURLResponse *response,
-                      NSData *data,
-                      NSError *connectionError) {
-             if (data) {
-                 // handle the response data e.g.
-                NSError *jsonError;
-                 NSDictionary *json = [NSJSONSerialization
-                                       JSONObjectWithData:data
-                                       options:0
-                                       error:&jsonError];
-                 
-                 NSString *followers = json[@"followers_count"];
-                 NSString *following = json[@"friends_count"];
-                 NSString *profilePicURL = json[@"profile_image_url_https"];
-                 NSString *fullName = json[@"name"];
-                 
-                 [[User sharedClient]setTwitterInfoWithUsername:self.username withFullName:fullName WithProfilePic:profilePicURL withFollowerCount:followers withFollowingCount:following withUserID:self.userid];
-                 
-                 
-                 NSLog(@"Followers:%@ Following:%@ Profile-Picture:%@ Full-Name:%@",followers,following,profilePicURL,fullName);
-                 
-             }
-             else {
-                 NSLog(@"Error: %@", connectionError);
-             }
-         }];
-    }
-    else {
-        NSLog(@"Error: %@", clientError);
-    }
-}
-
 - (void)viewWillLayoutSubviews
 {
     [super viewWillLayoutSubviews];

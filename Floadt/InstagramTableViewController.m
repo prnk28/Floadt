@@ -7,9 +7,11 @@
 //
 
 #import "InstagramTableViewController.h"
+#import "MBProgressHUD.h"
 
-@interface InstagramTableViewController ()
-
+@interface InstagramTableViewController ()<MBProgressHUDDelegate> {
+    MBProgressHUD *HUD;
+}
 @end
 
 @implementation InstagramTableViewController
@@ -54,7 +56,7 @@
 // Default Cell Size
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-        return 496;
+        return 503;
 }
 
 #pragma mark - XLPagerTabStripViewControllerDelegate
@@ -85,7 +87,14 @@
     // Set Image
     NSString *imageUrlString = entry[@"images"][@"low_resolution"][@"url"];
     NSURL *url = [NSURL URLWithString:imageUrlString];
+    cell.instagramPic.userInteractionEnabled = YES;
     [cell.instagramPic sd_setImageWithURL:url];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleImageTap:)];
+    tap.cancelsTouchesInView = YES;
+    tap.numberOfTapsRequired = 2;
+    tap.delegate = self;
+    [cell.instagramPic addGestureRecognizer:tap];
     
     // Set User Name
     NSString *user = entry[@"user"][@"username"];
@@ -175,12 +184,27 @@
         NSLog(urlString);
         NSURL *url = [NSURL URLWithString:urlString];
         [cell initiateVideoWithURL:url];
+        [cell.playButton addGestureRecognizer:tap];
     }else{
         [cell.player stop];
         cell.player.view.hidden = YES;
     }
     
     return cell;
+}
+
+- (void) handleImageTap:(UIGestureRecognizer *)gestureRecognizer {
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+    HUD.customView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"heart-white.png"]];
+    
+    // Set custom view mode
+    HUD.mode = MBProgressHUDModeCustomView;
+    
+    HUD.delegate = self;
+    
+    [HUD show:YES];
+    [HUD hide:YES afterDelay:0.75];
 }
 
 // On profile Picture Tap
@@ -207,7 +231,7 @@
 }
 
 // On Anime Button Tap
--(void) tapped:(DOFavoriteButton*) sender {
+-(void)tapped:(DOFavoriteButton*) sender {
     if (sender.selected) {
         // deselect
         [sender deselect];
@@ -216,13 +240,6 @@
         [sender select];
         // Set objectID
         NSString *objectID = sender.objectID;
-        int *likesCount = sender.LikesCount;
-        likesCount = likesCount + 1;
-        NSString *likesString = [NSString stringWithFormat:@"%d",likesCount];
-        // Get Cell
-        NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
-        InstagramCell *cell = (InstagramCell*)[self.tableView cellForRowAtIndexPath:i];
-        cell.likeLabel = likesString;
         
         NSString *path = [NSString stringWithFormat:@"media/%@/likes", objectID];
         [[InstagramClient sharedClient] postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -230,7 +247,6 @@
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
             NSLog(@"Failure: %@", error);
         }];
-        NSLog(@"Successfully Liked Picture");
     }
 }
 
@@ -322,6 +338,11 @@
     [self fetchInstagramPics];
     [refreshControl endRefreshing];
 }
+
+-(void)scrollViewDidEndZooming:(UIScrollView *)scrollView withView:(UIView *)view atScale:(float)scale {
+    
+}
+
 
 // Get Active Cell
 - (NSIndexPath *)indexPathForCellContainingView:(UIView *)view {

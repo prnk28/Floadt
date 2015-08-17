@@ -38,10 +38,9 @@
 }
 
 -(NSArray *)childViewControllersForPagerTabStripViewController:(XLPagerTabStripViewController *)pagerTabStripViewController{
-    TwitterSearchNavigationViewController *twitterNav = [[TwitterSearchNavigationViewController alloc] init];
       UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Search"];
     
-    NSArray * childViewControllers = [NSMutableArray arrayWithObjects:viewController, twitterNav, nil];
+    NSArray * childViewControllers = [NSMutableArray arrayWithObjects:viewController, viewController, nil];
     
     return childViewControllers;
 }

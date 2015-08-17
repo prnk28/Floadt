@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface InstagramResultsCell : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *proImageView;
-@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (strong, nonatomic) UIImageView *proImageView;
+@property (strong, nonatomic) UILabel *nameLabel;
+@property (strong, nonatomic) UILabel *usernameLabel;
 
 @end

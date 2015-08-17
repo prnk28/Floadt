@@ -45,7 +45,6 @@
 }
 
 - (void)handleOAuthCallbackWithURL:(NSURL *)url {
-    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
     NSError *regexError = nil;
     NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^[^#]*#access_token=(.*)$"
                                                                            options:0
@@ -59,7 +58,8 @@
                                  NSRange accessTokenRange = [result rangeAtIndex:1];
                                  NSString *token = [input substringWithRange:accessTokenRange];
                                  NSLog(@"Access Token: %@", token);
-                                 [user setBool:YES forKey:@"instagramActive"];
+                                 [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"instagramActive"];
+                                 [[NSUserDefaults standardUserDefaults] synchronize];
                                  [JNKeychain saveValue:token forKey:@"instaToken"];
                              }
                          }];

@@ -14,7 +14,16 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        self.proImageView = [[UIImageView alloc] initWithFrame:CGRectMake(8, 0, 30, 30)];
+        [self.contentView addSubview:self.proImageView];
+        
+        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 0, 202, 21)];
+        self.nameLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:12.0];
+        [self.contentView addSubview:self.nameLabel];
+        
+        self.usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(65, 21, 190, 24)];
+        self.usernameLabel.font = [UIFont fontWithName:@"Helvetica-Light" size:10.0];
+        [self.contentView addSubview:self.usernameLabel];
     }
     return self;
 }

@@ -11,7 +11,6 @@
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
-- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error;
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) AFOAuth1Client *twitterClient;
 @end

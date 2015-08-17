@@ -21,8 +21,8 @@
 // THE SOFTWARE.
 
 #import <UIKit/UIKit.h>
-#import "HMSegmentedControl.h"
 #import "MXPagerView.h"
+#import "HMSegmentedControl.h"
 
 /**
  The segmented control position options relative to the segmented-pager.

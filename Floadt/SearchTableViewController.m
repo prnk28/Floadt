@@ -23,6 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     _searchBar.delegate = self;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,7 +67,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             cell.proImageView.image = [UIImage imageWithData:data];
             CALayer *imageLayer = cell.proImageView.layer;
-            [imageLayer setCornerRadius:15];
+            [imageLayer setCornerRadius:25];
             [imageLayer setMasksToBounds:YES];
         });
     });
@@ -122,7 +123,7 @@
     NSDictionary *pic = [instagramResults objectAtIndex:indexPath.row];
     id idval = pic[@"id"];
     forInsta.idValue = idval;
-    forInsta.entersFromSearch = YES;
+    [forInsta setEntersFromSearch:(BOOL *)YES];
     [self.navigationController pushViewController:forInsta animated:YES];
 }
 

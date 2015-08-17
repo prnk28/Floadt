@@ -20,11 +20,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupNavbarGestureRecognizer];
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
     [refreshControl addTarget:self action:@selector(refresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:refreshControl];
 
     [self.tableView registerClass:[TwitterCell class] forCellReuseIdentifier:@"TwitterCell"];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"twitterActive"]) {
         [self fetchTweets];
@@ -61,20 +64,13 @@
     return [UIColor whiteColor];
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    NSDictionary *totalArray = tweets[indexPath.row];
-    NSString *text = [totalArray objectForKey:@"text"];
-    
-    if ([self Contains:@"RT" on:text]) {
-        return 144;
-    }
-    return 124;
-}
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     TwitterCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TwitterCell"];
+    
+    if (cell == nil) {
+        cell = [[TwitterCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TwitterCell"];
+    }
     
     // Add Tap Listeners
     UITapGestureRecognizer *nameLabelTap =
@@ -87,56 +83,12 @@
                                             action:@selector(handleCellProfileImageTap:)];
     [cell.profilePicture addGestureRecognizer:profileImageTap];
     
-    if (cell == nil) {
-        cell = [[TwitterCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TwitterCell"];
-    }
     NSDictionary *data = tweets[indexPath.row];
-    
-    //
-    // RETWEET CELL
-    //
-    /*
-    if ([self Contains:@"RT" on:[totalArray objectForKey:@"text"]]) {
-        TwitterCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"TwitterCell"];
-        cell.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"Background.png"]];
-        if (cell == nil) {
-           // cell = [[TwitterCell alloc] initWithRetweetStyle:UITableViewCellStyleDefault reuseIdentifier:@"TwitterCell"];
-        }
-
-        // Lookup RT User
-        NSString *text = [totalArray objectForKey:@"text"];
-        
-        NSRange start = [text rangeOfString:@"RT @"];
-        NSRange end = [text rangeOfString:@":"];
-        //NSString *shortString = [text substringWithRange:NSMakeRange(start.location, end.location)];
-        //NSString *evenShorterString = [shortString substringFromIndex:4];
-        
-        //[self lookupTwitterUser:evenShorterString];
-      
-        //Set username for twitter
-        //[cell.nameLabel setText:evenShorterString];
-        
-        //Set Retweet Status
-        NSString *name = [[totalArray objectForKey:@"user"] objectForKey:@"name"];
-        NSString *retName = [NSString stringWithFormat:@"Retweeted by %@",name];
-        [cell.retweetLabel setText:retName];
-    
-        //Set status for twitter
-        // NSString *status = userLookup[@"status"][@"text"];
-        //[cell.tweetLabel setText:shortString];
-    
-        //Set Profile Pic for Twitter
-        return cell;
-    }
-     */
-    //
-    // REGULAR CELL
-    //
     
     // NSDate
     NSString *nameString = data[@"user"][@"name"];
-    NSString *companyString = data[@"user"][@"screen_name"];
-    NSString *bioString = data[@"text"];
+    NSString *screenName = data[@"user"][@"screen_name"];
+    NSString *tweetString = data[@"text"];
 
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
@@ -146,7 +98,7 @@
     [dateFormatter setDateFormat: @"EEE MMM dd HH:mm:ss Z yyyy"];
     
     NSDate *date = [dateFormatter dateFromString:[data objectForKey:@"created_at"]];
-    NSDate *currentDateNTime        = [NSDate date];
+    NSDate *currentDateNTime = [NSDate date];
     NSCalendar *calendar = [NSCalendar currentCalendar];
     [calendar setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
     NSDateComponents *twitcomponents = [calendar components:(NSCalendarUnitHour | NSCalendarUnitMinute | NSCalendarUnitSecond) fromDate:date];
@@ -161,8 +113,6 @@
     NSInteger hour = realhour - twithour;
     NSInteger minute = realminute - twitminute;
     NSInteger second = realsecond - twitsecond;
-
-    NSLog(@"Formatted hour: %ld, Formatted minute: %ld, Formatted second: %ld",(long)hour, (long)minute, (long)second);
     
     int adjustedSeconds = ((int)minute * 60) - abs((int)second);
     int adjustedMinutes = adjustedSeconds / 60;
@@ -186,12 +136,15 @@
         cell.timeAgo.text = strFromInt;
     }
     
+    [cell.favoriteButton addTarget:self action:@selector(favoriteButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.retweetButton addTarget:self action:@selector(retweetButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
     // Set Values
-    cell.nameLabel.text = nameString;
+    [cell.nameLabel setText:nameString];
     cell.nameLabel.userInteractionEnabled = YES;
     cell.profilePicture.userInteractionEnabled = YES;
-    cell.tweetLabel.text = bioString;
-    cell.companyLabel.text = [NSString stringWithFormat:@"@%@",companyString];
+    cell.tweetLabel.text = tweetString;
+    cell.usernameLabel.text = [NSString stringWithFormat:@"@%@",screenName];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *imageUrl = [[data objectForKey:@"user"] objectForKey:@"profile_image_url"];
@@ -199,12 +152,50 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             cell.profilePicture.image = [UIImage imageWithData:data];
             CALayer *imageLayer = cell.profilePicture.layer;
-            [imageLayer setCornerRadius:15];
+            [imageLayer setCornerRadius:18];
             [imageLayer setMasksToBounds:YES];
         });
     });
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([tableView isEqual:self.tableView]) {
+        NSDictionary *data = tweets[indexPath.row];
+        NSString *nameString = data[@"user"][@"name"];
+        NSString *bioString = data[@"text"];
+        
+        NSMutableParagraphStyle *paragraphStyle = [NSMutableParagraphStyle new];
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        paragraphStyle.alignment = NSTextAlignmentLeft;
+        
+        NSDictionary *attributes = @{NSFontAttributeName: [UIFont systemFontOfSize:14.0],
+                                     NSParagraphStyleAttributeName: paragraphStyle};
+        
+        CGFloat width = CGRectGetWidth(tableView.frame)-kAvatarSize;
+        width -= 25.0;
+        
+        CGRect titleBounds = [nameString boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:NULL];
+        CGRect bodyBounds = [bioString boundingRectWithSize:CGSizeMake(width, CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:NULL];
+        
+        if (bioString.length == 0) {
+            return 0.0;
+        }
+        
+        CGFloat height = CGRectGetHeight(titleBounds);
+        height += CGRectGetHeight(bodyBounds);
+        height += 70.0;
+        
+        if (height < kMinimumHeight) {
+            height = kMinimumHeight;
+        }
+        return height;
+    }
+    else {
+        return kMinimumHeight;
+    }
 }
 
 // Fetches the OG set of Tweets
@@ -316,6 +307,26 @@
     NSLog(@"Cell ProPic Tapped");
     ForeignTwitterController *ftc = [[ForeignTwitterController alloc] init];
     [self.navigationController pushViewController:ftc animated:YES];
+}
+
+-(void)favoriteButtonTapped:(DOFavoriteButton*) sender {
+    if (sender.selected) {
+        // deselect
+        [sender deselect];
+    } else {
+        // select with animation
+        [sender select];
+    }
+}
+
+-(void)retweetButtonTapped:(DOFavoriteButton*) sender {
+    if (sender.selected) {
+        // deselect
+        [sender deselect];
+    } else {
+        // select with animation
+        [sender select];
+    }
 }
 
 - (void)navBarTap {

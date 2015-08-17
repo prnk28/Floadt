@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import "SettingsViewController.h"
-#import <Fabric/Fabric.h>
-#import <TwitterKit/TwitterKit.h>
 
 @implementation AppDelegate
 
@@ -19,20 +17,6 @@
     //NSSetUncaughtExceptionHandler(&uncaughtExceptionHandler);
     #endif
     
-    [Fabric with:@[TwitterKit]];
-
-    if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
-        
-        // If there's one, just open the session silently, without showing the user the login UI
-        [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
-                                           allowLoginUI:NO
-                                      completionHandler:^(FBSession *sessison, FBSessionState state, NSError *error) {
-                                          // Handler for session state changes
-                                          // Call this method EACH time the session state changes,
-                                          //  NOT just when the session open
-                                          //[self sessionStateChanged:session state:state error:error];
-                                      }];
-    }
     UIFont *newFont = [UIFont fontWithName:@"Aerovias_Brasil_NF" size:14];
     [[UILabel appearance] setFont:newFont];
     
@@ -54,53 +38,10 @@
         NSNotification *notification = [NSNotification notificationWithName:kAFApplicationLaunchedWithURLNotification object:nil userInfo:[NSDictionary dictionaryWithObject:url forKey:kAFApplicationLaunchOptionsURLKey]];
         [[NSNotificationCenter defaultCenter] postNotification:notification];
         
-    }else if([instagram isEqual: @"floadt://instagram_callback"]){
+    }else {
         [[InstagramClient sharedClient] handleOAuthCallbackWithURL:url];
-    }else{
-     return [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
     }
     return YES;
-}
-
-- (void)sessionStateChanged:(FBSession *)session state:(FBSessionState) state error:(NSError *)error
-{
-    if (!error && state == FBSessionStateOpen){
-        NSLog(@"Session opened");
-        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"facebookActive"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-        return;
-    }
-    if (state == FBSessionStateClosed || state == FBSessionStateClosedLoginFailed){
-        NSLog(@"Session closed");
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"facebookActive"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
-    
-    if (error){
-        NSLog(@"Error");
-        NSString *alertText;
-        NSString *alertTitle;
-        if ([FBErrorUtility shouldNotifyUserForError:error] == YES){
-            alertTitle = @"Something went wrong";
-            alertText = [FBErrorUtility userMessageForError:error];
-        } else {
-            if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryUserCancelled) {
-                NSLog(@"User cancelled login");
-            } else if ([FBErrorUtility errorCategoryForError:error] == FBErrorCategoryAuthenticationReopenSession){
-                alertTitle = @"Session Error";
-                alertText = @"Your current session is no longer valid. Please log in again.";
-                // https://developers.facebook.com/docs/ios/errors/
-            } else {
-                NSDictionary *errorInformation = [[[error.userInfo objectForKey:@"com.facebook.sdk:ParsedJSONResponseKey"] objectForKey:@"body"] objectForKey:@"error"];
-                
-                alertTitle = @"Something went wrong";
-                alertText = [NSString stringWithFormat:@"Please retry. \n\n If the problem persists contact us and mention this error code: %@", [errorInformation objectForKey:@"message"]];
-            }
-        }
-        [FBSession.activeSession closeAndClearTokenInformation];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"facebookActive"];
-        [[NSUserDefaults standardUserDefaults] synchronize];
-    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

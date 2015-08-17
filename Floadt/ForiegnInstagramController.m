@@ -174,16 +174,15 @@
 {
     UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
     cell.backgroundColor=[UIColor orangeColor];
-    
     NSDictionary *entry = instaPics[indexPath.row];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *imageUrlString = entry[@"images"][@"low_resolution"][@"url"];
         NSURL *url = [NSURL URLWithString:imageUrlString];
         NSData *data = [NSData dataWithContentsOfURL:url];
         dispatch_async(dispatch_get_main_queue(), ^{
-            UIImageView *photoImageView = [[UIImageView alloc] initWithFrame:cell.frame];
-            photoImageView.image = [UIImage imageWithData:data];
-            [cell addSubview:photoImageView];
+            UIImageView *imageView = [[UIImageView alloc] initWithFrame:cell.frame];
+            imageView.image = [UIImage imageWithData:data];
+            cell.backgroundView = imageView;
         });
     });
     
@@ -233,7 +232,7 @@
     self.navigationItem.rightBarButtonItem = gearButtonItem;
 
     if (self.entersFromSearch == NO) {
-    [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+        [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                                       [UIColor colorWithRed:179.0/255.0 green:177.0/255.0 blue:177.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
                                                                       [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
     }else{
@@ -253,6 +252,7 @@
         JGActionSheetSection *section = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Block"] buttonStyle:JGActionSheetButtonStyleDefault];
         [section setButtonStyle:JGActionSheetButtonStyleRed forButtonAtIndex:0];
         NSArray *sections = (@[section, [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Cancel"] buttonStyle:JGActionSheetButtonStyleCancel]]);
+        
         JGActionSheet *sheetI = [[JGActionSheet alloc] initWithSections:sections];
         sheetI.delegate = self;
         [sheetI setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
@@ -273,12 +273,6 @@
                 [alertView show];
                 [sheet dismissAnimated:YES];
             }
-            if(indexPath.row == 1) {
-                [sheet dismissAnimated:YES];
-            }
-            if(indexPath.row == 2) {
-                [sheet dismissAnimated:YES];
-            }
         }];
         [sheetI showInView:self.navigationController.view animated:YES];
     } else {
@@ -296,6 +290,7 @@
         JGActionSheetSection *section = [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Block",incomStatus] buttonStyle:JGActionSheetButtonStyleDefault];
         [section setButtonStyle:JGActionSheetButtonStyleRed forButtonAtIndex:0];
         NSArray *sections = (@[section, [JGActionSheetSection sectionWithTitle:nil message:nil buttonTitles:@[@"Cancel"] buttonStyle:JGActionSheetButtonStyleCancel]]);
+        
         JGActionSheet *sheetI = [[JGActionSheet alloc] initWithSections:sections];
         sheetI.delegate = self;
         [sheetI setButtonPressedBlock:^(JGActionSheet *sheet, NSIndexPath *indexPath) {
@@ -314,11 +309,7 @@
                 alertView.transitionStyle = SIAlertViewTransitionStyleBounce;
                 [alertView show];
                 [sheet dismissAnimated:YES];
-            }
-            if(indexPath.row == 1) {
-                [sheet dismissAnimated:YES];
-            }
-            if(indexPath.row == 2) {
+            } else {
                 [sheet dismissAnimated:YES];
             }
         }];
@@ -367,6 +358,31 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.collectionView reloadData];
     });
+}
+
+// Fetch Next Page
+- (void)fetchNextInstagramPage {
+    NSDictionary *page = instagramResponse[@"pagination"];
+    NSString *nextPage = page[@"next_url"];
+    
+    [[InstagramClient sharedClient] getPath:[NSString stringWithFormat:@"%@",nextPage] parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        instagramResponse = [responseObject mutableCopy];
+        [instagramResponse addEntriesFromDictionary:responseObject];
+        [instaPics addObjectsFromArray:responseObject[@"data"]];
+        [self.collectionView reloadData];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Failure: %@", error);
+    }];
+}
+
+// Bottome of UITableView
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    if (scrollView.contentOffset.y == roundf(scrollView.contentSize.height-scrollView.frame.size.height)) {
+        [self fetchNextInstagramPage];
+    }
 }
 
 - (void)getInstaDataWithUserID:(NSString *)user {

@@ -7,10 +7,11 @@
 //
 
 #import "SLKTextViewController.h"
+#import "ForiegnInstagramController.h"
 
 @interface MessageViewController : SLKTextViewController
 
-@property (strong, nonatomic) id instagramData;
+@property (strong, nonatomic) NSDictionary *instagramData;
 
 
 @end

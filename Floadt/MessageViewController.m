@@ -9,24 +9,8 @@
 #import "MessageViewController.h"
 #import "MessageTableViewCell.h"
 #import "MessageTextView.h"
-#import "Message.h"
-
-#import "LoremIpsum.h"
 
 static NSString *MessengerCellIdentifier = @"MessengerCell";
-static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
-
-@interface MessageViewController ()
-
-@property (nonatomic, strong) NSMutableArray *messages;
-
-@property (nonatomic, strong) NSArray *users;
-@property (nonatomic, strong) NSArray *channels;
-@property (nonatomic, strong) NSArray *emojis;
-
-@property (nonatomic, strong) NSArray *searchResult;
-
-@end
 
 @implementation MessageViewController
 
@@ -61,24 +45,12 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@",self.instagramData);
-    
-    NSMutableArray *array = [[NSMutableArray alloc] init];
-    
-    for (int i = 0; i < 100; i++) {
-        NSInteger words = (arc4random() % 40)+1;
-        
-        Message *message = [Message new];
-        message.username = [LoremIpsum name];
-        message.text = [LoremIpsum wordsWithNumber:words];
-        [array addObject:message];
-    }
-
+ 
     self.bounces = YES;
     self.shakeToClearEnabled = YES;
     self.keyboardPanningEnabled = YES;
     self.shouldScrollToBottomAfterKeyboardShows = NO;
-    self.inverted = YES;
+    self.inverted = NO;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.tableView registerClass:[MessageTableViewCell class] forCellReuseIdentifier:MessengerCellIdentifier];
@@ -99,9 +71,6 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 
     self.typingIndicatorView.canResignByTouch = YES;
     
-    [self.autoCompletionView registerClass:[MessageTableViewCell class] forCellReuseIdentifier:AutoCompletionCellIdentifier];
-    [self registerPrefixesForAutoCompletion:@[@"@", @"#", @":"]];
-    
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
     [barButton setTitle:@"" forState:UIControlStateNormal];
@@ -121,34 +90,6 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 
 #pragma mark - Overriden Methods
 
-
-- (NSString *)keyForTextCaching
-{
-    return [[NSBundle mainBundle] bundleIdentifier];
-}
-
-- (void)willRequestUndo
-{
-    // Notifies the view controller when a user did shake the device to undo the typed text
-    
-    [super willRequestUndo];
-}
-
-- (void)didCommitTextEditing:(id)sender
-{
-    // Notifies the view controller when tapped on the right "Accept" button for commiting the edited text
-    
-    Message *message = [Message new];
-    message.username = [LoremIpsum name];
-    message.text = [self.textView.text copy];
-    
-    [self.messages removeObjectAtIndex:0];
-    [self.messages insertObject:message atIndex:0];
-    [self.tableView reloadData];
-    
-    [super didCommitTextEditing:sender];
-}
-
 - (void)didCancelTextEditing:(id)sender
 {
     // Notifies the view controller when tapped on the left "Cancel" button
@@ -161,42 +102,10 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
     return [super canPressRightButton];
 }
 
-- (BOOL)canShowAutoCompletion
-{
-    NSArray *array = nil;
-    NSString *prefix = self.foundPrefix;
-    NSString *word = self.foundWord;
-    
-    self.searchResult = nil;
-    
-    if ([prefix isEqualToString:@"@"]) {
-        if (word.length > 0) {
-            array = [self.users filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self BEGINSWITH[c] %@", word]];
-        }
-        else {
-            array = self.users;
-        }
-    }
-    else if ([prefix isEqualToString:@"#"] && word.length > 0) {
-        array = [self.channels filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self BEGINSWITH[c] %@", word]];
-    }
-    else if ([prefix isEqualToString:@":"] && word.length > 1) {
-        array = [self.emojis filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"self BEGINSWITH[c] %@", word]];
-    }
-    
-    if (array.count > 0) {
-        array = [array sortedArrayUsingSelector:@selector(localizedCaseInsensitiveCompare:)];
-    }
-    
-    self.searchResult = [[NSMutableArray alloc] initWithArray:array];
-    
-    return self.searchResult.count > 0;
-}
-
 - (CGFloat)heightForAutoCompletionView
 {
     CGFloat cellHeight = [self.autoCompletionView.delegate tableView:self.autoCompletionView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-    return cellHeight*self.searchResult.count;
+    return cellHeight * self.instagramData.count;
 }
 
 
@@ -210,9 +119,8 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     NSDictionary *instaPics = self.instagramData;
-    NSString *count = instaPics[@"comments"][@"count"];
-    NSInteger myInt = [count intValue];
-    return myInt;
+    NSArray *commentArray =  instaPics[@"comments"][@"data"];
+    return commentArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -250,12 +158,9 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
     return cell;
 }
 
-
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([tableView isEqual:self.tableView]) {
-        
         NSDictionary *instaPics = self.instagramData;
         NSArray *commentArray =  instaPics[@"comments"][@"data"];
         NSString *commentText = [[commentArray objectAtIndex:indexPath.row] valueForKey:@"text"];
@@ -285,7 +190,6 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
         if (height < kMinimumHeight) {
             height = kMinimumHeight;
         }
-        
         return height;
     }
     else {
@@ -293,44 +197,18 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
     }
 }
 
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
-    if ([tableView isEqual:self.autoCompletionView]) {
-        UIView *topView = [UIView new];
-        topView.backgroundColor = self.autoCompletionView.separatorColor;
-        return topView;
-    }
-    return nil;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if ([tableView isEqual:self.autoCompletionView]) {
-        return 0.5;
-    }
-    return 0.0;
-}
-
-
 #pragma mark - UITableViewDelegate Methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([tableView isEqual:self.autoCompletionView]) {
-        
-        NSMutableString *item = [self.searchResult[indexPath.row] mutableCopy];
-        
-        if ([self.foundPrefix isEqualToString:@"@"] && self.foundPrefixRange.location == 0) {
-            [item appendString:@":"];
-        }
-        else if ([self.foundPrefix isEqualToString:@":"]) {
-            [item appendString:@":"];
-        }
-        
-        [item appendString:@" "];
-        
-        [self acceptAutoCompletionWithString:item keepPrefix:YES];
-    }
+    [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
+    ForiegnInstagramController *forInsta = [[ForiegnInstagramController alloc] init];
+    NSDictionary *instaPics = self.instagramData;
+    NSArray *commentArray =  instaPics[@"comments"][@"data"];
+    NSString *idval = [[[commentArray objectAtIndex:indexPath.row] valueForKey:@"from"]valueForKey:@"id"];
+    forInsta.idValue = idval;
+    [forInsta setEntersFromSearch:(BOOL *)NO];
+    [self.navigationController pushViewController:forInsta animated:YES];
 }
 
 -(void)popBack {
@@ -343,20 +221,6 @@ static NSString *AutoCompletionCellIdentifier = @"AutoCompletionCell";
 {
     // Since SLKTextViewController uses UIScrollViewDelegate to update a few things, it is important that if you ovveride this method, to call super.
     [super scrollViewDidScroll:scrollView];
-}
-
-
-#pragma mark - UIScrollViewDelegate Methods
-
-/** UITextViewDelegate */
-- (BOOL)textView:(SLKTextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-{
-    return [super textView:textView shouldChangeTextInRange:range replacementText:text];
-}
-
-- (void)textViewDidChangeSelection:(SLKTextView *)textView
-{
-    [super textViewDidChangeSelection:textView];
 }
 
 @end

@@ -44,7 +44,6 @@
         // Name
         self.nameLabel = [[UIButton alloc] initWithFrame:CGRectMake(50, 3, 192, 25)];
         self.nameLabel.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        
         [self.nameLabel.titleLabel setFont:[UIFont fontWithName:@"Helvetica-Regular" size:12.0]];
         [self.nameLabel setTitleColor:[UIColor colorWithRed:(38.0/255.0) green:(120.0/255.0) blue:(172.0/255.0) alpha:1.0] forState:UIControlStateNormal];
         [self.contentView addSubview:self.nameLabel];
@@ -107,10 +106,18 @@
         // Comment Button
         self.commentButton = [[UIButton alloc] initWithFrame:CGRectMake(220, 465, 25, 25 )];
         [self.commentButton setBackgroundImage:[UIImage imageNamed:@"comment.png"] forState:UIControlStateNormal];
-        [self.commentButton setTitleColor:[UIColor grayColor] forState:UIControlStateHighlighted];
+        [self.commentButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
         [self.contentView addSubview:self.commentButton];
     }
     return self;
+}
+
+- (void)prepareForReuse
+{
+    [super prepareForReuse];
+
+    
+    self.animeButton.selected = NO;
 }
 
 - (void)initiateVideoWithURL:(NSURL *)url {
