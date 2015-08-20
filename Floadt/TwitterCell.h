@@ -9,12 +9,17 @@
 #import <UIKit/UIKit.h>
 #import "Data.h"
 #import "PureLayout.h"
+#import "RetweetLabel.h"
+#import "FavoriteLabel.h"
 
 @interface TwitterCell : UITableViewCell
 
 @property (nonatomic, strong) DOFavoriteButton *favoriteButton;
 @property (nonatomic, strong) DOFavoriteButton *retweetButton;
 @property (nonatomic, strong) UIButton *replyButton;
+
+@property (nonatomic, strong) FavoriteLabel *favoritesLabel;
+@property (nonatomic, strong) RetweetLabel *retweetsLabel;
 
 @property (nonatomic, strong) UILabel *tweetLabel;
 @property (nonatomic, strong) UILabel *nameLabel;
@@ -24,6 +29,8 @@
 @property (nonatomic, strong) UIImageView *clockIcon;
 
 @property (nonatomic, strong) UILabel *timeAgo;
+
+@property NSDictionary *data;
 
 + (CGSize)defaultCellSize;
 

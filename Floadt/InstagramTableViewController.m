@@ -101,6 +101,16 @@
     [cell.nameLabel setTitle:user forState:UIControlStateNormal];
     [cell.nameLabel addTarget:self action:@selector(profilePicTapped:) forControlEvents:UIControlEventTouchUpInside];
 
+    // Determine if Entry was previously liked
+    id liked = entry[@"user_has_liked"];
+    
+    if ([liked integerValue] == 1) {
+        [cell.animeButton select];
+        
+    } else {
+        [cell.animeButton deselect];
+        
+    }
     
     // If no Caption
     if (entry[@"caption"] != [NSNull null] && entry[@"caption"][@"text"] != [NSNull null])            {
@@ -223,7 +233,7 @@
 - (void)commentButtonTap:(UIButton *)sender {
     NSLog(@"Comment Button Tapped");
     MessageViewController *message = [[MessageViewController alloc] init];
-       NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
+    NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
     NSInteger row = i.row;
     NSDictionary *pic = [instaPics objectAtIndex:row];
     message.instagramData = pic;

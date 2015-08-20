@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="q7I-3J-U0S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="q7I-3J-U0S">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
@@ -214,24 +214,6 @@
             </objects>
             <point key="canvasLocation" x="828" y="1519.5"/>
         </scene>
-        <!--Twitter-->
-        <scene sceneID="JhA-iA-CM9">
-            <objects>
-                <viewController storyboardIdentifier="TweetDetail" useStoryboardIdentifierAsRestorationIdentifier="YES" id="a0f-Gc-3sS" customClass="TweetDetailViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Htx-Ow-Ccw">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Twitter" id="RP0-QX-SXR"/>
-                    <connections>
-                        <outlet property="navItem" destination="RP0-QX-SXR" id="bdh-e0-TMh"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5vA-8c-H6c" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1856" y="1516"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="lKe-JO-sow">
             <objects>
@@ -292,7 +274,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InteractionsCell" id="ipC-0A-7WV">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ipC-0A-7WV" id="oAK-sq-9Zo">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -331,24 +313,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjx-m7-0rO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-109" y="820"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="W6J-gI-wGO">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AXt-SW-p8f" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XXv-SN-sJo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="a0f-Gc-3sS" kind="relationship" relationship="rootViewController" id="Q4n-fd-VyQ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cua-m0-DHn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1367" y="1516"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5WQ-ZE-noe">

@@ -11,8 +11,14 @@
 #import "LGPlusButton.h"
 #import "LGPlusButtonsView.h"
 #import "AFOAuth1Client.h"
+#import "EAIntroPage.h"
+#import "EAIntroView.h"
+#import "EARestrictedScrollView.h"
 
-@interface TimelineContainerViewController : UIViewController< UIActionSheetDelegate, LGPlusButtonsViewDelegate>
+@interface TimelineContainerViewController : UIViewController< UIActionSheetDelegate, LGPlusButtonsViewDelegate,EAIntroDelegate>{
+    UIView *rootView;
+    EAIntroView *intro;
+}
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (nonatomic, strong) UITextView *message;
 @property (nonatomic, strong) AFOAuth1Client *twitterClient;

@@ -115,8 +115,6 @@
 - (void)prepareForReuse
 {
     [super prepareForReuse];
-
-    
     self.animeButton.selected = NO;
 }
 

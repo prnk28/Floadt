@@ -47,7 +47,7 @@
 		AC20261B1B410524002A4F2C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC5A507B1A65FBA60093E83F /* SettingsViewController.m */; };
 		AC20261C1B410524002A4F2C /* MXPagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC86BFC71B406C99002F1C2F /* MXPagerView.m */; };
 		AC20261D1B410524002A4F2C /* WebViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA9FF921A4A8735000815A8 /* WebViewVC.m */; };
-		AC20261E1B410524002A4F2C /* TwitterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A1EC1A676694001312BD /* TwitterTableViewController.m */; };
+		AC20261E1B410524002A4F2C /* TwitterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACE2A1EC1A676694001312BD /* TwitterTableViewController.m */; settings = {COMPILER_FLAGS = "-w"; }; };
 		AC20261F1B410524002A4F2C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = AC6FB98F1ADCBBFD00B9FFCD /* MBProgressHUD.m */; };
 		AC2026221B410524002A4F2C /* UIImage+GIF.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA30F4919F99FB80018BDB7 /* UIImage+GIF.m */; };
 		AC2026231B410524002A4F2C /* UIScrollView+TwitterCover.m in Sources */ = {isa = PBXBuildFile; fileRef = AC84707F1B1A9F1C002200EA /* UIScrollView+TwitterCover.m */; };
@@ -201,6 +201,8 @@
 		AC2026E41B410524002A4F2C /* soundcloud.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCEE1845A76C00A3A498 /* soundcloud.png */; };
 		AC2026E51B410524002A4F2C /* picasa.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCE81845A76C00A3A498 /* picasa.png */; };
 		AC2026E71B410524002A4F2C /* deviantart.png in Resources */ = {isa = PBXBuildFile; fileRef = ACB8DCD21845A76C00A3A498 /* deviantart.png */; };
+		AC39B0311B857C64006F118D /* RetweetLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC39B0301B857C64006F118D /* RetweetLabel.m */; };
+		AC39B0341B8583BA006F118D /* FavoriteLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = AC39B0331B8583BA006F118D /* FavoriteLabel.m */; };
 		AC440B891B74351C00ACB040 /* heart-white.png in Resources */ = {isa = PBXBuildFile; fileRef = AC440B881B74351C00ACB040 /* heart-white.png */; };
 		AC66C96C1B5CE2D4009945A1 /* ForeignInstagramViewHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = AC66C96B1B5CE2D4009945A1 /* ForeignInstagramViewHeader.m */; };
 		AC66C96F1B5CE2E6009945A1 /* InstagramUser.m in Sources */ = {isa = PBXBuildFile; fileRef = AC66C96E1B5CE2E6009945A1 /* InstagramUser.m */; };
@@ -208,6 +210,9 @@
 		AC66C9791B5D6526009945A1 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = AC66C9741B5D6525009945A1 /* like.png */; };
 		AC66C97A1B5D6526009945A1 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = AC66C9751B5D6525009945A1 /* smile.png */; };
 		AC66C97D1B5D815D009945A1 /* asu_pid.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = AC66C97C1B5D815D009945A1 /* asu_pid.entitlements */; };
+		AC697DA51B83004000AE0039 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = AC697DA21B83004000AE0039 /* EAIntroPage.m */; };
+		AC697DA61B83004000AE0039 /* EAIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC697DA41B83004000AE0039 /* EAIntroView.m */; };
+		AC697DAA1B8300C900AE0039 /* EARestrictedScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = AC697DA91B8300C900AE0039 /* EARestrictedScrollView.m */; };
 		ACA569491B81C1DE00AA6081 /* TwitterDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACA569481B81C1DE00AA6081 /* TwitterDetailViewController.m */; };
 		ACC510FD1B61FB690048E603 /* SIAlertView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = ACC510F71B61FB690048E603 /* SIAlertView.bundle */; };
 		ACC510FF1B61FB690048E603 /* SIAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = ACC510F91B61FB690048E603 /* SIAlertView.m */; };
@@ -280,6 +285,10 @@
 		AC3246DF19F9CDA000397C1A /* TwitterCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterCell.m; sourceTree = "<group>"; };
 		AC36186C1B1F4BA000206AB5 /* STTweetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STTweetLabel.h; sourceTree = "<group>"; };
 		AC36186D1B1F4BA000206AB5 /* STTweetLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STTweetLabel.m; sourceTree = "<group>"; };
+		AC39B02F1B857C64006F118D /* RetweetLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetweetLabel.h; sourceTree = "<group>"; };
+		AC39B0301B857C64006F118D /* RetweetLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetweetLabel.m; sourceTree = "<group>"; };
+		AC39B0321B8583BA006F118D /* FavoriteLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoriteLabel.h; sourceTree = "<group>"; };
+		AC39B0331B8583BA006F118D /* FavoriteLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoriteLabel.m; sourceTree = "<group>"; };
 		AC3D25601A548B3900132DA8 /* InstagramClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstagramClient.h; sourceTree = "<group>"; };
 		AC3D25611A548B3900132DA8 /* InstagramClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstagramClient.m; sourceTree = "<group>"; };
 		AC3D25621A548B3900132DA8 /* TwitterClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClient.h; sourceTree = "<group>"; };
@@ -348,6 +357,12 @@
 		AC66C9741B5D6525009945A1 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		AC66C9751B5D6525009945A1 /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
 		AC66C97C1B5D815D009945A1 /* asu_pid.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = asu_pid.entitlements; sourceTree = "<group>"; };
+		AC697DA11B83004000AE0039 /* EAIntroPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroPage.h; sourceTree = "<group>"; };
+		AC697DA21B83004000AE0039 /* EAIntroPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroPage.m; sourceTree = "<group>"; };
+		AC697DA31B83004000AE0039 /* EAIntroView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAIntroView.h; sourceTree = "<group>"; };
+		AC697DA41B83004000AE0039 /* EAIntroView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAIntroView.m; sourceTree = "<group>"; };
+		AC697DA81B8300C900AE0039 /* EARestrictedScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EARestrictedScrollView.h; sourceTree = "<group>"; };
+		AC697DA91B8300C900AE0039 /* EARestrictedScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EARestrictedScrollView.m; sourceTree = "<group>"; };
 		AC6FB98E1ADCBBFD00B9FFCD /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		AC6FB98F1ADCBBFD00B9FFCD /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		AC6FB9931ADCC3A600B9FFCD /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
@@ -818,6 +833,27 @@
 			name = DOFavoriteButton;
 			sourceTree = "<group>";
 		};
+		AC697DA01B83004000AE0039 /* EAIntroView */ = {
+			isa = PBXGroup;
+			children = (
+				AC697DA71B8300C900AE0039 /* EARestrictedScrollView */,
+				AC697DA11B83004000AE0039 /* EAIntroPage.h */,
+				AC697DA21B83004000AE0039 /* EAIntroPage.m */,
+				AC697DA31B83004000AE0039 /* EAIntroView.h */,
+				AC697DA41B83004000AE0039 /* EAIntroView.m */,
+			);
+			path = EAIntroView;
+			sourceTree = "<group>";
+		};
+		AC697DA71B8300C900AE0039 /* EARestrictedScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				AC697DA81B8300C900AE0039 /* EARestrictedScrollView.h */,
+				AC697DA91B8300C900AE0039 /* EARestrictedScrollView.m */,
+			);
+			path = EARestrictedScrollView;
+			sourceTree = "<group>";
+		};
 		AC6FB98D1ADCBBEB00B9FFCD /* MBProgressHUD */ = {
 			isa = PBXGroup;
 			children = (
@@ -1241,6 +1277,7 @@
 			children = (
 				ACEBB1AB182C852500A4CE2F /* AFNetworking */,
 				AC66C9701B5D650D009945A1 /* DOFavoriteButton */,
+				AC697DA01B83004000AE0039 /* EAIntroView */,
 				AC619F551AEDE2A900995B2D /* GUIPlayerView */,
 				ACF6E08A1B7E6B5B005C397D /* HMSegmentedControl */,
 				ACC1E9831825E43F00DCA712 /* JASidePanels */,
@@ -1292,14 +1329,18 @@
 		ACD7D0401A05728A0090093B /* External Pages */ = {
 			isa = PBXGroup;
 			children = (
+				AC39B0321B8583BA006F118D /* FavoriteLabel.h */,
+				AC39B0331B8583BA006F118D /* FavoriteLabel.m */,
 				ACEEF64A1814275E002B61B9 /* MenuViewController.h */,
 				ACEEF64B1814275E002B61B9 /* MenuViewController.m */,
+				AC39B02F1B857C64006F118D /* RetweetLabel.h */,
+				AC39B0301B857C64006F118D /* RetweetLabel.m */,
 				ACEEF647181426FE002B61B9 /* RootMenuController.h */,
 				ACEEF648181426FE002B61B9 /* RootMenuController.m */,
-				ACA9FF911A4A8735000815A8 /* WebViewVC.h */,
-				ACA9FF921A4A8735000815A8 /* WebViewVC.m */,
 				ACB6AB931A5B8B1600398ADA /* UIPlaceholderTextView.h */,
 				ACB6AB941A5B8B1600398ADA /* UIPlaceholderTextView.m */,
+				ACA9FF911A4A8735000815A8 /* WebViewVC.h */,
+				ACA9FF921A4A8735000815A8 /* WebViewVC.m */,
 			);
 			name = "External Pages";
 			sourceTree = "<group>";
@@ -1495,6 +1536,7 @@
 				AC2025F41B410524002A4F2C /* SDWebImagePrefetcher.m in Sources */,
 				AC2025F51B410524002A4F2C /* Data.m in Sources */,
 				AC2025F71B410524002A4F2C /* MASConstraintMaker.m in Sources */,
+				AC697DAA1B8300C900AE0039 /* EARestrictedScrollView.m in Sources */,
 				AC063A431B6217770040F7F7 /* JGActionSheet.m in Sources */,
 				AC2025F81B410524002A4F2C /* JSFlatButton.m in Sources */,
 				AC2025F91B410524002A4F2C /* MXSegmentedPager.m in Sources */,
@@ -1546,7 +1588,10 @@
 				AC20262E1B410524002A4F2C /* MASViewConstraint.m in Sources */,
 				AC2026301B410524002A4F2C /* SDWebImageDownloaderOperation.m in Sources */,
 				AC2026311B410524002A4F2C /* UIViewController+JASidePanel.m in Sources */,
+				AC39B0341B8583BA006F118D /* FavoriteLabel.m in Sources */,
+				AC697DA61B83004000AE0039 /* EAIntroView.m in Sources */,
 				AC2026321B410524002A4F2C /* InstagramCell.m in Sources */,
+				AC39B0311B857C64006F118D /* RetweetLabel.m in Sources */,
 				AC2026331B410524002A4F2C /* MXSegmentedPager+ParallaxHeader.m in Sources */,
 				AC2026351B410524002A4F2C /* UIView+WebCacheOperation.m in Sources */,
 				AC2026361B410524002A4F2C /* UIScrollView+VGParallaxHeader.m in Sources */,
@@ -1604,6 +1649,7 @@
 				AC20267E1B410524002A4F2C /* UIImageView+HighlightedWebCache.m in Sources */,
 				AC20267F1B410524002A4F2C /* AFPropertyListRequestOperation.m in Sources */,
 				AC2026801B410524002A4F2C /* Reachability.m in Sources */,
+				AC697DA51B83004000AE0039 /* EAIntroPage.m in Sources */,
 				AC2026821B410524002A4F2C /* GUIPlayerView.m in Sources */,
 				AC2026831B410524002A4F2C /* JASidePanelController.m in Sources */,
 				AC2026841B410524002A4F2C /* UIColor+JSFlatButton.m in Sources */,

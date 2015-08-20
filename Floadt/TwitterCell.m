@@ -9,6 +9,7 @@
 #import "TwitterCell.h"
 
 @implementation TwitterCell
+@synthesize data;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -79,6 +80,16 @@
     [self.replyButton setBackgroundImage:[UIImage imageNamed:@"reply.png"] forState:UIControlStateNormal];
     [self.contentView addSubview:self.replyButton];
     
+    // Favorites Label
+    self.favoritesLabel = [[FavoriteLabel alloc] init];
+
+    [self.contentView addSubview:self.favoritesLabel];
+    
+    // Retweets Label
+    self.retweetsLabel = [[RetweetLabel alloc] init];
+
+    [self.contentView addSubview:self.retweetsLabel];
+    
     //
     //  CONSTRAIN
     //
@@ -104,43 +115,52 @@
     [self.tweetLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.usernameLabel withOffset:8.0];
     [self.tweetLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:5.0];
     
-    //
-    // Interactive Buttons
-    //
-    
-    // Left
+    // Reply Button
     [self.replyButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:60];
     [self.replyButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:245];
     [self.replyButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:5];
     [self.replyButton autoSetDimension:ALDimensionHeight toSize:15];
     [self.replyButton autoAlignAxis:ALAxisLastBaseline toSameAxisOfView:self.contentView];
     
-    // Middle
-    [self.retweetButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:115];
+    // Retweet Button
+    [self.retweetButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:120];
     [self.retweetButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:190];
     [self.retweetButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:5];
     [self.retweetButton autoSetDimension:ALDimensionHeight toSize:15];
     [self.retweetButton autoAlignAxis:ALAxisLastBaseline toSameAxisOfView:self.contentView];
     
-    // Right
-    [self.favoriteButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:160];
-    [self.favoriteButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:145];
+    // Retweets Label
+    [self.retweetsLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:140];
+    [self.retweetsLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:8];
+    [self.retweetsLabel autoSetDimension:ALDimensionHeight toSize:10];
+    [self.retweetsLabel autoAlignAxis:ALAxisLastBaseline toSameAxisOfView:self.contentView];
+    
+    // Favorite Buton
+    [self.favoriteButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:180];
+    [self.favoriteButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:130];
     [self.favoriteButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:5];
     [self.favoriteButton autoSetDimension:ALDimensionHeight toSize:15];
     [self.favoriteButton autoAlignAxis:ALAxisLastBaseline toSameAxisOfView:self.contentView];
-     
+    
+    // Favorites Label
+    [self.favoritesLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:200];
+    [self.favoritesLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:8];
+    [self.favoritesLabel autoSetDimension:ALDimensionHeight toSize:10];
+    [self.favoritesLabel autoAlignAxis:ALAxisLastBaseline toSameAxisOfView:self.contentView];
+    
     CGSize defaultSize = [[self class] defaultCellSize];
     self.tweetLabel.preferredMaxLayoutWidth = defaultSize.width - (8 * 2);
 }
 
-- (void)prepareForReuse
-{
+- (void)prepareForReuse {
     [super prepareForReuse];
-    self.favoriteButton.selected = NO;
+    [self.favoriteButton deselect];
+    [self.favoritesLabel deselect];
     self.tweetLabel.text = nil;
     self.profilePicture.image = nil;
     self.nameLabel.text = nil;
-    self.retweetButton.selected = NO;
+    [self.retweetButton deselect];
+    [self.retweetButton deselect];
     self.usernameLabel.text = nil;
 }
 

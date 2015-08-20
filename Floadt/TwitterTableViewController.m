@@ -31,6 +31,7 @@
     
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"twitterActive"]) {
         [self fetchTweets];
+        [self.tableView reloadData];
     }
     
 }
@@ -72,6 +73,29 @@
         cell = [[TwitterCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"TwitterCell"];
     }
     
+    NSDictionary *data = tweets[indexPath.row];
+    
+    [cell.favoriteButton setObjectID:data[@"id"]];
+    [cell.retweetButton setObjectID:data[@"id"]];
+    
+    id favorited = data[@"favorited"];
+    id retweeted = data[@"retweeted"];
+    
+    if ([favorited integerValue] == 1) {
+        [cell.favoriteButton select];
+        
+    } else {
+        [cell.favoriteButton deselect];
+    
+    }
+    
+    if ([retweeted integerValue] == 1) {
+        [cell.retweetButton select];
+        [cell.retweetsLabel select];
+    } else {
+        [cell.retweetButton deselect];
+        [cell.retweetsLabel deselect];
+    }
     // Add Tap Listeners
     UITapGestureRecognizer *nameLabelTap =
     [[UITapGestureRecognizer alloc] initWithTarget:self
@@ -83,13 +107,15 @@
                                             action:@selector(handleCellProfileImageTap:)];
     [cell.profilePicture addGestureRecognizer:profileImageTap];
     
-    NSDictionary *data = tweets[indexPath.row];
-    
     // NSDate
     NSString *nameString = data[@"user"][@"name"];
     NSString *screenName = data[@"user"][@"screen_name"];
     NSString *tweetString = data[@"text"];
-
+    id retweet = data[@"retweet_count"];
+    id favorite = data[@"favorite_count"];
+    long retweetCount = [retweet longValue];
+    long favoriteCount = [favorite longValue];
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
     [dateFormatter setLocale:usLocale];
@@ -145,6 +171,13 @@
     cell.profilePicture.userInteractionEnabled = YES;
     cell.tweetLabel.text = tweetString;
     cell.usernameLabel.text = [NSString stringWithFormat:@"@%@",screenName];
+    if (retweetCount > 0) {
+        cell.retweetsLabel.text = [NSString stringWithFormat:@"%ld",retweetCount];
+    }
+    
+    if (favoriteCount > 0) {
+        cell.favoritesLabel.text = [NSString stringWithFormat:@"%ld",favoriteCount];
+    }
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         NSString *imageUrl = [[data objectForKey:@"user"] objectForKey:@"profile_image_url"];
@@ -313,9 +346,47 @@
     if (sender.selected) {
         // deselect
         [sender deselect];
+        
+        NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
+        TwitterCell *cell = [self.tableView cellForRowAtIndexPath:i];
+        [cell.favoritesLabel select];
+        
+        self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"] key:@"tA5TT8uEtg88FwAHnVpBcbUoq" secret:@"L5whWoi91HmzjrE5bNPNUgoMXWnImvpnkIPHZWQ4VmymaoXyYV"];
+        
+        NSDictionary *parameters = @{
+                                     @"id" :sender.objectID
+                                     };
+        
+        AFOAuth1Token *twitterToken = [AFOAuth1Token retrieveCredentialWithIdentifier:@"TwitterToken"];
+        [self.twitterClient setAccessToken:twitterToken];
+        [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+        [self.twitterClient postPath:@"favorites/destroy.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"%@",responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@",error);
+        }];
+
     } else {
-        // select with animation
         [sender select];
+        
+        NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
+        TwitterCell *cell = [self.tableView cellForRowAtIndexPath:i];
+        [cell.favoritesLabel select];
+        
+        self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"] key:@"tA5TT8uEtg88FwAHnVpBcbUoq" secret:@"L5whWoi91HmzjrE5bNPNUgoMXWnImvpnkIPHZWQ4VmymaoXyYV"];
+        
+        NSDictionary *parameters = @{
+                                     @"id" :sender.objectID
+                                     };
+        
+        AFOAuth1Token *twitterToken = [AFOAuth1Token retrieveCredentialWithIdentifier:@"TwitterToken"];
+        [self.twitterClient setAccessToken:twitterToken];
+        [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+        [self.twitterClient postPath:@"favorites/create.json" parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"%@",responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@",error);
+        }];
     }
 }
 
@@ -323,9 +394,41 @@
     if (sender.selected) {
         // deselect
         [sender deselect];
+        // Highlight Label
+        NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
+        TwitterCell *cell = [self.tableView cellForRowAtIndexPath:i];
+        [cell.retweetsLabel deselect];
+        
+        self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"] key:@"tA5TT8uEtg88FwAHnVpBcbUoq" secret:@"L5whWoi91HmzjrE5bNPNUgoMXWnImvpnkIPHZWQ4VmymaoXyYV"];
+        
+        NSString *path = [NSString stringWithFormat:@"statuses/destroy/%@.json",sender.objectID];
+        AFOAuth1Token *twitterToken = [AFOAuth1Token retrieveCredentialWithIdentifier:@"TwitterToken"];
+        [self.twitterClient setAccessToken:twitterToken];
+        [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+        [self.twitterClient postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"%@",responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@",error);
+        }];
     } else {
-        // select with animation
         [sender select];
+        
+        NSIndexPath *i=[self indexPathForCellContainingView:sender.superview];
+        TwitterCell *cell = [self.tableView cellForRowAtIndexPath:i];
+        [cell.retweetsLabel select];
+        
+        // Request
+        self.twitterClient = [[AFOAuth1Client alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.twitter.com/1.1/"] key:@"tA5TT8uEtg88FwAHnVpBcbUoq" secret:@"L5whWoi91HmzjrE5bNPNUgoMXWnImvpnkIPHZWQ4VmymaoXyYV"];
+        
+        NSString *path = [NSString stringWithFormat:@"statuses/retweet/%@.json",sender.objectID];
+        AFOAuth1Token *twitterToken = [AFOAuth1Token retrieveCredentialWithIdentifier:@"TwitterToken"];
+        [self.twitterClient setAccessToken:twitterToken];
+        [self.twitterClient registerHTTPOperationClass:[AFJSONRequestOperation class]];
+        [self.twitterClient postPath:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+            NSLog(@"%@",responseObject);
+        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            NSLog(@"%@",error);
+        }];
     }
 }
 
@@ -340,6 +443,17 @@
     //TweetDetailViewController* vc = [sb instantiateViewControllerWithIdentifier:@"TweetDetail"];
     //vc.detailItem = tweet;
    // [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (NSIndexPath *)indexPathForCellContainingView:(UIView *)view {
+    while (view != nil) {
+        if ([view isKindOfClass:[TwitterCell class]]) {
+            return [self.tableView indexPathForCell:(TwitterCell *)view];
+        } else {
+            view = [view superview];
+        }
+    }
+    return nil;
 }
 
 @end

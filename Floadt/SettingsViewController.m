@@ -26,8 +26,8 @@
     UITapGestureRecognizer *singleFingerTap =
     [[UITapGestureRecognizer alloc] initWithTarget:self
                                             action:@selector(handleSingleTap:)];
-    singleFingerTap.numberOfTapsRequired = 30;
-    [self.view addGestureRecognizer:singleFingerTap];
+    singleFingerTap.numberOfTapsRequired = 25;
+    [_scrollView addGestureRecognizer:singleFingerTap];
     
     UIButton *barButton = [UIButton buttonWithType:UIButtonTypeCustom];
     
