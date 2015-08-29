@@ -1,38 +1,47 @@
 //
-//  TwitterCell.m
+//  TwitterRetweetCell.m
 //  Floadt
 //
-//  Created by Pradyumn Nukala on 10/23/14.
-//  Copyright (c) 2014 Floadt. All rights reserved.
+//  Created by Pradyumn Nukala on 8/20/15.
+//  Copyright (c) 2015 Floadt. All rights reserved.
 //
 
-#import "TwitterCell.h"
+#import "TwitterRetweetCell.h"
 
-@implementation TwitterCell
-@synthesize data;
+@implementation TwitterRetweetCell
 
 // Initialize for a Regular Style Cell
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        self.clockIcon = [[UIImageView alloc] initWithFrame:CGRectMake(250, 12, 15, 15)];
-        self.clockIcon.image = [UIImage imageNamed:@"clock.png"];
-        [self addSubview:self.clockIcon];
+
         
-        self.timeAgo = [[UILabel alloc] initWithFrame:CGRectMake(275, 12, 40, 15)];
+        self.timeAgo = [[UILabel alloc] initWithFrame:CGRectMake(275, 20, 40, 15)];
         self.timeAgo.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
         self.timeAgo.textColor = [UIColor darkGrayColor];
         self.timeAgo.numberOfLines = 1;
         [self.contentView addSubview:self.timeAgo];
-        [self setupView];
+        [self setupRetweetView];
     }
     return self;
 }
 
-- (void)setupView {
+- (void)setupRetweetView {
     [self.contentView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
     
-    // Create ProfileImageView
+    self.clockIcon = [[UIImageView alloc] initWithFrame:CGRectZero];
+    self.clockIcon.image = [UIImage imageNamed:@"clock.png"];
+    [self addSubview:self.clockIcon];
+    
+    // Retweeted by Label
+    self.retweetedLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+    self.retweetedLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    self.retweetedLabel.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:10];
+    self.retweetedLabel.textColor = [UIColor lightGrayColor];
+    self.retweetedLabel.numberOfLines = 1;
+    [self.contentView addSubview:self.retweetedLabel];
+    
+    // ProfileImageView
     self.profilePicture = [[UIImageView alloc] initWithFrame:CGRectZero];
     self.profilePicture.translatesAutoresizingMaskIntoConstraints = NO;
     self.profilePicture.contentMode = UIViewContentModeScaleAspectFill;
@@ -92,13 +101,26 @@
     //
     //  CONSTRAIN
     //
+    
     if([[UIDevice currentDevice]userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         CGFloat screenHeight = [UIScreen mainScreen].bounds.size.height;
         if (screenHeight == 568) {
+            
+            // Retweeted Label
+            [self.retweetedLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:60];
+            [self.retweetedLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:8];
+            [self.retweetedLabel autoAlignAxis:ALAxisVertical toSameAxisOfView:self.contentView];
+            
+            // Clock Icon
+            [self.clockIcon autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:250];
+            [self.clockIcon autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
+            [self.clockIcon autoSetDimension:ALDimensionHeight toSize:15];
+            [self.clockIcon autoSetDimension:ALDimensionWidth toSize:15];
+            
             // Name Label
             [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:60];
             [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:35];
-            [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:12];
+            [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
             [self.nameLabel autoAlignAxis:ALAxisVertical toSameAxisOfView:self.contentView];
             
             // Username Label
@@ -108,7 +130,7 @@
             
             // Profile Picture
             [self.profilePicture autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.nameLabel withOffset:-10.0];
-            [self.profilePicture autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:12];
+            [self.profilePicture autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
             [self.profilePicture autoSetDimension:ALDimensionHeight toSize:35];
             [self.profilePicture autoSetDimension:ALDimensionWidth toSize:35];
             
@@ -121,7 +143,6 @@
             [self.replyButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:525];
             [self.replyButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:5];
             [self.replyButton autoSetDimension:ALDimensionHeight toSize:15];
-            [self.replyButton autoSetDimension:ALDimensionWidth toSize:15];
             [self.replyButton autoAlignAxis:ALAxisLastBaseline toSameAxisOfView:self.contentView];
             
             // Retweet Button
@@ -149,11 +170,22 @@
             [self.favoritesLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:8];
             [self.favoritesLabel autoSetDimension:ALDimensionHeight toSize:10];
             [self.favoritesLabel autoAlignAxis:ALAxisLastBaseline toSameAxisOfView:self.contentView];
-        } else {
+        }else {
+            // Retweeted Label
+            [self.retweetedLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:60];
+            [self.retweetedLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:8];
+            [self.retweetedLabel autoAlignAxis:ALAxisVertical toSameAxisOfView:self.contentView];
+            
+            // Clock Icon
+            [self.clockIcon autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:250];
+            [self.clockIcon autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
+            [self.clockIcon autoSetDimension:ALDimensionHeight toSize:15];
+            [self.clockIcon autoSetDimension:ALDimensionWidth toSize:15];
+            
             // Name Label
             [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:60];
             [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:35];
-            [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:12];
+            [self.nameLabel autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
             [self.nameLabel autoAlignAxis:ALAxisVertical toSameAxisOfView:self.contentView];
             
             // Username Label
@@ -163,14 +195,20 @@
             
             // Profile Picture
             [self.profilePicture autoPinEdge:ALEdgeRight toEdge:ALEdgeLeft ofView:self.nameLabel withOffset:-10.0];
-            [self.profilePicture autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:12];
+            [self.profilePicture autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:20];
             [self.profilePicture autoSetDimension:ALDimensionHeight toSize:35];
             [self.profilePicture autoSetDimension:ALDimensionWidth toSize:35];
             
             // Tweet Label
             [self.tweetLabel autoPinEdge:ALEdgeTop toEdge:ALEdgeBottom ofView:self.usernameLabel withOffset:8.0];
-            [self.tweetLabel autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:5.0];
             [self.tweetLabel autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:5.0];
+            
+            // Reply Button
+            [self.replyButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:60];
+            [self.replyButton autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:525];
+            [self.replyButton autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:5];
+            [self.replyButton autoSetDimension:ALDimensionHeight toSize:15];
+            [self.replyButton autoAlignAxis:ALAxisLastBaseline toSameAxisOfView:self.contentView];
             
             // Reply Button
             [self.replyButton autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:60];
@@ -205,11 +243,11 @@
             [self.favoritesLabel autoPinEdgeToSuperviewEdge:ALEdgeBottom withInset:8];
             [self.favoritesLabel autoSetDimension:ALDimensionHeight toSize:10];
             [self.favoritesLabel autoAlignAxis:ALAxisLastBaseline toSameAxisOfView:self.contentView];
-            
         }
     }
+    
     CGSize defaultSize = [[self class] defaultCellSize];
-    self.tweetLabel.preferredMaxLayoutWidth = defaultSize.width + 5;
+    self.tweetLabel.preferredMaxLayoutWidth = defaultSize.width + 25;
 }
 
 - (void)prepareForReuse {
@@ -227,5 +265,6 @@
 + (CGSize)defaultCellSize {
     return (CGSize){CGRectGetWidth([[UIScreen mainScreen] bounds]), 85};
 }
+
 
 @end

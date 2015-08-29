@@ -9,6 +9,7 @@
 #import "RetweetLabel.h"
 
 @implementation RetweetLabel
+@synthesize retweetCount;
 
 -(id)init {
     self = [super init];

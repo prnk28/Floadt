@@ -10,7 +10,10 @@
 
 @interface FavoriteLabel : UILabel {
     BOOL selected;
+    long favoriteCount;
 }
+
+@property long favoriteCount;
 
 - (void)deselect;
 - (void)select;

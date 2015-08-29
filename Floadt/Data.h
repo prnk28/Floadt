@@ -69,7 +69,6 @@
 #import "AFHTTPRequestOperation.h"
 #import "AFOAuth1Client.h"
 #import "AFOAuth2Client.h"
-#import "WebViewVC.h"
 #import "InstagramClient.h"
 #import "SettingsViewController.h"
 #import "SettingsViewController.h"

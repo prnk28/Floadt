@@ -9,6 +9,7 @@
 #import "FavoriteLabel.h"
 
 @implementation FavoriteLabel
+@synthesize favoriteCount;
 
 -(id)init {
     self = [super init];

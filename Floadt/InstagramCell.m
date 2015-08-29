@@ -32,10 +32,11 @@
         // Create ClockImageView
         self.player.view.hidden = YES;
         [self.player stop];
-        self.clockIcon = [[UIImageView alloc] initWithFrame:CGRectMake(250, 12, 15, 15)];
+        self.clockIcon = [[UIImageView alloc] initWithFrame:CGRectZero];
         self.clockIcon.image = [UIImage imageNamed:@"clock.png"];
         [self addSubview:self.clockIcon];
-        self.timeAgo = [[UILabel alloc] initWithFrame:CGRectMake(275, 12, 40, 15)];
+        
+        self.timeAgo = [[UILabel alloc] initWithFrame:CGRectZero];
         self.timeAgo.font = [UIFont fontWithName:@"HelveticaNeue-Light" size:14];
         self.timeAgo.textColor = [UIColor darkGrayColor];
         self.timeAgo.numberOfLines = 1;
@@ -108,6 +109,22 @@
         [self.commentButton setBackgroundImage:[UIImage imageNamed:@"comment.png"] forState:UIControlStateNormal];
         [self.commentButton setTitleColor:[UIColor blueColor] forState:UIControlStateHighlighted];
         [self.contentView addSubview:self.commentButton];
+        
+        //
+        // Constrain
+        //
+        
+        [self.clockIcon autoPinEdgeToSuperviewEdge:ALEdgeRight withInset:70];
+        [self.clockIcon autoPinEdgeToSuperviewEdge:ALEdgeLeft withInset:290];
+        [self.clockIcon autoPinEdgeToSuperviewEdge:ALEdgeTop withInset:12];
+        [self.clockIcon autoSetDimension:ALDimensionHeight toSize:15];
+        [self.clockIcon autoSetDimension:ALDimensionWidth toSize:15];
+        
+        [self.timeAgo autoAlignAxis:ALAxisVertical toSameAxisOfView:self.clockIcon withOffset:25];
+        [self.timeAgo autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.clockIcon withOffset:0];
+        
+        [self.nameLabel autoAlignAxis:ALAxisVertical toSameAxisOfView:self.timeAgo withOffset:-50];
+        [self.nameLabel autoAlignAxis:ALAxisHorizontal toSameAxisOfView:self.timeAgo];
     }
     return self;
 }

@@ -6,16 +6,13 @@
 //  Copyright (c) 2014 Floadt. All rights reserved.
 //
 
-#import "InteractionsTableViewController.h"
+#import "NotificationsViewController.h"
 
-@interface InteractionsTableViewController ()
-
-@end
-
-@implementation InteractionsTableViewController
+@implementation NotificationsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUpUI];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

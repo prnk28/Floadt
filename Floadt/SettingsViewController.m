@@ -42,12 +42,12 @@
     [self.navigationController.navigationBar setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
                                                                       [UIColor whiteColor], NSForegroundColorAttributeName,
                                                                       [UIFont fontWithName:@"AeroviasBrasilNF" size:30.0], NSFontAttributeName, nil]];
+    
     _plusButtonsView = [[LGPlusButtonsView alloc] initWithView:_scrollView
                                                numberOfButtons:2
                                                showsPlusButton:YES
                                                  actionHandler:^(LGPlusButtonsView *plusButtonView, NSString *title, NSString *description, NSUInteger index)
                         {
-                            NSLog(@"%@, %@, %i", title, description, (int)index);
 
                             switch (index) {
                                 case 0:
@@ -110,8 +110,12 @@
                             }
 
                         }
-                        
     plusButtonActionHandler:nil];
+    
+    [_plusButtonsView.buttons[0] setImage:[UIImage imageNamed:@"plusCirc"] forState:UIControlStateNormal];
+    [_plusButtonsView.buttons[1] setImage:[UIImage imageNamed:@"TwitterCirc"] forState:UIControlStateNormal];
+    [_plusButtonsView.buttons[2] setImage:[UIImage imageNamed:@"InstgramCirc"] forState:UIControlStateNormal];
+    
     [_plusButtonsView setButtonsTitles:@[@"+", @"", @""] forState:UIControlStateNormal];
     [_plusButtonsView setDescriptionsTexts:@[@"", @"Twitter", @"Instagram"]];
     _plusButtonsView.position = LGPlusButtonsViewPositionBottomRight;
@@ -120,8 +124,9 @@
     _plusButtonsView.buttonsAppearingAnimationType = LGPlusButtonsAppearingAnimationTypeCrossDissolveAndSlideHorizontal;
     _plusButtonsView.plusButtonAnimationType = LGPlusButtonAnimationTypeRotate;
     [_plusButtonsView setButtonsTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [_plusButtonsView setButtonsAdjustsImageWhenHighlighted:NO];
+     [_plusButtonsView setButtonsAdjustsImageWhenHighlighted:NO];
     [_plusButtonsView showAnimated:NO completionHandler:nil];
+    [_plusButtonsView setButtonsContentEdgeInsets:UIEdgeInsetsMake(0.0, 8.0, 8.0, 0.0)];
 }
 
 - (void)didTapBarButton:(id)sender
@@ -150,52 +155,6 @@
         topInset += (self.navigationController.navigationBarHidden ? 0.f : MIN(self.navigationController.navigationBar.frame.size.width, self.navigationController.navigationBar.frame.size.height));
         topInset += ([UIApplication sharedApplication].statusBarHidden ? 0.f : MIN([UIApplication sharedApplication].statusBarFrame.size.width, [UIApplication sharedApplication].statusBarFrame.size.height));
     }
-    // -----
-    
-    BOOL isPortrait = UIInterfaceOrientationIsPortrait([UIApplication sharedApplication].statusBarOrientation);
-    
-    CGFloat shadowBlur = 3.f;
-    CGFloat buttonSide = (isPortrait ? 64.f : 44.f);
-    CGFloat buttonsFontSize = (isPortrait ? 30.f : 20.f);
-    CGFloat plusButtonFontSize = buttonsFontSize*1.5;
-    
-    _plusButtonsView.contentInset = UIEdgeInsetsMake(shadowBlur, shadowBlur, shadowBlur, shadowBlur);
-    [_plusButtonsView setButtonsTitleFont:[UIFont boldSystemFontOfSize:buttonsFontSize]];
-    
-    _plusButtonsView.plusButton.titleLabel.font = [UIFont systemFontOfSize:plusButtonFontSize];
-    _plusButtonsView.plusButton.titleOffset = CGPointMake(0.f, -plusButtonFontSize*0.1);
-    
-    UIImage *circleImageNormal = [LGDrawer drawEllipseWithImageSize:CGSizeMake(buttonSide, buttonSide)
-                                                               size:CGSizeMake(buttonSide-shadowBlur*2, buttonSide-shadowBlur*2)
-                                                             offset:CGPointZero
-                                                             rotate:0.f
-                                                    backgroundColor:nil
-                                                          fillColor:[UIColor colorWithRed:0.f green:0.5 blue:1.f alpha:1.f]
-                                                        strokeColor:nil
-                                                    strokeThickness:0.f
-                                                         strokeDash:nil
-                                                         strokeType:LGDrawerStrokeTypeInside
-                                                        shadowColor:[UIColor colorWithWhite:0.f alpha:0.5]
-                                                       shadowOffset:CGPointZero
-                                                         shadowBlur:shadowBlur];
-    
-    UIImage *circleImageHighlighted = [LGDrawer drawEllipseWithImageSize:CGSizeMake(buttonSide, buttonSide)
-                                                                    size:CGSizeMake(buttonSide-shadowBlur*2, buttonSide-shadowBlur*2)
-                                                                  offset:CGPointZero
-                                                                  rotate:0.f
-                                                         backgroundColor:nil
-                                                               fillColor:[UIColor colorWithRed:0.2 green:0.7 blue:1.f alpha:1.f]
-                                                             strokeColor:nil
-                                                         strokeThickness:0.f
-                                                              strokeDash:nil
-                                                              strokeType:LGDrawerStrokeTypeInside
-                                                             shadowColor:[UIColor colorWithWhite:0.f alpha:0.5]
-                                                            shadowOffset:CGPointZero
-                                                              shadowBlur:shadowBlur];
-    
-    [_plusButtonsView setButtonsImage:circleImageNormal forState:UIControlStateNormal];
-    [_plusButtonsView setButtonsImage:circleImageHighlighted forState:UIControlStateHighlighted];
-    [_plusButtonsView setButtonsImage:circleImageHighlighted forState:UIControlStateHighlighted|UIControlStateSelected];
 }
 
 @end

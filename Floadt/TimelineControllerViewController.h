@@ -8,6 +8,7 @@
 
 #import "XLBarPagerTabStripViewController.h"
 #import "Data.h"
+#import "PureLayout.h"
 
 @interface TimelineControllerViewController : XLBarPagerTabStripViewController
 

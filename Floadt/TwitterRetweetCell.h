@@ -1,9 +1,9 @@
 //
-//  TwitterCell.h
+//  TwitterRetweetCell.h
 //  Floadt
 //
-//  Created by Pradyumn Nukala on 10/23/14.
-//  Copyright (c) 2014 Floadt. All rights reserved.
+//  Created by Pradyumn Nukala on 8/20/15.
+//  Copyright (c) 2015 Floadt. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -11,8 +11,9 @@
 #import "PureLayout.h"
 #import "RetweetLabel.h"
 #import "FavoriteLabel.h"
+#import "Floadt-Swift.h"
 
-@interface TwitterCell : UITableViewCell
+@interface TwitterRetweetCell : UITableViewCell
 
 @property (nonatomic, strong) UILabel *retweetedLabel;
 
@@ -32,9 +33,6 @@
 
 @property (nonatomic, strong) UILabel *timeAgo;
 
-@property NSDictionary *data;
-
-- (id)initWithRetweetStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier;
 + (CGSize)defaultCellSize;
 
 @end

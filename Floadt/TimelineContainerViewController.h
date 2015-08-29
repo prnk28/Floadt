@@ -19,6 +19,7 @@
     UIView *rootView;
     EAIntroView *intro;
 }
+@property (weak, nonatomic) IBOutlet UIView *container;
 @property (strong, nonatomic) IBOutlet UINavigationItem *navBar;
 @property (nonatomic, strong) UITextView *message;
 @property (nonatomic, strong) AFOAuth1Client *twitterClient;

@@ -10,7 +10,10 @@
 
 @interface RetweetLabel : UILabel {
     BOOL selected;
+    long retweetCount;
 }
+
+@property long retweetCount;
 
 - (void)deselect;
 - (void)select;
