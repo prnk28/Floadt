@@ -19,6 +19,6 @@
 @property (strong, nonatomic) NSString *username;
 @property (strong, nonatomic) NSString *userid;
 @property (strong, nonatomic) LGPlusButtonsView *plusButtonsView;
-@property (strong, nonatomic) UIScrollView      *scrollView;
+@property (strong, nonatomic) UIScrollView  *scrollView;
 
 @end
